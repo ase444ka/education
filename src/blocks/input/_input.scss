@@ -1,0 +1,33 @@
+%material {
+  font-family: 'Material Icons';
+  position: absolute;
+  color: $darkShade_50;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.input  {
+    width: 100%;
+    border: 1px solid $darkShade_25;
+    border-radius: 4px;
+    padding: 1rem;
+    outline: none;
+}
+
+@import "_type_select/input_type_select";
+@import "_target_mail/input_target_mail";
+@import "_expanded/input_expanded";
+@import "_hovered/input_hovered";
+@import "__placeholder/input__placeholder";
+@import "__customization/input__customization";
+@import "__options/input__options";
+@import "__item/input__item";
+@import "__option/input__option";
+@import "__option-setter/input__option-setter";
+@import "__option-iteration/input__option-iteration";
+@import "__option-quantity/input__option-quantity";
+@import "__buttons/input__buttons";
+@import "__button/input__button";
+
+
+

@@ -1,0 +1,23 @@
+
+
+.headersFooters {
+  display: grid;
+  grid-template-rows: 110px 98px 65px 65px;
+  grid-template-columns: 67px 336px;
+}
+
+.label {
+  color: $darkShade_25;
+  justify-self: end;
+  padding-right: 1.8rem;
+  font-weight: normal;
+}
+
+
+.extra_h3 {
+  color: $darkShade_50;
+  font-weight: normal;
+}
+p {
+  font-family: Montserrat;
+}

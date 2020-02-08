@@ -1,0 +1,39 @@
+@import "reset";
+@import "basics";
+$left: percentage(150/1362);
+$top: percentage(140/1362);
+$right: percentage(191/1362);
+@mixin bodyMargins($left, $top, $right) {
+  body {
+    margin-left: $left;
+    margin-top: $top;
+    margin-right: $right;
+  }
+}
+
+@include bodyMargins($left, $top, $right);
+#colorsAndType {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@import 'Logo/logo';
+@import '../../fonts/fonts.css';
+@import 'Colors/colors';
+@import "Type/type";
+@import "Forms/forms";
+
+@media only screen and (max-width: 830px) {
+  @include bodyMargins(3%, 3%, 3%);
+}
+@media only screen and (max-width: 675px) {
+
+  #content {
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+  }
+
+}
+

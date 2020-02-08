@@ -1,0 +1,47 @@
+{
+  "name": "learn",
+  "version": "0.0.1",
+  "description": "just learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "ololo",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ase444ka/learn.git"
+  },
+  "keywords": [
+    "leearn"
+  ],
+  "author": "ase444ka",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ase444ka/learn/issues"
+  },
+  "homepage": "https://github.com/ase444ka/learn#readme",
+  "dependencies": {
+    "@babel/core": "^7.7.4",
+    "babel-upgrade": "^1.0.1",
+    "cowsay": "^1.4.0",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^5.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "pug-html-loader": "^1.1.5",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "svg-inline-loader": "^0.8.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

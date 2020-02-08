@@ -1,0 +1,11 @@
+.field {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@import "__content/field__content";
+@import "./__annotation/field__annotation";
+@import "./__name/field__name";
+@import "_doubled/field_doubled";
+@import "_shorted/field_shorted";

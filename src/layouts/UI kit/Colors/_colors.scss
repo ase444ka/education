@@ -1,0 +1,59 @@
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+$colors: (
+        darkShade: #1F2041,
+        purple: #BC9CFF,
+        green: #6FCF97
+);
+$opacities: (
+        5, 25, 50, 75, 100
+);
+
+@each $color, $code in $colors {
+  @if $color == darkShade {
+    @each $value in $opacities {
+      .color__sample--#{$color}-#{$value} {
+        background-color: $code;
+        opacity: $value * 0.01;
+      }
+    }
+  } @else {
+    .color__sample--#{$color} {
+      background-color: $code;
+    }
+  }
+}
+
+.color {
+  width: 270px;
+  height: 70px;
+  padding-bottom: 20px;
+}
+
+.color__sample {
+  width: 70px;
+  height: 70px;
+  border-radius: 7px;
+  display: inline-block;
+}
+
+.color__description {
+  display: inline-block;
+  padding-left: 36px;
+  padding-top: 4px;
+  vertical-align: top;
+  font-size: 18px;
+}
+
+.color__colorName {
+  font-weight: bold;
+  padding-top: 5px;
+}
+.color__colorCode {
+  padding-top: 5px;
+}

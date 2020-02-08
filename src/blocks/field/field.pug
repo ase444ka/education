@@ -1,0 +1,9 @@
+mixin field(data, items)
+    -let doubled = data.doubled? " field_doubled" : ""
+    -let shorted = data.shorted? " field_shorted" : ""
+    div(class = "field" + doubled + shorted)
+        .field__name= data.name? data.name : "no-name field"
+        if data.annotation
+            .field__annotation= data.annotation
+        .field__content
+            block
