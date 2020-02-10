@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
+
 
 
 module.exports = {
@@ -20,6 +20,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, './dist'),
+        //publicPath: 'https://ase444ka.github.io/Education/'
         publicPath: '/dist'
     },
     module: {
@@ -102,15 +103,6 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery'
         }),
-        new GhPagesWebpackPlugin({
-            path: './dist/UIKit.html',
-            options: {
-                message: 'Update Home Page',
-                user: {
-                    name: 'Ася Истомина',
-                    email: 'istomina.asia@yandex.ru'
-                }
-            }
-        })
+
     ]
 };
