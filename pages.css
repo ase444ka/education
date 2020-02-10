@@ -1,0 +1,486 @@
+/* ------------------------------------------open-sans-regular - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-regular.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-regular.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-regular.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+/* -----------------------------------------------------------open-sans-italic - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Open Sans Italic'), local('OpenSans-Italic'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-italic.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-italic.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-italic.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+/*------------------------------------------------------------------- open-sans-600 - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-600.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-600.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-600.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+/* -------------------------------------------------------open-sans-600italic - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-600italic.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-600italic.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-600italic.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+/* -------------------------------------------------------------------open-sans-700 - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-700.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-700.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-700.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+/* ---------------------------------------open-sans-700italic - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-700italic.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-700italic.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-700italic.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+/* --------------------------------------open-sans-800 - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-800.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-800.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-800.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+/* -------------------------------------------------open-sans-800italic - cyrillic_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 800;
+    src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-800italic.woff2) format('woff2'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-800italic.woff) format('woff'), 
+    url(/dist/fonts/open-sans-v17-cyrillic_latin-800italic.ttf) format('truetype'), 
+    url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
+}
+
+/*------------------------------------------------------- montserrat-regular - cyrillic_latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/dist/fonts/montserrat-v14-cyrillic_latin-regular.eot); /* IE9 Compat Modes */
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+    url("[object Module]?#iefix") format('embedded-opentype'), 
+    url(/dist/fonts/montserrat-v14-cyrillic_latin-regular.woff2) format('woff2'), 
+    url(/dist/fonts/montserrat-v14-cyrillic_latin-regular.woff) format('woff'), 
+    url(/dist/fonts/montserrat-v14-cyrillic_latin-regular.ttf) format('truetype'), 
+    url("[object Module]#Montserrat") format('svg'); /* Legacy iOS */
+}
+/* -------------------------------------------montserrat-800 - cyrillic_latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    src: url(/dist/fonts/montserrat-v14-cyrillic_latin-800.eot); /* IE9 Compat Modes */
+    src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+    url("[object Module]?#iefix") format('embedded-opentype'), 
+    url(/dist/fonts/montserrat-v14-cyrillic_latin-800.woff2) format('woff2'), 
+    url(/dist/fonts/montserrat-v14-cyrillic_latin-800.woff) format('woff'), 
+    url(/dist/fonts/montserrat-v14-cyrillic_latin-800.ttf) format('truetype'), 
+    url("[object Module]#Montserrat") format('svg'); /* Legacy iOS */
+}
+/*-------------------------Material Icons*/
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/dist/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'), local('MaterialIcons-Regular'),
+    url(/dist/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+    url(/dist/fonts/MaterialIcons-Regular.woff) format('woff'),
+    url(/dist/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  background: none; }
+
+.label {
+  color: rgba(31, 32, 65, 0.25);
+  opacity: 0.25;
+  justify-self: end;
+  padding-right: 1.8rem;
+  font-weight: normal; }
+
+html {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  line-height: 1.7; }
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  letter-spacing: 0.001em; }
+
+h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  letter-spacing: 0.001em; }
+
+h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .input__button {
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.001em;
+  /*0.73*/
+  font-family: Montserrat;
+  text-transform: uppercase; }
+
+p {
+  font-family: Montserrat; }
+
+body {
+  margin-left: 11.01322%;
+  margin-top: 10.279%;
+  margin-right: 14.02349%; }
+
+#colorsAndType {
+  display: flex;
+  justify-content: space-between; }
+
+#logo {
+  position: fixed;
+  left: 35px;
+  top: 27px;
+  background: url(/dist/icons/logo-img.svg) no-repeat;
+  width: 48px;
+  height: 48px; }
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.color__sample--darkShade-5 {
+  background-color: #1F2041;
+  opacity: 0.05; }
+
+.color__sample--darkShade-25 {
+  background-color: #1F2041;
+  opacity: 0.25; }
+
+.color__sample--darkShade-50 {
+  background-color: #1F2041;
+  opacity: 0.5; }
+
+.color__sample--darkShade-75 {
+  background-color: #1F2041;
+  opacity: 0.75; }
+
+.color__sample--darkShade-100 {
+  background-color: #1F2041;
+  opacity: 1; }
+
+.color__sample--purple {
+  background-color: #BC9CFF; }
+
+.color__sample--green {
+  background-color: #6FCF97; }
+
+.color {
+  width: 270px;
+  height: 70px;
+  padding-bottom: 20px; }
+
+.color__sample {
+  width: 70px;
+  height: 70px;
+  border-radius: 7px;
+  display: inline-block; }
+
+.color__description {
+  display: inline-block;
+  padding-left: 36px;
+  padding-top: 4px;
+  vertical-align: top;
+  font-size: 18px; }
+
+.color__colorName {
+  font-weight: bold;
+  padding-top: 5px; }
+
+.color__colorCode {
+  padding-top: 5px; }
+
+.headersFooters {
+  display: grid;
+  grid-template-rows: 110px 98px 65px 65px;
+  grid-template-columns: 67px 336px; }
+
+.label {
+  color: rgba(31, 32, 65, 0.25);
+  justify-self: end;
+  padding-right: 1.8rem;
+  font-weight: normal; }
+
+.extra_h3 {
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: normal; }
+
+p {
+  font-family: Montserrat; }
+
+#forms {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #forms > div {
+    margin: 5px; }
+
+.span2 {
+  grid-column: span 2; }
+
+@media only screen and (max-width: 830px) {
+  #forms {
+    grid-template-columns: 1fr 1fr; } }
+
+@media only screen and (max-width: 675px) {
+  #forms {
+    grid-template-columns: 1fr; }
+  .span2 {
+    grid-column: span 1; } }
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.field__content {
+  flex-grow: 1; }
+
+.field__annotation {
+  font-weight: normal;
+  color: rgba(31, 32, 65, 0.5); }
+
+.field__name {
+  color: rgba(31, 32, 65, 0.75); }
+
+.field_doubled {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  grid-gap: 1rem; }
+
+.field_shorted {
+  width: 76%; }
+
+.input_type_select::after, .input_target_mail::after {
+  font-family: 'Material Icons';
+  position: absolute;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  pointer-events: all; }
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  padding: 1rem;
+  outline: none; }
+
+.input_type_select {
+  pointer-events: none;
+  position: relative; }
+  .input_type_select::after {
+    content: 'expand_more';
+    top: 2.2rem;
+    right: 0.4rem;
+    font-size: 2.1rem; }
+
+.input_target_mail {
+  position: relative; }
+  .input_target_mail::after {
+    content: 'arrow_forward';
+    class: 'mdi';
+    top: 2.2rem;
+    right: 0.7rem;
+    font-size: 2.1rem; }
+
+.input_expanded {
+  border-width: 2px !important; }
+  .input_expanded .input__customization {
+    max-height: 800px; }
+
+.input:hover, .input:focus, .input_hovered {
+  border-width: 2px;
+  border-color: rgba(31, 32, 65, 0.5); }
+  .input:hover::placeholder, .input:hover .input__placeholder, .input:focus::placeholder, .input:focus .input__placeholder, .input_hovered::placeholder, .input_hovered .input__placeholder {
+    color: rgba(31, 32, 65, 0.5); }
+
+.input::placeholder, .input__placeholder {
+  color: rgba(31, 32, 65, 0.25); }
+
+.input__customization {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in;
+  -webkit-transition: max-height 1s ease-in; }
+
+.input__options {
+  border-top: 2px solid rgba(31, 32, 65, 0.25);
+  padding-bottom: 0.25rem; }
+
+.input__item {
+  height: 2.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.04rem 0.4rem 0.04rem 1rem; }
+
+.input__option {
+  justify-self: flex-start;
+  color: #1F2041; }
+
+.input__option-setter {
+  display: flex;
+  align-items: center; }
+
+.input__option-iteration {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  padding: 5px;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-content: center;
+  justify-content: center; }
+
+.input__option-iteration_disabled {
+  border-color: rgba(31, 32, 65, 0.25); }
+
+.input__option-quantity {
+  color: #1F2041;
+  padding: 0.85rem; }
+
+.input__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between; }
+
+.input__button {
+  padding: 0.8rem 0.5rem 0.5rem; }
+
+.input__button_target_apply {
+  color: #BC9CFF; }
+
+.input__button_target_clear {
+  color: rgba(31, 32, 65, 0.5); }
+
+@media only screen and (max-width: 830px) {
+  body {
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-right: 3%; } }
+
+@media only screen and (max-width: 675px) {
+  #content {
+    width: 100%;
+    flex-direction: column;
+    align-content: center; } }
+
