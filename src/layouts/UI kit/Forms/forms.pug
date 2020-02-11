@@ -12,173 +12,169 @@ section#forms
                 +input({placeholder: "Сколько гостей", select: true})
         +field({name: "masked text field", annotation: "default"})
             +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+        +field({doubled: true, name: "doubled date dropdoun"})
+            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+            +input({placeholder: "19.08.2019", select: true})
+        +field({name: "filter date dropdown", shorted: true})
+            +input({placeholder: "19авг - 23авг", select: true})
+        +field({name: "masked text field", annotation: "default"})
+        +field({name: "subscription text field"})
+            +input({placeholder: "Email", mail: true})
+        +field({name: "masked text field", annotation: "default"})
+            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
 
-        //-    div.select_with_date
-        //-        +select({h3: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ'})
-        //-        +select({h3: 'date dropdown', placeholder: '19.08.2019'})
-        //-    +select({
-        //-        h3: 'filter date dropdown',
-        //-        placeholder: '19авг - 23авг',
-        //-        shorted: true
-        //-    })(class='select_with_filtering-date')
-        //-    +input({h3: 'subscription text field', placeholder: 'Email'})(class='input_for-subscription')
-        //-
-        //-    div.input
-        //-        h3 subscription text field
-        //-        h3.extra_h3
-        //-        input(placeholder='')
-        //-
-        //-div
-        //-    div.input
-        //-        h3 checkbox buttons
-        //-        div.checkbox
-        //-            input#smoke_sample(type='checkbox')
-        //-            label(for='smoke_sample') можно курить
-        //-        div.checkbox
-        //-            input#animals_sample(type='checkbox')
-        //-            label(for='animals_sample') можно с питомцами
-        //-        div.checkbox
-        //-            input#guests_sample(type='checkbox')
-        //-            label(for='guests_sample') можно пригласить гостей (до 10 человек)
-        //-    div.input
-        //-        h3 radio buttons
-        //-        div.radio
-        //-            input#male_sample(type='radio')
-        //-            label(for='male_sample') мужчина
-        //-        div.radio
-        //-            input#female_sample(type='radio')
-        //-            label(for='female_sample') женщина
-        //-    div.input
-        //-        h3 toggle
-        //-        div
-        //-            input#subscription_sample.toggle(type='checkbox' checked)
-        //-            label(for='subscription_sample') получать спецпредложения
-        //-        div
-        //-            input#subscription1_sample.toggle(type='checkbox')
-        //-            label(for='subscription1_sample') получать спецпредложения
-        //-    div.input
-        //-        h3 like button
-        //-            div.like
-        //-            div.like
-        //-    div.input
-        //-        h3 rate button
-        //-            div.rate &#9733;&#9733;&#9733;&#9734;&#9734;
-        //-            div.rate &#9733;&#9733;&#9733;&#9733;&#9733;
-        //-div
-        //-    div.input
-        //-        h3 range slider
-        //-        div.range_slider
-        //-            div.range_slider-range 5000 &#8381; - 10000 &#8381;
-        //-    div.input
-        //-        h3 buttons
-        //-        button.button_active click me
-        //-        button.button_disabled click me
-        //-        button.button_active click me
-        //-        button.button_clicked click me
-        //-        button.button_simplified click me
-        //-        button.button_simplified_active click me
-        //-        button.button_cta перейти к оплате
-        //-    div.input
-        //-        h3 pagination
-        //-        div.pagination_current 1
-        //-        div.pagination 2
-        //-        div.pagination 3
-        //-        div.pagination_insie ...
-        //-        div.pagination 15
-        //-        div.pagination_comment 1 – 12 из 100+ вариантов аренды
-        //-
-        //-
-        //-
-        //-
-        //-div
-        //-
-        //-
-        //-    +select({h3: 'dropdown', placeholder: '2 спальни, 2 кровати...', extra_h3: 'default', shorted: true})
-        //-    +select({h3: 'dropdown', placeholder: '2 спальни, 2 кровати...', extra_h3: 'default', shorted: true},
-        //-        {name: 'спальни', value: 2},{name: 'кровати', value: 2},{name: 'ванные комнаты', value: 0})
-        //-
-        //-
-        //-    div.input
-        //-        h3 expandable checkbox list
-        //-        div.checkbox_list-expandable
-        //-        h3 expandable checkbox list
-        //-        div
-        //-            div.checkbox
-        //-                input#breakfast_sample(type='checkbox')
-        //-                label(for='breakfast_sample') завтрак
-        //-            div.checkbox
-        //-                input#desk_sample(type='checkbox')
-        //-                label(for='desk_sample') письменный стол
-        //-            div.checkbox
-        //-                input#baby_chair_sample(type='checkbox')
-        //-                label(for='baby_chair_sample') стул для кормления
-        //-            div.checkbox
-        //-                input#cot_sample(type='checkbox')
-        //-                label(for='cot_sample') кроватка
-        //-            div.checkbox
-        //-                input#TV_sample(type='checkbox')
-        //-                label(for='TV_sample') телевизор
-        //-            div.checkbox
-        //-                input#shampoo_sample(type='checkbox')
-        //-                label(for='shampoo_sample') шампунь
-        //-            div.checkbox
-        //-                input#TV1_sample(type='checkbox')
-        //-                label(for='TV1_sample') телевизор
-        //-            div.checkbox
-        //-                input#shampoo1_sample(type='checkbox')
-        //-                label(for='shampoo1_sample') шампунь
-        //-div
-        //-    +select({h3: 'dropdown', placeholder: 'сколько гостей', btn1: "применить", expanded: true},
-        //-        {name: 'взрослые', value: 0},{name: 'дети', value: 0},{name: 'младенцы', value: 0})
-        //-
-        //-    div.input
-        //-        h3 rich Checkbox Buttons
-        //-        div.checkbox_rich
-        //-            label(for='wide_corridor_sample') широкий коридор
-        //-            input.input_quantity-choice#wide_corridor_sample(type='checkbox')
-        //-            p.checkbox_rich_description Ширина коридоров в номере не менее 91 см.
-        //-        div.checkbox_rich
-        //-            label(for='assistant_sample') помощник для инвалидов
-        //-            input.input_quantity-choice#assistant_sample(type='checkbox')
-        //-            p.checkbox_rich_description На 1 этаже вас встретит специалист  и проводит до номера.
-        //-div
-        //-    +select({
-        //-        h3: 'dropdown',
-        //-        placeholder: 'сколько гостей',
-        //-        btn1: "применить",
-        //-        btn2: "очистить",
-        //-        expanded: true
-        //-    },
-        //-        {name: 'взрослые', value: 0},{name: 'дети', value: 0},{name: 'младенцы', value: 0})
-        //-
-        //-    div.input
-        //-        h3 bullet list
-        //-        div.list-item_bullet
-        //-            label(for='no_animals_sample') нельзя с питомцами
-        //-            input.input_quantity-choice#no_animals_sample(type='checkbox')
-        //-        div.list-item_bullet
-        //-            label(for='no_parties_sample') Без вечеринок и мероприятий
-        //-            input.input_quantity-choice#no_parties_sample(type='checkbox')
-        //-        div.list-item_bullet
-        //-            label(for='registration_time_sample') Время прибытия — после 13:00, а выезд до 12:00
-        //-            input.input_quantity-choice#registration_time_sample(type='checkbox')
-        //-div
-        //-    div.input
-        //-        div.preferency
-        //-            p.preferency_name комфорт
-        //-            p.preferency_description шумопоглощающие стены
-        //-        div.preferency
-        //-            p.preferency_name удобство
-        //-            p.preferency_description окно в каждой из спален
-        //-div.span2
-        //-    div.input
-        //-        div.feedback
-        //-            div.feedback_info
-        //-                img.author_avatar
-        //-                div.author_name Мурад Сарафанов
-        //-                div.feedback_date 5 дней назад
-        //-            div.feedback_content
-        //-                div.feedback_likes &#9829; 12
-        //-                div.feedback_text
-        //-                    | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
-        //-                    | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+
+        div
+            div.input
+                h3 checkbox buttons
+                div.checkbox
+                    input#smoke_sample(type='checkbox')
+                    label(for='smoke_sample') можно курить
+                div.checkbox
+                    input#animals_sample(type='checkbox')
+                    label(for='animals_sample') можно с питомцами
+                div.checkbox
+                    input#guests_sample(type='checkbox')
+                    label(for='guests_sample') можно пригласить гостей (до 10 человек)
+            div.input
+                h3 radio buttons
+                div.radio
+                    input#male_sample(type='radio')
+                    label(for='male_sample') мужчина
+                div.radio
+                    input#female_sample(type='radio')
+                    label(for='female_sample') женщина
+            div.input
+                h3 toggle
+                div
+                    input#subscription_sample.toggle(type='checkbox' checked)
+                    label(for='subscription_sample') получать спецпредложения
+                div
+                    input#subscription1_sample.toggle(type='checkbox')
+                    label(for='subscription1_sample') получать спецпредложения
+            div.input
+                h3 like button
+                    div.like
+                    div.like
+            div.input
+                h3 rate button
+                    div.rate &#9733;&#9733;&#9733;&#9734;&#9734;
+                    div.rate &#9733;&#9733;&#9733;&#9733;&#9733;
+        div
+            div.input
+                h3 range slider
+                div.range_slider
+                    div.range_slider-range 5000 &#8381; - 10000 &#8381;
+            div.input
+                h3 buttons
+                button.button_active click me
+                button.button_disabled click me
+                button.button_active click me
+                button.button_clicked click me
+                button.button_simplified click me
+                button.button_simplified_active click me
+                button.button_cta перейти к оплате
+            div.input
+                h3 pagination
+                div.pagination_current 1
+                div.pagination 2
+                div.pagination 3
+                div.pagination_insie ...
+                div.pagination 15
+                div.pagination_comment 1 – 12 из 100+ вариантов аренды
+
+
+
+
+        div
+
+            +field({name: "dropdown", annotation: "default", shorted: true})
+                +input({placeholder: "2 спальни, 2 кровати...", select: true})
+            +field({name: "dropdown", annotation: "default", shorted: true})
+                +input({placeholder: "2 спальни, 2 кровати...", select: true, expanded: true},
+                    {name: 'спальни', value: 2},{name: 'кровати', value: 2},{name: 'ванные комнаты', value: 0})
+
+
+
+
+            div.input
+                h3 expandable checkbox list
+                div.checkbox_list-expandable
+                h3 expandable checkbox list
+                div
+                    div.checkbox
+                        input#breakfast_sample(type='checkbox')
+                        label(for='breakfast_sample') завтрак
+                    div.checkbox
+                        input#desk_sample(type='checkbox')
+                        label(for='desk_sample') письменный стол
+                    div.checkbox
+                        input#baby_chair_sample(type='checkbox')
+                        label(for='baby_chair_sample') стул для кормления
+                    div.checkbox
+                        input#cot_sample(type='checkbox')
+                        label(for='cot_sample') кроватка
+                    div.checkbox
+                        input#TV_sample(type='checkbox')
+                        label(for='TV_sample') телевизор
+                    div.checkbox
+                        input#shampoo_sample(type='checkbox')
+                        label(for='shampoo_sample') шампунь
+                    div.checkbox
+                        input#TV1_sample(type='checkbox')
+                        label(for='TV1_sample') телевизор
+                    div.checkbox
+                        input#shampoo1_sample(type='checkbox')
+                        label(for='shampoo1_sample') шампунь
+        div
+            +field({name: "dropdown"})
+                +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true},
+                    {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
+
+
+            div.input
+                h3 rich Checkbox Buttons
+                div.checkbox_rich
+                    label(for='wide_corridor_sample') широкий коридор
+                    input.input_quantity-choice#wide_corridor_sample(type='checkbox')
+                    p.checkbox_rich_description Ширина коридоров в номере не менее 91 см.
+                div.checkbox_rich
+                    label(for='assistant_sample') помощник для инвалидов
+                    input.input_quantity-choice#assistant_sample(type='checkbox')
+                    p.checkbox_rich_description На 1 этаже вас встретит специалист  и проводит до номера.
+        div
+            +field({name: "dropdown"})
+                +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true},
+                    {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
+            div.input
+                h3 bullet list
+                div.list-item_bullet
+                    label(for='no_animals_sample') нельзя с питомцами
+                    input.input_quantity-choice#no_animals_sample(type='checkbox')
+                div.list-item_bullet
+                    label(for='no_parties_sample') Без вечеринок и мероприятий
+                    input.input_quantity-choice#no_parties_sample(type='checkbox')
+                div.list-item_bullet
+                    label(for='registration_time_sample') Время прибытия — после 13:00, а выезд до 12:00
+                    input.input_quantity-choice#registration_time_sample(type='checkbox')
+        div
+            div.input
+                div.preferency
+                    p.preferency_name комфорт
+                    p.preferency_description шумопоглощающие стены
+                div.preferency
+                    p.preferency_name удобство
+                    p.preferency_description окно в каждой из спален
+        div.span2
+            div.input
+                div.feedback
+                    div.feedback_info
+                        img.author_avatar
+                        div.author_name Мурад Сарафанов
+                        div.feedback_date 5 дней назад
+                    div.feedback_content
+                        div.feedback_likes &#9829; 12
+                        div.feedback_text
+                            | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+                            | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
