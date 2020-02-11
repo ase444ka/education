@@ -1,11 +1,4 @@
 .input_type_select {
     pointer-events: none;
-    position: relative;
-    &::after {
-      @extend %material;
-      content: 'expand_more';
-      top: 2.2rem;
-      right: 0.4rem;
-      font-size: 2.1rem;
-    }
+    cursor: none;
 }

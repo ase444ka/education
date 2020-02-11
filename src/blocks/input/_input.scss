@@ -1,17 +1,26 @@
-%material {
-  font-family: 'Material Icons';
-  position: absolute;
-  color: $darkShade_50;
-  cursor: pointer;
-  pointer-events: all;
-}
+
 
 .input  {
+    cursor: text;
     width: 100%;
     border: 1px solid $darkShade_25;
     border-radius: 4px;
-    padding: 1rem;
     outline: none;
+    position: relative;
+    i {
+      position: absolute;
+      color: $darkShade_50;
+      cursor: pointer;
+      pointer-events: all;
+      top: 0.5rem;
+      right: 0.7rem;
+      font-size: 2.1rem;
+    }
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+    }
 }
 
 @import "_type_select/input_type_select";

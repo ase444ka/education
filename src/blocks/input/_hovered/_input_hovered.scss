@@ -1,9 +1,9 @@
 .input:hover, .input:focus, .input_hovered {
     border-width: 2px;
     border-color: $darkShade_50;
-    &::placeholder, .input__placeholder {
+    input::placeholder, .input__placeholder {
       color: $darkShade_50;
-    }
+  }
 }
 
 

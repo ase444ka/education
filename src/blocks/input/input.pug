@@ -1,27 +1,28 @@
 mixin input(data, ...items)
-    -let expanded = data.expanded? " input_expanded":""
-    -let mail = data.mail? "input_target_mail":""
-    -let select = data.select? "input_type_select":""
-    -let hovered = data.hovered? "input_hovered":""
+    -let expanded = data.expanded? "input_expanded ":""
+    -let mail = data.mail? "input_target_mail ":""
+    -let select = data.select? "input_type_select ":""
+    -let hovered = data.hovered? "input_hovered ":""
+    -let material = ""
+    -if (data.select) material = "expand_more"
+    -if (data.mail) material = "arrow_forward"
 
     -let classes = expanded + mail + select + hovered
 
-    if !select
-        input.input(class=classes placeholder=data.placeholder)
-    else
-        div.input(class= classes)
-            div.input__placeholder=data.placeholder
-            div.input__customization
-                ul.input__options
-                    each item in items
-                        li.input__item
-                            .input__option= item.name
-                            .input__option-setter
-                                .input__option-iteration -
-                                .input__option-quantity=item.value
-                                .input__option-iteration(class = "input__option-iteration_disabled") +
-                if data.apply
-                    .input__buttons
-                        button.input__button(class=input__button_target_apply)= применить
-                        if data.clear
-                            button.input__button(class=input__button_target_clear)= очистить
+    div.input(class= classes)
+        i.material-icons=material
+        div.input__placeholder=data.placeholder
+        div.input__customization
+            ul.input__options
+                each item in items
+                    li.input__item
+                        .input__option= item.name
+                        .input__option-setter
+                            .input__option-iteration -
+                            .input__option-quantity=item.value
+                            .input__option-iteration(class = "input__option-iteration_disabled") +
+            if data.apply
+                .input__buttons
+                    button.input__button(class=input__button_target_apply)= применить
+                    if data.clear
+                        button.input__button(class=input__button_target_clear)= очистить

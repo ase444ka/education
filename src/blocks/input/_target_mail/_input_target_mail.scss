@@ -1,11 +1,2 @@
 .input_target_mail{
-  position: relative;
-  &::after {
-    @extend %material;
-    content: 'arrow_forward';
-    class: 'mdi';
-    top: 2.2rem;
-    right: 0.7rem;
-    font-size: 2.1rem;
-  }
 }
