@@ -11,7 +11,9 @@ mixin input(data, ...items)
 
     div.input(class= classes)
         i.material-icons=material
-        div.input__placeholder=data.placeholder
+        div.input__placeholder=data.select? data.placeholder:""
+            if !data.select
+                input(placeholder=data.placeholder)
         div.input__customization
             ul.input__options
                 each item in items
