@@ -17,6 +17,7 @@ module.exports = {
         pages: './src/layouts/UI kit/UIKit.js',
       /*  UIKit: './src/UI kit/UIKit.js'*/
     },
+    devtool: 'inline-source-map',
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, './dist'),

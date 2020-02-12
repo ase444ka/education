@@ -10,5 +10,6 @@
   @extend %font_middle;
   color: $darkShade_25;
   font-weight: normal;
+  cursor: pointer;
 }
 @import "_disabled/input__option-iteration_disabled";
