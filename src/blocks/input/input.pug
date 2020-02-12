@@ -22,7 +22,7 @@ mixin input(data, ...items)
                         .input__option-setter
                             .input__option-iteration(class = "input__option-iteration_decrement") -
                             .input__option-quantity=item.value
-                            .input__option-iteration(class = "input__option-iteration_increment input__option-iteration_disabled") +
+                            .input__option-iteration(class = "input__option-iteration_increment") +
             if data.apply
                 .input__buttons
                     button.input__button(class=input__button_target_apply)= применить
