@@ -1,4 +1,6 @@
 section#forms
+
+    h1= seting
     div
         include ../../../blocks/field/field
         include ../../../blocks/input/input
@@ -8,9 +10,9 @@ section#forms
         +field({name: "text field", annotation: "hover / focus"})
             +input({placeholder: "This is pretty awesome", hovered: true})
         +field({name: "dropdown", annotation: "default"})
-            +input({placeholder: "Сколько гостей", select: true})
+            +input({placeholder: "Сколько гостей", select: true, target: "guests"})
         +field({name: "dropdown", annotation: "default"})
-                +input({placeholder: "Сколько гостей", select: true})
+                +input({placeholder: "Сколько гостей", select: true, target: "guests"})
         +field({name: "masked text field", annotation: "default"})
             +input({placeholder: "ДД.ММ.ГГГГ", select: true})
         +fieldset
@@ -94,9 +96,9 @@ section#forms
         div
 
             +field({name: "dropdown", annotation: "default", shorted: true})
-                +input({placeholder: "2 спальни, 2 кровати...", select: true})
+                +input({placeholder: "2 спальни, 2 кровати...", select: true, target: "rooms"})
             +field({name: "dropdown", annotation: "default", shorted: true})
-                +input({placeholder: "2 спальни, 2 кровати...", select: true, expanded: true},
+                +input({placeholder: "2 спальни, 2 кровати...", select: true, expanded: true, target: "rooms"},
                     {name: 'спальни', value: 2},{name: 'кровати', value: 2},{name: 'ванные комнаты', value: 0})
 
 

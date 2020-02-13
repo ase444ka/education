@@ -1,100 +1,21 @@
 $('.input_type_select i').click(function(){
     $(this).parent().toggleClass('input_expanded');
 });
-
-function endDigit(quantity, ...digits) {
-    for (let digit of digits) {
-        if ((quantity % 10 == digit)&&((quantity - digit) % 10 != 1)) return true;
+import {guests} from '../data.js';
+import {rooms} from '../data.js';
+$(document).ready(function(){
+    $('.input_target_guests').children('.input__placeholder').text(guests.initial_value);
+    $('.input_target_rooms').children('.input__placeholder').text(rooms.initial_value);
+    let li = $('.input_target_guests').children('.input__options').children('li');
+    for (let i = 1; i++; i < guests.items.length) {
+        li.append(li)
     }
-    return false;
-}
-
-let guests = {
-    initial_value: "сколько гостей",
-    items: [
-        {
-            value: "взрослые",
-            max_quantity: 100,
-            writing_mode: function (quantity) {
-                if (endDigit(quantity, 1)) {
-                    return quantity + " взрослый";
-                }
-                return quantity + " взрослых";
-            }
-        },
-        {
-            value: "дети",
-            max_quantity: 50,
-            writing_mode: function (quantity) {
-                if (endDigit(quantity, 1)) {
-                    return quantity + " ребенок";
-                }
-                return quantity + " детей";
-            }
-        },
-        {
-            value: "младенцы",
-            max_quantity: 30,
-            writing_mode: function (quantity) {
-                if (endDigit(quantity, 1)) {
-                    return quantity + " младенец";
-                }
-                if (endDigit(quantity, 2, 3, 4)) {
-                    return quantity + " младенца";
-                }
-                return quantity + " младенцев";
-            }
-        },
-    ],
-    result: function (all) {
-        if (endDigit(all, 1)) return all + " гость";
-        if (endDigit(all, 2,3,4)) return all + " гость";
-        return all + " гостей";
+    let i = 1;
+    guests.items.forEach(function () {
+        $('.input_target_guests').children('.input__option:nth-child(' + i++ + ')').text(guests.initial_value);
+    })
+    li = $('.input_target_rooms').children('.input__options').children('li');
+    for (let i = 1; i++; i < rooms.items.length) {
+        li.append(li)
     }
-};
-
-let rooms = {
-    initial_value: "Какой номер..",
-    items: [
-        {
-            value: "спальни",
-            max_quantity: 5,
-            writing_mode: function(quantity) {
-                if (endDigit(quantity, 1)) {
-                    return quantity + " спальня";
-                }
-                if (endDigit(quantity, 2,3,4)) {
-                    return quantity + " спальни";
-                }
-                return quantity + " спален";
-            }
-        },
-        {
-            value: "кровати",
-            max_quantity: 30,
-            writing_mode: function(quantity) {
-                if (endDigit(quantity, 1)) {
-                    return quantity + " кровать";
-                }
-                if (endDigit(quantity, 2,3,4)) {
-                    return quantity + " кровати";
-                }
-                return quantity + " кроватей";
-            }
-        },
-        {
-            value: "ванные комнаты",
-            max_quantity: 50,
-            writing_mode: function(quantity) {
-                if (endDigit(quantity, 1)) {
-                    return quantity + " ванная комната";
-                }
-                if (endDigit(quantity, 2,3,4)) {
-                    return quantity + " ванные комнаты";
-                }
-                return quantity + " ванных комнат";
-            }
-        },
-    ]
-};
-
+});
