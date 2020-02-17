@@ -1,6 +1,7 @@
 $('.input_type_select i').click(function(){
     $(this).parent().toggleClass('input_expanded');
 });
+/* 
 import {guests} from '../data.js';
 import {rooms} from '../data.js';
 $(document).ready(function(){
@@ -18,4 +19,4 @@ $(document).ready(function(){
     for (let i = 1; i++; i < rooms.items.length) {
         li.append(li)
     }
-});
+}); */

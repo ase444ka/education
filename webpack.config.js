@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 
@@ -12,6 +13,12 @@ module.exports = {
             chunks: "all"
         }
     },
+    devServer: {
+            contentBase: path.resolve(__dirname, 'dist'),
+            index: 'UIKit.html',
+            hot: true
+           
+       },
     mode: 'development',
     entry: {
         pages: './src/layouts/UI kit/UIKit.js',
@@ -20,9 +27,8 @@ module.exports = {
     devtool: 'inline-source-map',
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, './dist'),
-        //publicPath: 'https://ase444ka.github.io/Education/'
-        publicPath: '/dist'
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: ""
     },
     module: {
         rules: [
@@ -76,18 +82,21 @@ module.exports = {
                         name: '/icons/[name].[ext]'
                     }
             },
-            {
+             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 include: [/fonts/],
                 loader: "file-loader",
                 options:
                     {
-                        name: '/fonts/[name].[ext]'
+                        name: './fonts/[name].[ext]'
                     }
-            }
+            } 
         ]
     },
     plugins: [
+/*         new CopyPlugin([
+            { from: './src/layouts/UI kit/UIKit.js', to: path.resolve(__dirname, 'dist/fonts') },
+          ]), */
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].css"

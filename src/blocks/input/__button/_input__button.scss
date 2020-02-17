@@ -2,6 +2,8 @@
   @extend %font_small;
   padding: 0.8rem 0.5rem 0.5rem;
   cursor: pointer;
+  outline: none;
+
 }
 @import "_target_apply/input__button_target_apply";
 @import "_target_clear/input__button_target_clear";
