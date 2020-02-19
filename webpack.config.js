@@ -24,7 +24,7 @@ module.exports = {
         pages: './src/layouts/UI kit/UIKit.js',
       /*  UIKit: './src/UI kit/UIKit.js'*/
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
@@ -34,7 +34,8 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                // options: {sourceMap: true}
             },
             {
                 test: /\.scss$/,
@@ -43,11 +44,11 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
-                        options: {sourceMap: true}
+                        // options: {sourceMap: true}
                     },
                     {
                         loader: "sass-loader",
-                        options: {sourceMap: true}
+                        // options: {sourceMap: true}
                     }
                 ]
             },

@@ -98,7 +98,7 @@ section#forms
             +field({name: "dropdown", annotation: "default", shorted: true})
                 +input({placeholder: "2 спальни, 2 кровати...", select: true, target: "rooms"})
             +field({name: "dropdown", annotation: "default", shorted: true})
-                +input({placeholder: "2 спальни, 2 кровати...", select: true, expanded: true, target: "rooms"},
+                +input({placeholder: "2 спальни, 2 кровати...", select: true, expanded: true, target: "rooms", apply: true, clear: true},
                     {name: 'спальни', value: 2},{name: 'кровати', value: 2},{name: 'ванные комнаты', value: 0})
 
 
@@ -135,7 +135,7 @@ section#forms
                         label(for='shampoo1_sample') шампунь
         div
             +field({name: "dropdown"})
-                +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true},
+                +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true, target: guests},
                     {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
 
 
@@ -151,7 +151,7 @@ section#forms
                     p.checkbox_rich_description На 1 этаже вас встретит специалист  и проводит до номера.
         div
             +field({name: "dropdown"})
-                +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true},
+                +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true, target:"guests"},
                     {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
             div.input
                 h3 bullet list

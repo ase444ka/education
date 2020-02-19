@@ -1,16 +1,17 @@
 mixin input(data, ...items)
+    
     -let expanded = data.expanded? "input_expanded ":""
     -let target = '';
-    -if (data.target) target = "input_target_" + data.target + " ";
+    -if (data.target) target = data.target;
     -let select = data.select? "input_type_select ":""
     -let hovered = data.hovered? "input_hovered ":""
     -let material = ""
     -if (data.select) material = "expand_more"
     -if (data.mail) material = "arrow_forward"
 
-    -let classes = expanded + target + select + hovered
+    -let classes = expanded + select + hovered
 
-    div.input(class= classes)
+    div.input(class= classes, data-target = target)
         i.material-icons=material
         div.input__placeholder=data.select? data.placeholder:""
             if !data.select
