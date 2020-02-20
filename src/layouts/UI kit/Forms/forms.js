@@ -1,1 +1,2 @@
-import '../../../blocks/input/input.js'
+import '../../../blocks/input/input';
+import '../../../blocks/range-slider/range-slider';

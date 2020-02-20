@@ -1,7 +1,6 @@
 mixin field(data)
-    -let doubled = data.doubled? " field_doubled" : ""
     -let shorted = data.shorted? " field_shorted" : ""
-    div(class = "field" + doubled + shorted)
+    div(class = "field" + shorted)
         .field__name= data.name? data.name : "no-name field"
         if data.annotation
             .field__annotation= data.annotation

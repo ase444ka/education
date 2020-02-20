@@ -5,6 +5,8 @@ section#forms
         include ../../../blocks/field/field
         include ../../../blocks/input/input
         include ../../../blocks/fieldset/fieldset
+        include ../../../blocks/range-slider/range-slider
+        
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
         +field({name: "text field", annotation: "hover / focus"})
@@ -68,10 +70,9 @@ section#forms
                     div.rate &#9733;&#9733;&#9733;&#9734;&#9734;
                     div.rate &#9733;&#9733;&#9733;&#9733;&#9733;
         div
-            div.input
-                h3 range slider
-                div.range_slider
-                    div.range_slider-range 5000 &#8381; - 10000 &#8381;
+            +field({name: "range slider", annotation: "5000р - 10000р"}) 
+                +range-slider
+                    //- div.range_slider-range 5000 &#8381; - 10000 &#8381;
             div.input
                 h3 buttons
                 button.button_active click me
