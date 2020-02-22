@@ -4,9 +4,9 @@
     font-style: normal;
     font-weight: 400;
     src: local('Open Sans Regular'), local('OpenSans-Regular'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-regular.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-regular.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-regular.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-regular.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-regular.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-regular.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 /* -----------------------------------------------------------open-sans-italic - cyrillic_latin */
@@ -15,9 +15,9 @@
     font-style: italic;
     font-weight: 400;
     src: local('Open Sans Italic'), local('OpenSans-Italic'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-italic.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-italic.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-italic.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-italic.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-italic.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-italic.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 /*------------------------------------------------------------------- open-sans-600 - cyrillic_latin */
@@ -26,9 +26,9 @@
     font-style: normal;
     font-weight: 600;
     src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-600.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-600.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-600.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-600.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-600.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-600.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 /* -------------------------------------------------------open-sans-600italic - cyrillic_latin */
@@ -37,9 +37,9 @@
     font-style: italic;
     font-weight: 600;
     src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-600italic.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-600italic.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-600italic.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-600italic.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-600italic.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-600italic.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 /* -------------------------------------------------------------------open-sans-700 - cyrillic_latin */
@@ -48,9 +48,9 @@
     font-style: normal;
     font-weight: 700;
     src: local('Open Sans Bold'), local('OpenSans-Bold'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-700.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-700.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-700.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-700.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-700.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-700.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 /* ---------------------------------------open-sans-700italic - cyrillic_latin */
@@ -59,9 +59,9 @@
     font-style: italic;
     font-weight: 700;
     src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-700italic.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-700italic.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-700italic.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-700italic.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-700italic.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-700italic.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 /* --------------------------------------open-sans-800 - cyrillic_latin */
@@ -70,9 +70,9 @@
     font-style: normal;
     font-weight: 800;
     src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-800.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-800.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-800.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-800.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-800.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-800.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 /* -------------------------------------------------open-sans-800italic - cyrillic_latin */
@@ -81,9 +81,9 @@
     font-style: italic;
     font-weight: 800;
     src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-800italic.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-800italic.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/open-sans-v17-cyrillic_latin-800italic.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-800italic.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-800italic.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/open-sans-v17-cyrillic_latin-800italic.ttf) format('truetype'), 
     url("[object Module]#OpenSans") format('svg'); /* Legacy iOS */
 }
 
@@ -92,12 +92,12 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    src: url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-regular.eot); /* IE9 Compat Modes */
+    src: url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-regular.eot); /* IE9 Compat Modes */
     src: local('Montserrat Regular'), local('Montserrat-Regular'),
     url("[object Module]?#iefix") format('embedded-opentype'), 
-    url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-regular.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-regular.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-regular.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-regular.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-regular.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-regular.ttf) format('truetype'), 
     url("[object Module]#Montserrat") format('svg'); /* Legacy iOS */
 }
 /* -------------------------------------------montserrat-800 - cyrillic_latin */
@@ -105,12 +105,12 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 800;
-    src: url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-800.eot); /* IE9 Compat Modes */
+    src: url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-800.eot); /* IE9 Compat Modes */
     src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
     url("[object Module]?#iefix") format('embedded-opentype'), 
-    url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-800.woff2) format('woff2'), 
-    url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-800.woff) format('woff'), 
-    url(https://ase444ka.github.io/Education//fonts/montserrat-v14-cyrillic_latin-800.ttf) format('truetype'), 
+    url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-800.woff2) format('woff2'), 
+    url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-800.woff) format('woff'), 
+    url(https://ase444ka.github.io/Education/./fonts/montserrat-v14-cyrillic_latin-800.ttf) format('truetype'), 
     url("[object Module]#Montserrat") format('svg'); /* Legacy iOS */
 }
 /*-------------------------Material Icons*/
@@ -118,11 +118,11 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(https://ase444ka.github.io/Education//fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: url(https://ase444ka.github.io/Education/./fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
     src: local('Material Icons'), local('MaterialIcons-Regular'),
-    url(https://ase444ka.github.io/Education//fonts/MaterialIcons-Regular.woff2) format('woff2'),
-    url(https://ase444ka.github.io/Education//fonts/MaterialIcons-Regular.woff) format('woff'),
-    url(https://ase444ka.github.io/Education//fonts/MaterialIcons-Regular.ttf) format('truetype');
+    url(https://ase444ka.github.io/Education/./fonts/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://ase444ka.github.io/Education/./fonts/MaterialIcons-Regular.woff) format('woff'),
+    url(https://ase444ka.github.io/Education/./fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 
@@ -150,6 +150,7 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain) */
@@ -171,7 +172,8 @@ time, mark, audio, video, button {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  box-sizing: border-box; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -217,7 +219,7 @@ h1 {
   line-height: 1.3;
   letter-spacing: 0.001em; }
 
-h2 {
+h2, .input__option-iteration {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 1.3;
@@ -285,8 +287,7 @@ body {
 
 .color {
   width: 270px;
-  height: 70px;
-  padding-bottom: 20px; }
+  padding-bottom: 18px; }
 
 .color__sample {
   width: 70px;
@@ -297,7 +298,7 @@ body {
 .color__description {
   display: inline-block;
   padding-left: 36px;
-  padding-top: 4px;
+  padding-top: 8px;
   vertical-align: top;
   font-size: 18px; }
 
@@ -306,15 +307,15 @@ body {
   padding-top: 5px; }
 
 .color__colorCode {
-  padding-top: 5px; }
+  padding-top: 10px; }
 
 .headersFooters {
   display: grid;
-  grid-template-rows: 110px 98px 65px 65px;
+  grid-template-rows: 110px 93px 70px 70px;
   grid-template-columns: 67px 336px; }
 
 .label {
-  color: rgba(31, 32, 65, 0.25);
+  color: #1F2041;
   justify-self: end;
   padding-right: 1.8rem;
   font-weight: normal; }
@@ -352,7 +353,8 @@ p {
   flex-wrap: wrap; }
 
 .field__content {
-  flex-grow: 1; }
+  flex-grow: 1;
+  width: 100%; }
 
 .field__annotation {
   font-weight: normal;
@@ -361,45 +363,31 @@ p {
 .field__name {
   color: rgba(31, 32, 65, 0.75); }
 
-.field_doubled {
-  display: grid;
-  grid-template: 1fr / 1fr 1fr;
-  grid-gap: 1rem; }
-
 .field_shorted {
   width: 76%; }
 
-.input_type_select::after, .input_target_mail::after {
-  font-family: 'Material Icons';
-  position: absolute;
-  color: rgba(31, 32, 65, 0.5);
-  cursor: pointer;
-  pointer-events: all; }
-
 .input {
+  cursor: text;
   width: 100%;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
-  padding: 1rem;
-  outline: none; }
-
-.input_type_select {
-  pointer-events: none;
+  outline: none;
   position: relative; }
-  .input_type_select::after {
-    content: 'expand_more';
-    top: 2.2rem;
-    right: 0.4rem;
-    font-size: 2.1rem; }
-
-.input_target_mail {
-  position: relative; }
-  .input_target_mail::after {
-    content: 'arrow_forward';
-    class: 'mdi';
-    top: 2.2rem;
+  .input i {
+    position: absolute;
+    color: rgba(31, 32, 65, 0.5);
+    cursor: pointer;
+    pointer-events: all;
+    top: 0.5rem;
     right: 0.7rem;
     font-size: 2.1rem; }
+  .input input {
+    border: none;
+    outline: none;
+    width: 100%; }
+
+.input_type_select {
+  cursor: default; }
 
 .input_expanded {
   border-width: 2px !important; }
@@ -409,11 +397,14 @@ p {
 .input:hover, .input:focus, .input_hovered {
   border-width: 2px;
   border-color: rgba(31, 32, 65, 0.5); }
-  .input:hover::placeholder, .input:hover .input__placeholder, .input:focus::placeholder, .input:focus .input__placeholder, .input_hovered::placeholder, .input_hovered .input__placeholder {
+  .input:hover input::placeholder, .input:hover .input__placeholder, .input:focus input::placeholder, .input:focus .input__placeholder, .input_hovered input::placeholder, .input_hovered .input__placeholder {
     color: rgba(31, 32, 65, 0.5); }
 
-.input::placeholder, .input__placeholder {
+input::placeholder, .input__placeholder {
   color: rgba(31, 32, 65, 0.25); }
+
+.input__placeholder {
+  padding: 1rem; }
 
 .input__customization {
   max-height: 0;
@@ -444,14 +435,18 @@ p {
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50%;
   padding: 5px;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 2.1rem;
+  height: 2.1rem;
   display: flex;
-  align-content: center;
-  justify-content: center; }
+  align-items: center;
+  justify-content: center;
+  color: rgba(31, 32, 65, 0.25);
+  font-weight: normal;
+  cursor: pointer; }
 
 .input__option-iteration_disabled {
-  border-color: rgba(31, 32, 65, 0.25); }
+  border-color: rgba(31, 32, 65, 0.05);
+  cursor: default; }
 
 .input__option-quantity {
   color: #1F2041;
@@ -464,13 +459,223 @@ p {
   justify-content: space-between; }
 
 .input__button {
-  padding: 0.8rem 0.5rem 0.5rem; }
+  padding: 0.8rem 0.5rem 0.5rem;
+  cursor: pointer;
+  outline: none; }
 
 .input__button_target_apply {
   color: #BC9CFF; }
 
 .input__button_target_clear {
   color: rgba(31, 32, 65, 0.5); }
+
+.fieldset {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  grid-gap: 1rem; }
+
+/**
+Ion.RangeSlider, 2.3.1
+© Denis Ineshin, 2010 - 2019, IonDen.com
+Build date: 2019-12-19 16:51:02
+*/
+.irs {
+  position: relative;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.irs-line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none !important; }
+
+.irs-bar {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 0; }
+
+.irs-shadow {
+  position: absolute;
+  display: none;
+  left: 0;
+  width: 0; }
+
+.irs-handle {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  cursor: default;
+  z-index: 1; }
+
+.irs-handle.type_last {
+  z-index: 2; }
+
+.irs-min,
+.irs-max {
+  position: absolute;
+  display: block;
+  cursor: default; }
+
+.irs-min {
+  left: 0; }
+
+.irs-max {
+  right: 0; }
+
+.irs-from,
+.irs-to,
+.irs-single {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  cursor: default;
+  white-space: nowrap; }
+
+.irs-grid {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px; }
+
+.irs-with-grid .irs-grid {
+  display: block; }
+
+.irs-disable-mask {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: -1%;
+  width: 102%;
+  height: 100%;
+  cursor: default;
+  background: rgba(0, 0, 0, 0);
+  z-index: 2; }
+
+.lt-ie9 .irs-disable-mask {
+  background: #000;
+  filter: alpha(opacity=0);
+  cursor: not-allowed; }
+
+.irs-disabled {
+  opacity: 0.4; }
+
+.irs-hidden-input {
+  position: absolute !important;
+  display: block !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  outline: none !important;
+  z-index: -9999 !important;
+  background: none !important;
+  border-style: solid !important;
+  border-color: transparent !important; }
+
+.irs--custom {
+  height: 50px; }
+
+.irs--custom.irs-with-grid {
+  height: 65px; }
+
+.irs--custom .irs-line {
+  top: 18px;
+  height: 8px;
+  background-color: white;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px; }
+
+.irs--custom .irs-bar {
+  top: 19px;
+  height: 6px;
+  background-color: #006cfa;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
+
+.irs--custom .irs-bar--single {
+  border-radius: 4px 0 0 4px; }
+
+.irs--custom .irs-shadow {
+  display: none;
+  height: 4px;
+  bottom: 21px;
+  background-color: rgba(222, 228, 236, 0.5); }
+
+.irs--custom .irs-handle {
+  top: 14px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 50%; }
+
+.irs--custom .irs-handle.state_hover,
+.irs--custom .irs-handle:hover {
+  background-color: #f0f6ff; }
+
+.irs--custom .irs-min,
+.irs--custom .irs-max {
+  color: #333;
+  font-size: 14px;
+  line-height: 1;
+  top: 0;
+  padding: 3px 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px; }
+
+.irs--custom .irs-from,
+.irs--custom .irs-to {
+  opacity: 0; }
+
+.irs--custom .irs-from,
+.irs--custom .irs-to,
+.irs--custom .irs-single {
+  font-size: 14px;
+  line-height: 1;
+  text-shadow: none;
+  padding: 3px 5px;
+  background-color: #006cfa;
+  color: white;
+  border-radius: 4px; }
+
+.irs--custom .irs-from:before,
+.irs--custom .irs-to:before,
+.irs--custom .irs-single:before {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -3px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  border-top-color: #006cfa; }
+
+.irs--custom .irs-grid {
+  height: 25px; }
+
+.irs--custom .irs-grid-pol {
+  background-color: #dedede; }
+
+.irs--custom .irs-grid-text {
+  color: silver;
+  font-size: 13px; }
 
 @media only screen and (max-width: 830px) {
   body {
@@ -484,3 +689,5 @@ p {
     flex-direction: column;
     align-content: center; } }
 
+
+/*# sourceMappingURL=pages.css.map*/
