@@ -155,10 +155,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/layouts/UI kit/UIKit.scss":
-/*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/layouts/UI kit/UIKit.scss ***!
-  \**************************************************************************************************************************************************************************/
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./src/layouts/UI kit/UIKit.scss":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/layouts/UI kit/UIKit.scss ***!
+  \**********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -451,16 +451,89 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ion-rangeslider */ "./node_modules/ion-rangeslider/js/ion.rangeSlider.js");
 /* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ion_rangeslider__WEBPACK_IMPORTED_MODULE_0__);
+/*  //------------------ТАК ПРИ ЗАГРУЗКЕ ОК ПРИ CHANGE НЕ ОК
+import "ion-rangeslider"
+
+let _setDiapason = function()   {
+    let context = this;
+    return function()  {
+        let _from = $(context).prev().find(".irs-from").text();
+        let _to = $(context).prev().find(".irs-to").text();
+        let str = _from + "-" + _to;
+        $(context).parent().prev().html(str);
+        return;
+    }
+};
+
+$(document).ready(function(){
+    $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        min: 1000,
+        max: 15000,
+        from: 5000,
+        to: 10000,
+        skin: "custom",
+        hide_min_max: true,
+        postfix: "&#8381;"
+        // hide_from_to: true
+        
+    });
+    $(".js-range-slider").on("change", _setDiapason.call($(this)));
+    let elems = $(document).find(".js-range-slider");
+    for (let elem of elems) {
+        let boundF = _setDiapason.bind(elem);
+        boundF()();
+    }   
+    
+});  */
+//------------------ТАК ПРИ ЗАГРУЗКЕ НЕ ОК ПРИ CHANGE  ОК
+
+/* import "ion-rangeslider"
+
+let _setDiapason = ()  => {
+    return function() {
+        let _from = $(this).prev().find(".irs-from").text();
+        let _to = $(this).prev().find(".irs-to").text();
+        let str = _from + "-" + _to;
+        $(this).parent().prev().html(str);
+        return;
+    }
+};
+ 
+$(document).ready(function(){
+    $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        min: 1000,
+        max: 15000,
+        from: 5000,
+        to: 10000,
+        skin: "custom",
+        hide_min_max: true,
+        postfix: "&#8381;"
+        // hide_from_to: true
+        
+    });
+    let elems = document.querySelectorAll(".js-range-slider");
+    for (let elem of elems) {
+        let boundF = _setDiapason.bind(elem);
+        _setDiapason()();
+    }
+    
+    $(".js-range-slider").on("change", _setDiapason.call(this));
+    
+}); */
+//---------------------КОСТЫЛЬ, Но надо двигаться дальше хоть как-то!
 
 
-let _setDiapason = () => {
+let _setDiapason = function () {
+  let context = this;
   return function () {
-    let _from = $(this).prev().find(".irs-from").text();
+    let _from = $(context).prev().find(".irs-from").text();
 
-    let _to = $(this).prev().find(".irs-to").text();
+    let _to = $(context).prev().find(".irs-to").text();
 
     let str = _from + "-" + _to;
-    $(this).parent().prev().html(str);
+    $(context).parent().parent().find('.field__annotation').html(str);
     return;
   };
 };
@@ -474,18 +547,25 @@ $(document).ready(function () {
     to: 10000,
     skin: "custom",
     hide_min_max: true,
-    postfix: "&#8381;" // hide_from_to: true
+    postfix: "&#8381;",
+    step: 100 // hide_from_to: true
 
   });
-  let elems = document.querySelectorAll(".js-range-slider");
+  $(".js-range-slider").on("change", function () {
+    let _from = $(this).prev().find(".irs-from").text();
+
+    let _to = $(this).prev().find(".irs-to").text();
+
+    let str = _from + "-" + _to;
+    $(this).parent().parent().find('.field__annotation').html(str);
+  });
+  let elems = $(document).find(".js-range-slider");
 
   for (let elem of elems) {
     let boundF = _setDiapason.bind(elem);
 
-    _setDiapason()();
+    boundF()();
   }
-
-  $(".js-range-slider").on("change", _setDiapason.call(this));
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -531,7 +611,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./UIKit.scss */ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/layouts/UI kit/UIKit.scss");
+var content = __webpack_require__(/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--5-2!../../../node_modules/sass-loader/dist/cjs.js??ref--5-3!./UIKit.scss */ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./src/layouts/UI kit/UIKit.scss");
 
 if (typeof content === 'string') {
   content = [[module.i, content, '']];
