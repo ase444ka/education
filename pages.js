@@ -455,15 +455,12 @@ __webpack_require__.r(__webpack_exports__);
 
 let _setDiapason = () => {
   return function () {
-    alert(3);
-    elem = $(".js-range-slider");
+    let _from = $(this).prev().find(".irs-from").text();
 
-    let _from = elem.prev().find(".irs-from").text();
-
-    let _to = elem.prev().find(".irs-to").text();
+    let _to = $(this).prev().find(".irs-to").text();
 
     let str = _from + "-" + _to;
-    elem.parent().prev().html(str);
+    $(this).parent().prev().html(str);
     return;
   };
 };
@@ -488,9 +485,7 @@ $(document).ready(function () {
     _setDiapason()();
   }
 
-  $(".js-range-slider").on("change", _setDiapason());
-
-  _setDiapason()();
+  $(".js-range-slider").on("change", _setDiapason.call(this));
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
