@@ -4,11 +4,9 @@
   "description": "just learning",
   "main": "index.js",
   "scripts": {
-    "test": "ololo",
-    "scss": "node-sass --watch scss -o css",
     "deploy": "gh-pages -d dist",
-    "start": "webpack-dev-server --open",
-    "bundle": "webpack"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "bundle": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -38,6 +36,7 @@
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
+    "cross-env": "^7.0.0",
     "css-loader": "^3.2.0",
     "file-loader": "^5.0.2",
     "gh-pages": "^2.2.0",

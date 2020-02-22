@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
 
 
 
@@ -15,7 +17,7 @@ module.exports = {
     },
     devServer: {
             contentBase: path.resolve(__dirname, 'dist'),
-            index: 'UIKit.html',
+           //index: 'UIKit.html',
             hot: true
            
        },
@@ -28,14 +30,14 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: ""
+        publicPath: isDev? "" : 'https://ase444ka.github.io/Education/'
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                // options: {sourceMap: true}
+                options: {sourceMap: true}
             },
             {
                 test: /\.scss$/,
@@ -44,11 +46,11 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
-                        // options: {sourceMap: true}
+                        options: {sourceMap: true}
                     },
                     {
                         loader: "sass-loader",
-                        // options: {sourceMap: true}
+                        options: {sourceMap: true}
                     }
                 ]
             },
@@ -107,8 +109,8 @@ module.exports = {
         //     template: './src/pages/pages.pug'
         // }),
         new HtmlWebpackPlugin({
-            filename: "UIKit.html",
-            template: './src/layouts/UI kit/UIKit.pug'
+            filename: "index.html",
+            template: './src/layouts/UI kit/index.pug'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
