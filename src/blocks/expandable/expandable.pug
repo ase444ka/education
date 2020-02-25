@@ -1,4 +1,7 @@
-mixin expandable()
-    .expandable&attributes(attributes)
+mixin expandable(expanded = false)
+    -let _material = expanded? "expand_less":"expand_more"
+    -let _class = expanded? "expandable_expanded":""
+    .expandable(class = _class)
+        i.material-icons=_material
         .expandable__content
             block

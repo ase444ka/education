@@ -1,32 +1,33 @@
 .expandable {
     position: relative;
-    pointer-events: none;
     &__content {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: max-height 100ms ease-in;
+        -webkit-transition: max-height 100ms ease-in;
     }
-    &::before {
+    i {
         position: absolute;
-        top: -5px;
-        right: -20px;
+        top: -1.8rem;
+        right: 21.5%;
         font-family: 'Material Icons';
-        content: "expand_more";
         color: rgba(31, 32, 65, 0.5);
         cursor: pointer;
-        pointer-events: all;
-        font-size: 2.1rem;
+        font-size: 1.8rem;
     }
-    &_expanded {
-        &::before {
-            content: "expand_less";
-        }
 
-        expandable__content {
-            display: block !important;
+    &_expanded {
+        .expandable__content {
+            max-height: 800px;
+            visibility: visible;
+        
+    }
         }
     }   
     
 
     
-    }
+    
    
     
