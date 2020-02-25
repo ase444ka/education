@@ -211,7 +211,8 @@ button {
 html {
   font-family: 'Open Sans';
   font-size: 14px;
-  line-height: 1.7; }
+  line-height: 1.7;
+  color: #1F2041; }
 
 h1 {
   font-weight: bold;
@@ -233,9 +234,6 @@ h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .in
   /*0.73*/
   font-family: Montserrat;
   text-transform: uppercase; }
-
-p {
-  font-family: Montserrat; }
 
 body {
   margin-left: 11.01322%;
@@ -676,6 +674,56 @@ Build date: 2019-12-19 16:51:02
 .irs--custom .irs-grid-text {
   color: silver;
   font-size: 13px; }
+
+.checkbox {
+  width: 75%; }
+
+.checkbox__label {
+  display: block;
+  font-size: 1rem;
+  padding-left: 30px;
+  padding-top: 1.1rem;
+  padding-bottom: 1px;
+  cursor: pointer;
+  font-family: Montserrat; }
+
+.checkbox__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.checkbox__input:checked + .checkbox__tick {
+  border-color: #BC9CFF; }
+
+.checkbox__input:checked + .checkbox__tick::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 6px;
+  height: 8px;
+  border-width: 0 2px 2px 0;
+  -moz-border-image: linear-gradient(180deg, #BC9CFF 0%, #6FCF97 100%);
+  -webkit-border-image: linear-gradient(180deg, #BC9CFF 0%, #6FCF97 100%);
+  border-image: linear-gradient(180deg, #BC9CFF 0%, #6FCF97 100%);
+  border-color: transparent;
+  border-image-slice: 1;
+  border-style: solid;
+  border-radius: 0;
+  transform: rotate(45deg);
+  box-sizing: border-box; }
+
+.checkbox__tick {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  background-color: white;
+  margin-left: -30px;
+  margin-top: -3px; }
 
 @media only screen and (max-width: 830px) {
   body {
