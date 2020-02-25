@@ -1,0 +1,32 @@
+.expandable {
+    position: relative;
+    pointer-events: none;
+    &__content {
+        display: none;
+    }
+    &::before {
+        position: absolute;
+        top: -5px;
+        right: -20px;
+        font-family: 'Material Icons';
+        content: "expand_more";
+        color: rgba(31, 32, 65, 0.5);
+        cursor: pointer;
+        pointer-events: all;
+        font-size: 2.1rem;
+    }
+    &_expanded {
+        &::before {
+            content: "expand_less";
+        }
+
+        expandable__content {
+            display: block !important;
+        }
+    }   
+    
+
+    
+    }
+   
+    

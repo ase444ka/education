@@ -6,6 +6,7 @@ section#forms
         include ../../../blocks/fieldset/fieldset
         include ../../../blocks/range-slider/range-slider
         include ../../../blocks/checkbox/checkbox      
+        include ../../../blocks/expandable/expandable      
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -105,32 +106,17 @@ section#forms
             div.input
                 h3 expandable checkbox list
                 div.checkbox_list-expandable
-                h3 expandable checkbox list
-                div
-                    div.checkbox
-                        input#breakfast_sample(type='checkbox')
-                        label(for='breakfast_sample') завтрак
-                    div.checkbox
-                        input#desk_sample(type='checkbox')
-                        label(for='desk_sample') письменный стол
-                    div.checkbox
-                        input#baby_chair_sample(type='checkbox')
-                        label(for='baby_chair_sample') стул для кормления
-                    div.checkbox
-                        input#cot_sample(type='checkbox')
-                        label(for='cot_sample') кроватка
-                    div.checkbox
-                        input#TV_sample(type='checkbox')
-                        label(for='TV_sample') телевизор
-                    div.checkbox
-                        input#shampoo_sample(type='checkbox')
-                        label(for='shampoo_sample') шампунь
-                    div.checkbox
-                        input#TV1_sample(type='checkbox')
-                        label(for='TV1_sample') телевизор
-                    div.checkbox
-                        input#shampoo1_sample(type='checkbox')
-                        label(for='shampoo1_sample') шампунь
+            +field({name:"expandable checkbox list"}) 
+                +expandable(class="expandable_expanded")
+                    +checkbox({value: "завтрак", nameVar: "breakfast"})
+                    +checkbox({value: "письменный стол", nameVar: "breakfast"})
+                    +checkbox({value: "завтрак", nameVar: "breakfast"})
+                    +checkbox({value: "стул для кормления", nameVar: "feedingChair"})
+                    +checkbox({value: "кроватка", nameVar: "cot"})
+                    +checkbox({value: "телевизор", nameVar: "TV"})
+                    +checkbox({value: "шампунь", nameVar: "shampoo"})
+                    +checkbox({value: "тапочки", nameVar: "slippers"})
+
         div
             +field({name: "dropdown"})
                 +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true, target: guests},
