@@ -407,8 +407,8 @@ input::placeholder, .input__placeholder {
 .input__customization {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s ease-in;
-  -webkit-transition: max-height 1s ease-in; }
+  transition: max-height 100ms ease-in;
+  -webkit-transition: max-height 100ms ease-in; }
 
 .input__options {
   border-top: 2px solid rgba(31, 32, 65, 0.25);
@@ -726,24 +726,24 @@ Build date: 2019-12-19 16:51:02
   margin-top: -3px; }
 
 .expandable {
-  position: relative;
-  pointer-events: none; }
+  position: relative; }
   .expandable__content {
-    display: none; }
-  .expandable::before {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 100ms ease-in;
+    -webkit-transition: max-height 100ms ease-in; }
+  .expandable i {
     position: absolute;
-    top: -5px;
-    right: -20px;
+    top: -1.8rem;
+    right: 21.5%;
     font-family: 'Material Icons';
-    content: "expand_more";
     color: rgba(31, 32, 65, 0.5);
     cursor: pointer;
-    pointer-events: all;
-    font-size: 2.1rem; }
-  .expandable_expanded::before {
-    content: "expand_less"; }
-  .expandable_expanded expandable__content {
-    display: block !important; }
+    font-size: 1.8rem; }
+  .expandable_expanded .expandable__content {
+    max-height: 800px;
+    visibility: visible; }
 
 @media only screen and (max-width: 830px) {
   body {

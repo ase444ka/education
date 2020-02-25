@@ -173,8 +173,11 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {$('.expandable').click(function () {
-  $(this).toggleClass('expandable_expanded');
+/* WEBPACK VAR INJECTION */(function($) {$('.expandable i').click(function () {
+  let txt = $(this).text();
+  txt = txt == 'expand_more' ? 'expand_less' : 'expand_more';
+  $(this).parent().toggleClass('expandable_expanded');
+  $(this).text(txt);
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
