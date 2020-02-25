@@ -1,11 +1,11 @@
 section#forms
 
-    h1= seting
     div
         include ../../../blocks/field/field
         include ../../../blocks/input/input
         include ../../../blocks/fieldset/fieldset
         include ../../../blocks/range-slider/range-slider
+        include ../../../blocks/checkbox/checkbox      
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -33,18 +33,15 @@ section#forms
 
 
 
-        div
-            div.input
-                h3 checkbox buttons
-                div.checkbox
-                    input#smoke_sample(type='checkbox')
-                    label(for='smoke_sample') можно курить
-                div.checkbox
-                    input#animals_sample(type='checkbox')
-                    label(for='animals_sample') можно с питомцами
-                div.checkbox
-                    input#guests_sample(type='checkbox')
-                    label(for='guests_sample') можно пригласить гостей (до 10 человек)
+        +field({name: "checkbox buttons"})
+            +checkbox({value:"Можно курить", nameVar: "smoke-permission"})
+            +checkbox({value:"Можно с питомцами", nameVar: "pets-permission"})
+            +checkbox({value:"Можно пригласить гостей (до 10 человек)", nameVar: "guests-permission"})
+        p  
+        p   
+
+        p   
+            
             div.input
                 h3 radio buttons
                 div.radio

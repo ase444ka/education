@@ -1,0 +1,9 @@
+mixin checkbox(options)
+    -let val = options.value
+    .checkbox
+        label.checkbox__label
+            input.checkbox__input(type="checkbox", name = options.nameVar)
+            span.checkbox__tick
+            = val
+
+

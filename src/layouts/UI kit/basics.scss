@@ -17,6 +17,7 @@ html {
   font-family: 'Open Sans';
   font-size: 14px;
   line-height: 1.7;
+  color: $darkShade;
 }
 @mixin h-size($size, $height, $spacing) {
   font-weight: bold;
@@ -46,6 +47,3 @@ h3 {
   @extend %font_small;
 }
 
-p {
-  font-family: Montserrat;
-}
