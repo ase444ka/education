@@ -8,6 +8,7 @@ section#forms
         include ../../../blocks/checkbox/checkbox      
         include ../../../blocks/expandable/expandable 
         include ../../../blocks/radio/radio     
+        include ../../../blocks/toggle/toggle     
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -45,22 +46,20 @@ section#forms
             +radio({name:"gender", checked:"female"},
                 {valueVar:"male", valueName:"мужчина"},{valueVar:"female", valueName:"женщина"})
 
-            div.input(style="margin-top: 50px")
-                h3 toggle
-                div
-                    input#subscription_sample.toggle(type='checkbox' checked)
-                    label(for='subscription_sample') получать спецпредложения
-                div
-                    input#subscription1_sample.toggle(type='checkbox')
-                    label(for='subscription1_sample') получать спецпредложения
-            div.input
-                h3 like button
-                    div.like
-                    div.like
-            div.input
-                h3 rate button
-                    div.rate &#9733;&#9733;&#9733;&#9734;&#9734;
-                    div.rate &#9733;&#9733;&#9733;&#9733;&#9733;
+            
+        +field({name: "toggle"})
+            +toggle("offences","Получать спецпредложения",true)
+            +toggle("offences","Получать спецпредложения")
+
+        div.input(style="margin-top: 50px")
+        div.input
+            h3 like button
+                div.like
+                div.like
+        div.input
+            h3 rate button
+                div.rate &#9733;&#9733;&#9733;&#9734;&#9734;
+                div.rate &#9733;&#9733;&#9733;&#9733;&#9733;
         div
             +field({name: "range slider", annotation: "5000р - 10000р"}) 
                 +range-slider
