@@ -246,44 +246,42 @@
                             </div>
                   </div>
                 </div>
-        <p> </p>
-        <p>  </p>
-        <p>  
-          <div class="input">
-            <h3>radio buttons</h3>
-            <div class="radio">
-              <input id="male_sample" type="radio"/>
-              <label for="male_sample">мужчина</label>
-            </div>
-            <div class="radio">
-              <input id="female_sample" type="radio"/>
-              <label for="female_sample">женщина</label>
-            </div>
-          </div>
-          <div class="input">
-            <h3>toggle</h3>
-            <div>
-              <input class="toggle" id="subscription_sample" type="checkbox" checked="checked"/>
-              <label for="subscription_sample">получать спецпредложения</label>
-            </div>
-            <div>
-              <input class="toggle" id="subscription1_sample" type="checkbox"/>
-              <label for="subscription1_sample">получать спецпредложения</label>
-            </div>
-          </div>
-          <div class="input">
-            <h3>like button
-              <div class="like"></div>
-              <div class="like"></div>
-            </h3>
-          </div>
-          <div class="input">
-            <h3>rate button
-              <div class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
-              <div class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            </h3>
-          </div>
-        </p>
+                <div class="field">
+                  <div class="field__name">radio buttons</div>
+                  <div class="field__content">
+                            <div class="radio">
+                              <div class="radio__item">
+                                <input class="radio__input" type="radio" name="gender" value="male"/><span class="radio__tick"></span>мужчина
+                              </div>
+                              <div class="radio__item">
+                                <input class="radio__input" type="radio" name="gender" checked="checked" value="female"/><span class="radio__tick"></span>женщина
+                              </div>
+                            </div>
+                    <div class="input" style="margin-top: 50px">
+                      <h3>toggle</h3>
+                      <div>
+                        <input class="toggle" id="subscription_sample" type="checkbox" checked="checked"/>
+                        <label for="subscription_sample">получать спецпредложения</label>
+                      </div>
+                      <div>
+                        <input class="toggle" id="subscription1_sample" type="checkbox"/>
+                        <label for="subscription1_sample">получать спецпредложения</label>
+                      </div>
+                    </div>
+                    <div class="input">
+                      <h3>like button
+                        <div class="like"></div>
+                        <div class="like"></div>
+                      </h3>
+                    </div>
+                    <div class="input">
+                      <h3>rate button
+                        <div class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                        <div class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
         <div>
                   <div class="field">
                     <div class="field__name">range slider</div>
@@ -369,10 +367,55 @@
                               </div>
                     </div>
                   </div>
-          <div class="input">
-            <h3>expandable checkbox list</h3>
-            <div class="checkbox_list-expandable"></div>
-          </div>
+                  <div class="field">
+                    <div class="field__name">expandable checkbox list</div>
+                    <div class="field__content"> 
+                              <div class="expandable"><i class="material-icons">expand_more</i>
+                                <div class="expandable__content">
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
+                                            </label>
+                                          </div>
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>письменный стол
+                                            </label>
+                                          </div>
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
+                                            </label>
+                                          </div>
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="feedingChair"/><span class="checkbox__tick"></span>стул для кормления
+                                            </label>
+                                          </div>
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="cot" checked="checked"/><span class="checkbox__tick"></span>кроватка
+                                            </label>
+                                          </div>
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="TV"/><span class="checkbox__tick"></span>телевизор
+                                            </label>
+                                          </div>
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="shampoo" checked="checked"/><span class="checkbox__tick"></span>шампунь
+                                            </label>
+                                          </div>
+                                          <div class="checkbox">
+                                            <label class="checkbox__label">
+                                              <input class="checkbox__input" type="checkbox" name="slippers"/><span class="checkbox__tick"></span>тапочки
+                                            </label>
+                                          </div>
+                                </div>
+                              </div>
+                    </div>
+                  </div>
                   <div class="field">
                     <div class="field__name">expandable checkbox list</div>
                     <div class="field__content"> 

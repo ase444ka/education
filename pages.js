@@ -457,6 +457,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/blocks/radio/radio.js":
+/*!***********************************!*\
+  !*** ./src/blocks/radio/radio.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$('.radio__item').click(function () {
+  $(this).find('.radio__input').attr("checked", true);
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/blocks/range-slider/range-slider.js":
 /*!*************************************************!*\
   !*** ./src/blocks/range-slider/range-slider.js ***!
@@ -601,6 +615,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_range_slider_range_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../blocks/range-slider/range-slider */ "./src/blocks/range-slider/range-slider.js");
 /* harmony import */ var _blocks_expandable_expandable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../blocks/expandable/expandable */ "./src/blocks/expandable/expandable.js");
 /* harmony import */ var _blocks_expandable_expandable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_blocks_expandable_expandable__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _blocks_radio_radio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../blocks/radio/radio */ "./src/blocks/radio/radio.js");
+/* harmony import */ var _blocks_radio_radio__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_blocks_radio_radio__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
