@@ -6,7 +6,8 @@ section#forms
         include ../../../blocks/fieldset/fieldset
         include ../../../blocks/range-slider/range-slider
         include ../../../blocks/checkbox/checkbox      
-        include ../../../blocks/expandable/expandable      
+        include ../../../blocks/expandable/expandable 
+        include ../../../blocks/radio/radio     
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -38,20 +39,13 @@ section#forms
             +checkbox({value:"Можно курить", nameVar: "smoke-permission"})
             +checkbox({value:"Можно с питомцами", nameVar: "pets-permission"})
             +checkbox({value:"Можно пригласить гостей (до 10 человек)", nameVar: "guests-permission"})
-        p  
-        p   
-
-        p   
+   
             
-            div.input
-                h3 radio buttons
-                div.radio
-                    input#male_sample(type='radio')
-                    label(for='male_sample') мужчина
-                div.radio
-                    input#female_sample(type='radio')
-                    label(for='female_sample') женщина
-            div.input
+        +field({name: "radio buttons"})
+            +radio({name:"gender", checked:"female"},
+                {valueVar:"male", valueName:"мужчина"},{valueVar:"female", valueName:"женщина"})
+
+            div.input(style="margin-top: 50px")
                 h3 toggle
                 div
                     input#subscription_sample.toggle(type='checkbox' checked)
@@ -103,9 +97,16 @@ section#forms
 
 
 
-            div.input
-                h3 expandable checkbox list
-                div.checkbox_list-expandable
+            +field({name:"expandable checkbox list"}) 
+                +expandable()
+                    +checkbox({value: "завтрак", nameVar: "breakfast"})
+                    +checkbox({value: "письменный стол", nameVar: "breakfast"})
+                    +checkbox({value: "завтрак", nameVar: "breakfast"})
+                    +checkbox({value: "стул для кормления", nameVar: "feedingChair"})
+                    +checkbox({value: "кроватка", nameVar: "cot", checked: true})
+                    +checkbox({value: "телевизор", nameVar: "TV"})
+                    +checkbox({value: "шампунь", nameVar: "shampoo", checked: true})
+                    +checkbox({value: "тапочки", nameVar: "slippers"})
             +field({name:"expandable checkbox list"}) 
                 +expandable(true)
                     +checkbox({value: "завтрак", nameVar: "breakfast"})

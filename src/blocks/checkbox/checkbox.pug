@@ -1,8 +1,9 @@
 mixin checkbox(options)
     -let val = options.value
+    -let _checked = options.checked || false;
     .checkbox
         label.checkbox__label
-            input.checkbox__input(type="checkbox", name = options.nameVar)
+            input.checkbox__input(type="checkbox", name = options.nameVar, checked = _checked )
             span.checkbox__tick
             = val
 
