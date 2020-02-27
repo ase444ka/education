@@ -1,0 +1,47 @@
+.like {
+    padding-top: 0.9rem;
+    display: inline-block;
+    padding-right: 0.5rem;
+    background-color: white;
+}
+
+.like__button{
+    position: relative;
+    display: block;
+    padding: 0.3rem 0 0 1.6rem;
+    height: 1.38rem;
+    width: 2.9rem;
+    font-size: 0.7rem;
+    border: 1px solid $darkShade_50;
+    cursor: pointer;
+    border-radius: 34px;
+    opacity: 0.7;
+}
+.like__button:before {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    font-size: 0.8rem;
+    font-family: 'Material Icons';
+    content: "favorite_border";
+    color: $darkShade_50; 
+  }
+
+  .like__button_checked {
+    opacity: 1;
+    border-color: transparent;
+  }
+  .like__button_checked::before {
+    content: "favorite";
+    color: $purple;  
+}
+.like__button_checked::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    right: -5px;
+    left: -5px;
+    z-index: -100;
+    background-image: linear-gradient(180deg, $purple 0%, $green 100%); 
+}

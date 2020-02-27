@@ -9,6 +9,7 @@ section#forms
         include ../../../blocks/expandable/expandable 
         include ../../../blocks/radio/radio     
         include ../../../blocks/toggle/toggle     
+        include ../../../blocks/like/like     
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -52,10 +53,10 @@ section#forms
             +toggle("offences","Получать спецпредложения")
 
         div.input(style="margin-top: 50px")
-        div.input
-            h3 like button
-                div.like
-                div.like
+        +field({name: "like button"})
+            +like(2)
+            +like(12)
+        div(style="margin-top:20px")
         div.input
             h3 rate button
                 div.rate &#9733;&#9733;&#9733;&#9734;&#9734;
