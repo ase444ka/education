@@ -794,9 +794,8 @@ Build date: 2019-12-19 16:51:02
 
 .toggle {
   position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px; }
+  display: block;
+  padding: 1rem 3.5rem 0.3rem; }
 
 .toggle__input {
   opacity: 0;
@@ -805,39 +804,41 @@ Build date: 2019-12-19 16:51:02
 
 .toggle__slider {
   position: absolute;
-  cursor: pointer;
-  top: 0;
+  height: 1.38rem;
+  width: 2.9rem;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  top: 0.8rem;
   left: 0;
-  right: 0;
   bottom: 0;
   cursor: pointer;
-  background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
-  border-radius: 34px; }
+  border-radius: 34px;
+  opacity: 0.5; }
 
 .toggle__slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
+  height: 0.9rem;
+  width: 0.9rem;
+  left: 2px;
+  top: 0.2rem;
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #6FCF97 100%);
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%; }
 
-.toggle__input:checked + .slider {
-  background-color: #2196F3; }
+.toggle__input:checked + .toggle__slider {
+  opacity: 1; }
 
-.toggle__input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; }
+.toggle__input:focus + .toggle__slider {
+  box-shadow: 0 0 1px rgba(31, 32, 65, 0.25); }
 
-.toggle__input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px); }
+.toggle__input:checked + .toggle__slider:before {
+  -webkit-transform: translateX(1.5rem);
+  -ms-transform: translateX(1.5rem);
+  transform: translateX(1.5rem);
+  opacity: 1; }
 
 @media only screen and (max-width: 830px) {
   body {

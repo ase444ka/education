@@ -462,13 +462,12 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./src/blocks/radio/radio.js ***!
   \***********************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-/* WEBPACK VAR INJECTION */(function($) {$('.radio__item').click(function () {
-  $('.radio__item .radio__input').removeAttr("checked");
-  $(this).find('.radio__input').attr("checked", true);
-});
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+/* $('.radio__item').click(function(){
+    $('.radio__item .radio__input').removeAttr("checked");
+    $(this).find('.radio__input').attr("checked",true);
+}) */
 
 /***/ }),
 
