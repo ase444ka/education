@@ -3,7 +3,7 @@ mixin radio(options, ...items)
     .radio
         each item in items
             -let _checked = options.checked == item.valueVar
-            div.radio__item
+            label.radio__item
                 input.radio__input(type="radio", name = _name, checked = _checked, value = item.valueVar)
                 span.radio__tick
                 = item.valueName
