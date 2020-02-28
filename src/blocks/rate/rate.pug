@@ -1,9 +1,10 @@
 mixin rate(options)
     -let stars = options.stars || 0;
     -if (stars > 5) stars = 5;
-    -let ratable = options.ratable || false;
+    -let ratable = options.ratable? "rate_ratable":"";
+    -if (ratable) stars = 0;
 
-    .rate
+    .rate(class=ratable)
         -let i = 0
         while i < 5
             if (stars > i)
