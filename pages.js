@@ -621,6 +621,31 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./src/blocks/rate/rate.js":
+/*!*********************************!*\
+  !*** ./src/blocks/rate/rate.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {let click = false;
+$('.rate__star').mouseenter(function (event) {
+  if (!$(this).parent().hasClass("rate_ratable")) return;
+  $(this).addClass('rate__star_checked');
+  $(this).prevAll().addClass('rate__star_checked');
+  $(this).nextAll().removeClass('rate__star_checked');
+});
+$('.rate_ratable').mouseleave(function () {
+  if (!click) $(this).children().removeClass('rate__star_checked');
+});
+$('.rate_ratable').mousedown(function () {
+  click = true;
+  $(this).removeClass('rate_ratable');
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/layouts/UI kit/Forms/forms.js":
 /*!*******************************************!*\
   !*** ./src/layouts/UI kit/Forms/forms.js ***!
@@ -638,6 +663,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_radio_radio__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_blocks_radio_radio__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _blocks_like_like__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../blocks/like/like */ "./src/blocks/like/like.js");
 /* harmony import */ var _blocks_like_like__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_blocks_like_like__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _blocks_rate_rate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../blocks/rate/rate */ "./src/blocks/rate/rate.js");
+/* harmony import */ var _blocks_rate_rate__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_blocks_rate_rate__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 

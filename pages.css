@@ -911,6 +911,31 @@ Build date: 2019-12-19 16:51:02
   border-radius: 34px;
   overflow: hidden; }
 
+.rate {
+  padding-top: 1rem;
+  display: inline-block;
+  padding-right: 1.3rem; }
+
+.rate__star {
+  position: relative;
+  display: inline-block;
+  padding-right: 1px;
+  width: 1.7rem; }
+
+.rate__star::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "star_border";
+  font-family: 'Material Icons';
+  font-size: 1.7rem;
+  color: #BC9CFF; }
+
+.rate__star_checked::before {
+  content: "star"; }
+
 @media only screen and (max-width: 830px) {
   body {
     margin-left: 3%;
