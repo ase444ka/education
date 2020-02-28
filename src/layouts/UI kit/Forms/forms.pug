@@ -10,6 +10,7 @@ section#forms
         include ../../../blocks/radio/radio     
         include ../../../blocks/toggle/toggle     
         include ../../../blocks/like/like     
+        include ../../../blocks/rate/rate     
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -57,10 +58,9 @@ section#forms
             +like(2)
             +like(12)
         div(style="margin-top:20px")
-        div.input
-            h3 rate button
-                div.rate &#9733;&#9733;&#9733;&#9734;&#9734;
-                div.rate &#9733;&#9733;&#9733;&#9733;&#9733;
+        +field({name: "rate button"})
+            +rate({stars:4})
+        div(style="margin-top:40px")
         div
             +field({name: "range slider", annotation: "5000р - 10000р"}) 
                 +range-slider

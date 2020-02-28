@@ -1,0 +1,23 @@
+.rate {
+    padding-top: 1rem;
+}
+.rate__star {
+    position: relative;
+    display: inline-block;
+    padding-right: 1px;
+    width: 1.7rem;
+}
+.rate__star::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "star_border";
+    font-family: 'Material Icons';
+    font-size: 1.7rem;
+    color: $purple
+}
+.rate__star_checked::before {
+    content: "star";
+}

@@ -1,0 +1,13 @@
+mixin rate(options)
+    -let stars = options.stars || 0;
+    -if (stars > 5) stars = 5;
+    -let ratable = options.ratable || false;
+
+    .rate
+        -let i = 0
+        while i < 5
+            if (stars > i)
+                span.rate__star(class='rate__star_checked')
+            else
+                span.rate__star
+            -i++
