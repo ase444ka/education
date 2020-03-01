@@ -1,0 +1,95 @@
+$_red: red($purple);
+$_green: green($purple);
+$_blue: blue($purple);
+.button {
+    padding: 0.8rem 0;
+}
+.button button {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    @extend %font_small;
+    padding: 0.8rem 1.3rem;
+    color: white;
+    border-radius: 3em;
+}
+.button_target_payment button {
+    width: 100%;
+    position: relative;
+}
+.button_target_payment button::after {
+    direction: ltr;
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    content: "arrow_forward";  
+    position: absolute;
+    top: 0.7rem;
+    right: 0.6rem; 
+}
+.button_disabled, .button_hovered, .button_clicking {
+    pointer-events: none;
+}
+.button_disabled button, .button button:disabled {
+    opacity: 0.6;
+}
+.button_hovered button, .button button:hover {
+    @extend %acting;
+}
+.button_hovered button:before, .button button:hover:before {
+    @extend %acting_before;
+    z-index: -1;
+}
+.button_clicking button, .button button:active {
+    @extend %acting;
+    outline: none;
+    color: rgba($_red, $_green, $_blue, 0.4) !important;
+}
+.button button:focus {
+    outline: none;
+}
+.button_clicking button:before, .button button:active:before {
+    @extend %acting_before;
+    z-index: -1;
+    opacity: 0.5;
+}
+.button_simple button {
+    background: none;
+    color: $purple;
+}
+.button_simple button:hover, .button_simple.button_hovered button {
+    color: rgba(31, 32, 65, 0.5) !important;
+}
+.button_simple button:hover:before, .button_simple.button_hovered button::before {
+    display: none;
+}
+
+%rounded-border {
+    border: 1px solid transparent;
+    border-radius: 2.5rem;
+}
+%acting_before {
+    content: "";
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    @extend %rounded-border;
+}
+%acting {
+    color: $purple;
+    background-image: none;
+    background-color: white;
+    position: relative;
+}

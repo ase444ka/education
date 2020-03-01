@@ -4,3 +4,4 @@ import '../../../blocks/expandable/expandable';
 import '../../../blocks/radio/radio';
 import '../../../blocks/like/like';
 import '../../../blocks/rate/rate';
+import '../../../blocks/button/button';

@@ -11,6 +11,7 @@ section#forms
         include ../../../blocks/toggle/toggle     
         include ../../../blocks/like/like     
         include ../../../blocks/rate/rate     
+        include ../../../blocks/button/button     
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -55,7 +56,7 @@ section#forms
 
         div.input(style="margin-top: 50px")
         +field({name: "like button"})
-            +like(2)
+            +like()
             +like(12)
         div(style="margin-top:20px")
         +field({name: "rate button"})
@@ -66,23 +67,16 @@ section#forms
             +field({name: "range slider", annotation: "5000р - 10000р"}) 
                 +range-slider
                     //- div.range_slider-range 5000 &#8381; - 10000 &#8381;
-            div.input
-                h3 buttons
-                button.button_active click me
-                button.button_disabled click me
-                button.button_active click me
-                button.button_clicked click me
-                button.button_simplified click me
-                button.button_simplified_active click me
-                button.button_cta перейти к оплате
-            div.input
-                h3 pagination
-                div.pagination_current 1
-                div.pagination 2
-                div.pagination 3
-                div.pagination_insie ...
-                div.pagination 15
-                div.pagination_comment 1 – 12 из 100+ вариантов аренды
+            +field({name:"buttons"})
+                div(class="form__buttons")
+                    +button()
+                    +button()(class = "button_disabled")
+                    +button()(class = "button_hovered")
+                    +button()(class = "button_clicking")
+                    +button()(class = "button_simple")
+                    +button()(class = "button_simple button_hovered")
+                    +button("перейти к оплате")(class = 'button_target_payment')
+
 
 
 
