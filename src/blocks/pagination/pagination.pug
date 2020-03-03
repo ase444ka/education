@@ -1,0 +1,15 @@
+mixin pagination(options)
+    -let offset = options.offset||12
+    -let limit = options.limit||12
+    -let total = options.total||"100+"
+    -let dTotal = parseInt(total)
+    -let text = `1-${limit} из ${total} вариантов аренды`
+    .pagination(data-offset=offset data-total = dTotal)
+        .pagination__item(class = "pagination__item_current") 1
+        .pagination__item 2
+        .pagination__item 3
+        .pagination__item(class="pagination__item_hidden") ...
+        .pagination__item=offset+3
+        .pagination__item(class="pagination__item_next") arrow_forward
+        .pagination__text= text
+        

@@ -12,6 +12,7 @@ section#forms
         include ../../../blocks/like/like     
         include ../../../blocks/rate/rate     
         include ../../../blocks/button/button     
+        include ../../../blocks/pagination/pagination     
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -77,12 +78,9 @@ section#forms
                     +button()(class = "button_simple button_hovered")
                     +button("перейти к оплате")(class = 'button_target_payment')
 
-
-
-
-
         div
-
+            +field({name:"pagination"})
+                +pagination({})
             +field({name: "dropdown", annotation: "default", shorted: true})
                 +input({placeholder: "2 спальни, 2 кровати...", select: true, target: "rooms"})
             +field({name: "dropdown", annotation: "default", shorted: true})
