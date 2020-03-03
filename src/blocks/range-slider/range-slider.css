@@ -35,7 +35,7 @@ Build date: 2019-12-19 16:51:02
   position: absolute;
   display: block;
   box-sizing: border-box;
-  cursor: default;
+  cursor: pointer;
   z-index: 1;
 }
 .irs-handle.type_last {
