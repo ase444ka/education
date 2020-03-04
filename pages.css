@@ -1097,6 +1097,19 @@ Build date: 2019-12-19 16:51:02
       border-radius: 50%;
       opacity: 0.7; }
 
+.feature {
+  background: url(//icons/insert-emoticon.svg) no-repeat;
+  display: grid;
+  grid-template: 4rem 1fr / 1fr 1fr;
+  grid-template-areas: "img name" "img descr"; }
+  .feature__image {
+    grid-area: img; }
+  .feature__name {
+    grid-area: name;
+    font-weight: bold; }
+  .feature__description {
+    grid-area: descr; }
+
 @media only screen and (max-width: 830px) {
   body {
     margin-left: 3%;
