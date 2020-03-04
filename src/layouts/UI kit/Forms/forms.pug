@@ -117,16 +117,10 @@ section#forms
                     {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
 
 
-            div.input
-                h3 rich Checkbox Buttons
-                div.checkbox_rich
-                    label(for='wide_corridor_sample') широкий коридор
-                    input.input_quantity-choice#wide_corridor_sample(type='checkbox')
-                    p.checkbox_rich_description Ширина коридоров в номере не менее 91 см.
-                div.checkbox_rich
-                    label(for='assistant_sample') помощник для инвалидов
-                    input.input_quantity-choice#assistant_sample(type='checkbox')
-                    p.checkbox_rich_description На 1 этаже вас встретит специалист  и проводит до номера.
+            +field({name: "rich checkbox buttons"})
+                +checkbox({value: "широкий коридор", nameVar: "wide_corridor_sample", description: "Ширина коридоров в номере не менее 91 см."})
+                +checkbox({value: "помощник для инвалидов", nameVar: "assistant_sample", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
+
         div
             +field({name: "dropdown"})
                 +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true, target:"guests"},

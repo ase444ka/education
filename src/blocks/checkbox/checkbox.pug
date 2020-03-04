@@ -1,10 +1,14 @@
 mixin checkbox(options)
     -let val = options.value
-    -let _checked = options.checked || false;
-    .checkbox
+    -let _checked = options.checked || false
+    -let rich = options.description? "checkbox_rich":""
+    -let description = options.description||""
+    .checkbox(class = rich)
         label.checkbox__label
             input.checkbox__input(type="checkbox", name = options.nameVar, checked = _checked )
             span.checkbox__tick
             = val
+            if (rich)
+                div.checkbox__description=description
 
 
