@@ -13,6 +13,7 @@ section#forms
         include ../../../blocks/rate/rate     
         include ../../../blocks/button/button     
         include ../../../blocks/pagination/pagination     
+        include ../../../blocks/bullet-list/bullet-list
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -118,31 +119,23 @@ section#forms
 
 
             +field({name: "rich checkbox buttons"})
-                +checkbox({value: "широкий коридор", nameVar: "wide_corridor_sample", description: "Ширина коридоров в номере не менее 91 см."})
-                +checkbox({value: "помощник для инвалидов", nameVar: "assistant_sample", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
+                +checkbox({value: "Широкий коридор", nameVar: "wide_corridor_sample", description: "Ширина коридоров в номере не менее 91 см."})
+                +checkbox({value: "Помощник для инвалидов", nameVar: "assistant_sample", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
 
         div
             +field({name: "dropdown"})
                 +input({placeholder: "сколько гостей", select: true, expanded: true, clear: true, apply: true, target:"guests"},
                     {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
-            div.input
-                h3 bullet list
-                div.list-item_bullet
-                    label(for='no_animals_sample') нельзя с питомцами
-                    input.input_quantity-choice#no_animals_sample(type='checkbox')
-                div.list-item_bullet
-                    label(for='no_parties_sample') Без вечеринок и мероприятий
-                    input.input_quantity-choice#no_parties_sample(type='checkbox')
-                div.list-item_bullet
-                    label(for='registration_time_sample') Время прибытия — после 13:00, а выезд до 12:00
-                    input.input_quantity-choice#registration_time_sample(type='checkbox')
-        div
-            div.input
-                div.preferency
-                    p.preferency_name комфорт
-                    p.preferency_description шумопоглощающие стены
-                div.preferency
-                    p.preferency_name удобство
+            +field({name: "bullet list"})
+                +bullet-list("Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00")
+//-        div
+//-        div
+ //-           div.input
+ //-               div.preferency
+ //-                   p.preferency_name комфорт
+ //-                   p.preferency_description шумопоглощающие стены
+ //-               div.preferency
+ //-                   p.preferency_name удобство
                     p.preferency_description окно в каждой из спален
         div.span2
             div.input
