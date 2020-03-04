@@ -1076,6 +1076,27 @@ Build date: 2019-12-19 16:51:02
     margin: 0.8rem 0.2rem;
     color: rgba(31, 32, 65, 0.75); }
 
+.bullet-list {
+  padding-top: 0.7rem;
+  color: rgba(31, 32, 65, 0.75);
+  width: 80%;
+  font-family: Montserrat; }
+  .bullet-list__item {
+    padding-left: 1.6rem;
+    line-height: 1.8;
+    position: relative;
+    padding-bottom: 0.6rem; }
+    .bullet-list__item:before {
+      content: "";
+      position: absolute;
+      top: 0.5rem;
+      left: 0.1rem;
+      background-color: #BC9CFF;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      opacity: 0.7; }
+
 @media only screen and (max-width: 830px) {
   body {
     margin-left: 3%;
