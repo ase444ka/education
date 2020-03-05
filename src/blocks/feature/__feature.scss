@@ -1,0 +1,16 @@
+.feature {
+    display: grid;
+    grid-template: 4rem 1fr / 1fr 1fr;
+    grid-template-areas:"img name"
+                        "img descr";
+    &__image {
+        grid-area: img;
+    }
+    &__name {
+        grid-area:  name;
+        font-weight: bold;
+    }
+    &__description {
+        grid-area: descr;
+    }
+}

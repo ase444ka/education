@@ -14,6 +14,7 @@ section#forms
         include ../../../blocks/button/button     
         include ../../../blocks/pagination/pagination     
         include ../../../blocks/bullet-list/bullet-list
+        include ../../../blocks/feature/feature
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -128,12 +129,15 @@ section#forms
                     {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
             +field({name: "bullet list"})
                 +bullet-list("Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00")
+            +field({})
+                +feature("комфорт","шумопоглощающие стены","insert_emoticon")
+                +feature("удобство","окно в каждой из спален","location_city")
 //-        div
 //-        div
  //-           div.input
  //-               div.preferency
- //-                   p.preferency_name комфорт
- //-                   p.preferency_description шумопоглощающие стены
+ //-                   p.preferency_name 
+ //-                   p.preferency_description 
  //-               div.preferency
  //-                   p.preferency_name удобство
                     p.preferency_description окно в каждой из спален
