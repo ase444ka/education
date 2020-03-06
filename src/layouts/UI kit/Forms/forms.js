@@ -1,8 +1,8 @@
-import '../../../blocks/input/input';
-import '../../../blocks/range-slider/range-slider';
-import '../../../blocks/expandable/expandable';
-import '../../../blocks/radio/radio';
-import '../../../blocks/like/like';
-import '../../../blocks/rate/rate';
-import '../../../blocks/button/button';
-import '../../../blocks/pagination/pagination';
+import 'Blocks/input/input';
+import 'Blocks/range-slider/range-slider';
+import 'Blocks/expandable/expandable';
+import 'Blocks/radio/radio';
+import 'Blocks/like/like';
+import 'Blocks/rate/rate';
+import 'Blocks/button/button';
+import 'Blocks/pagination/pagination';

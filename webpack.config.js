@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -15,29 +15,43 @@ module.exports = {
             chunks: "all"
         }
     },
+    resolve: {
+        alias: {
+            Blocks: path.resolve(__dirname, 'src/blocks'),
+            Icons: path.resolve(__dirname, 'src/icons'),
+            Fonts: path.resolve(__dirname, 'src/fonts'),
+        }
+    },
     devServer: {
-            contentBase: path.resolve(__dirname, 'dist'),
-           //index: 'UIKit.html',
-            hot: true
-           
-       },
+        contentBase: path.resolve(__dirname, 'dist'),
+        //index: 'UIKit.html',
+        hot: true
+
+    },
     mode: 'development',
+    context: path.resolve(__dirname, 'src'),
     entry: {
-        pages: './src/layouts/UI kit/UIKit.js',
-      /*  UIKit: './src/UI kit/UIKit.js'*/
+        'pages': './layouts/UI kit/UIKit.js',
+        /*  UIKit: './src/UI kit/UIKit.js'*/
     },
     devtool: 'source-map',
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: isDev? "" : 'https://ase444ka.github.io/Education/'
+        publicPath: isDev ? "" : 'https://ase444ka.github.io/Education/'
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                options: {sourceMap: true}
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        sourceMap: true
+                    }
+                }
             },
             {
                 test: /\.scss$/,
@@ -46,60 +60,55 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
-                        options: {sourceMap: true}
+                        options: { sourceMap: true }
                     },
                     {
                         loader: "sass-loader",
-                        options: {sourceMap: true}
+                        options: { sourceMap: true }
                     }
                 ]
             },
 
             {
                 test: /\.pug$/,
-                loaders: [
-                    {
-                        loader: "html-loader"
-                    },
-                    {
-                        loader: "pug-html-loader",
-                        options: {
-                            "pretty": true
-                        }
-                    }
-                ]
+                loader: 'pug-loader',
+                query: {
+                    pretty: true
+                }
+
+
             }, {
                 test: /\.(png|jpg|jpeg|gif)$/,
                 loader: "file-loader",
                 options:
-                    {
-                        name: '/images/[name].[ext]'
-                    }
+                {
+                    name: '/images/[name].[ext]'
+                }
             },
             {
                 test: /\.svg$/,
                 exclude: [/fonts/],
                 loader: "file-loader",
                 options:
-                    {
-                        name: '/icons/[name].[ext]'
-                    }
+                {
+                    name: '/icons/[name].[ext]'
+                }
             },
-             {
+            {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 include: [/fonts/],
                 loader: "file-loader",
                 options:
-                    {
-                        name: './fonts/[name].[ext]'
-                    }
-            } 
+                {
+                    name: 'fonts/[name].[ext]'
+                }
+            }
         ]
     },
     plugins: [
-/*         new CopyPlugin([
-            { from: './src/layouts/UI kit/UIKit.js', to: path.resolve(__dirname, 'dist/fonts') },
-          ]), */
+        new CopyPlugin([
+            { from: 'Icons', to: path.resolve(__dirname, 'dist/icons') },
+        ]),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].css"
@@ -110,7 +119,7 @@ module.exports = {
         // }),
         new HtmlWebpackPlugin({
             filename: "index.html",
-            template: './src/layouts/UI kit/index.pug'
+            template: 'layouts/UI kit/index.pug'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
