@@ -2,6 +2,6 @@ mixin feature(name, description, svg)
     -let path = 'icons/' + svg + '.svg'
     .feature
         .feature__image
-            img(src=require('Icons/location_city.svg').default)
+            img(src=require(`Icons/${svg}.svg`).default)
         .feature__name= name
         .feature__description= description
