@@ -1,13 +1,13 @@
 mixin card_for_room-choice(options)
         .card__header=options.header||"Найдем номера под ваши пожелания"
-    .card__dates
-        +field({name:"прибытие"})
-            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
-        +field({name: "выезд"})
-            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
-    .card__guests
-        +field({name: "гости"})
-             +input({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: guests},
-            {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
-    .card__button
-         +button("подобрать номер")
+        .card__dates
+            +field({name:"прибытие"})
+                +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+            +field({name: "выезд"})
+                +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+        .card__guests
+            +field({name: "гости"})
+                +input({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: guests},
+                {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
+        .card__button
+            +button("подобрать номер")
