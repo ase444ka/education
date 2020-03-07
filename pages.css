@@ -1135,6 +1135,27 @@ Build date: 2019-12-19 16:51:02
     grid-area: descr;
     color: rgba(31, 32, 65, 0.5); }
 
+.feedback {
+  display: grid;
+  font-family: Montserrat;
+  grid-template: 2rem 1.4rem 2rem 1fr / 4rem 1fr;
+  grid-template-areas: 'ava  name' 'ava   time' 'likes feed' 'likes feed'; }
+  .feedback__avatar {
+    grid-area: ava; }
+  .feedback__likes {
+    grid-area: likes;
+    padding-left: 0.15rem; }
+  .feedback__time {
+    grid-area: time; }
+  .feedback__feed {
+    grid-area: feed;
+    padding-top: 0.8rem;
+    line-height: 1.65; }
+  .feedback__name {
+    grid-area: name;
+    padding-top: 0.4rem;
+    font-weight: bold; }
+
 @media only screen and (max-width: 830px) {
   body {
     margin-left: 3%;
