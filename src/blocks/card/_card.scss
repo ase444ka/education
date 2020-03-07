@@ -1,0 +1,7 @@
+.card {
+    padding: 2.8rem 2.2rem;
+    box-shadow: 0 0 1rem 0.2rem 0.3rem $darkShade_25;
+    &__dates {
+        display: flex;
+    }
+}

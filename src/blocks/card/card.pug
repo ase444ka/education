@@ -1,0 +1,7 @@
+include ./card_for_room-choice/card_for_room-choice
+mixin card(type, options)
+    -let modificator = "card_for_" + type
+    .card(class = modificator)
+        case type
+            when "room-choice"
+                +card_for_room-choice(options)

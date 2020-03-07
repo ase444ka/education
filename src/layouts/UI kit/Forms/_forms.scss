@@ -8,14 +8,7 @@
     margin: 5px;
   }
 }
-.form__buttons {
-  display: grid;
-  grid-template-columns: 37.5% 62.5%;
-}
-.form__buttons div:last-child {
-  grid-column: span 2;
-  justify-self: stretch;
-}
+
 .span2 {
   grid-column: span 2;
 }

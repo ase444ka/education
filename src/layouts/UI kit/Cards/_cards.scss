@@ -1,0 +1,9 @@
+#cards {
+    display: grid;
+    grid-template-rows: max-content max-content max-content;
+    grid-template-columns: 1fr 1fr 1fr;
+    >div {
+      margin: 5px;
+    }
+  }
+@import "../../../blocks/card/card";
