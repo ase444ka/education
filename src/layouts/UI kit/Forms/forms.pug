@@ -15,6 +15,7 @@ section#forms
         include ../../../blocks/pagination/pagination     
         include ../../../blocks/bullet-list/bullet-list
         include ../../../blocks/feature/feature
+        include ../../../blocks/feedback/feedback
         
         +field({name:"text field", annotation:"default"})
             +input({placeholder: "Email"})
@@ -132,6 +133,11 @@ section#forms
             +field({})
                 +feature("Комфорт","Шумопоглощающие стены","insert_emoticon")
                 +feature("Удобство","Окно в каждой из спален","location_city")
+            +feedback({ava: "murad", name: "Мурад Сарафанов", likes: 12, time: "5 дней назад", 
+            feed: 
+                 `Великолепный матрас на кровати в основной спальне!
+                А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
+                Выкрикивал комплименты повару — никто не жаловался из соседей.`})
 //-        div
 //-        div
  //-           div.input
