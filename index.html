@@ -70,83 +70,546 @@
 </section>
     </div>
     <section id="forms">
-      <div>
-                <div class="field">
-                  <div class="field__name">text field</div>
-                  <div class="field__annotation">default</div>
-                  <div class="field__content">
-                            <div class="input" data-target=""><i class="material-icons"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="Email"/>
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
-                              </div>
-                            </div>
-                  </div>
+            <div class="field">
+              <div class="field__name">text field</div>
+              <div class="field__annotation">default</div>
+              <div class="field__content">
+                      <div class="input" data-target=""><i class="material-icons"></i>
+                        <div class="input__placeholder">
+                          <input placeholder="Email"/>
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">text field</div>
+              <div class="field__annotation">hover / focus</div>
+              <div class="field__content">
+                      <div class="input input_hovered " data-target=""><i class="material-icons"></i>
+                        <div class="input__placeholder">
+                          <input placeholder="This is pretty awesome"/>
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">dropdown</div>
+              <div class="field__annotation">default</div>
+              <div class="field__content">
+                      <div class="input input_type_select " data-target="guests"><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">Сколько гостей
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">dropdown</div>
+              <div class="field__annotation">default</div>
+              <div class="field__content">
+                      <div class="input input_type_select " data-target="guests"><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">Сколько гостей
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">masked text field</div>
+              <div class="field__annotation">default</div>
+              <div class="field__content">
+                      <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">ДД.ММ.ГГГГ
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="fieldset">
+                    <div class="field">
+                      <div class="field__name">date dropdoun</div>
+                      <div class="field__content">
+                      </div>
+                    </div>
+            </div>
+            <div class="field field_shorted">
+              <div class="field__name">filter date dropdown</div>
+              <div class="field__content">
+                      <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">19авг - 23авг
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">masked text field</div>
+              <div class="field__annotation">default</div>
+              <div class="field__content">
+                      <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">ДД.ММ.ГГГГ
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">subscription text field</div>
+              <div class="field__content">
+                      <div class="input" data-target=""><i class="material-icons">arrow_forward</i>
+                        <div class="input__placeholder">
+                          <input placeholder="Email"/>
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">checkbox buttons</div>
+              <div class="field__content">
+                      <div class="checkbox">
+                        <label class="checkbox__label">
+                          <input class="checkbox__input" type="checkbox" name="smoke-permission"/><span class="checkbox__tick"></span>Можно курить
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label class="checkbox__label">
+                          <input class="checkbox__input" type="checkbox" name="pets-permission"/><span class="checkbox__tick"></span>Можно с питомцами
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label class="checkbox__label">
+                          <input class="checkbox__input" type="checkbox" name="guests-permission"/><span class="checkbox__tick"></span>Можно пригласить гостей (до 10 человек)
+                        </label>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">radio buttons</div>
+              <div class="field__content">
+                      <div class="radio">
+                        <label class="radio__item">
+                          <input class="radio__input" type="radio" name="gender" value="male"/><span class="radio__tick"></span>мужчина
+                        </label>
+                        <label class="radio__item">
+                          <input class="radio__input" type="radio" name="gender" checked="checked" value="female"/><span class="radio__tick"></span>женщина
+                        </label>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">toggle</div>
+              <div class="field__content">
+                      <label class="toggle">
+                        <input class="toggle__input" type="checkbox" name="offences"/><span class="toggle__slider"></span>Получать спецпредложения
+                      </label>
+                      <label class="toggle">
+                        <input class="toggle__input" type="checkbox" name="offences"/><span class="toggle__slider"></span>Получать спецпредложения
+                      </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">like button</div>
+              <div class="field__content">
+                      <div class="like">
+                        <div class="like__base">
+                          <div class="like__button"></div>
+                        </div>
+                      </div>
+                      <div class="like">
+                        <div class="like__base">
+                          <div class="like__button">12</div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">rate button</div>
+              <div class="field__content">
+                      <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span>
+                      </div>
+                      <div class="rate rate_ratable"><span class="rate__star"></span><span class="rate__star"></span><span class="rate__star"></span><span class="rate__star"></span><span class="rate__star"></span>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">range slider</div>
+              <div class="field__annotation">5000р - 10000р</div>
+              <div class="field__content"> 
+                      <input class="js-range-slider" type="text" name="my-range" value=""/>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">buttons</div>
+              <div class="field__content">
+                <div class="form__buttons">
+                        <div class="button">
+                          <button>click me</button>
+                        </div>
+                        <div class="button button_disabled">
+                          <button>click me</button>
+                        </div>
+                        <div class="button button_hovered">
+                          <button>click me</button>
+                        </div>
+                        <div class="button button_clicking">
+                          <button>click me</button>
+                        </div>
+                        <div class="button button_simple">
+                          <button>click me</button>
+                        </div>
+                        <div class="button button_simple button_hovered">
+                          <button>click me</button>
+                        </div>
+                        <div class="button button_target_payment">
+                          <button>перейти к оплате</button>
+                        </div>
                 </div>
-                <div class="field">
-                  <div class="field__name">text field</div>
-                  <div class="field__annotation">hover / focus</div>
-                  <div class="field__content">
-                            <div class="input input_hovered " data-target=""><i class="material-icons"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="This is pretty awesome"/>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">pagination</div>
+              <div class="field__content">
+                      <div class="pagination" data-offset="12" data-total="100">
+                        <div class="pagination__item pagination__item_current">1</div>
+                        <div class="pagination__item">2</div>
+                        <div class="pagination__item">3</div>
+                        <div class="pagination__item pagination__item_hidden">...</div>
+                        <div class="pagination__item">15</div>
+                        <div class="pagination__item pagination__item_next">arrow_forward</div>
+                        <div class="pagination__text">1-12 из 100+ вариантов аренды</div>
+                      </div>
+              </div>
+            </div>
+            <div class="field field_shorted">
+              <div class="field__name">dropdown</div>
+              <div class="field__annotation">default</div>
+              <div class="field__content">
+                      <div class="input input_type_select " data-target="rooms"><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">2 спальни, 2 кровати...
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field field_shorted">
+              <div class="field__name">dropdown</div>
+              <div class="field__annotation">default</div>
+              <div class="field__content">
+                      <div class="input input_expanded input_type_select " data-target="rooms"><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">2 спальни, 2 кровати...
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                            <li class="input__item">
+                              <div class="input__option">спальни</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">2</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
                               </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
+                            </li>
+                            <li class="input__item">
+                              <div class="input__option">кровати</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">2</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
                               </div>
-                            </div>
-                  </div>
+                            </li>
+                            <li class="input__item">
+                              <div class="input__option">ванные комнаты</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">0</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              </div>
+                            </li>
+                          </ul>
+                          <div class="input__buttons">
+                            <button class="input__button input__button_target_apply">применить</button>
+                            <button class="input__button input__button_target_clear">очистить</button>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">dropdown</div>
+              <div class="field__content">
+                      <div class="input input_expanded input_type_select " data-target=""><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">сколько гостей
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                            <li class="input__item">
+                              <div class="input__option">взрослые</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">2</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              </div>
+                            </li>
+                            <li class="input__item">
+                              <div class="input__option">дети</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">2</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              </div>
+                            </li>
+                            <li class="input__item">
+                              <div class="input__option">младенцы</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">0</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              </div>
+                            </li>
+                          </ul>
+                          <div class="input__buttons">
+                            <button class="input__button input__button_target_apply">применить</button>
+                            <button class="input__button input__button_target_clear">очистить</button>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">dropdown</div>
+              <div class="field__content">
+                      <div class="input input_expanded input_type_select " data-target="guests"><i class="material-icons">expand_more</i>
+                        <div class="input__placeholder">сколько гостей
+                        </div>
+                        <div class="input__customization">
+                          <ul class="input__options">
+                            <li class="input__item">
+                              <div class="input__option">взрослые</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">2</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              </div>
+                            </li>
+                            <li class="input__item">
+                              <div class="input__option">дети</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">2</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              </div>
+                            </li>
+                            <li class="input__item">
+                              <div class="input__option">младенцы</div>
+                              <div class="input__option-setter">
+                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                <div class="input__option-quantity">0</div>
+                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              </div>
+                            </li>
+                          </ul>
+                          <div class="input__buttons">
+                            <button class="input__button input__button_target_apply">применить</button>
+                            <button class="input__button input__button_target_clear">очистить</button>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">expandable checkbox list</div>
+              <div class="field__content"> 
+                      <div class="expandable"><i class="material-icons">expand_more</i>
+                        <div class="expandable__content">
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>письменный стол
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="feedingChair"/><span class="checkbox__tick"></span>стул для кормления
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="cot" checked="checked"/><span class="checkbox__tick"></span>кроватка
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="TV"/><span class="checkbox__tick"></span>телевизор
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="shampoo" checked="checked"/><span class="checkbox__tick"></span>шампунь
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="slippers"/><span class="checkbox__tick"></span>тапочки
+                                  </label>
+                                </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">expandable checkbox list</div>
+              <div class="field__content"> 
+                      <div class="expandable expandable_expanded"><i class="material-icons">expand_less</i>
+                        <div class="expandable__content">
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>письменный стол
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="feedingChair"/><span class="checkbox__tick"></span>стул для кормления
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="cot"/><span class="checkbox__tick"></span>кроватка
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="TV"/><span class="checkbox__tick"></span>телевизор
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="shampoo"/><span class="checkbox__tick"></span>шампунь
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label class="checkbox__label">
+                                    <input class="checkbox__input" type="checkbox" name="slippers"/><span class="checkbox__tick"></span>тапочки
+                                  </label>
+                                </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">rich checkbox buttons</div>
+              <div class="field__content">
+                      <div class="checkbox checkbox_rich">
+                        <label class="checkbox__label">
+                          <input class="checkbox__input" type="checkbox" name="wide_corridor_sample"/><span class="checkbox__tick"></span>Широкий коридор
+                          <div class="checkbox__description">Ширина коридоров в номере не менее 91 см.</div>
+                        </label>
+                      </div>
+                      <div class="checkbox checkbox_rich">
+                        <label class="checkbox__label">
+                          <input class="checkbox__input" type="checkbox" name="assistant_sample"/><span class="checkbox__tick"></span>Помощник для инвалидов
+                          <div class="checkbox__description">На 1 этаже вас встретит специалист  и проводит до номера.</div>
+                        </label>
+                      </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name">bullet list</div>
+              <div class="field__content">
+                      <ul class="bullet-list">
+                        <li class="bullet-list__item">Нельзя с питомцами</li>
+                        <li class="bullet-list__item">Без вечеринок и мероприятий</li>
+                        <li class="bullet-list__item">Время прибытия — после 13:00, а выезд до 12:00</li>
+                      </ul>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field__name"></div>
+              <div class="field__content">
+                      <div class="feature">
+                        <div class="feature__image"><img src="https://ase444ka.github.io/Education/icons/insert_emoticon.svg"/></div>
+                        <div class="feature__name">Комфорт</div>
+                        <div class="feature__description">Шумопоглощающие стены</div>
+                      </div>
+                      <div class="feature">
+                        <div class="feature__image"><img src="https://ase444ka.github.io/Education/icons/location_city.svg"/></div>
+                        <div class="feature__name">Удобство</div>
+                        <div class="feature__description">Окно в каждой из спален</div>
+                      </div>
+              </div>
+            </div>
+      <div class="span2">
+              <div class="feedback">
+                <div class="feedback__avatar"><img src="https://ase444ka.github.io/Education/images/murad.png"/></div>
+                <div class="feedback__likes">
+                        <div class="like">
+                          <div class="like__base">
+                            <div class="like__button">12</div>
+                          </div>
+                        </div>
                 </div>
-                <div class="field">
-                  <div class="field__name">dropdown</div>
-                  <div class="field__annotation">default</div>
-                  <div class="field__content">
-                            <div class="input input_type_select " data-target="guests"><i class="material-icons">expand_more</i>
-                              <div class="input__placeholder">Сколько гостей
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
-                              </div>
-                            </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">dropdown</div>
-                  <div class="field__annotation">default</div>
-                  <div class="field__content">
-                            <div class="input input_type_select " data-target="guests"><i class="material-icons">expand_more</i>
-                              <div class="input__placeholder">Сколько гостей
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
-                              </div>
-                            </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">masked text field</div>
-                  <div class="field__annotation">default</div>
-                  <div class="field__content">
-                            <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
-                              <div class="input__placeholder">ДД.ММ.ГГГГ
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
-                              </div>
-                            </div>
-                  </div>
-                </div>
-                <div class="fieldset">
-                          <div class="field">
-                            <div class="field__name">date dropdoun</div>
-                            <div class="field__content">
+                <div class="feedback__time">5 дней назад</div>
+                <div class="feedback__name">Мурад Сарафанов</div>
+                <div class="feedback__feed">Великолепный матрас на кровати в основной спальне!
+            А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
+            Выкрикивал комплименты повару — никто не жаловался из соседей.</div>
+              </div>
+      </div>
+    </section>
+    <section id="cards">
+            <div class="card card_for_room-choice">
+                    <div class="card__header">Найдем номера под ваши пожелания</div>
+                    <div class="card__dates">
+                            <div class="field">
+                              <div class="field__name">прибытие</div>
+                              <div class="field__content">
                                       <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
                                         <div class="input__placeholder">ДД.ММ.ГГГГ
                                         </div>
@@ -155,499 +618,71 @@
                                           </ul>
                                         </div>
                                       </div>
+                              </div>
                             </div>
-                          </div>
-                          <div class="field">
-                            <div class="field__name">date dropdoun</div>
-                            <div class="field__content">
+                            <div class="field">
+                              <div class="field__name">выезд</div>
+                              <div class="field__content">
                                       <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
-                                        <div class="input__placeholder">19.08.2019
+                                        <div class="input__placeholder">ДД.ММ.ГГГГ
                                         </div>
                                         <div class="input__customization">
                                           <ul class="input__options">
                                           </ul>
                                         </div>
                                       </div>
-                            </div>
-                          </div>
-                </div>
-                <div class="field field_shorted">
-                  <div class="field__name">filter date dropdown</div>
-                  <div class="field__content">
-                            <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
-                              <div class="input__placeholder">19авг - 23авг
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
                               </div>
                             </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">masked text field</div>
-                  <div class="field__annotation">default</div>
-                  <div class="field__content">
-                            <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
-                              <div class="input__placeholder">ДД.ММ.ГГГГ
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
-                              </div>
-                            </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">subscription text field</div>
-                  <div class="field__content">
-                            <div class="input" data-target=""><i class="material-icons">arrow_forward</i>
-                              <div class="input__placeholder">
-                                <input placeholder="Email"/>
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
-                              </div>
-                            </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">masked text field</div>
-                  <div class="field__annotation">default</div>
-                  <div class="field__content">
-                            <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
-                              <div class="input__placeholder">ДД.ММ.ГГГГ
-                              </div>
-                              <div class="input__customization">
-                                <ul class="input__options">
-                                </ul>
-                              </div>
-                            </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">checkbox buttons</div>
-                  <div class="field__content">
-                            <div class="checkbox">
-                              <label class="checkbox__label">
-                                <input class="checkbox__input" type="checkbox" name="smoke-permission"/><span class="checkbox__tick"></span>Можно курить
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label class="checkbox__label">
-                                <input class="checkbox__input" type="checkbox" name="pets-permission"/><span class="checkbox__tick"></span>Можно с питомцами
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label class="checkbox__label">
-                                <input class="checkbox__input" type="checkbox" name="guests-permission"/><span class="checkbox__tick"></span>Можно пригласить гостей (до 10 человек)
-                              </label>
-                            </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">radio buttons</div>
-                  <div class="field__content">
-                            <div class="radio">
-                              <label class="radio__item">
-                                <input class="radio__input" type="radio" name="gender" value="male"/><span class="radio__tick"></span>мужчина
-                              </label>
-                              <label class="radio__item">
-                                <input class="radio__input" type="radio" name="gender" checked="checked" value="female"/><span class="radio__tick"></span>женщина
-                              </label>
-                            </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">toggle</div>
-                  <div class="field__content">
-                            <label class="toggle">
-                              <input class="toggle__input" type="checkbox" name="offences"/><span class="toggle__slider"></span>Получать спецпредложения
-                            </label>
-                            <label class="toggle">
-                              <input class="toggle__input" type="checkbox" name="offences"/><span class="toggle__slider"></span>Получать спецпредложения
-                            </label>
-                  </div>
-                </div>
-        <div class="input" style="margin-top: 50px"></div>
-                <div class="field">
-                  <div class="field__name">like button</div>
-                  <div class="field__content">
-                            <div class="like">
-                              <div class="like__base">
-                                <div class="like__button"></div>
-                              </div>
-                            </div>
-                            <div class="like">
-                              <div class="like__base">
-                                <div class="like__button">12</div>
-                              </div>
-                            </div>
-                  </div>
-                </div>
-        <div style="margin-top:20px"></div>
-                <div class="field">
-                  <div class="field__name">rate button</div>
-                  <div class="field__content">
-                            <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span>
-                            </div>
-                            <div class="rate rate_ratable"><span class="rate__star"></span><span class="rate__star"></span><span class="rate__star"></span><span class="rate__star"></span><span class="rate__star"></span>
-                            </div>
-                  </div>
-                </div>
-        <div style="margin-top:40px"></div>
-        <div>
-                  <div class="field">
-                    <div class="field__name">range slider</div>
-                    <div class="field__annotation">5000р - 10000р</div>
-                    <div class="field__content"> 
-                              <input class="js-range-slider" type="text" name="my-range" value=""/>
                     </div>
-                  </div>
-                  <div class="field">
-                    <div class="field__name">buttons</div>
-                    <div class="field__content">
-                      <div class="form__buttons">
-                                <div class="button">
-                                  <button>click me</button>
-                                </div>
-                                <div class="button button_disabled">
-                                  <button>click me</button>
-                                </div>
-                                <div class="button button_hovered">
-                                  <button>click me</button>
-                                </div>
-                                <div class="button button_clicking">
-                                  <button>click me</button>
-                                </div>
-                                <div class="button button_simple">
-                                  <button>click me</button>
-                                </div>
-                                <div class="button button_simple button_hovered">
-                                  <button>click me</button>
-                                </div>
-                                <div class="button button_target_payment">
-                                  <button>перейти к оплате</button>
-                                </div>
-                      </div>
-                    </div>
-                  </div>
-        </div>
-        <div>
-                  <div class="field">
-                    <div class="field__name">pagination</div>
-                    <div class="field__content">
-                              <div class="pagination" data-offset="12" data-total="100">
-                                <div class="pagination__item pagination__item_current">1</div>
-                                <div class="pagination__item">2</div>
-                                <div class="pagination__item">3</div>
-                                <div class="pagination__item pagination__item_hidden">...</div>
-                                <div class="pagination__item">15</div>
-                                <div class="pagination__item pagination__item_next">arrow_forward</div>
-                                <div class="pagination__text">1-12 из 100+ вариантов аренды</div>
-                              </div>
-                    </div>
-                  </div>
-                  <div class="field field_shorted">
-                    <div class="field__name">dropdown</div>
-                    <div class="field__annotation">default</div>
-                    <div class="field__content">
-                              <div class="input input_type_select " data-target="rooms"><i class="material-icons">expand_more</i>
-                                <div class="input__placeholder">2 спальни, 2 кровати...
-                                </div>
-                                <div class="input__customization">
-                                  <ul class="input__options">
-                                  </ul>
-                                </div>
-                              </div>
-                    </div>
-                  </div>
-                  <div class="field field_shorted">
-                    <div class="field__name">dropdown</div>
-                    <div class="field__annotation">default</div>
-                    <div class="field__content">
-                              <div class="input input_expanded input_type_select " data-target="rooms"><i class="material-icons">expand_more</i>
-                                <div class="input__placeholder">2 спальни, 2 кровати...
-                                </div>
-                                <div class="input__customization">
-                                  <ul class="input__options">
-                                    <li class="input__item">
-                                      <div class="input__option">спальни</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">2</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
+                    <div class="card__guests">
+                            <div class="field">
+                              <div class="field__name">гости</div>
+                              <div class="field__content">
+                                      <div class="input input_type_select " data-target=""><i class="material-icons">expand_more</i>
+                                        <div class="input__placeholder">сколько гостей
+                                        </div>
+                                        <div class="input__customization">
+                                          <ul class="input__options">
+                                            <li class="input__item">
+                                              <div class="input__option">взрослые</div>
+                                              <div class="input__option-setter">
+                                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                                <div class="input__option-quantity">2</div>
+                                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                                              </div>
+                                            </li>
+                                            <li class="input__item">
+                                              <div class="input__option">дети</div>
+                                              <div class="input__option-setter">
+                                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                                <div class="input__option-quantity">2</div>
+                                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                                              </div>
+                                            </li>
+                                            <li class="input__item">
+                                              <div class="input__option">младенцы</div>
+                                              <div class="input__option-setter">
+                                                <div class="input__option-iteration input__option-iteration_decrement">-</div>
+                                                <div class="input__option-quantity">0</div>
+                                                <div class="input__option-iteration input__option-iteration_increment">+</div>
+                                              </div>
+                                            </li>
+                                          </ul>
+                                          <div class="input__buttons">
+                                            <button class="input__button input__button_target_apply">применить</button>
+                                            <button class="input__button input__button_target_clear">очистить</button>
+                                          </div>
+                                        </div>
                                       </div>
-                                    </li>
-                                    <li class="input__item">
-                                      <div class="input__option">кровати</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">2</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                    <li class="input__item">
-                                      <div class="input__option">ванные комнаты</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">0</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                  <div class="input__buttons">
-                                    <button class="input__button input__button_target_apply">применить</button>
-                                    <button class="input__button input__button_target_clear">очистить</button>
-                                  </div>
-                                </div>
                               </div>
+                            </div>
                     </div>
-                  </div>
-                  <div class="field">
-                    <div class="field__name">expandable checkbox list</div>
-                    <div class="field__content"> 
-                              <div class="expandable"><i class="material-icons">expand_more</i>
-                                <div class="expandable__content">
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>письменный стол
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="feedingChair"/><span class="checkbox__tick"></span>стул для кормления
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="cot" checked="checked"/><span class="checkbox__tick"></span>кроватка
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="TV"/><span class="checkbox__tick"></span>телевизор
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="shampoo" checked="checked"/><span class="checkbox__tick"></span>шампунь
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="slippers"/><span class="checkbox__tick"></span>тапочки
-                                            </label>
-                                          </div>
-                                </div>
-                              </div>
+                    <div class="card__button">
+                            <div class="button button_target_payment">
+                              <button>подобрать номер</button>
+                            </div>
                     </div>
-                  </div>
-                  <div class="field">
-                    <div class="field__name">expandable checkbox list</div>
-                    <div class="field__content"> 
-                              <div class="expandable expandable_expanded"><i class="material-icons">expand_less</i>
-                                <div class="expandable__content">
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>письменный стол
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="breakfast"/><span class="checkbox__tick"></span>завтрак
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="feedingChair"/><span class="checkbox__tick"></span>стул для кормления
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="cot"/><span class="checkbox__tick"></span>кроватка
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="TV"/><span class="checkbox__tick"></span>телевизор
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="shampoo"/><span class="checkbox__tick"></span>шампунь
-                                            </label>
-                                          </div>
-                                          <div class="checkbox">
-                                            <label class="checkbox__label">
-                                              <input class="checkbox__input" type="checkbox" name="slippers"/><span class="checkbox__tick"></span>тапочки
-                                            </label>
-                                          </div>
-                                </div>
-                              </div>
-                    </div>
-                  </div>
-        </div>
-        <div>
-                  <div class="field">
-                    <div class="field__name">dropdown</div>
-                    <div class="field__content">
-                              <div class="input input_expanded input_type_select " data-target=""><i class="material-icons">expand_more</i>
-                                <div class="input__placeholder">сколько гостей
-                                </div>
-                                <div class="input__customization">
-                                  <ul class="input__options">
-                                    <li class="input__item">
-                                      <div class="input__option">взрослые</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">2</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                    <li class="input__item">
-                                      <div class="input__option">дети</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">2</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                    <li class="input__item">
-                                      <div class="input__option">младенцы</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">0</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                  <div class="input__buttons">
-                                    <button class="input__button input__button_target_apply">применить</button>
-                                    <button class="input__button input__button_target_clear">очистить</button>
-                                  </div>
-                                </div>
-                              </div>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <div class="field__name">rich checkbox buttons</div>
-                    <div class="field__content">
-                              <div class="checkbox checkbox_rich">
-                                <label class="checkbox__label">
-                                  <input class="checkbox__input" type="checkbox" name="wide_corridor_sample"/><span class="checkbox__tick"></span>Широкий коридор
-                                  <div class="checkbox__description">Ширина коридоров в номере не менее 91 см.</div>
-                                </label>
-                              </div>
-                              <div class="checkbox checkbox_rich">
-                                <label class="checkbox__label">
-                                  <input class="checkbox__input" type="checkbox" name="assistant_sample"/><span class="checkbox__tick"></span>Помощник для инвалидов
-                                  <div class="checkbox__description">На 1 этаже вас встретит специалист  и проводит до номера.</div>
-                                </label>
-                              </div>
-                    </div>
-                  </div>
-        </div>
-        <div>
-                  <div class="field">
-                    <div class="field__name">dropdown</div>
-                    <div class="field__content">
-                              <div class="input input_expanded input_type_select " data-target="guests"><i class="material-icons">expand_more</i>
-                                <div class="input__placeholder">сколько гостей
-                                </div>
-                                <div class="input__customization">
-                                  <ul class="input__options">
-                                    <li class="input__item">
-                                      <div class="input__option">взрослые</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">2</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                    <li class="input__item">
-                                      <div class="input__option">дети</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">2</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                    <li class="input__item">
-                                      <div class="input__option">младенцы</div>
-                                      <div class="input__option-setter">
-                                        <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                        <div class="input__option-quantity">0</div>
-                                        <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                  <div class="input__buttons">
-                                    <button class="input__button input__button_target_apply">применить</button>
-                                    <button class="input__button input__button_target_clear">очистить</button>
-                                  </div>
-                                </div>
-                              </div>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <div class="field__name">bullet list</div>
-                    <div class="field__content">
-                              <ul class="bullet-list">
-                                <li class="bullet-list__item">Нельзя с питомцами</li>
-                                <li class="bullet-list__item">Без вечеринок и мероприятий</li>
-                                <li class="bullet-list__item">Время прибытия — после 13:00, а выезд до 12:00</li>
-                              </ul>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <div class="field__name"></div>
-                    <div class="field__content">
-                              <div class="feature">
-                                <div class="feature__image"><img src="https://ase444ka.github.io/Education/icons/insert_emoticon.svg"/></div>
-                                <div class="feature__name">Комфорт</div>
-                                <div class="feature__description">Шумопоглощающие стены</div>
-                              </div>
-                              <div class="feature">
-                                <div class="feature__image"><img src="https://ase444ka.github.io/Education/icons/location_city.svg"/></div>
-                                <div class="feature__name">Удобство</div>
-                                <div class="feature__description">Окно в каждой из спален</div>
-                              </div>
-                    </div>
-                  </div>
-                  <div class="feedback">
-                    <div class="feedback__avatar"><img src="https://ase444ka.github.io/Education/images/murad.png"/></div>
-                    <div class="feedback__likes">
-                              <div class="like">
-                                <div class="like__base">
-                                  <div class="like__button">12</div>
-                                </div>
-                              </div>
-                    </div>
-                    <div class="feedback__time">5 дней назад</div>
-                    <div class="feedback__name">Мурад Сарафанов</div>
-                    <div class="feedback__feed">Великолепный матрас на кровати в основной спальне!
-                А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
-                Выкрикивал комплименты повару — никто не жаловался из соседей.</div>
-                  </div>
-        </div>
-      </div>
+            </div>
     </section>
   <script type="text/javascript" src="https://ase444ka.github.io/Education/vendors~pages.js"></script><script type="text/javascript" src="https://ase444ka.github.io/Education/pages.js"></script></body>
 </html>

@@ -332,14 +332,6 @@ p {
   #forms > div {
     margin: 5px; }
 
-.form__buttons {
-  display: grid;
-  grid-template-columns: 37.5% 62.5%; }
-
-.form__buttons div:last-child {
-  grid-column: span 2;
-  justify-self: stretch; }
-
 .span2 {
   grid-column: span 2; }
 
@@ -1155,6 +1147,31 @@ Build date: 2019-12-19 16:51:02
     grid-area: name;
     padding-top: 0.4rem;
     font-weight: bold; }
+
+#cards {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgba(31, 32, 65, 0.05); }
+
+.card {
+  padding: 2.8rem 2.2rem;
+  box-shadow: 0 0 2rem 0.5rem rgba(31, 32, 65, 0.25);
+  background-color: white; }
+  .card__header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 0.001em;
+    margin-bottom: 1.2rem; }
+  .card__dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin-bottom: 1.3rem; }
+  .card__guests {
+    margin-bottom: 1.4rem; }
 
 @media only screen and (max-width: 830px) {
   body {
