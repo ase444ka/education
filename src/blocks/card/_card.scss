@@ -2,6 +2,7 @@
     padding: 2.8rem 2.2rem;
     box-shadow:  0 0 2rem 0.5rem $darkShade_25;
     background-color: white;
+    font-family: Montserrat;
     &__header {
         font-weight: bold;
         font-size: 1.5rem;
@@ -19,5 +20,54 @@
     &__guests {
         margin-bottom: 1.4rem;
     }
+    &__room-data {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        &__number {
+            font-weight: bold;
+            font-size: 1.5rem;
+            &:before {
+                content: "&#8470;";
+                font-size: 1rem;
+            }
+            &__category {
+                color: $purple;
+            }
+        }
+        &__price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: $darkShade_50;
+            &__period {
+                font-weight: normal;
+                font-size: 1rem;
+                color: $darkShade_25;
+            }
+        }       
+    }
+    &__calc-table {
+        margin-bottom: 1.5rem;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: max-content max-content;
+        &__position_with-info:after {
+            content: "i";
+            border: 1px solid $darkShade_25;
+            border-radius: 50%;
+        }
+    &__total {
+        font-weight: bold;
+        font-size: 1.2rem;
+        &__literal::after {
+            content: "";
+            border-bottom: 1px solid $darkShade_25;
+            width: 100%;
+        }
+    }
+    }
+
+
+
     
 }
