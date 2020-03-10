@@ -1,14 +1,22 @@
 mixin card_for_price-calc(options)
-    -let number = options.number || 100
-    -let category = options.category || "эконом"
-    -let period = options.period || "в неделю"
-    -let currency = options.currency || "&#8381;"
-    -let price = options.price || 100;
+    -let number = options.number || 888
+    -let category = options.category || "люкс"
+    -let period = options.period || "в сутки"
+    -let price = options.price || 9990;
     .card__room-data
         .card__room-data__number= number
-            .card__room-data__category= category
-        .card__room-data__price=price + currency 
-            .card__room-data__period= period
+            span.card__room-data__category= category
+        .card__room-data__price=price
+            span.card__room-data__period= period
+    .card__dates
+        +field({name:"прибытие"})
+            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+        +field({name: "выезд"})
+            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+    .card__guests
+        +field({name: "гости"})
+            +input({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: guests},
+            {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
     .card__calc-table
     .card__total
     .card__button

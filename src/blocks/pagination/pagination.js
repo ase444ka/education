@@ -8,13 +8,15 @@ document.addEventListener('click', function(event){
     /* -----------обработка троеточия------------ */
     if(list.contains('pagination__item_hidden')) {
         let firstItem = tar.parentElement.firstElementChild;
+        let current = tar.parentElement.querySelector('.pagination__item_current')
+        current.classList.remove('pagination__item_current')
+        firstItem.nextElementSibling.classList.add('pagination__item_current')
         let firstVal = 0
         if (firstItem.classList.contains('pagination__item_previous')) {
             firstVal = +firstItem.nextElementSibling.textContent + 2
         } else {
             firstVal = +firstItem.textContent + 3
             firstItem.classList.add('pagination__item_previous')
-            firstItem.classList.remove('pagination__item_current')
             firstItem.textContent = 'arrow_back'
         }
         tar.parentElement.children[1].textContent = firstVal

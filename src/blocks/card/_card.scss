@@ -21,29 +21,38 @@
         margin-bottom: 1.4rem;
     }
     &__room-data {
+        font-family: "Open Sans";
         display: flex;
         justify-content: space-between;
         margin-bottom: 1.5rem;
+        padding-top: 0.4rem;
+        align-items: flex-end;
+        &__category {
+            color: $purple;
+            font-size: 1.2rem;
+            padding-left: 0.4rem;
+        }
+        &__period {
+            font-weight: normal;
+            font-size: 0.85rem;
+            color: $darkShade_50;
+            &:before {
+                content: "\20BD";
+                @extend %price;
+            }
+        }
         &__number {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             &:before {
-                content: "&#8470;";
+                content: "\2116";
                 font-size: 1rem;
-            }
-            &__category {
-                color: $purple;
+                font-family: Montserrat;
+                margin-right: 0.4rem;
             }
         }
         &__price {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: $darkShade_50;
-            &__period {
-                font-weight: normal;
-                font-size: 1rem;
-                color: $darkShade_25;
-            }
+            @extend %price;        
         }       
     }
     &__calc-table {
@@ -65,9 +74,11 @@
             width: 100%;
         }
     }
-    }
-
-
-
-    
+    }   
+}
+%price {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: $darkShade_50;
 }
