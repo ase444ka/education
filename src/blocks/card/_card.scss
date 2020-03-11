@@ -1,5 +1,5 @@
 .card {
-    padding: 2.8rem 2.2rem;
+    padding: 2.7rem 2.2rem;
     box-shadow:  0 0 2rem 0.5rem $darkShade_25;
     background-color: white;
     font-family: Montserrat;
@@ -56,25 +56,56 @@
         }       
     }
     &__calc-table {
+        color: $darkShade_75;
+        font-family: "Open Sans";
+        margin-top: -0.1rem;
         margin-bottom: 1.5rem;
+        letter-spacing: 0.5;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 5fr 2fr;
+        grid-auto-rows: 2.45rem;
+        line-height: 1.25;
+        &__price, &__position {
+            padding-top: 0.25rem;
+        }
+        &__position_with-info {
+            position: relative;
+        }
+        &__position_with-info:after {
+            content: "i";
+            width: 1.3rem;
+            height: 1.2rem;
+            text-align: center;
+            padding-top: 0.1rem;
+            border: 1px solid $darkShade_50;
+            color: $darkShade_50;
+            border-radius: 50%;
+            position: absolute;
+            right: -0.9rem;
+            top: 0.1rem;
+            font-size: 0.9rem;
+        }
+        &__price {
+            justify-self: flex-end;
+            padding-right: 0.1rem;
+        }
+    }
+    &__total {
+        margin-top: 2.6rem;
+        margin-bottom: 0.8rem;
         display: grid;
         justify-content: space-between;
         grid-template-columns: max-content max-content;
-        &__position_with-info:after {
-            content: "i";
-            border: 1px solid $darkShade_25;
-            border-radius: 50%;
-        }
-    &__total {
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         &__literal::after {
             content: "";
             border-bottom: 1px solid $darkShade_25;
             width: 100%;
         }
     }
-    }   
+   
 }
 %price {
     font-family: Montserrat;

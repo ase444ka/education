@@ -18,6 +18,14 @@ mixin card_for_price-calc(options)
             +input({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: guests},
             {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
     .card__calc-table
+        .card__calc-table__position 9 990&#8381; x 4 суток
+        .card__calc-table__price 39 960&#8381;
+        .card__calc-table__position.card__calc-table__position_with-info Сбор за услуги: скидка 2 179₽
+        .card__calc-table__price 0&#8381;
+        .card__calc-table__position.card__calc-table__position_with-info Сбор за дополнительные услуги
+        .card__calc-table__price 300&#8381;
     .card__total
+        .card__total__literal Итого
+        .card__total__price 38 081&#8381;
     .card__button
             +button("подобрать номер")(class = "button_target_payment")
