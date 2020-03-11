@@ -549,6 +549,12 @@ document.addEventListener('click', function (event) {
 
   if (list.contains('pagination__item_hidden')) {
     var firstItem = tar.parentElement.firstElementChild;
+
+    var _current = tar.parentElement.querySelector('.pagination__item_current');
+
+    _current.classList.remove('pagination__item_current');
+
+    firstItem.nextElementSibling.classList.add('pagination__item_current');
     var firstVal = 0;
 
     if (firstItem.classList.contains('pagination__item_previous')) {
@@ -556,7 +562,6 @@ document.addEventListener('click', function (event) {
     } else {
       firstVal = +firstItem.textContent + 3;
       firstItem.classList.add('pagination__item_previous');
-      firstItem.classList.remove('pagination__item_current');
       firstItem.textContent = 'arrow_back';
     }
 
@@ -592,11 +597,11 @@ document.addEventListener('click', function (event) {
 
 
   if (list.contains('pagination__item_next')) {
-    var _current = tar.parentElement.querySelector('.pagination__item_current');
+    var _current2 = tar.parentElement.querySelector('.pagination__item_current');
 
     var _firstVal = +tar.previousElementSibling.textContent + 1;
 
-    _current.classList.remove('pagination__item_current');
+    _current2.classList.remove('pagination__item_current');
 
     tar.parentElement.children[0].textContent = "arrow_back";
     tar.parentElement.children[0].classList.add('pagination__item_previous');
@@ -636,9 +641,9 @@ document.addEventListener('click', function (event) {
 
 
   if (tar.classList.contains('pagination__item_previous')) {
-    var _current2 = tar.parentNode.querySelector('.pagination__item_current');
+    var _current3 = tar.parentNode.querySelector('.pagination__item_current');
 
-    _current2.classList.remove('pagination__item_current');
+    _current3.classList.remove('pagination__item_current');
 
     var first = +tar.nextElementSibling.textContent - offset - 1;
     if (first < 1) first = 1;
