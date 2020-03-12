@@ -1,0 +1,12 @@
+
+@import './css/datepicker.scss';
+.calendar {
+    background: white;
+    border: 1px solid $darkShade_50;
+    border-radius: 4px;
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1.35rem 1rem;
+    }
+}

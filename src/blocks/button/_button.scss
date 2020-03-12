@@ -63,7 +63,11 @@ $_blue: blue($purple);
     z-index: -1;
     opacity: 0.5;
 }
+.button_simple {
+    padding: 0;
+}
 .button_simple button {
+    padding: 0;
     background: none;
     color: $purple;
 }
