@@ -59,19 +59,41 @@
     width: 100%;
     height: 100%;
     &.-in-range- {
-      opacity: 25%;
-      width: 100%;
+      background: none;
+      position: relative;
       border: none;
       border-radius: unset;
+      color: black;
+      &:before {
+        content: "";
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 25%;
+      }
+      
     }
    }
     .datepicker--cell.-current-.-focus- {
       color: #4a4a4a; }
 
   .datepicker--cell.-in-range- {
-    background-color: $purple;
-    opacity: 25%;
+    position: relative;
     width: 100%;
+      &:after {
+        content: "";
+        background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        opacity: 25%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      } 
+    
      }
   .datepicker--cell.-disabled- {
     cursor: default;
@@ -103,7 +125,7 @@
         width: 50%;
         height: 100%;
         top: 0;
-        background: $purple;
+        background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         opacity: 25%;
   }
 /*   .datepicker--cell.-range-from- {
@@ -132,12 +154,8 @@
     cursor: default; }
 
 .datepicker--days-names {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(7, 2.85rem);
   margin: 1.35rem 1rem 1rem 1.2rem;
  }
 
