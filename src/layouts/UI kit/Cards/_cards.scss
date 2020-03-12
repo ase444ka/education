@@ -2,9 +2,20 @@
     display: grid;
     align-items: flex-start;
     grid-template-rows: max-content max-content max-content;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 380px repeat(2, 1fr);
     grid-gap: 4rem;
     background-color: $darkShade_05;
+  }
+  @media only screen and (max-width: 830px) {
+    #cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media only screen and (max-width: 675px) {
+    #cards {
+      grid-template-columns: 1fr;
+    }
+    
   }
 @import "../../../blocks/card/card";
 @import "../../../blocks/calendar/calendar";

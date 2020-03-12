@@ -17,6 +17,13 @@ $right: percentage(191/1362);
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 675px) {
+  #colorsAndType {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 
 @import 'Logo/logo';

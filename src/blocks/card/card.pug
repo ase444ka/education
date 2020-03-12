@@ -1,5 +1,6 @@
 include ./_for_room-choice/card_for_room-choice
 include ./_for_price-calc/card_for_price-calc
+include ./_for_registration/card_for_registration
 mixin card(type, options)
     -let modificator = "card_for_" + type
     .card(class = modificator)
@@ -8,3 +9,5 @@ mixin card(type, options)
                 +card_for_room-choice(options)
             when "price-calc"
                 +card_for_price-calc(options)
+            when "registration"
+                +card_for_registration(options)
