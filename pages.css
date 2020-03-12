@@ -226,7 +226,7 @@ h2, .input__option-iteration {
   line-height: 1.3;
   letter-spacing: 0.001em; }
 
-h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .input__button, .button button {
+h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .input__button, .button button, .card__input-name {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.8;
@@ -389,6 +389,7 @@ p {
   width: 76%; }
 
 .input {
+  height: 3.15rem;
   cursor: text;
   width: 100%;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -780,8 +781,6 @@ Build date: 2019-12-19 16:51:02
   display: block;
   font-size: 1rem;
   padding-left: 30px;
-  padding-top: 1.1rem;
-  padding-bottom: 1px;
   cursor: pointer;
   font-family: Montserrat; }
 
@@ -821,7 +820,7 @@ Build date: 2019-12-19 16:51:02
 .toggle {
   position: relative;
   display: block;
-  padding: 1rem 3.5rem 0.3rem; }
+  padding-left: 3.5rem; }
 
 .toggle__input {
   opacity: 0;
@@ -833,7 +832,7 @@ Build date: 2019-12-19 16:51:02
   height: 1.38rem;
   width: 2.9rem;
   border: 1px solid rgba(31, 32, 65, 0.5);
-  top: 0.8rem;
+  top: -0.1rem;
   left: 0;
   bottom: 0;
   cursor: pointer;
@@ -1161,7 +1160,7 @@ Build date: 2019-12-19 16:51:02
   display: grid;
   align-items: flex-start;
   grid-template-rows: max-content max-content max-content;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 380px repeat(2, 1fr);
   grid-gap: 4rem;
   background-color: rgba(31, 32, 65, 0.05); }
 
@@ -1260,6 +1259,25 @@ Build date: 2019-12-19 16:51:02
       content: "";
       border-bottom: 1px solid rgba(31, 32, 65, 0.25);
       width: 100%; }
+  .card__input {
+    padding-top: 0.3rem;
+    margin-bottom: 0.4rem; }
+  .card__radio {
+    margin-top: 0.9rem;
+    margin-bottom: 1.7rem; }
+  .card__input-name {
+    margin-top: 1.2rem;
+    margin-bottom: -0.2rem;
+    font-weight: bold;
+    color: rgba(31, 32, 65, 0.75); }
+  .card__offers-setter {
+    padding-top: 0.4rem;
+    margin-bottom: 1.1rem; }
+  .card__account-existance-check {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.4rem; }
 
 .card__room-data__period:before, .card__room-data__price {
   font-family: Montserrat;
