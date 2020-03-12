@@ -244,6 +244,11 @@ body {
   display: flex;
   justify-content: space-between; }
 
+@media only screen and (max-width: 675px) {
+  #colorsAndType {
+    flex-direction: column;
+    align-items: center; } }
+
 #logo {
   position: fixed;
   left: 35px;
@@ -1159,6 +1164,14 @@ Build date: 2019-12-19 16:51:02
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
   background-color: rgba(31, 32, 65, 0.05); }
+
+@media only screen and (max-width: 830px) {
+  #cards {
+    grid-template-columns: 1fr 1fr; } }
+
+@media only screen and (max-width: 675px) {
+  #cards {
+    grid-template-columns: 1fr; } }
 
 .card {
   padding: 2.7rem 2.2rem;
