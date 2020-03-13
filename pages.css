@@ -396,7 +396,7 @@ p {
   border-radius: 4px;
   outline: none;
   position: relative; }
-  .input i {
+  .input__i {
     position: absolute;
     color: rgba(31, 32, 65, 0.5);
     cursor: pointer;
@@ -1540,12 +1540,12 @@ Build date: 2019-12-19 16:51:02
   color: #4a4a4a;
   width: 100%;
   position: absolute;
+  z-index: 2000;
   left: -100000px;
   opacity: 0;
   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
-  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
-  z-index: 100; }
+  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease; }
 
 .datepicker.-from-top- {
   -webkit-transform: translateY(-8px);
@@ -1574,7 +1574,8 @@ Build date: 2019-12-19 16:51:02
 .datepicker-inline .datepicker {
   border-color: #d7d7d7;
   box-shadow: none;
-  position: static;
+  position: relative;
+  z-index: 1000;
   left: auto;
   right: auto;
   opacity: 1;

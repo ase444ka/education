@@ -258,7 +258,7 @@ $('.calendar__body').datepicker({
       prevHtml: '<i class="material-icons">arrow_back</i>',
       nextHtml: '<i class="material-icons">arrow_forward</i>',
       navTitles: {
-        days: 'MM  &nbsp; <i>yyyy</i>',
+        days: 'MM  &nbsp; <span>yyyy</span>',
         months: 'yyyy',
         years: 'yyyy1 - yyyy2'
       },
@@ -2537,10 +2537,10 @@ $('.input__button_target_apply').click(function () {
 
 /***/ }),
 
-/***/ "./blocks/input/_type_select/input_type_select.js":
-/*!********************************************************!*\
-  !*** ./blocks/input/_type_select/input_type_select.js ***!
-  \********************************************************/
+/***/ "./blocks/input/_type/input_type_select.js":
+/*!*************************************************!*\
+  !*** ./blocks/input/_type/input_type_select.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2702,8 +2702,8 @@ var data = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _type_select_input_type_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_type_select/input_type_select */ "./blocks/input/_type_select/input_type_select.js");
-/* harmony import */ var _type_select_input_type_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_type_select_input_type_select__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _type_input_type_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_type/input_type_select */ "./blocks/input/_type/input_type_select.js");
+/* harmony import */ var _type_input_type_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_type_input_type_select__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _option_iteration_decrement_input_option_iteration_decrement_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./__option-iteration/_decrement/input__option-iteration_decrement.js */ "./blocks/input/__option-iteration/_decrement/input__option-iteration_decrement.js");
 /* harmony import */ var _option_iteration_decrement_input_option_iteration_decrement_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_option_iteration_decrement_input_option_iteration_decrement_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _option_iteration_increment_input_option_iteration_increment_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./__option-iteration/_increment/input__option-iteration_increment.js */ "./blocks/input/__option-iteration/_increment/input__option-iteration_increment.js");
