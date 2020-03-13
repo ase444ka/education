@@ -3,16 +3,20 @@ mixin input(data, ...items)
     -let expanded = data.expanded? "input_expanded ":""
     -let target = '';
     -if (data.target) target = data.target;
-    -let select = data.select? "input_type_select ":""
+    -let type = data.select? "input_type_select ":""
+    -let date = data.dateFirst? "input_type_dateFirst datepicker-here": 
+    -data.dateLast? "input_type_dateLast":
+    -data.date? "input_type_date datepicker-here":"";
+
     -let hovered = data.hovered? "input_hovered ":""
     -let material = ""
     -if (data.select) material = "expand_more"
     -if (data.mail) material = "arrow_forward"
 
-    -let classes = expanded + select + hovered
+    -let classes = expanded + type + hovered + date
 
     div.input(class= classes, data-target = target)
-        i.material-icons=material
+        i.material-icons.input__i=material
         div.input__placeholder=data.select? data.placeholder:""
             if !data.select
                 input(placeholder=data.placeholder)

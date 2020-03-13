@@ -56,7 +56,7 @@
             prevHtml: '<i class="material-icons">arrow_back</i>',
             nextHtml: '<i class="material-icons">arrow_forward</i>',
             navTitles: {
-                days: 'MM  &nbsp; <i>yyyy</i>',
+                days: 'MM  &nbsp; <span>yyyy</span>',
                 months: 'yyyy',
                 years: 'yyyy1 - yyyy2'
             },

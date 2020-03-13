@@ -8,7 +8,7 @@
     border-radius: 4px;
     outline: none;
     position: relative;
-    i {
+    &__i {
       position: absolute;
       color: $darkShade_50;
       cursor: pointer;
@@ -24,7 +24,7 @@
     }
 }
 
-@import "_type_select/input_type_select";
+@import "_type/input_type_select";
 @import "_expanded/input_expanded";
 @import "_hovered/input_hovered";
 @import "__placeholder/input__placeholder";

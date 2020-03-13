@@ -1,0 +1,12 @@
+mixin card_for_login(options)
+    .card__header=options.header||"Войти"
+    .card__input
+        +input({placeholder: "Email"})
+    .card__input
+        +input({placeholder: "Пароль"})
+    .card__button
+        +button("войти")(class = "button_target_payment")
+    .card__account-existance-check
+        .card__account-existance-check__text Нет аккаунта на Toxin?
+        .card__account-existance-check__button 
+            +button("создать")
