@@ -1,10 +1,7 @@
 mixin card_for_room-choice(options)
         .card__header=options.header||"Найдем номера под ваши пожелания"
         .card__dates
-            +field({name:"прибытие"})
-                +input({placeholder: "ДД.ММ.ГГГГ", select: true, dateFirst: true})
-            +field({name: "выезд"})
-                +input({placeholder: "ДД.ММ.ГГГГ", select: true, dateLast: true})
+            +date-diapazon()
         .card__guests
             +field({name: "гости"})
                 +input({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: guests},

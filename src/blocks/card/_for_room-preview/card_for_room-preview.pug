@@ -1,0 +1,20 @@
+mixin card_for_room-preview(options)
+    -let number = options.number || 888
+    -let category = options.category || "люкс"
+    -let period = options.period || "в сутки"
+    -let price = options.price || 9990;
+    -let rating = options.rating || 0;
+    -let jpg = options.jpg || "room_preview1"
+    -let feeds = options.feeds || 0
+    .card__room-preview
+        img(src=require(`Images/${jpg}.jpg`).default)
+    .card__room-data
+        .card__room-data__number= number
+            span.card__room-data__category= category
+        .card__room-data__price=price
+            span.card__room-data__period= period
+    .card__room-feedback
+        +rate({stars: rating})
+        .card__feeds
+            span=feeds
+            | отзывов

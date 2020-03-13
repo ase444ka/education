@@ -1,0 +1,10 @@
+-let idVal = "input_id_" + parseInt(Math.random()*100)
+
+mixin date-diapazon(first="прибытие",last="выезд")
+    -let idVal = "input_id_" + parseInt(Math.random()*100)
+    +field({name: first})
+        label(for = idVal)
+            +input({type: "select", dateFirst: true})(id = idVal)
+    +field({name: first})
+        label(for = idVal) 
+            +input({type: "select", dateLast: true})
