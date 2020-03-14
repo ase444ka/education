@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    padding: 2rem 10rem;
+    background: url("../../icons/Logo.svg") no-repeat;
+    &__nav {
+        display: flex;
+        &__item {
+            color: $darkShade_25;
+            &_current {
+                color: $darkShade_75;
+            }
+            &_expandable{
+                position: relative;
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: "expand_more";
+                    font-family: 'Material Icons';
+                    font-size: 1.7rem;
+                    color: #BC9CFF; }
+            }
+        }
+    }
+    &__user-info {
+        border-left: 1px solid $darkShade_25;
+    }
+    &__buttons {
+        display: flex;
+    }
+}

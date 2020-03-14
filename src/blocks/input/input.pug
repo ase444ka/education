@@ -4,9 +4,9 @@ mixin input(data, ...items)
     -let target = '';
     -if (data.target) target = data.target;
     -let type = data.select? "input_type_select ":""
-    -let date = data.dateFirst? "input_type_dateFirst datepicker-here": 
+    -let date = data.dateFirst? "input_type_dateFirst": 
     -data.dateLast? "input_type_dateLast":
-    -data.date? "input_type_date datepicker-here":"";
+    -data.date? "input_type_date":"";
 
     -let hovered = data.hovered? "input_hovered ":""
     -let material = ""
