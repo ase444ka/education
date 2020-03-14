@@ -1229,6 +1229,12 @@ Build date: 2019-12-19 16:51:02
         font-size: 1rem;
         font-family: Montserrat;
         margin-right: 0.4rem; }
+    .card__room-data_small {
+      margin-left: -0.9rem;
+      margin-right: -0.9rem;
+      margin-bottom: 0.5rem; }
+      .card__room-data_small .card__room-data__number {
+        font-size: 1.2rem; }
   .card__calc-table {
     color: rgba(31, 32, 65, 0.75);
     font-family: "Open Sans";
@@ -1291,6 +1297,39 @@ Build date: 2019-12-19 16:51:02
     align-items: center;
     justify-content: space-between;
     padding-top: 0.4rem; }
+  .card_for_room-preview {
+    box-shadow: none;
+    border-radius: 4px;
+    width: 270px;
+    overflow: hidden; }
+  .card__room-preview {
+    position: relative;
+    height: 8em;
+    margin-bottom: 1.4rem; }
+    .card__room-preview:before {
+      content: "brightness_1 panorama_fish_eye  panorama_fish_eye  panorama_fish_eye";
+      font-family: "Material Icons";
+      position: absolute;
+      font-size: 0.66rem;
+      bottom: 0.9rem;
+      right: -1.2rem;
+      color: white;
+      z-index: 1000; }
+    .card__room-preview__image {
+      position: absolute;
+      top: -2.7rem;
+      left: -2.2rem; }
+  .card__room-feedback {
+    display: flex;
+    border-top: 2px solid rgba(31, 32, 65, 0.05);
+    margin-left: -0.9rem;
+    margin-right: -0.9rem; }
+    .card__room-feedback__feeds {
+      color: rgba(31, 32, 65, 0.5);
+      align-self: flex-end;
+      padding-top: 1.4rem; }
+      .card__room-feedback__feeds strong {
+        font-weight: bold; }
 
 .card__room-data__period:before, .card__room-data__price {
   font-family: Montserrat;
@@ -2061,6 +2100,31 @@ Build date: 2019-12-19 16:51:02
     display: flex;
     justify-content: space-between;
     padding: 0 1.35rem 1rem; }
+
+.header {
+  display: flex;
+  padding: 2rem 10rem;
+  background: url(https://ase444ka.github.io/Education/icons/Logo.svg) no-repeat; }
+  .header__nav {
+    display: flex; }
+    .header__nav__item {
+      color: rgba(31, 32, 65, 0.25); }
+      .header__nav__item_current {
+        color: rgba(31, 32, 65, 0.75); }
+      .header__nav__item_expandable {
+        position: relative; }
+        .header__nav__item_expandable:after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          content: "expand_more";
+          font-family: 'Material Icons';
+          font-size: 1.7rem;
+          color: #BC9CFF; }
+  .header__user-info {
+    border-left: 1px solid rgba(31, 32, 65, 0.25); }
+  .header__buttons {
+    display: flex; }
 
 @media only screen and (max-width: 830px) {
   body {
