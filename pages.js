@@ -2384,6 +2384,26 @@ $('.calendar__body').datepicker({
 
 /***/ }),
 
+/***/ "./blocks/date-diapazon/date-diapazon.js":
+/*!***********************************************!*\
+  !*** ./blocks/date-diapazon/date-diapazon.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$('.date-diapazon').datepicker({
+  onSelect: function onSelect(fd, d, picker) {
+    var id = picker.el.id.slice(-2);
+    var firstInputId = "#date-diapazon__first_id_" + id;
+    var secondInputId = "#date-diapazon__last_id_" + id;
+    $(firstInputId).val(fd.split("-")[0]);
+    $(secondInputId).val(fd.split("-")[1]);
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./blocks/expandable/expandable.js":
 /*!*****************************************!*\
   !*** ./blocks/expandable/expandable.js ***!
@@ -3108,6 +3128,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var Blocks_button_button__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(Blocks_button_button__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var Blocks_pagination_pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! Blocks/pagination/pagination */ "./blocks/pagination/pagination.js");
 /* harmony import */ var Blocks_pagination_pagination__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(Blocks_pagination_pagination__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var Blocks_date_diapazon_date_diapazon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! Blocks/date-diapazon/date-diapazon */ "./blocks/date-diapazon/date-diapazon.js");
+/* harmony import */ var Blocks_date_diapazon_date_diapazon__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(Blocks_date_diapazon_date_diapazon__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 
@@ -3130,8 +3153,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UIKit_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UIKit.scss */ "./layouts/UI kit/UIKit.scss");
 /* harmony import */ var _UIKit_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_UIKit_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Forms_forms_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Forms/forms.js */ "./layouts/UI kit/Forms/forms.js");
-/* harmony import */ var _Cards_cards_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cards/cards.js */ "./layouts/UI kit/Cards/cards.js");
+/* harmony import */ var _Cards_cards_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cards/cards.js */ "./layouts/UI kit/Cards/cards.js");
+/* harmony import */ var _Forms_forms_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Forms/forms.js */ "./layouts/UI kit/Forms/forms.js");
 
 
 
