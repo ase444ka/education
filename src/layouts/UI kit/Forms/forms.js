@@ -6,3 +6,4 @@ import 'Blocks/like/like';
 import 'Blocks/rate/rate';
 import 'Blocks/button/button';
 import 'Blocks/pagination/pagination';
+import 'Blocks/date-diapazon/date-diapazon';
