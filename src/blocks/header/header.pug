@@ -10,5 +10,5 @@ mixin header(user=false, ...items)
             .header__user-info=user
         else
             .header__buttons
-                +button("login")
-                +button("register")
+                +button({text:"login", color: "white", size: "slim"})
+                +button({text:"register", color: "purple", size: "slim"})

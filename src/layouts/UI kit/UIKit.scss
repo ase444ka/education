@@ -6,9 +6,10 @@ $top: percentage(140/1362);
 $right: percentage(191/1362);
 @mixin bodyMargins($left, $top, $right) {
   body {
-    margin-left: $left;
-    margin-top: $top;
-    margin-right: $right;
+    margin: 2rem 10rem;
+  /*   margin-left: $left;
+    margin-top: $top; */
+   // margin-right: $right;
   }
 }
 

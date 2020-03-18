@@ -1,31 +1,46 @@
 .header {
+    opacity: 0.99;
+    box-shadow: 0px 10px 20px $darkShade_05;
     display: flex;
-    padding: 2rem 10rem;
-    background: url("../../icons/Logo.svg") no-repeat;
+    justify-content: flex-end;
+    padding: 1rem 0 1rem 10rem;
+    background: white url(../../icons/Logo.svg) no-repeat;
+    background-position-y: 1rem;
+    align-items: center;
+    color: $darkShade_50;
+  /*   &__content-wrapper {
+        width: 80%;
+    } */
     &__nav {
         display: flex;
         &__item {
-            color: $darkShade_25;
+            padding: 1rem 1.25rem;
             &_current {
                 color: $darkShade_75;
+                font-weight: bold;
             }
             &_expandable{
                 position: relative;
+                padding-right: 2rem;
                 &:after {
                     position: absolute;
-                    top: 0;
-                    right: 0;
+                    top: 0.75rem;
+                    right: auto;
                     content: "expand_more";
                     font-family: 'Material Icons';
                     font-size: 1.7rem;
-                    color: #BC9CFF; }
+                }
             }
         }
     }
     &__user-info {
         border-left: 1px solid $darkShade_25;
+        padding: 0.65rem 0 0.65rem 2.35rem;
     }
     &__buttons {
         display: flex;
+        & .button {
+            margin-left: 1.5rem;
+        }
     }
 }
