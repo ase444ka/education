@@ -1,0 +1,15 @@
+
+.date-diapazon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    position: relative;
+    input {
+        height: 3.15rem;
+        width: 100%;
+        border: 1px solid $darkShade_25;
+        border-radius: 4px;
+        outline: none;       
+    }
+}

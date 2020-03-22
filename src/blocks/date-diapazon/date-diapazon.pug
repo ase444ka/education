@@ -1,12 +1,6 @@
--let idVal = "input_id_" + parseInt(Math.random()*100)
-
 mixin date-diapazon(first="прибытие",last="выезд")
-    -let id = parseInt(Math.random()*100)
-    -let idFirst = "date-diapazon__first_id_" + id
-    -let idLast = "date-diapazon__last_id_" + id
-    +field({name: first})
-        label(for = idFirst)
-            input.date-diapazon(id = idFirst, class = "datepicker-here",  data-range="true" data-multiple-dates-separator=" - ")
-    +field({name: first})
-        label(for = idFirst) 
-            input.date-diapazon(id = idLast)
+    .date-diapazon
+        +field({name: first})
+            input.date-diapazon__start(class = "datepicker-here",  data-range="true" data-multiple-dates-separator=" - ")
+        +field({name: last})
+            input.date-diapazon__end(class = "datepicker-here",  data-range="true" data-multiple-dates-separator=" - ")
