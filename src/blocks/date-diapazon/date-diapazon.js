@@ -3,24 +3,27 @@ class DateDiapazon {
       this.component = component;
       const $start = $('.date-diapazon__start', this.component);
       const $end = $('.date-diapazon__end', this.component);
-      this._attachEventHandler($start, $end);
+      const $endOffset = $end.parent().parent().position().left;
+      this._attachEventHandler($start, $end, $endOffset);
     }
-    _attachEventHandler($start, $end) {
+    _attachEventHandler($start, $end, $endOffset) {
       $start.datepicker({
         onSelect: function (fd, d, picker) {
-            console.log(fd);
             $start.val(fd.split("-")[0]);
             $end.val(fd.split("-")[1]);
         },
         clearButton: 'true',
+        position: "left bottom",
+        offset: 0
       });
       $end.datepicker({
         onSelect: function (fd, d, picker) {
-            console.log(fd);
             $start.val(fd.split("-")[0]);
             $end.val(fd.split("-")[1]);
         },
         clearButton: 'true',
+        position: "left bottom",
+        offset: $endOffset,
       });
       
     }
