@@ -8,7 +8,7 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(7, 2.85rem);
+  grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(auto-fit, 2.86rem);
   font-family: Montserrat;
  font-size: 0.9rem;
@@ -128,7 +128,7 @@
 
 .datepicker--days-names {
   display: grid;
-  grid-template-columns: repeat(7, 2.85rem);
+  grid-template-columns: repeat(7, 1fr);
   margin: 1.35rem 1rem 1rem 1.2rem;
  }
 
@@ -198,9 +198,6 @@
   width: 100%;
   position: absolute;
   z-index: 2000;
-  left: 0px;
-  right: 0px;
-  max-height: 0;
   opacity: 0;
   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
@@ -359,6 +356,8 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  justify-content: space-between;
   padding: 4px;
   border-top: 1px solid #efefef; }
 

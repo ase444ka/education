@@ -1,6 +1,8 @@
 import "./js/datepicker"
-$('.calendar__body').datepicker({
+$('.calendar').datepicker({
     //inline: true,
     range: true,
-    multipleDates: true
+    multipleDates: true,
+    clearButton: true,
+    todayButton: true,
 })

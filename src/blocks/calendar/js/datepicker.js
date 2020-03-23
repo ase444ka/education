@@ -1478,7 +1478,7 @@
             daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
             months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
             monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-            today: 'Сегодня',
+            today: 'Применить',
             clear: 'Очистить',
             dateFormat: 'dd.mm.yyyy',
             timeFormat: 'hh:ii',
@@ -1810,7 +1810,7 @@
         '<div class="datepicker--nav-title">#{title}</div>' +
         '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',
         buttonsContainerTemplate = '<div class="datepicker--buttons"></div>',
-        button = '<span class="datepicker--button" data-action="#{action}">#{label}</span>',
+        button = '<button class="button button_theme_simple#{color}" data-action="#{action}">#{label}</span>',
         datepicker = $.fn.datepicker,
         dp = datepicker.Constructor;
 
@@ -1843,11 +1843,11 @@
         },
 
         _addButtonsIfNeed: function () {
-            if (this.opts.todayButton) {
-                this._addButton('today')
-            }
             if (this.opts.clearButton) {
                 this._addButton('clear')
+            }
+            if (this.opts.todayButton) {
+                this._addButton('today')
             }
         },
 
@@ -1869,12 +1869,14 @@
             if (!this.$buttonsContainer.length) {
                 this._addButtonsContainer();
             }
-
+            var color = type=="clear"?" button_color_darkShade":" ";
             var data = {
                     action: type,
+                    color: color,
                     label: this.d.loc[type]
                 },
                 html = dp.template(button, data);
+                console.log(html);
 
             if ($('[data-action=' + type + ']', this.$buttonsContainer).length) return;
             this.$buttonsContainer.append(html);

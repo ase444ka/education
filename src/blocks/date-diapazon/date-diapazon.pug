@@ -1,6 +1,6 @@
 mixin date-diapazon(first="прибытие",last="выезд")
     .date-diapazon
         +field({name: first})
-            input.date-diapazon__start(class = "datepicker-here",  data-range="true" data-multiple-dates-separator=" - ")
+            input.date-diapazon__start
         +field({name: last})
-            input.date-diapazon__end(class = "datepicker-here",  data-range="true" data-multiple-dates-separator=" - ")
+            input.date-diapazon__end
