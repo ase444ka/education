@@ -5,8 +5,8 @@ mixin card_for_login(options)
     .card__input
         +input({placeholder: "Пароль"})
     .card__button
-        +button("войти")(class = "button_target_payment")
+         +button({type: "active", color: "purple", text: "перейти к оплате"})
     .card__account-existance-check
-        .card__account-existance-check__text Нет аккаунта на Toxin?
-        .card__account-existance-check__button 
-            +button("создать")
+            .card__account-existance-check__text Нет аккаунта на Toxin?
+            .card__account-existance-check__button 
+                +button({text: "создать", color: "white"})

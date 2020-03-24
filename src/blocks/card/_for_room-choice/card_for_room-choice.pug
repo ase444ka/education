@@ -7,4 +7,4 @@ mixin card_for_room-choice(options)
                 +input({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: guests},
                 {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
         .card__button
-            +button("подобрать номер")(class = "button_target_payment")
+            +button({text: "подобрать номер", type: "active"})
