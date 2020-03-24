@@ -192,7 +192,7 @@
   border-radius: 4px;
   grid-template-rows: 1fr;
   background: #fff;
-  box-sizing: content-box;
+  padding: 2px;
   font-size: 14px;
   color: #4a4a4a;
   width: 100%;
@@ -229,7 +229,9 @@
 .datepicker--content {
   background: white;
   box-sizing: content-box;
-  padding: 4px; }
+  padding: 4px; 
+  padding-bottom: 2px;
+}
   .-only-timepicker- .datepicker--content {
     display: none; }
 
@@ -295,7 +297,7 @@
   background-color: white;
   width: 100%;
   color: $purple;
-  padding: 1.4rem  1.1rem;
+  padding: 1.35rem  1.1rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -358,8 +360,8 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 4px;
-  border-top: 1px solid #efefef; }
+  padding: 0 1.3rem 1rem;
+ }
 
 .datepicker--button {
   color: #4EB5E6;

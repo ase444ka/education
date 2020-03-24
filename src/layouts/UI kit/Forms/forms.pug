@@ -31,8 +31,7 @@ section#forms
              
     +field({name: "filter date dropdown", shorted: true})
         +input({placeholder: "19авг - 23авг", select: true})
-    +field({name: "masked text field", annotation: "default"})
-        +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+    +date-diapazon("date-dropdown","date-dropdown")
     +field({name: "subscription text field"})
         +input({placeholder: "Email", mail: true})
     

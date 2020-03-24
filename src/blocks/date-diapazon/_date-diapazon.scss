@@ -5,15 +5,55 @@
     grid-template-rows: 1fr;
     gap: 1.5rem;
     position: relative;
+    &__input-wrapper {
+        position: relative;
+        pointer-events: none;
+        &:after {
+            direction: ltr;
+            display: inline-block;
+            font-family: 'Material Icons';
+            color: $darkShade_75;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            text-transform: none;
+            white-space: nowrap;
+            word-wrap: normal;
+            font-feature-settings: 'liga';
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+            content: "expand_more";
+            position: absolute;
+            top: 0.7rem;
+            right: 0.6rem;
+            cursor: pointer;
+            pointer-events: all;
+        }
+        &_expanded:after {
+            content: "expand_less";
+        }
+    }
     input {
+        padding-left: 10px;
+        color: $darkShade_50;
         height: 3.15rem;
         width: 100%;
         border: 1px solid $darkShade_25;
         border-radius: 4px;
-        outline: none;       
+        outline: none; 
+            
     }
-    .datepicker-inline {
-        grid-column-start: 1;
-        grid-column-end: 3;
+    &__calendar {
+        position: absolute;
+        left: 0;
+        top: 4.8rem;
+        width: 100%;
+        transition: opacity 0.25s ease-in-out;
+    }
+    &__calendar_hidden {
+        opacity: 0;
+        pointer-events: none;
     }
 }
