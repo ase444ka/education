@@ -189,10 +189,12 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _js_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/datepicker */ "./blocks/calendar/js/datepicker.js");
 /* harmony import */ var _js_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_datepicker__WEBPACK_IMPORTED_MODULE_0__);
 
-$('.calendar__body').datepicker({
+$('.calendar').datepicker({
   //inline: true,
   range: true,
-  multipleDates: true
+  multipleDates: true,
+  clearButton: true,
+  todayButton: true
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
@@ -1674,7 +1676,7 @@ $('.calendar__body').datepicker({
         daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
         months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
         monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-        today: 'Сегодня',
+        today: 'Применить',
         clear: 'Очистить',
         dateFormat: 'dd.mm.yyyy',
         timeFormat: 'hh:ii',
@@ -1978,7 +1980,7 @@ $('.calendar__body').datepicker({
   (function () {
     var template = '' + '<div class="datepicker--nav-action" data-action="prev">#{prevHtml}</div>' + '<div class="datepicker--nav-title">#{title}</div>' + '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',
         buttonsContainerTemplate = '<div class="datepicker--buttons"></div>',
-        button = '<span class="datepicker--button" data-action="#{action}">#{label}</span>',
+        button = '<button class="button button_theme_simple#{color}" data-action="#{action}">#{label}</span>',
         datepicker = $.fn.datepicker,
         dp = datepicker.Constructor;
 
@@ -2008,12 +2010,12 @@ $('.calendar__body').datepicker({
         this._addButtonsIfNeed();
       },
       _addButtonsIfNeed: function _addButtonsIfNeed() {
-        if (this.opts.todayButton) {
-          this._addButton('today');
-        }
-
         if (this.opts.clearButton) {
           this._addButton('clear');
+        }
+
+        if (this.opts.todayButton) {
+          this._addButton('today');
         }
       },
       _render: function _render() {
@@ -2038,11 +2040,14 @@ $('.calendar__body').datepicker({
           this._addButtonsContainer();
         }
 
+        var color = type == "clear" ? " button_color_darkShade" : " ";
         var data = {
           action: type,
+          color: color,
           label: this.d.loc[type]
         },
             html = dp.template(button, data);
+        console.log(html);
         if ($('[data-action=' + type + ']', this.$buttonsContainer).length) return;
         this.$buttonsContainer.append(html);
       },
@@ -2391,15 +2396,102 @@ $('.calendar__body').datepicker({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {$('.date-diapazon').datepicker({
-  onSelect: function onSelect(fd, d, picker) {
-    var id = picker.el.id.slice(-2);
-    var firstInputId = "#date-diapazon__first_id_" + id;
-    var secondInputId = "#date-diapazon__last_id_" + id;
-    $(firstInputId).val(fd.split("-")[0]);
-    $(secondInputId).val(fd.split("-")[1]);
+/* WEBPACK VAR INJECTION */(function($) {function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+//объявление класса календаря с привязкой по двум инпутам
+var DateDiapazon = function DateDiapazon(component) {
+  var _$$datepicker;
+
+  _classCallCheck(this, DateDiapazon);
+
+  var $start = $('.date-diapazon__start', component);
+  var $end = $('.date-diapazon__end', component);
+  $(component).datepicker((_$$datepicker = {
+    onSelect: function onSelect(fd, d, picker) {
+      console.log($start);
+      console.log($end);
+      console.log(fd);
+      $start.val(fd.split(",")[0]);
+      $end.val(fd.split(",")[1]);
+    },
+    range: true,
+    clearButton: 'true',
+    offset: 0,
+    multipleDates: true
+  }, _defineProperty(_$$datepicker, "clearButton", true), _defineProperty(_$$datepicker, "todayButton", true), _$$datepicker));
+  $('.datepicker-inline', component).addClass('date-diapazon__calendar_hidden');
+  $('.datepicker-inline', component).addClass('date-diapazon__calendar');
+  $('[data-action="clear"]', component).addClass('date-diapazon__calendar__button_target_clear');
+  $('[data-action="today"]', component).addClass('date-diapazon__calendar__button_target_apply');
+}; //инициализация календаря с двойными инпутами на соотв. блоках
+
+
+$(function () {
+  $('.date-diapazon').each(function (index, node) {
+    new DateDiapazon(node);
+  });
+}); //отображение календаря
+
+var dateDiapazonShowCalendar = function dateDiapazonShowCalendar(event) {
+  var calendar = $('.datepicker-inline', event.target.closest('.date-diapazon'));
+
+  if ($(calendar).hasClass('date-diapazon__calendar_hidden')) {
+    $(calendar).removeClass('date-diapazon__calendar_hidden');
+    $('.date-diapazon__calendar__button_target_apply', event.target.closest('.date-diapazon')).click(dateDiapazonHideCalendar);
+    $('.date-diapazon__calendar__button_target_clear', event.target.closest('.date-diapazon')).click(dateDiapazonClearDates);
   }
+
+  return;
+}; //скрытие календаря
+
+
+var dateDiapazonHideCalendar = function dateDiapazonHideCalendar(event) {
+  var parent = event.target.closest('.date-diapazon');
+  var calendar = $('.datepicker-inline', parent);
+  var wrapperExpanded = $('.date-diapazon__input-wrapper_expanded', parent);
+  $(wrapperExpanded).removeClass('date-diapazon__input-wrapper_expanded');
+  $(calendar).addClass('date-diapazon__calendar_hidden');
+  return;
+}; //очистка инпутов с датами
+
+
+var dateDiapazonClearDates = function dateDiapazonClearDates(event) {
+  var start = $('.date-diapazon__start', event.target.closest('.date-diapazon'));
+  var end = $('.date-diapazon__end', event.target.closest('.date-diapazon'));
+  var inRange = event.target.closest('.date-diapazon').querySelectorAll('.-in-range-');
+  inRange.forEach(function (item) {
+    $(item).removeClass('-in-range-');
+    return;
+  });
+  var selected = event.target.closest('.date-diapazon').querySelectorAll('.-selected-');
+  selected.forEach(function (item) {
+    $(item).removeClass('-selected-');
+    return;
+  });
+  $('.-range-to-').removeClass('-range-to-');
+  $('.-range-from-').removeClass('-range-from-');
+  $(start).val('');
+  $(end).val('');
+  return;
+}; //клик на expand_more/less
+
+
+$('.date-diapazon__input-wrapper').click(function (event) {
+  //если календарь скрыт - покажем!
+  if ($(event.target.closest('.date-diapazon')).find('.date-diapazon__calendar_hidden').length) {
+    $(event.target).addClass('date-diapazon__input-wrapper_expanded');
+    dateDiapazonShowCalendar(event);
+  } //а если это expand_less - скроем календарь!
+  else if ($(event.target).hasClass('date-diapazon__input-wrapper_expanded')) {
+      dateDiapazonHideCalendar(event);
+    }
 });
+/* //разворачиваем календарь
+  $('.date-diapazon__start').click(dateDiapazonShowCalendar);
+  //разворачиваем календарь
+  $('.date-diapazon__end').click(dateDiapazonShowCalendar); */
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

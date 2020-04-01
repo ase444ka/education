@@ -226,7 +226,7 @@ h2, .input__option-iteration {
   line-height: 1.3;
   letter-spacing: 0.001em; }
 
-h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .input__button, .button button, .card__input-name {
+h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .input__button, .button, .card__input-name {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.8;
@@ -236,9 +236,9 @@ h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .in
   text-transform: uppercase; }
 
 body {
-  margin-left: 11.01322%;
-  margin-top: 10.279%;
-  margin-right: 14.02349%; }
+  margin: 2rem 10rem;
+  /*   margin-left: $left;
+    margin-top: $top; */ }
 
 #colorsAndType {
   display: flex;
@@ -336,6 +336,9 @@ p {
   grid-template-columns: 1fr 1fr 1fr; }
   #forms > div {
     margin: 5px; }
+
+.form__buttons .button {
+  margin: 0.8rem 1.3rem; }
 
 .span2 {
   grid-column: span 2; }
@@ -978,79 +981,75 @@ Build date: 2019-12-19 16:51:02
   content: "star"; }
 
 .button {
-  padding: 0.8rem 0; }
-
-.button button {
-  cursor: pointer;
-  background-color: transparent;
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   padding: 0.8rem 1.3rem;
-  color: white;
+  align-self: center;
+  cursor: pointer;
   border-radius: 3em; }
+  .button_active {
+    width: 100%;
+    position: relative; }
+    .button_active:after {
+      direction: ltr;
+      display: inline-block;
+      font-family: 'Material Icons';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-transform: none;
+      white-space: nowrap;
+      word-wrap: normal;
+      font-feature-settings: 'liga';
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+      content: "arrow_forward";
+      position: absolute;
+      top: 0.7rem;
+      right: 0.6rem; }
+  .button_disabled {
+    pointer-events: none; }
+  .button_transparent, .button:disabled {
+    opacity: 0.6; }
+  .button_clicking, .button:active, .button_color_white .button_transparent {
+    outline: none;
+    color: rgba(188, 156, 255, 0.4); }
+  .button_theme_simple {
+    padding: 0;
+    background: none;
+    color: #BC9CFF; }
+    .button_theme_simple.button_color_purple {
+      color: #BC9CFF;
+      background-image: none; }
+      .button_theme_simple.button_color_purple:hover {
+        color: rgba(31, 32, 65, 0.5); }
+      .button_theme_simple.button_color_purple:active {
+        color: rgba(31, 32, 65, 0.5);
+        opacity: 50%; }
+    .button_theme_simple.button_color_darkShade {
+      color: rgba(31, 32, 65, 0.5); }
+      .button_theme_simple.button_color_darkShade:hover {
+        color: #BC9CFF; }
+      .button_theme_simple.button_color_darkShade:active {
+        color: #BC9CFF;
+        opacity: 50%; }
+  .button:focus {
+    outline: none; }
+  .button_clicking:before, .button:active:before {
+    z-index: -1;
+    opacity: 0.5; }
+  .button_theme_simple:hover, .button_theme_simple.button_hovered {
+    color: rgba(31, 32, 65, 0.5) !important; }
+  .button_theme_simple:hover:before, .button_theme_simple.button_hovered:before {
+    display: none; }
+  .button_size_slim {
+    padding: 0.35rem 1.15rem; }
 
-.button_target_payment button {
-  width: 100%;
-  position: relative; }
-
-.button_target_payment button::after {
-  direction: ltr;
-  display: inline-block;
-  font-family: 'Material Icons';
-  font-size: 24px;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: normal;
-  line-height: 1;
-  text-transform: none;
-  white-space: nowrap;
-  word-wrap: normal;
-  font-feature-settings: 'liga';
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-  content: "arrow_forward";
-  position: absolute;
-  top: 0.7rem;
-  right: 0.6rem; }
-
-.button_disabled, .button_hovered, .button_clicking {
-  pointer-events: none; }
-
-.button_disabled button, .button button:disabled {
-  opacity: 0.6; }
-
-.button_hovered button:before, .button button:hover:before {
-  z-index: -1; }
-
-.button_clicking button, .button button:active {
-  outline: none;
-  color: rgba(188, 156, 255, 0.4) !important; }
-
-.button button:focus {
-  outline: none; }
-
-.button_clicking button:before, .button button:active:before {
-  z-index: -1;
-  opacity: 0.5; }
-
-.button_simple {
-  padding: 0; }
-
-.button_simple button {
-  padding: 0;
-  background: none;
-  color: #BC9CFF; }
-
-.button_simple button:hover, .button_simple.button_hovered button {
-  color: rgba(31, 32, 65, 0.5) !important; }
-
-.button_simple button:hover:before, .button_simple.button_hovered button::before {
-  display: none; }
-
-.button_hovered button:before, .button button:hover:before, .button_clicking button:before, .button button:active:before {
+.button_color_purple:hover:before, .button_color_white:before, .button_clicking:before, .button:active:before {
   border: 1px solid transparent;
   border-radius: 2.5rem; }
 
-.button_hovered button:before, .button button:hover:before, .button_clicking button:before, .button button:active:before {
+.button_color_purple:hover:before, .button_color_white:before, .button_clicking:before, .button:active:before {
   content: "";
   background-color: transparent;
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -1058,9 +1057,15 @@ Build date: 2019-12-19 16:51:02
   top: -2px;
   left: -2px;
   right: -2px;
-  bottom: -2px; }
+  bottom: -2px;
+  z-index: -1; }
 
-.button_hovered button, .button button:hover, .button_clicking button, .button button:active {
+.button_color_purple, .button_color_white:hover {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: white; }
+
+.button_color_purple:hover, .button_color_white, .button_clicking, .button:active, .button_color_white .button_transparent {
   color: #BC9CFF;
   background-image: none;
   background-color: white;
@@ -1169,6 +1174,57 @@ Build date: 2019-12-19 16:51:02
     padding-top: 0.4rem;
     font-weight: bold; }
 
+.date-diapazon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.5rem;
+  position: relative; }
+  .date-diapazon__input-wrapper {
+    position: relative;
+    pointer-events: none; }
+    .date-diapazon__input-wrapper:after {
+      direction: ltr;
+      display: inline-block;
+      font-family: 'Material Icons';
+      color: rgba(31, 32, 65, 0.75);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-transform: none;
+      white-space: nowrap;
+      word-wrap: normal;
+      font-feature-settings: 'liga';
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+      content: "expand_more";
+      position: absolute;
+      top: 0.7rem;
+      right: 0.6rem;
+      cursor: pointer;
+      pointer-events: all; }
+    .date-diapazon__input-wrapper_expanded:after {
+      content: "expand_less"; }
+  .date-diapazon input {
+    padding-left: 10px;
+    color: rgba(31, 32, 65, 0.5);
+    height: 3.15rem;
+    width: 100%;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    outline: none; }
+  .date-diapazon__calendar {
+    position: absolute;
+    left: 0;
+    top: 4.8rem;
+    width: 100%;
+    transition: opacity 0.25s ease-in-out; }
+  .date-diapazon__calendar_hidden {
+    opacity: 0;
+    pointer-events: none; }
+
 #cards {
   display: grid;
   align-items: flex-start;
@@ -1189,7 +1245,8 @@ Build date: 2019-12-19 16:51:02
   padding: 2.7rem 2.2rem;
   box-shadow: 0 0 2rem 0.5rem rgba(31, 32, 65, 0.25);
   background-color: white;
-  font-family: Montserrat; }
+  font-family: Montserrat;
+  opacity: 0.99; }
   .card__header {
     font-weight: bold;
     font-size: 1.5rem;
@@ -1197,10 +1254,6 @@ Build date: 2019-12-19 16:51:02
     letter-spacing: 0.001em;
     margin-bottom: 1.2rem; }
   .card__dates {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    justify-content: space-between;
     margin-bottom: 1.3rem; }
   .card__guests {
     margin-bottom: 1.4rem; }
@@ -1278,6 +1331,8 @@ Build date: 2019-12-19 16:51:02
       content: "";
       border-bottom: 1px solid rgba(31, 32, 65, 0.25);
       width: 100%; }
+  .card__button {
+    padding-top: 0.9rem; }
   .card__input {
     padding-top: 0.3rem;
     margin-bottom: 0.4rem; }
@@ -1293,10 +1348,10 @@ Build date: 2019-12-19 16:51:02
     padding-top: 0.4rem;
     margin-bottom: 1.1rem; }
   .card__account-existance-check {
+    padding-top: 2.1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 0.4rem; }
+    justify-content: space-between; }
   .card_for_room-preview {
     box-shadow: none;
     border-radius: 4px;
@@ -1337,33 +1392,6 @@ Build date: 2019-12-19 16:51:02
   font-size: 1.2rem;
   color: rgba(31, 32, 65, 0.5); }
 
-.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
-  color: #dedede; }
-
-.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
-  color: #c5c5c5; }
-
-.-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
-  color: #dedede; }
-
-.-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
-  color: #fff;
-  background: #a2ddf6; }
-
-.-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-  background: #8ad5f4; }
-
-.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.1);
-  color: #cccccc; }
-
-.-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.2); }
-
-.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
-  background: none;
-  border: none; }
-
 /* -------------------------------------------------
     Datepicker cells
    ------------------------------------------------- */
@@ -1372,7 +1400,7 @@ Build date: 2019-12-19 16:51:02
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(7, 2.85rem);
+  grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(auto-fit, 2.86rem);
   font-family: Montserrat;
   font-size: 0.9rem;
@@ -1469,16 +1497,6 @@ Build date: 2019-12-19 16:51:02
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   opacity: 25%; }
 
-/*   .datepicker--cell.-range-from- {
-    border: 1px solid rgba(92, 196, 239, 0.5);
-    background-color: rgba(92, 196, 239, 0.1);
-     }
-  .datepicker--cell.-range-to- {
-    border: 1px solid rgba(92, 196, 239, 0.5);
-    background-color: rgba(92, 196, 239, 0.1);
-    }
-  .datepicker--cell.-range-from-.-range-to- {
-    } */
 .datepicker--cell.-selected- {
   color: #fff;
   width: 100%;
@@ -1498,7 +1516,7 @@ Build date: 2019-12-19 16:51:02
 
 .datepicker--days-names {
   display: grid;
-  grid-template-columns: repeat(7, 2.85rem);
+  grid-template-columns: repeat(7, 1fr);
   margin: 1.35rem 1rem 1rem 1.2rem; }
 
 .datepicker--day-name {
@@ -1523,9 +1541,6 @@ Build date: 2019-12-19 16:51:02
 .datepicker--cell-day {
   width: 14.28571%; }
 
-.datepicker--cells-months {
-  height: 170px; }
-
 .datepicker--cell-month {
   width: 33.33%;
   height: 25%; }
@@ -1540,22 +1555,6 @@ Build date: 2019-12-19 16:51:02
   width: 25%;
   height: 33.33%; }
 
-/* .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
-  color: #dedede; }
-  .datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
-    color: #c5c5c5; }
-  .-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
-    color: #dedede; }
-  .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
-    color: #fff;
-    background: #a2ddf6; }
-    .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-      background: #8ad5f4; }
-  .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-    background-color: rgba(92, 196, 239, 0.1);
-    color: #cccccc; }
-    .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
-      background-color: rgba(92, 196, 239, 0.2); } */
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
   background: none;
   border: none; }
@@ -1573,34 +1572,21 @@ Build date: 2019-12-19 16:51:02
     display: none; } }
 
 .datepicker {
+  display: grid;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 4px;
+  grid-template-rows: 1fr;
   background: #fff;
-  box-sizing: content-box;
+  padding: 2px;
   font-size: 14px;
   color: #4a4a4a;
   width: 100%;
   position: absolute;
   z-index: 2000;
-  left: -100000px;
   opacity: 0;
   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease; }
-
-.datepicker.-from-top- {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px); }
-
-.datepicker.-from-right- {
-  -webkit-transform: translateX(8px);
-  transform: translateX(8px); }
-
-.datepicker.-from-bottom- {
-  -webkit-transform: translateY(8px);
-  transform: translateY(8px); }
-
-.datepicker.-from-left- {
-  -webkit-transform: translateX(-8px);
-  transform: translateX(-8px); }
 
 .datepicker.active {
   opacity: 1;
@@ -1625,20 +1611,13 @@ Build date: 2019-12-19 16:51:02
   display: none; }
 
 .datepicker--content {
+  background: white;
   box-sizing: content-box;
-  padding: 4px; }
+  padding: 4px;
+  padding-bottom: 2px; }
 
 .-only-timepicker- .datepicker--content {
   display: none; }
-
-.datepicker--pointer {
-  position: absolute;
-  background: #fff;
-  border-top: 1px solid #dbdbdb;
-  border-right: 1px solid #dbdbdb;
-  width: 10px;
-  height: 10px;
-  z-index: -1; }
 
 .-top-left- .datepicker--pointer, .-top-center- .datepicker--pointer, .-top-right- .datepicker--pointer {
   top: calc(100% - 4px);
@@ -1715,8 +1694,10 @@ Build date: 2019-12-19 16:51:02
     Navigation
    ------------------------------------------------- */
 .datepicker--nav {
+  background-color: white;
+  width: 100%;
   color: #BC9CFF;
-  padding: 1.4rem  1.1rem;
+  padding: 1.35rem  1.1rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1780,8 +1761,9 @@ Build date: 2019-12-19 16:51:02
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 4px;
-  border-top: 1px solid #efefef; }
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1.3rem 1rem; }
 
 .datepicker--button {
   color: #4EB5E6;
@@ -2046,25 +2028,22 @@ Build date: 2019-12-19 16:51:02
   width: 1em;
   height: 1em; }
 
-.datepicker--time-icon:after, .datepicker--time-icon:before {
-  content: '';
-  background: currentColor;
-  position: absolute; }
-
-.datepicker--time-icon:after {
-  height: .4em;
-  width: 1px;
-  left: calc(50% - 1px);
-  top: calc(50% + 1px);
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%); }
-
-.datepicker--time-icon:before {
-  width: .4em;
-  height: 1px;
-  top: calc(50% + 1px);
-  left: calc(50% - 1px); }
-
+/*   .datepicker--time-icon:after, .datepicker--time-icon:before {
+    content: '';
+    background: currentColor;
+    position: absolute; }
+  .datepicker--time-icon:after {
+    height: .4em;
+    width: 1px;
+    left: calc(50% - 1px);
+    top: calc(50% + 1px);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  .datepicker--time-icon:before {
+    width: .4em;
+    height: 1px;
+    top: calc(50% + 1px);
+    left: calc(50% - 1px); } */
 .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
   color: #dedede; }
 
@@ -2092,45 +2071,49 @@ Build date: 2019-12-19 16:51:02
   background: none;
   border: none; }
 
-.calendar {
-  background: white;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-radius: 4px; }
-  .calendar__buttons {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1.35rem 1rem; }
-
 .header {
+  opacity: 0.99;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   display: flex;
-  padding: 2rem 10rem;
-  background: url(https://ase444ka.github.io/Education/icons/Logo.svg) no-repeat; }
+  justify-content: flex-end;
+  padding: 1rem 0 1rem 10rem;
+  background: white url(https://ase444ka.github.io/Education/icons/Logo.svg) no-repeat;
+  background-position-y: 1rem;
+  align-items: center;
+  color: rgba(31, 32, 65, 0.5);
+  /*   &__content-wrapper {
+        width: 80%;
+    } */ }
   .header__nav {
     display: flex; }
     .header__nav__item {
-      color: rgba(31, 32, 65, 0.25); }
+      padding: 1rem 1.25rem; }
       .header__nav__item_current {
-        color: rgba(31, 32, 65, 0.75); }
+        color: rgba(31, 32, 65, 0.75);
+        font-weight: bold; }
       .header__nav__item_expandable {
-        position: relative; }
+        position: relative;
+        padding-right: 2rem; }
         .header__nav__item_expandable:after {
           position: absolute;
-          top: 0;
-          right: 0;
+          top: 0.75rem;
+          right: auto;
           content: "expand_more";
           font-family: 'Material Icons';
-          font-size: 1.7rem;
-          color: #BC9CFF; }
+          font-size: 1.7rem; }
   .header__user-info {
-    border-left: 1px solid rgba(31, 32, 65, 0.25); }
+    border-left: 1px solid rgba(31, 32, 65, 0.25);
+    padding: 0.65rem 0 0.65rem 2.35rem; }
   .header__buttons {
     display: flex; }
+    .header__buttons .button {
+      margin-left: 1.5rem; }
 
 @media only screen and (max-width: 830px) {
   body {
-    margin-left: 3%;
-    margin-top: 3%;
-    margin-right: 3%; } }
+    margin: 2rem 10rem;
+    /*   margin-left: $left;
+    margin-top: $top; */ } }
 
 @media only screen and (max-width: 675px) {
   #content {

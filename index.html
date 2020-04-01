@@ -154,19 +154,23 @@
                       </div>
               </div>
             </div>
-            <div class="field">
-              <div class="field__name">masked text field</div>
-              <div class="field__annotation">default</div>
-              <div class="field__content">
-                      <div class="input input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">ДД.ММ.ГГГГ
-                          <div class="input__customization">
-                            <ul class="input__options">
-                            </ul>
-                          </div>
+            <div class="date-diapazon">
+                    <div class="field">
+                      <div class="field__name">date-dropdown</div>
+                      <div class="field__content">
+                        <div class="date-diapazon__input-wrapper">
+                          <input class="date-diapazon__start" placeholder="ДД.ММ.ГГГГ"/>
                         </div>
                       </div>
-              </div>
+                    </div>
+                    <div class="field">
+                      <div class="field__name">date-dropdown</div>
+                      <div class="field__content">
+                        <div class="date-diapazon__input-wrapper">
+                          <input class="date-diapazon__end" placeholder="ДД.ММ.ГГГГ"/>
+                        </div>
+                      </div>
+                    </div>
             </div>
             <div class="field">
               <div class="field__name">subscription text field</div>
@@ -257,27 +261,13 @@
               <div class="field__name">buttons</div>
               <div class="field__content">
                 <div class="form__buttons">
-                        <div class="button">
-                          <button>click me</button>
-                        </div>
-                        <div class="button button_disabled">
-                          <button>click me</button>
-                        </div>
-                        <div class="button button_hovered">
-                          <button>click me</button>
-                        </div>
-                        <div class="button button_clicking">
-                          <button>click me</button>
-                        </div>
-                        <div class="button button_simple">
-                          <button>click me</button>
-                        </div>
-                        <div class="button button_simple button_hovered">
-                          <button>click me</button>
-                        </div>
-                        <div class="button button_target_payment">
-                          <button>перейти к оплате</button>
-                        </div>
+                        <button class="button  button_color_purple">click me</button>
+                        <button class="button  button_color_purple button_theme_transparent">click me</button>
+                        <button class="button  button_color_white">click me</button>
+                        <button class="button  button_color_white button_theme_transparent">click me</button>
+                        <button class="button  button_color_purple button_theme_simple">click me</button>
+                        <button class="button  button_color_darkShade button_theme_simple">click me</button>
+                        <button class="button  button_color_purple button_active">перейти к оплате</button>
                 </div>
               </div>
             </div>
@@ -595,22 +585,24 @@
             <div class="card card_for_room-choice">
                     <div class="card__header">Найдем номера под ваши пожелания</div>
                     <div class="card__dates">
-                                  <div class="field">
-                                    <div class="field__name">прибытие</div>
-                                    <div class="field__content">
-                                      <label for="date-diapazon__first_id_37">
-                                        <input class="date-diapazon datepicker-here" id="date-diapazon__first_id_37" data-range="true" data-multiple-dates-separator=" - "/>
-                                      </label>
+                            <div class="date-diapazon">
+                                    <div class="field">
+                                      <div class="field__name">прибытие</div>
+                                      <div class="field__content">
+                                        <div class="date-diapazon__input-wrapper">
+                                          <input class="date-diapazon__start" placeholder="ДД.ММ.ГГГГ"/>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div class="field">
-                                    <div class="field__name">прибытие</div>
-                                    <div class="field__content">
-                                      <label for="date-diapazon__first_id_37"> 
-                                        <input class="date-diapazon" id="date-diapazon__last_id_37"/>
-                                      </label>
+                                    <div class="field">
+                                      <div class="field__name">выезд</div>
+                                      <div class="field__content">
+                                        <div class="date-diapazon__input-wrapper">
+                                          <input class="date-diapazon__end" placeholder="ДД.ММ.ГГГГ"/>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
+                            </div>
                     </div>
                     <div class="card__guests">
                             <div class="field">
@@ -656,9 +648,7 @@
                             </div>
                     </div>
                     <div class="card__button">
-                            <div class="button button_target_payment">
-                              <button>подобрать номер</button>
-                            </div>
+                            <button class="button button_color_purple button_active">подобрать номер</button>
                     </div>
             </div>
             <div class="card card_for_price-calc">
@@ -750,22 +740,10 @@
                       <div class="card__total__price">38 081&#8381;</div>
                     </div>
                     <div class="card__button">
-                            <div class="button button_target_payment">
-                              <button>забронировать</button>
-                            </div>
+                            <button class="button button_color_purple button_active">забронировать</button>
                     </div>
             </div>
-            <div class="calendar">
-              <div class="calendar__body"></div>
-              <div class="calendar__buttons">
-                      <div class="button button_simple">
-                        <button>очистить</button>
-                      </div>
-                      <div class="button button_simple">
-                        <button>применить</button>
-                      </div>
-              </div>
-            </div>
+            <div class="calendar"></div>
             <div class="card card_for_registration">
                     <div class="card__header">Регистрация аккаунта</div>
                     <div class="card__input">
@@ -821,16 +799,12 @@
                             </label>
                     </div>
                     <div class="card__button">
-                            <div class="button button_target_payment">
-                              <button>перейти к оплате</button>
-                            </div>
+                            <button class="button  button_color_purple button_active">перейти к оплате</button>
                     </div>
                     <div class="card__account-existance-check">
                       <div class="card__account-existance-check__text">Уже есть аккаунт на Toxin</div>
                       <div class="card__account-existance-check__button"> 
-                              <div class="button">
-                                <button>войти</button>
-                              </div>
+                              <button class="button  button_color_white">войти</button>
                       </div>
                     </div>
             </div>
@@ -851,16 +825,12 @@
                             </div>
                     </div>
                     <div class="card__button">
-                            <div class="button button_target_payment">
-                              <button>войти</button>
-                            </div>
+                            <button class="button  button_color_purple button_active">перейти к оплате</button>
                     </div>
                     <div class="card__account-existance-check">
                       <div class="card__account-existance-check__text">Нет аккаунта на Toxin?</div>
                       <div class="card__account-existance-check__button"> 
-                              <div class="button">
-                                <button>создать</button>
-                              </div>
+                              <button class="button  button_color_white">создать</button>
                       </div>
                     </div>
             </div>
@@ -896,27 +866,23 @@
     <section id="headersFooters">
             <div class="header">
               <div class="header__nav">
-                <div class="header__nav__item">Home</div>
+                <div class="header__nav__item  header__nav__item_current">Home</div>
                 <div class="header__nav__item">About us</div>
-                <div class="header__nav__item">Services</div>
+                <div class="header__nav__item  header__nav__item_expandable">Services</div>
                 <div class="header__nav__item">Careers</div>
                 <div class="header__nav__item">News</div>
                 <div class="header__nav__item">Documentation</div>
               </div>
               <div class="header__buttons">
-                      <div class="button">
-                        <button>login</button>
-                      </div>
-                      <div class="button">
-                        <button>register</button>
-                      </div>
+                      <button class="button  button_color_white button_size_slim">login</button>
+                      <button class="button  button_color_purple button_size_slim">register</button>
               </div>
             </div>
             <div class="header">
               <div class="header__nav">
-                <div class="header__nav__item">Home</div>
+                <div class="header__nav__item  header__nav__item_current">Home</div>
                 <div class="header__nav__item">About us</div>
-                <div class="header__nav__item">Services</div>
+                <div class="header__nav__item  header__nav__item_expandable">Services</div>
                 <div class="header__nav__item">Careers</div>
                 <div class="header__nav__item">News</div>
                 <div class="header__nav__item">Documentation</div>
