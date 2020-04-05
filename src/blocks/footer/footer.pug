@@ -1,0 +1,34 @@
+include ./_type_small/footer_type_small.pug
+include ./_type_wide/footer_type_wide.pug
+mixin footer(options)
+    if !options
+        -let options = {}
+    -let type = options.type || "wide"
+    -let menu = options.menu || {}
+    -let text = options.text || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aut veniam architecto? Suscipit quo accusantium corrupti magni."
+    -let subscribeHeader = options.subscribe && options.subscribe.header || "Subscribe to our newsletter"
+    -let subscribeText = options.subscribe && options.subscribe.text || 
+    -"Receive our latest news and promotions in your inbox!"
+    -let subscribeInput = options.subscribe && options.subscribe.input || "meeeellll"
+    -let copyright = options.subscribe && options.copyright || "Copyright © 2018 Toxin UI Kit. All rights reserved."
+    -let social = options.social || {}
+    -let _class = "footer_type_" + type;
+    .footer(class=_class)
+            .footer__top
+                .footer__info
+                    .footer__text=text
+                each val, index in menu
+                    .footer__menu
+                        .footer__header=index
+                        each itemAddress, itemName in val
+                            a.footer__menu-item(href = itemAddress)=itemName
+                .footer__subscribe-block
+                    .footer__header=subscribeHeader
+                    .footer__text=subscribeText
+                    .footer__subscribe-input
+                        +input({placeholder: subscribeInput, mail: true})
+            .footer__bottom
+                .footer__copyright=copyright
+                .footer__social
+                    each href, icon in social
+                        a.footer__social-icon(href = href)="&#"+icon+";"
