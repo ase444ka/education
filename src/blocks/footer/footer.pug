@@ -2,7 +2,10 @@ include ./_type_small/footer_type_small.pug
 include ./_type_wide/footer_type_wide.pug
 mixin footer(options)
     if !options
-        -let options = {}
+        - options = require("Blocks/footer/footer.json")
+    else
+        - options = Object.assign(require("Blocks/footer/footer.json"),options)
+
     -let type = options.type || "wide"
     -let menu = options.menu || {}
     -let text = options.text || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aut veniam architecto? Suscipit quo accusantium corrupti magni."
@@ -31,4 +34,6 @@ mixin footer(options)
                 .footer__copyright=copyright
                 .footer__social
                     each href, icon in social
-                        a.footer__social-icon(href = href)="&#"+icon+";"
+                        -let encodedIcon = "&#" + icon + ";"
+                        a.footer__social-icon(href = href)!=encodedIcon 
+

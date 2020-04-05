@@ -2,6 +2,11 @@
     font-family: Montserrat;
     background: white url(../../icons/Logo.svg) no-repeat;
     padding-top: 7.4rem;
+    &__text {         
+        color: $darkShade_75;
+        line-height: 1.8;
+        font-size: 0.95rem;
+    }
     &_type_wide {
         background-position-y: 7.1rem;
         .footer__top {
@@ -14,9 +19,6 @@
         }
         .footer__text {
             padding-top: 1.4rem;           
-            color: $darkShade_75;
-            line-height: 1.95;
-            font-size: 0.9rem;
         }
         .footer__subscribe-input {
             padding-top: 1.55rem;
@@ -52,7 +54,37 @@
         color: $darkShade_75;
     }
     &__social-icon {
-        font-family:"Font Awesome 5 Brands Regular";
+        font-family:"Font Awesome 5 Brands";
+        text-decoration: none;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        -webkit-background-clip: text; /* Обрезаем фон по тексту */
+        -webkit-text-fill-color: transparent; /* Прозрачный текст */
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+    &_type_narrow {
+        background-position-x: center;
+        background-position-y: 7.2rem;
+        padding-top: 11.4rem;
+        align-items: center;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+        .footer__menu {
+            display: none;
+        }
+        .footer__subscribe-block {
+            display: none;
+        }
+        .footer__copyright {
+            display: none;
+        }
+        .footer__social {
+            padding-top: 2rem;
+        }
+
     }
 
 }
