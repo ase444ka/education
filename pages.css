@@ -378,7 +378,8 @@ p {
 
 .field__content {
   flex-grow: 1;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 .field__annotation {
   font-weight: normal;
@@ -397,7 +398,8 @@ p {
 
 .field__content {
   flex-grow: 1;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 .field__annotation {
   font-weight: normal;
@@ -2153,10 +2155,10 @@ Build date: 2019-12-19 16:51:02
       font-size: 0.9rem;
       margin-top: 7.4rem;
       padding-top: 2rem;
-      margin-left: -50%;
-      margin-right: -50%;
-      padding-left: 50%;
-      padding-right: 50%;
+      margin-left: -10rem;
+      margin-right: -10rem;
+      padding-left: 10rem;
+      padding-right: 10rem;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
