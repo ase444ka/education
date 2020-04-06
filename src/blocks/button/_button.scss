@@ -9,11 +9,12 @@ $_blue: blue($purple);
     border-radius: 3em;
     &_color_purple {
         @extend %purple;
-        &:hover {
-            @extend %white;
-            &:before {
-                @extend %white_before;                
-            }
+        &:hover, &.button_theme_transparent {
+            opacity: 50%;
+        }
+        &:active {
+            outline: none;
+            color: rgba($_red, $_green, $_blue, 0.4);
         }
     }
     &_active {
@@ -51,25 +52,28 @@ $_blue: blue($purple);
         &:before {
             @extend %white_before;
         }
-        &:hover {
-            @extend %purple;
+        &:hover, &.button_theme_transparent {
+            outline: none;
+            color: rgba($_red, $_green, $_blue, 0.4);
+        }
+        &:active {
+            color: white;
         }
     }
-    &_clicking, &:active, &_color_white &_transparent {
-        @extend %white;
+    &_color_white &_transparent {
         outline: none;
         color: rgba($_red, $_green, $_blue, 0.4);
     }
     &_theme_simple {
         padding: 0;
         background: none;
+        &:hover {
+            opacity: 50%;
+        }
         &.button_color_ {
             &purple {
                 color: $purple;
-                background-image: none;
-                &:hover {
-                    color: $darkShade_50;
-                }
+                background-image: none;              
                 &:active {
                     color: $darkShade_50;
                     opacity: 50%;
@@ -77,9 +81,6 @@ $_blue: blue($purple);
             }
             &darkShade {
                 color: $darkShade_50;
-                &:hover {
-                    color: $purple
-                }
                 &:active {
                     color: $purple;
                     opacity: 50%;
@@ -91,7 +92,7 @@ $_blue: blue($purple);
     &:focus {
         outline: none;
     }
-    &_clicking:before, &:active:before {
+    &_clicking:before, &:active:before, &:hover:before, &.button_theme_transparent:before {
         @extend %white_before;
         z-index: -1;
         opacity: 0.5;
