@@ -5,6 +5,7 @@ $_blue: blue($purple);
     padding: 0.8rem 1.3rem;
     align-self: center;
     cursor: pointer;
+    position: relative;
     @extend %font_small; 
     border-radius: 3em;
     &_color_purple {
@@ -51,6 +52,8 @@ $_blue: blue($purple);
         @extend %white;
         &:before {
             @extend %white_before;
+            z-index: -1;
+            opacity: 0.5;
         }
         &:hover, &.button_theme_transparent {
             outline: none;
@@ -92,11 +95,7 @@ $_blue: blue($purple);
     &:focus {
         outline: none;
     }
-    &_clicking:before, &:active:before, &:hover:before, &.button_theme_transparent:before {
-        @extend %white_before;
-        z-index: -1;
-        opacity: 0.5;
-    }
+
     &_theme_simple:hover, &_theme_simple.button_hovered {
         color: rgba(31, 32, 65, 0.5) !important;
     }
@@ -105,6 +104,9 @@ $_blue: blue($purple);
     }
     &_size_slim {
         padding: 0.35rem 1.15rem;
+        &.button_color_white {
+            padding: 0.21rem 1.01rem;
+        } 
     }
 }
 
@@ -131,6 +133,7 @@ $_blue: blue($purple);
 }
 %white {
     color: $purple;
+    padding: 0.66rem 1.16rem;
     background-image: none;
     background-color: white;
     position: relative;
