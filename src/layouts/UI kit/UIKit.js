@@ -1,4 +1,8 @@
 import './UIKit.scss';
-import './Cards/cards.js'
-import './Forms/forms.js'
+
+function requireAll(requireContext) {
+    return requireContext.keys().map(requireContext);
+}
+
+requireAll(require.context('Blocks', true, /\.js$/)); 
 
