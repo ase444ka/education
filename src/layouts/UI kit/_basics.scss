@@ -1,0 +1,49 @@
+$darkShade: #1F2041;
+$darkShade_75: rgba(31, 32, 65, 0.75);
+$darkShade_50: rgba(31, 32, 65, 0.50);
+$darkShade_25: rgba(31, 32, 65, 0.25);
+$darkShade_05: rgba(31, 32, 65, 0.05);
+$purple: #BC9CFF;
+$green: #6FCF97;
+
+.label {
+  color: $darkShade_25;
+  opacity: 0.25;
+  justify-self: end;
+  padding-right: 1.8rem;
+  font-weight: normal;
+}
+html {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  line-height: 1.7;
+  color: $darkShade;
+}
+@mixin h-size($size, $height, $spacing) {
+  font-weight: bold;
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
+
+%font_big {
+  @include h-size(1.5rem, 1.3, 0.001em);
+}
+%font_middle {
+  @include h-size(1.2rem, 1.3, 0.001em);
+}
+%font_small {
+  @include h-size(0.9rem, 1.8, 0.001em); /*0.73*/
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+h1 {
+  @extend %font_big;
+}
+h2 {
+  @extend %font_middle;
+}
+h3 {
+  @extend %font_small;
+}
+
