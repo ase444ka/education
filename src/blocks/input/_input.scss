@@ -23,20 +23,27 @@
       width: 100%;
     }
 }
+input::placeholder, .input__placeholder {
+  color: $darkShade_25;
+}
+.input__placeholder {
+  padding: 1rem;
+}
 
-@import "_type/input_type_select";
-@import "_expanded/input_expanded";
+.input:hover, .input:focus, .input_hovered {
+  border-width: 2px;
+  border-color: $darkShade_50;
+  input::placeholder, .input__placeholder {
+    color: $darkShade_50;
+}
+}
+
+
+
+
 @import "_hovered/input_hovered";
 @import "__placeholder/input__placeholder";
-@import "__customization/input__customization";
-@import "__options/input__options";
-@import "__item/input__item";
-@import "__option/input__option";
-@import "__option-setter/input__option-setter";
-@import "__option-iteration/input__option-iteration";
-@import "__option-quantity/input__option-quantity";
-@import "__buttons/input__buttons";
-@import "__button/input__button";
+
 
 
 
