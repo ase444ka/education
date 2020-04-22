@@ -1,16 +1,10 @@
 mixin input(data, ...items)
-    
-    -let expanded = data.expanded? "input_expanded ":""
     -let target = '';
     -if (data.target) target = data.target;
-    -let type = data.select? "input_type_select ":""
-    -let date = data.dateFirst? "input_type_dateFirst": 
-    -data.dateLast? "input_type_dateLast":
     -data.date? "input_type_date":"";
 
     -let hovered = data.hovered? "input_hovered ":""
     -let material = ""
-    -if (data.select) material = "expand_more"
     -if (data.mail) material = "arrow_forward"
 
 
@@ -19,21 +13,4 @@ mixin input(data, ...items)
     div.input(class= classes, data-target = target)&attributes(attributes)
         i.material-icons.input__i=material
         div.input__placeholder=data.select? data.placeholder:""
-            if date 
-            if !data.select
-                input(placeholder=data.placeholder)&attributes(attributes)
-            else
-                div.input__customization
-                    ul.input__options
-                        each item in items
-                            li.input__item
-                                .input__option= item.name
-                                .input__option-setter
-                                    .input__option-iteration(class = "input__option-iteration_decrement") -
-                                    .input__option-quantity=item.value
-                                    .input__option-iteration(class = "input__option-iteration_increment") +
-                    if (data.apply)
-                        .input__buttons
-                            button.input__button(class="input__button_target_apply") применить
-                            if (data.clear)
-                                button.input__button(class="input__button_target_clear") очистить
+            input(placeholder=data.placeholder)&attributes(attributes)
