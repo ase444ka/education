@@ -1,6 +1,6 @@
 
-$('.dropdown_type_select i').click(function(){
-    $(this).parent().toggleClass('dropdown_expanded');
+$('.dropdown__i').click(function(){
+    $(this).parent().toggleClass('dropdown_state_expanded');
 });
 
 $('.dropdown__option-iteration_decrement').click(function(){
