@@ -31,10 +31,11 @@
 
 }
 @import "~Blocks/field/field";
+@import "~Blocks/field/field";
 @import "~Blocks/input/input";
 @import "~Blocks/fieldset/fieldset";
 @import "~Blocks/range-slider/range-slider";
-@import "~Blocks/checkbox/checkbox";
+@import "~Blocks/checkbox/checkbox.scss";
 @import "~Blocks/expandable/expandable";
 @import "~Blocks/radio/radio";
 @import "~Blocks/toggle/toggle";
@@ -46,5 +47,6 @@
 @import "~Blocks/feature/feature";
 @import "~Blocks/feedback/feedback";
 @import "~Blocks/date-diapazon/date-diapazon";
+@import "~Blocks/dropdown/dropdown";
 
 

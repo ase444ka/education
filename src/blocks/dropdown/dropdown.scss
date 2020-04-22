@@ -1,0 +1,115 @@
+/*
+_state_ - в js добавить! (expanded и hovered(?))
+*/
+.dropdown {
+    @extend %input-appearence;
+    &:hover {
+        @extend %input_strong-appearence;
+        .dropdown__placeholder {
+            @extend %placeholder_strong-appearence;
+        }
+    }
+    &__i {
+        @extend %input__icon;
+    }
+    &__placeholder {
+        @extend %placeholder-appearence; 
+    }
+    &_state_ {
+        &expanded {
+            border-width: 2px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            .dropdown__customization {
+                position: absolute;
+                max-height: 800px;
+                top: 3rem;
+                padding-top: 0.3rem;
+                left: -2px;
+                right: -2px;
+                z-index: 1000;
+                border: 2px solid rgba(31, 32, 65, 0.25);
+                border-top: none;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                box-sizing: border-box;
+            }
+        }
+        &hovered {
+            @extend %input_strong-appearence;
+            .dropdown__placeholder {
+                @extend %placeholder_strong-appearence;
+            }
+        }
+    }
+    &__customization {
+        max-height: 0;
+        background-color: white;
+        overflow: hidden;
+        transition: max-height 100ms ease-in;
+        -webkit-transition: max-height 100ms ease-in;
+    }
+    &__options {
+        padding-bottom: 0.25rem;
+    }
+    &__item {
+        height: 2.6rem;
+        @extend %font_small;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.04rem 0.4rem 0.04rem 1rem;
+    }
+    &__option {
+        justify-self: flex-start;
+        color: $darkShade;
+    }
+    &__option-setter {
+        display: flex;
+        align-items: center;
+    }
+    &__option-iteration {
+        border: 1px solid $darkShade_25;
+        border-radius: 50%;
+        padding: 5px;
+        width: 2.1rem;
+        height: 2.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @extend %font_middle;
+        color: $darkShade_25;
+        font-weight: normal;
+        cursor: pointer;
+        &_disabled {
+            border-color: $darkShade_05;
+            cursor: default;
+          }
+    }
+    &__option-quantity {
+        @extend %font_small;
+        color: $darkShade;
+        padding: 0.85rem;
+    }
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    &__button {
+        @extend %font_small;
+        padding: 0.8rem 0.5rem 0.5rem;
+        cursor: pointer;
+        outline: none;
+        &_target {
+            &_apply {
+                color: $purple; 
+            }
+            &_clear {
+                color: $darkShade_50;
+            }
+        }
+    }
+
+}
