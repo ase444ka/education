@@ -15,6 +15,7 @@ section#forms
     include ../../../blocks/feature/feature
     include ../../../blocks/feedback/feedback
     include ../../../blocks/date-diapazon/date-diapazon
+    include ../../../blocks/dropdown/dropdown
     
     +field({name:"text field", annotation:"default"})
         +input({placeholder: "Email"})
@@ -128,4 +129,8 @@ section#forms
                 `Великолепный матрас на кровати в основной спальне!
             А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
             Выкрикивал комплименты повару — никто не жаловался из соседей.`})
+
+
+    +field({name: "dropdown", annotation: "default", shorted: true})
+        +dropdown({placeholder: "2 унитаза, 2 Какатиии...", select: true, target: "rooms"})
 

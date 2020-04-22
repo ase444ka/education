@@ -24,8 +24,8 @@ $('.dropdown__option-iteration_increment').click(function(){
     $(this).parent().children('.dropdown__option-quantity').text(quantity)
 });
 
-import {data} from 'data.js';
-import {endDigit} from 'data.js'; 
+import {data} from './data.js';
+import {endDigit} from './data.js'; 
 
 $('.dropdown__button_target_apply').click(function(){
     let target = (this.closest('.dropdown').dataset.target);
