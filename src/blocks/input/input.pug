@@ -1,16 +1,20 @@
-mixin input(data, ...items)
-    -let target = '';
-    -if (data.target) target = data.target;
-    -data.date? "input_type_date":"";
+mixin input(data)
+    - let hovered = data.hovered? "input_hovered ":""
+    - let material = ""
+    - let type = ""
+    - if (data.sending) material = "arrow_forward"
+        - type = " input_sending"
+    -let masked = ""
+    -if (data.mask)
+        - let attributes = {};
+        - attributes['data-mask'] = mask;
+        - masked = " input_masked"
 
-    -let hovered = data.hovered? "input_hovered ":""
-    -let material = ""
-    -if (data.mail) material = "arrow_forward"
 
-
-    -let classes = expanded + type + hovered + date
+    -let classes = type + hovered + masked
 
     div.input(class= classes, data-target = target)&attributes(attributes)
-        i.material-icons.input__i=material
+        if (data.sending)
+            i.material-icons.input__i=material
         div.input__placeholder=data.select? data.placeholder:""
             input(placeholder=data.placeholder)&attributes(attributes)

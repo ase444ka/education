@@ -22,9 +22,9 @@ section#forms
     +field({name: "text field", annotation: "hover / focus"})
         +input({placeholder: "This is pretty awesome", hovered: true})
     +field({name: "dropdown", annotation: "default"})
-        +dropdown({placeholder: "Сколько гостей", target: "guests"})
+        +dropdown({placeholder: "Сколько гостей"})
     +field({name: "dropdown", annotation: "default"})
-            +dropdown({placeholder: "Сколько гостей", target: "guests"})
+            +dropdown({placeholder: "Сколько гостей"})
     +field({name: "masked text field", annotation: "default"})
         +input({placeholder: "ДД.ММ.ГГГГ"})
     +fieldset
@@ -34,7 +34,7 @@ section#forms
         +input({placeholder: "19авг - 23авг"})
     +date-diapazon("date-dropdown","date-dropdown")
     +field({name: "subscription text field"})
-        +input({placeholder: "Email", mail: true})
+        +input({placeholder: "Email", sending: true})
     
 
 
@@ -76,15 +76,15 @@ section#forms
     
     
     +field({name: "dropdown", annotation: "default", shorted: true})
-        +dropdown({placeholder: "2 спальни, 2 кровати...", target: "rooms"})
+        +dropdown({placeholder: "2 спальни, 2 кровати..."})
     +field({name: "dropdown", annotation: "default", shorted: true})
-        +dropdown({placeholder: "2 спальни, 2 кровати...", expanded: true, target: "rooms", apply: true, clear: true},
+        +dropdown({placeholder: "2 спальни, 2 кровати...", expanded: true, apply: true, clear: true},
             {name: 'спальни', value: 2},{name: 'кровати', value: 2},{name: 'ванные комнаты', value: 0})
     +field({name: "dropdown"})
-        +dropdown({placeholder: "сколько гостей", expanded: true, clear: true, apply: true, target: guests},
+        +dropdown({placeholder: "сколько гостей", expanded: true, clear: true, apply: true},
             {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
     +field({name: "dropdown"})
-        +dropdown({placeholder: "сколько гостей", expanded: true, clear: true, apply: true, target:"guests"},
+        +dropdown({placeholder: "сколько гостей", expanded: true, clear: true, apply: true},
             {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
 
 
