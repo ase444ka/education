@@ -5,15 +5,15 @@ mixin input(data)
     - if (data.sending) material = "arrow_forward"
         - type = " input_sending"
     -let masked = ""
+    - let attr = {};
     -if (data.mask)
-        - let attributes = {};
-        - attributes['data-mask'] = mask;
+        - attr = {"data-inputmask": `'mask': '${data.mask}', 'placeholder': '${data.placeholder}'`};
         - masked = "input_masked"
 
 
     -let classes = type + hovered
 
-    div.input(class= classes, data-target = target)&attributes(attributes)
+    div.input(class= classes, data-target = target)
         if (data.sending)
             i.material-icons.input__i=material
-        input(placeholder=data.placeholder, class= masked )&attributes(attributes)
+        input(placeholder=data.placeholder, class= masked )&attributes(attr)
