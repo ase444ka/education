@@ -74,32 +74,24 @@
               <div class="field__name">text field</div>
               <div class="field__annotation">default</div>
               <div class="field__content">
-                      <div class="input" data-target=""><i class="material-icons input__i"></i>
-                        <div class="input__placeholder">
-                          <input placeholder="Email"/>
-                        </div>
-                      </div>
+                      <input class="input" placeholder="Email" spellcheck="false"/>
               </div>
             </div>
             <div class="field">
               <div class="field__name">text field</div>
               <div class="field__annotation">hover / focus</div>
               <div class="field__content">
-                      <div class="input input_hovered " data-target=""><i class="material-icons input__i"></i>
-                        <div class="input__placeholder">
-                          <input placeholder="This is pretty awesome"/>
-                        </div>
-                      </div>
+                      <input class="input input_hovered " placeholder="This is pretty awesome" spellcheck="false"/>
               </div>
             </div>
             <div class="field">
               <div class="field__name">dropdown</div>
               <div class="field__annotation">default</div>
               <div class="field__content">
-                      <div class="input input_type_select " data-target="guests"><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">Сколько гостей
-                          <div class="input__customization">
-                            <ul class="input__options">
+                      <div class="dropdown" data-target=""><i class="material-icons dropdown__i">expand_more</i>
+                        <div class="dropdown__placeholder">Сколько гостей
+                          <div class="dropdown__customization">
+                            <ul class="dropdown__options">
                             </ul>
                           </div>
                         </div>
@@ -110,10 +102,10 @@
               <div class="field__name">dropdown</div>
               <div class="field__annotation">default</div>
               <div class="field__content">
-                      <div class="input input_type_select " data-target="guests"><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">Сколько гостей
-                          <div class="input__customization">
-                            <ul class="input__options">
+                      <div class="dropdown" data-target=""><i class="material-icons dropdown__i">expand_more</i>
+                        <div class="dropdown__placeholder">Сколько гостей
+                          <div class="dropdown__customization">
+                            <ul class="dropdown__options">
                             </ul>
                           </div>
                         </div>
@@ -124,14 +116,7 @@
               <div class="field__name">masked text field</div>
               <div class="field__annotation">default</div>
               <div class="field__content">
-                      <div class="input input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">ДД.ММ.ГГГГ
-                          <div class="input__customization">
-                            <ul class="input__options">
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                      <input class="input input_masked" placeholder="ДД.ММ.ГГГГ" spellcheck="false" data-inputmask="'mask': '99.99.9999', 'placeholder': 'ДД.ММ.ГГГГ'"/>
               </div>
             </div>
             <div class="fieldset">
@@ -144,14 +129,7 @@
             <div class="field field_shorted">
               <div class="field__name">filter date dropdown</div>
               <div class="field__content">
-                      <div class="input input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">19авг - 23авг
-                          <div class="input__customization">
-                            <ul class="input__options">
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                      <input class="input" placeholder="19авг - 23авг" spellcheck="false"/>
               </div>
             </div>
             <div class="date-diapazon">
@@ -175,11 +153,7 @@
             <div class="field">
               <div class="field__name">subscription text field</div>
               <div class="field__content">
-                      <div class="input" data-target=""><i class="material-icons input__i">arrow_forward</i>
-                        <div class="input__placeholder">
-                          <input placeholder="Email"/>
-                        </div>
-                      </div>
+                      <input class="input input_sending" placeholder="Email" spellcheck="false"/><i class="material-icons input__i">arrow_forward</i>
               </div>
             </div>
             <div class="field">
@@ -289,10 +263,10 @@
               <div class="field__name">dropdown</div>
               <div class="field__annotation">default</div>
               <div class="field__content">
-                      <div class="input input_type_select " data-target="rooms"><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">2 спальни, 2 кровати...
-                          <div class="input__customization">
-                            <ul class="input__options">
+                      <div class="dropdown" data-target=""><i class="material-icons dropdown__i">expand_more</i>
+                        <div class="dropdown__placeholder">2 спальни, 2 кровати...
+                          <div class="dropdown__customization">
+                            <ul class="dropdown__options">
                             </ul>
                           </div>
                         </div>
@@ -303,38 +277,38 @@
               <div class="field__name">dropdown</div>
               <div class="field__annotation">default</div>
               <div class="field__content">
-                      <div class="input input_expanded input_type_select " data-target="rooms"><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">2 спальни, 2 кровати...
-                          <div class="input__customization">
-                            <ul class="input__options">
-                              <li class="input__item">
-                                <div class="input__option">спальни</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">2</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                      <div class="dropdown dropdown_state_expanded " data-target=""><i class="material-icons dropdown__i">expand_more</i>
+                        <div class="dropdown__placeholder">2 спальни, 2 кровати...
+                          <div class="dropdown__customization">
+                            <ul class="dropdown__options">
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">спальни</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">2</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
-                              <li class="input__item">
-                                <div class="input__option">кровати</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">2</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">кровати</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">2</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
-                              <li class="input__item">
-                                <div class="input__option">ванные комнаты</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">0</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">ванные комнаты</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">0</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
                             </ul>
-                            <div class="input__buttons">
-                              <button class="input__button input__button_target_apply">применить</button>
-                              <button class="input__button input__button_target_clear">очистить</button>
+                            <div class="dropdown__buttons">
+                              <button class="dropdown__button dropdown__button_target_apply">применить</button>
+                              <button class="dropdown__button dropdown__button_target_clear">очистить</button>
                             </div>
                           </div>
                         </div>
@@ -344,38 +318,38 @@
             <div class="field">
               <div class="field__name">dropdown</div>
               <div class="field__content">
-                      <div class="input input_expanded input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">сколько гостей
-                          <div class="input__customization">
-                            <ul class="input__options">
-                              <li class="input__item">
-                                <div class="input__option">взрослые</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">2</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                      <div class="dropdown dropdown_state_expanded " data-target=""><i class="material-icons dropdown__i">expand_more</i>
+                        <div class="dropdown__placeholder">сколько гостей
+                          <div class="dropdown__customization">
+                            <ul class="dropdown__options">
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">взрослые</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">2</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
-                              <li class="input__item">
-                                <div class="input__option">дети</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">2</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">дети</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">2</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
-                              <li class="input__item">
-                                <div class="input__option">младенцы</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">0</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">младенцы</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">0</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
                             </ul>
-                            <div class="input__buttons">
-                              <button class="input__button input__button_target_apply">применить</button>
-                              <button class="input__button input__button_target_clear">очистить</button>
+                            <div class="dropdown__buttons">
+                              <button class="dropdown__button dropdown__button_target_apply">применить</button>
+                              <button class="dropdown__button dropdown__button_target_clear">очистить</button>
                             </div>
                           </div>
                         </div>
@@ -385,38 +359,38 @@
             <div class="field">
               <div class="field__name">dropdown</div>
               <div class="field__content">
-                      <div class="input input_expanded input_type_select " data-target="guests"><i class="material-icons input__i">expand_more</i>
-                        <div class="input__placeholder">сколько гостей
-                          <div class="input__customization">
-                            <ul class="input__options">
-                              <li class="input__item">
-                                <div class="input__option">взрослые</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">2</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                      <div class="dropdown dropdown_state_expanded " data-target=""><i class="material-icons dropdown__i">expand_more</i>
+                        <div class="dropdown__placeholder">сколько гостей
+                          <div class="dropdown__customization">
+                            <ul class="dropdown__options">
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">взрослые</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">2</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
-                              <li class="input__item">
-                                <div class="input__option">дети</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">2</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">дети</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">2</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
-                              <li class="input__item">
-                                <div class="input__option">младенцы</div>
-                                <div class="input__option-setter">
-                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                  <div class="input__option-quantity">0</div>
-                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
+                              <li class="dropdown__item">
+                                <div class="dropdown__option">младенцы</div>
+                                <div class="dropdown__option-setter">
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                                  <div class="dropdown__option-quantity">0</div>
+                                  <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                                 </div>
                               </li>
                             </ul>
-                            <div class="input__buttons">
-                              <button class="input__button input__button_target_apply">применить</button>
-                              <button class="input__button input__button_target_clear">очистить</button>
+                            <div class="dropdown__buttons">
+                              <button class="dropdown__button dropdown__button_target_apply">применить</button>
+                              <button class="dropdown__button dropdown__button_target_clear">очистить</button>
                             </div>
                           </div>
                         </div>
@@ -608,42 +582,7 @@
                             <div class="field">
                               <div class="field__name">гости</div>
                               <div class="field__content">
-                                      <div class="input input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                                        <div class="input__placeholder">сколько гостей
-                                          <div class="input__customization">
-                                            <ul class="input__options">
-                                              <li class="input__item">
-                                                <div class="input__option">взрослые</div>
-                                                <div class="input__option-setter">
-                                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                                  <div class="input__option-quantity">2</div>
-                                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                                </div>
-                                              </li>
-                                              <li class="input__item">
-                                                <div class="input__option">дети</div>
-                                                <div class="input__option-setter">
-                                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                                  <div class="input__option-quantity">2</div>
-                                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                                </div>
-                                              </li>
-                                              <li class="input__item">
-                                                <div class="input__option">младенцы</div>
-                                                <div class="input__option-setter">
-                                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                                  <div class="input__option-quantity">0</div>
-                                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                                </div>
-                                              </li>
-                                            </ul>
-                                            <div class="input__buttons">
-                                              <button class="input__button input__button_target_apply">применить</button>
-                                              <button class="input__button input__button_target_clear">очистить</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      <input class="input" placeholder="сколько гостей" spellcheck="false"/>
                               </div>
                             </div>
                     </div>
@@ -660,27 +599,13 @@
                             <div class="field">
                               <div class="field__name">прибытие</div>
                               <div class="field__content">
-                                      <div class="input input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                                        <div class="input__placeholder">ДД.ММ.ГГГГ
-                                          <div class="input__customization">
-                                            <ul class="input__options">
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      <input class="input" placeholder="ДД.ММ.ГГГГ" spellcheck="false"/>
                               </div>
                             </div>
                             <div class="field">
                               <div class="field__name">выезд</div>
                               <div class="field__content">
-                                      <div class="input input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                                        <div class="input__placeholder">ДД.ММ.ГГГГ
-                                          <div class="input__customization">
-                                            <ul class="input__options">
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      <input class="input" placeholder="ДД.ММ.ГГГГ" spellcheck="false"/>
                               </div>
                             </div>
                     </div>
@@ -688,42 +613,7 @@
                             <div class="field">
                               <div class="field__name">гости</div>
                               <div class="field__content">
-                                      <div class="input input_type_select " data-target=""><i class="material-icons input__i">expand_more</i>
-                                        <div class="input__placeholder">сколько гостей
-                                          <div class="input__customization">
-                                            <ul class="input__options">
-                                              <li class="input__item">
-                                                <div class="input__option">взрослые</div>
-                                                <div class="input__option-setter">
-                                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                                  <div class="input__option-quantity">2</div>
-                                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                                </div>
-                                              </li>
-                                              <li class="input__item">
-                                                <div class="input__option">дети</div>
-                                                <div class="input__option-setter">
-                                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                                  <div class="input__option-quantity">2</div>
-                                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                                </div>
-                                              </li>
-                                              <li class="input__item">
-                                                <div class="input__option">младенцы</div>
-                                                <div class="input__option-setter">
-                                                  <div class="input__option-iteration input__option-iteration_decrement">-</div>
-                                                  <div class="input__option-quantity">0</div>
-                                                  <div class="input__option-iteration input__option-iteration_increment">+</div>
-                                                </div>
-                                              </li>
-                                            </ul>
-                                            <div class="input__buttons">
-                                              <button class="input__button input__button_target_apply">применить</button>
-                                              <button class="input__button input__button_target_clear">очистить</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      <input class="input" placeholder="сколько гостей" spellcheck="false"/>
                               </div>
                             </div>
                     </div>
@@ -747,18 +637,10 @@
             <div class="card card_for_registration">
                     <div class="card__header">Регистрация аккаунта</div>
                     <div class="card__input">
-                            <div class="input" data-target=""><i class="material-icons input__i"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="Имя"/>
-                              </div>
-                            </div>
+                            <input class="input" placeholder="Имя" spellcheck="false"/>
                     </div>
                     <div class="card__input">
-                            <div class="input" data-target=""><i class="material-icons input__i"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="Фамилия"/>
-                              </div>
-                            </div>
+                            <input class="input" placeholder="Фамилия" spellcheck="false"/>
                     </div>
                     <div class="card__radio">
                             <div class="radio">
@@ -772,26 +654,14 @@
                     </div>
                     <div class="card__input-name">Дата рождения</div>
                     <div class="card__input">
-                            <div class="input" data-target=""><i class="material-icons input__i"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="ДД.ММ.ГГ"/>
-                              </div>
-                            </div>
+                            <input class="input" placeholder="ДД.ММ.ГГ" spellcheck="false"/>
                     </div>
                     <div class="card__input-name">Данные для входа в сервис</div>
                     <div class="card__input">
-                            <div class="input" data-target=""><i class="material-icons input__i"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="Email"/>
-                              </div>
-                            </div>
+                            <input class="input" placeholder="Email" spellcheck="false"/>
                     </div>
                     <div class="card__input">
-                            <div class="input" data-target=""><i class="material-icons input__i"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="Пароль"/>
-                              </div>
-                            </div>
+                            <input class="input" placeholder="Пароль" spellcheck="false"/>
                     </div>
                     <div class="card__offers-setter">
                             <label class="toggle">
@@ -811,18 +681,10 @@
             <div class="card card_for_login">
                     <div class="card__header">Войти</div>
                     <div class="card__input">
-                            <div class="input" data-target=""><i class="material-icons input__i"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="Email"/>
-                              </div>
-                            </div>
+                            <input class="input" placeholder="Email" spellcheck="false"/>
                     </div>
                     <div class="card__input">
-                            <div class="input" data-target=""><i class="material-icons input__i"></i>
-                              <div class="input__placeholder">
-                                <input placeholder="Пароль"/>
-                              </div>
-                            </div>
+                            <input class="input" placeholder="Пароль" spellcheck="false"/>
                     </div>
                     <div class="card__button">
                             <button class="button  button_color_purple button_active">перейти к оплате</button>
@@ -907,11 +769,7 @@
                   <div class="footer__header">Subscribe to our newsletter</div>
                   <div class="footer__text">Receive our latest news and promotions in your inbox!</div>
                   <div class="footer__subscribe-input">
-                          <div class="input" data-target=""><i class="material-icons input__i">arrow_forward</i>
-                            <div class="input__placeholder">
-                              <input placeholder="meeeellll"/>
-                            </div>
-                          </div>
+                          <input class="input" placeholder="meeeellll" spellcheck="false"/>
                   </div>
                 </div>
               </div>
@@ -939,11 +797,7 @@
                   <div class="footer__header">Subscribe to our newsletter</div>
                   <div class="footer__text">Receive our latest news and promotions in your inbox!</div>
                   <div class="footer__subscribe-input">
-                          <div class="input" data-target=""><i class="material-icons input__i">arrow_forward</i>
-                            <div class="input__placeholder">
-                              <input placeholder="meeeellll"/>
-                            </div>
-                          </div>
+                          <input class="input" placeholder="meeeellll" spellcheck="false"/>
                   </div>
                 </div>
               </div>

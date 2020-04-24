@@ -238,13 +238,13 @@ h1 {
   line-height: 1.3;
   letter-spacing: 0.001em; }
 
-h2, .input__option-iteration {
+h2, .dropdown__option-iteration {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 1.3;
   letter-spacing: 0.001em; }
 
-h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .input__button, .button, .card__input-name {
+h3, .field__annotation, .field__name, .button, .dropdown__item, .dropdown__option-quantity, .dropdown__button, .card__input-name {
   font-weight: bold;
   font-size: 0.9rem;
   line-height: 1.8;
@@ -252,6 +252,35 @@ h3, .field__annotation, .field__name, .input__item, .input__option-quantity, .in
   /*0.73*/
   font-family: Montserrat;
   text-transform: uppercase; }
+
+.dropdown {
+  height: 3.15rem;
+  cursor: text;
+  width: 100%;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  outline: none;
+  position: relative; }
+
+.dropdown__i {
+  position: absolute;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  pointer-events: all;
+  top: 0.5rem;
+  right: 0.7rem;
+  font-size: 2.1rem; }
+
+.dropdown:hover, .dropdown_state_hovered {
+  border-width: 2px;
+  border-color: rgba(31, 32, 65, 0.5); }
+
+.dropdown:hover .dropdown__placeholder, .dropdown_state_hovered .dropdown__placeholder {
+  color: rgba(31, 32, 65, 0.5); }
+
+.dropdown__placeholder {
+  color: rgba(31, 32, 65, 0.25);
+  padding: 1rem; }
 
 body {
   margin: 2rem 10rem;
@@ -418,7 +447,9 @@ p {
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   outline: none;
-  position: relative; }
+  position: relative;
+  outline: none;
+  padding: 5px; }
   .input__i {
     position: absolute;
     color: rgba(31, 32, 65, 0.5);
@@ -427,31 +458,10 @@ p {
     top: 0.5rem;
     right: 0.7rem;
     font-size: 2.1rem; }
-  .input input {
-    border: none;
-    outline: none;
-    width: 100%; }
 
-.input_type_select {
-  cursor: default; }
-
-.input_expanded {
-  border-width: 2px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
-  .input_expanded .input__customization {
-    position: absolute;
-    max-height: 800px;
-    top: 3rem;
-    padding-top: 0.3rem;
-    left: -2px;
-    right: -2px;
-    z-index: 1000;
-    border: 2px solid rgba(31, 32, 65, 0.25);
-    border-top: none;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    box-sizing: border-box; }
+input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+  padding: 1rem; }
 
 .input:hover, .input:focus, .input_hovered {
   border-width: 2px;
@@ -464,69 +474,6 @@ input::placeholder, .input__placeholder {
 
 .input__placeholder {
   padding: 1rem; }
-
-.input__customization {
-  max-height: 0;
-  background-color: white;
-  overflow: hidden;
-  transition: max-height 100ms ease-in;
-  -webkit-transition: max-height 100ms ease-in; }
-
-.input__options {
-  padding-bottom: 0.25rem; }
-
-.input__item {
-  height: 2.6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.04rem 0.4rem 0.04rem 1rem; }
-
-.input__option {
-  justify-self: flex-start;
-  color: #1F2041; }
-
-.input__option-setter {
-  display: flex;
-  align-items: center; }
-
-.input__option-iteration {
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 50%;
-  padding: 5px;
-  width: 2.1rem;
-  height: 2.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(31, 32, 65, 0.25);
-  font-weight: normal;
-  cursor: pointer; }
-
-.input__option-iteration_disabled {
-  border-color: rgba(31, 32, 65, 0.05);
-  cursor: default; }
-
-.input__option-quantity {
-  color: #1F2041;
-  padding: 0.85rem; }
-
-.input__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-  justify-content: space-between; }
-
-.input__button {
-  padding: 0.8rem 0.5rem 0.5rem;
-  cursor: pointer;
-  outline: none; }
-
-.input__button_target_apply {
-  color: #BC9CFF; }
-
-.input__button_target_clear {
-  color: rgba(31, 32, 65, 0.5); }
 
 .fieldset {
   display: grid;
@@ -1004,7 +951,13 @@ Build date: 2019-12-19 16:51:02
   padding: 0.8rem 1.3rem;
   align-self: center;
   cursor: pointer;
+  position: relative;
   border-radius: 3em; }
+  .button_color_purple:hover, .button_color_purple.button_theme_transparent {
+    opacity: 50%; }
+  .button_color_purple:active {
+    outline: none;
+    color: rgba(188, 156, 255, 0.4); }
   .button_active {
     width: 100%;
     position: relative; }
@@ -1031,45 +984,50 @@ Build date: 2019-12-19 16:51:02
     pointer-events: none; }
   .button_transparent, .button:disabled {
     opacity: 0.6; }
-  .button_clicking, .button:active, .button_color_white .button_transparent {
+  .button_color_white:before {
+    z-index: -1;
+    opacity: 0.5; }
+  .button_color_white:hover, .button_color_white.button_theme_transparent {
+    outline: none;
+    color: rgba(188, 156, 255, 0.4); }
+  .button_color_white:active {
+    color: white; }
+  .button_color_white .button_transparent {
     outline: none;
     color: rgba(188, 156, 255, 0.4); }
   .button_theme_simple {
     padding: 0;
     background: none;
     color: #BC9CFF; }
+    .button_theme_simple:hover {
+      opacity: 50%; }
     .button_theme_simple.button_color_purple {
       color: #BC9CFF;
       background-image: none; }
-      .button_theme_simple.button_color_purple:hover {
-        color: rgba(31, 32, 65, 0.5); }
       .button_theme_simple.button_color_purple:active {
         color: rgba(31, 32, 65, 0.5);
         opacity: 50%; }
     .button_theme_simple.button_color_darkShade {
       color: rgba(31, 32, 65, 0.5); }
-      .button_theme_simple.button_color_darkShade:hover {
-        color: #BC9CFF; }
       .button_theme_simple.button_color_darkShade:active {
         color: #BC9CFF;
         opacity: 50%; }
   .button:focus {
     outline: none; }
-  .button_clicking:before, .button:active:before {
-    z-index: -1;
-    opacity: 0.5; }
   .button_theme_simple:hover, .button_theme_simple.button_hovered {
     color: rgba(31, 32, 65, 0.5) !important; }
   .button_theme_simple:hover:before, .button_theme_simple.button_hovered:before {
     display: none; }
   .button_size_slim {
     padding: 0.35rem 1.15rem; }
+    .button_size_slim.button_color_white {
+      padding: 0.21rem 1.01rem; }
 
-.button_color_purple:hover:before, .button_color_white:before, .button_clicking:before, .button:active:before {
+.button_color_white:before {
   border: 1px solid transparent;
   border-radius: 2.5rem; }
 
-.button_color_purple:hover:before, .button_color_white:before, .button_clicking:before, .button:active:before {
+.button_color_white:before {
   content: "";
   background-color: transparent;
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -1080,28 +1038,30 @@ Build date: 2019-12-19 16:51:02
   bottom: -2px;
   z-index: -1; }
 
-.button_color_purple, .button_color_white:hover {
+.button_color_purple {
   background-color: transparent;
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   color: white; }
 
-.button_color_purple:hover, .button_color_white, .button_clicking, .button:active, .button_color_white .button_transparent {
+.button_color_white {
   color: #BC9CFF;
+  padding: 0.66rem 1.16rem;
   background-image: none;
   background-color: white;
   position: relative; }
 
 .pagination {
-  padding: 0.8rem 0.1rem; }
+  padding: 0.8rem 0.1rem;
+  display: flex;
+  flex-wrap: wrap; }
   .pagination__item {
     color: rgba(31, 32, 65, 0.5);
-    display: inline-block;
-    vertical-align: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1.1rem;
-    padding-left: 0.8rem;
     font-size: 0.9rem;
-    cursor: pointer;
-    text-align: center; }
+    cursor: pointer; }
   .pagination__item_next, .pagination__item_previous {
     margin-left: -0.4rem;
     padding: 0.6rem;
@@ -1120,6 +1080,10 @@ Build date: 2019-12-19 16:51:02
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
+  .pagination__item_next {
+    margin-left: 0.5rem; }
+  .pagination__item_previous {
+    margin-right: 0.5rem; }
   .pagination__item_current {
     background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     cursor: default;
@@ -1131,7 +1095,8 @@ Build date: 2019-12-19 16:51:02
     color: white; }
   .pagination__text {
     margin: 0.8rem 0.2rem;
-    color: rgba(31, 32, 65, 0.75); }
+    color: rgba(31, 32, 65, 0.75);
+    flex-grow: 3; }
 
 .bullet-list {
   padding-top: 0.7rem;
@@ -1244,6 +1209,87 @@ Build date: 2019-12-19 16:51:02
   .date-diapazon__calendar_hidden {
     opacity: 0;
     pointer-events: none; }
+
+/*
+_state_ - в js добавить! (expanded и hovered(?))
+*/
+.dropdown_state_expanded {
+  border-width: 2px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+  .dropdown_state_expanded .dropdown__customization {
+    position: absolute;
+    max-height: 800px;
+    top: 3rem;
+    padding-top: 0.3rem;
+    left: -2px;
+    right: -2px;
+    z-index: 1000;
+    border: 2px solid rgba(31, 32, 65, 0.25);
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-sizing: border-box; }
+
+.dropdown__customization {
+  max-height: 0;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 100ms ease-in;
+  -webkit-transition: max-height 100ms ease-in; }
+
+.dropdown__options {
+  padding-bottom: 0.25rem; }
+
+.dropdown__item {
+  height: 2.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.04rem 0.4rem 0.04rem 1rem; }
+
+.dropdown__option {
+  justify-self: flex-start;
+  color: #1F2041; }
+
+.dropdown__option-setter {
+  display: flex;
+  align-items: center; }
+
+.dropdown__option-iteration {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  padding: 5px;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(31, 32, 65, 0.25);
+  font-weight: normal;
+  cursor: pointer; }
+  .dropdown__option-iteration_disabled {
+    border-color: rgba(31, 32, 65, 0.05);
+    cursor: default; }
+
+.dropdown__option-quantity {
+  color: #1F2041;
+  padding: 0.85rem; }
+
+.dropdown__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between; }
+
+.dropdown__button {
+  padding: 0.8rem 0.5rem 0.5rem;
+  cursor: pointer;
+  outline: none; }
+  .dropdown__button_target_apply {
+    color: #BC9CFF; }
+  .dropdown__button_target_clear {
+    color: rgba(31, 32, 65, 0.5); }
 
 #cards {
   display: grid;
