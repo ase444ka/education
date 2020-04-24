@@ -8,13 +8,12 @@ mixin input(data)
     -if (data.mask)
         - let attributes = {};
         - attributes['data-mask'] = mask;
-        - masked = " input_masked"
+        - masked = "input_masked"
 
 
-    -let classes = type + hovered + masked
+    -let classes = type + hovered
 
     div.input(class= classes, data-target = target)&attributes(attributes)
         if (data.sending)
             i.material-icons.input__i=material
-        div.input__placeholder=data.select? data.placeholder:""
-            input(placeholder=data.placeholder)&attributes(attributes)
+        input(placeholder=data.placeholder, class= masked )&attributes(attributes)
