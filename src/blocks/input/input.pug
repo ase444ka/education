@@ -14,7 +14,11 @@ mixin input(data)
 
     -let classes = "input" + type + hovered + masked
 
-    input(placeholder=data.placeholder, class= classes, spellcheck= "false" )&attributes(attr)
     if (data.sending)
-        i.material-icons.input__i=material
+        .input__wrapper
+            input(placeholder=data.placeholder, class= classes, spellcheck= "false" )&attributes(attr)
+            i.material-icons.input__i=material
+    else
+        input(placeholder=data.placeholder, class= classes, spellcheck= "false" )&attributes(attr)
+        
         
