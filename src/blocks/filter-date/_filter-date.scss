@@ -1,0 +1,25 @@
+
+.filter-date {
+    position: relative;
+    &__input {
+        padding-left: 10px;
+        color: $darkShade_50;
+        height: 3.15rem;
+        width: 100%;
+        border: 1px solid $darkShade_25;
+        border-radius: 4px;
+        outline: none; 
+            
+    }
+    &__calendar {
+        position: absolute;
+        left: 0;
+        top: 3.15rem;
+        width: 100%;
+        transition: opacity 0.25s ease-in-out;
+    }
+    &__calendar_hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

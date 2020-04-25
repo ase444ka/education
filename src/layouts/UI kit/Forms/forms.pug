@@ -16,6 +16,7 @@ section#forms
     include ../../../blocks/feedback/feedback
     include ../../../blocks/date-diapazon/date-diapazon
     include ../../../blocks/dropdown/dropdown
+    include ../../../blocks/filter-date/filter-date
     
     +field({name:"text field", annotation:"default"})
         +input({placeholder: "Email"})
@@ -31,7 +32,7 @@ section#forms
         +field({name: "date dropdoun"})
              
     +field({name: "filter date dropdown", shorted: true})
-        +input({placeholder: "19авг - 23авг"})
+        +filter-date()
     +date-diapazon("date-dropdown","date-dropdown")
     +field({name: "subscription text field"})
         +input({placeholder: "Email", sending: true})

@@ -426,6 +426,10 @@
                     result = replacer(result, boundary('yyyy2'), decade[1]);
                 case /yy/.test(result):
                     result = replacer(result, boundary('yy'), d.year.toString().slice(-2));
+                case /ddM/.test(result):
+                    result = replacer(result, boundary('ddM'), d.fullDate + locale.monthsShort[d.month]);
+    
+
             }
 
             return result;
@@ -1477,7 +1481,7 @@
             daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб'],
             daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
             months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-            monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+            monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
             today: 'Применить',
             clear: 'Очистить',
             dateFormat: 'dd.mm.yyyy',
