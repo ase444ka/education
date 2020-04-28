@@ -115,8 +115,12 @@ module.exports = {
         //     template: './src/pages/pages.pug'
         // }),
         new HtmlWebpackPlugin({
+            filename: "UIKit.html",
+            template: 'layouts/UI kit/UIKit.pug'
+        }),
+        new HtmlWebpackPlugin({
             filename: "index.html",
-            template: 'layouts/UI kit/index.pug'
+            template: 'layouts/pages/index.pug'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
