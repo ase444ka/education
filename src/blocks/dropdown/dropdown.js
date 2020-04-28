@@ -45,7 +45,7 @@ $('.dropdown__button_target_apply').click(function(){
     }
     str = str.slice(0,-2);
     alert(str);
-    
+    this.closest('.dropdown').classList.remove('dropdown_state_expanded');
 })
 $('.dropdown__button_target_clear').click(function(){
     $(this).closest(".dropdown__customization").find('.dropdown__option-quantity').text('0');
