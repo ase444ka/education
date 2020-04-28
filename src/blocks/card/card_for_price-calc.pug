@@ -9,13 +9,10 @@ mixin card_for_price-calc(options)
         .card__room-data__price=price
             span.card__room-data__period= period
     .card__dates
-        +field({name:"прибытие"})
-            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
-        +field({name: "выезд"})
-            +input({placeholder: "ДД.ММ.ГГГГ", select: true})
+        +date-diapazon()
     .card__guests
         +field({name: "гости"})
-            +input({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: guests},
+            +dropdown({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: "guests"},
             {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
     .card__calc-table
         .card__calc-table__position 9 990&#8381; x 4 суток

@@ -9,7 +9,7 @@ mixin card_for_registration(options)
             {valueVar:"male", valueName:"мужчина"},{valueVar:"female", valueName:"женщина"})   
         .card__input-name Дата рождения
         .card__input
-            +input({placeholder: "ДД.ММ.ГГ"})
+            +input({placeholder: "ДД.ММ.ГГ", mask: "99.99.9999"})
         .card__input-name Данные для входа в сервис
         .card__input
             +input({placeholder: "Email"})

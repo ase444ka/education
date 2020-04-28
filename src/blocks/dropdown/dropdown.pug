@@ -1,7 +1,6 @@
 mixin dropdown(data, ...items)   
     -let expanded = data.expanded? "dropdown_state_expanded ":""
-    -let target = '';
-    -if (data.target) target = data.target;
+    -let target = data.target? data.target : '';
     -let hovered = data.hovered? "dropdown_state_hovered ":""
     -let material = "expand_more"
     -let classes = expanded + hovered
