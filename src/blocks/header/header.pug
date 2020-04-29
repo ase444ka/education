@@ -5,7 +5,7 @@ mixin header(user=false, ...items)
                 -let expandable = item.expandable?" header__nav__item_expandable":""
                 -let current = item.current?" header__nav__item_current":""
                 -let _class = expandable + current
-                .header__nav__item(class = _class)=item.value
+                a.header__nav__item(class = _class, href="#")=item.value
         if user
             .header__user-info=user
         else

@@ -15,6 +15,9 @@
         display: flex;
         &__item {
             padding: 1rem 1.25rem;
+            display: block;
+            text-decoration: none;
+            color: $darkShade_50;
             &_current {
                 color: $darkShade_75;
                 font-weight: bold;
