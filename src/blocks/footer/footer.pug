@@ -14,6 +14,7 @@ mixin footer(options)
     -"Receive our latest news and promotions in your inbox!"
     -let subscribeInput = options.subscribe && options.subscribe.input || "meeeellll"
     -let copyright = options.subscribe && options.copyright || "Copyright © 2018 Toxin UI Kit. All rights reserved."
+    include ../logo/logo
     -let social = options.social || {}
     -let _class = "footer_type_" + type;
     .footer(class=_class)
