@@ -1308,7 +1308,7 @@ _state_ - в js добавить! (expanded и hovered(?))
   display: grid;
   align-items: flex-start;
   grid-template-rows: max-content max-content max-content;
-  grid-template-columns: 380px repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
   background-color: rgba(31, 32, 65, 0.05); }
 
@@ -2264,6 +2264,26 @@ _state_ - в js добавить! (expanded и hovered(?))
 
 #headersFooters > div {
   margin-top: 41px; }
+
+.main {
+  position: relative;
+  margin: 0 -10rem; }
+  .main__image {
+    width: 100%; }
+  .main__room-search {
+    position: absolute;
+    width: 380px;
+    height: 374px;
+    left: 10rem;
+    top: 5rem; }
+  .main__slogan {
+    position: absolute;
+    width: 19rem;
+    bottom: 2.7rem;
+    right: 1.5rem;
+    line-height: 1.5;
+    font-family: Montserrat;
+    color: rgba(31, 32, 65, 0.5); }
 
 @media only screen and (max-width: 830px) {
   body {
