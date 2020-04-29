@@ -28,12 +28,13 @@ $right: percentage(191/1362);
 
 
 @import 'Logo/logo';
-@import '../../fonts/fonts.css';
+@import '~Fonts/fonts.css';
 @import 'Colors/colors';
 @import "Type/type";
 @import "Forms/forms";
 @import "Cards/cards";
 @import "Headers_Footers/headers_footers";
+@import '~Blocks/main/main.scss';
 
 
 @media only screen and (max-width: 830px) {

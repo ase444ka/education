@@ -6,6 +6,12 @@ html
         meta(content='width=device-width, initial-scale=1.0' name='viewport')
 
     body
-        h1 hellooo
-        +rate({ratable: true})
-        a(href="UIKit.html") uikit
+        +header(false,
+    {value: "Home", current: true}, 
+    {value: "About us"}, 
+    {value: "Services", expandable: true}, 
+    {value: "Careers"}, 
+    {value: "News"}, 
+    {value: "Documentation"})
+        +main("Все привет зовусь я цветик от меня вам всем приветик!!!")
+        +footer()

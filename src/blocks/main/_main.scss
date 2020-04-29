@@ -1,0 +1,23 @@
+.main {
+    position: relative;
+    margin: 0 -10rem;
+    &__image {
+        width: 100%;
+    }
+    &__room-search {
+        position: absolute;
+        width: 380px;
+        height: 374px;
+        left: 10rem;
+        top: 5rem;
+    }
+    &__slogan {
+        position: absolute;
+        width: 19rem;
+        bottom: 2.7rem;
+        right: 1.5rem;
+        line-height: 1.5;
+        font-family: Montserrat;
+        color: $darkShade_50;
+    }
+}
