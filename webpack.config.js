@@ -19,7 +19,8 @@ module.exports = {
             Blocks: path.resolve(__dirname, 'src/blocks'),
             Icons: path.resolve(__dirname, 'src/icons'),
             Fonts: path.resolve(__dirname, 'src/fonts'),
-            Images: path.resolve(__dirname, 'src/images')
+            Images: path.resolve(__dirname, 'src/images'),
+            Modules: path.resolve(__dirname, 'node_modules'),
         }
     },
     devServer: {
