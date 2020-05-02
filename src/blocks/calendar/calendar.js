@@ -1,55 +1,51 @@
 import "./js/datepicker"
 class Calendar {
-    constructor(component) {
-      $(component).datepicker({
-        onSelect: function (fd, d, picker) {
-            this.start = fd.split(",")[0];
-            this.end = fd.split(",")[1];
-        },
+    constructor(block) {
+      this.block = block;
+      this.options = {
         range: true,
         clearButton: 'true',
         offset: 0,
         multipleDates: true,
         clearButton: true,
         todayButton: true,
-      });
+      }
     }
-
     static initialize(_class, block) {
       $(() => {
         $(`.${block}`).each((index, node) => {
-          new _class(node);
+          new _class(block);
         });
       });
     }
 
-    show(event, block) {
-        let calendar = $('.datepicker-inline', event.target.closest(`.${block}`));
-        if ($(calendar).hasClass(`${block}__calendar_hidden`)) {
-            $(calendar).removeClass(`${block}__calendar_hidden`);
-            $( `.${block}__calendar__button_target_apply`, event.target.closest(`.${block}`)).click(() => this.hide);
-            $( `.${block}__calendar__button_target_clear`, event.target.closest(`.${block}`)).click(() => this.clear);
+    show(event) {
+        let calendar = $('.datepicker-inline', event.target.closest(`.${this.block}`));
+        if ($(calendar).hasClass(`${this.block}__calendar_hidden`)) {
+            $(calendar).removeClass(`${this.block}__calendar_hidden`);
+            $( `.${this.block}__calendar__button_target_apply`, event.target.closest(`.${this.block}`)).click(() => this.hide);
+            $( `.${this.block}__calendar__button_target_clear`, event.target.closest(`.${this.block}`)).click(() => this.clear);
           }
           return;
     }
 
-    hide(event, block)  {
-      let parent = event.target.closest(`.${block}`);
+    hide(event)  {
+      let parent = event.target.closest(`.${this.block}`);
       let calendar = $('.datepicker-inline', parent);
-      let wrapperExpanded = $(`.${block}__input-wrapper_expanded`, parent);
-      $(wrapperExpanded).removeClass(`${block}__input-wrapper_expanded`);  
-      $(calendar).addClass(`${block}__calendar_hidden`);
+      let wrapperExpanded = $(`.${this.block}__input-wrapper_expanded`, parent);
+      $(wrapperExpanded).removeClass(`${this.block}__input-wrapper_expanded`);  
+      $(calendar).addClass(`${this.block}__calendar_hidden`);
       return;
     }
 
-    clear(event, block)  {
-      let inRange = event.target.closest(`.${block}`).querySelectorAll('.-in-range-');
+    clear(event)  {
+      let inRange = event.target.closest(`.${this.block}`).querySelectorAll('.-in-range-');
       inRange.forEach((item) => 
       {
         $(item).removeClass('-in-range-')
         return;
       });
-      let selected = event.target.closest(`.${block}`).querySelectorAll('.-selected-');
+      let selected = event.target.closest(`.${this.block}`).querySelectorAll('.-selected-');
       selected.forEach((item) => 
       {
         $(item).removeClass('-selected-')
@@ -62,6 +58,18 @@ class Calendar {
     }
    
   }
+
+  class CalendarCard extends Calendar {
+    constructor(block) {
+      super(block);
+      Object.assign(this.options, {
+          onSelect: () => console.log('yaaaaaa')
+         }
+      );
+      $(`.${this.block}`).datepicker(this.options);
+
+    }
+  }
   
-  Calendar.initialize(Calendar, 'calendar');
+  Calendar.initialize(CalendarCard, 'calendar');
  
