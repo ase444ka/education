@@ -2,6 +2,7 @@ import "./js/datepicker"
 export class Calendar {
     constructor(block, blockName) {
       this.block = block;
+      this.hidden = true;
       this.blockName = blockName;
       this.options = {
         range: true,
@@ -24,8 +25,9 @@ export class Calendar {
         let calendar = $('.datepicker-inline', event.target.closest(`.${this.blockName}`));
         if ($(calendar).hasClass(`${this.blockName}__calendar_hidden`)) {
             $(calendar).removeClass(`${this.blockName}__calendar_hidden`);
-            $( `.${this.blockName}__calendar__button_target_apply`, event.target.closest(`.${this.blockName}`)).click(() => this.hide);
-            $( `.${this.blockName}__calendar__button_target_clear`, event.target.closest(`.${this.blockName}`)).click(() => this.clear);
+            $( `.${this.blockName}__calendar__button_target_apply`, event.target.closest(`.${this.blockName}`)).click((event) => this.hide(event));
+            $( `.${this.blockName}__calendar__button_target_clear`, event.target.closest(`.${this.blockName}`)).click((event) => this.clear(event));
+            this.hidden = false;
           }
           return;
     }
@@ -36,6 +38,7 @@ export class Calendar {
       let wrapperExpanded = $(`.${this.blockName}__input-wrapper_expanded`, parent);
       $(wrapperExpanded).removeClass(`${this.blockName}__input-wrapper_expanded`);  
       $(calendar).addClass(`${this.blockName}__calendar_hidden`);
+      this.hidden = true;
       return;
     }
 

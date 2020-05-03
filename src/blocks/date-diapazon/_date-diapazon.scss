@@ -7,7 +7,6 @@
     position: relative;
     &__input-wrapper {
         position: relative;
-        pointer-events: none;
         &:after {
             direction: ltr;
             display: inline-block;
