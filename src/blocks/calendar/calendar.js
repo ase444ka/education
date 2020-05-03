@@ -23,37 +23,44 @@ export class Calendar {
       });
     }
 
-    show(event) {
-        let calendar = $('.datepicker-inline', event.target.closest(`.${this.blockName}`));
+    addFunctionality() {
+      if (!this.static) $('.datepicker-inline', this.block).addClass(`${this.blockName}__calendar_hidden`);
+      $('.datepicker-inline', this.block).addClass(`${this.blockName}__calendar`);
+      $('[data-action="clear"]',this.block).addClass(`${this.blockName}__calendar__button_target_clear`);
+      $('[data-action="today"]',this.block).addClass(`${this.blockName}__calendar__button_target_apply`);
+    } 
+
+    show() {
+        let calendar = $('.datepicker-inline', this.block);
         if ($(calendar).hasClass(`${this.blockName}__calendar_hidden`)) {
             $(calendar).removeClass(`${this.blockName}__calendar_hidden`);
-            $( `.${this.blockName}__calendar__button_target_apply`, event.target.closest(`.${this.blockName}`)).click((event) => this.hide(event));
-            $( `.${this.blockName}__calendar__button_target_clear`, event.target.closest(`.${this.blockName}`)).click((event) => this.clear(event));
+        }
+            $( `.${this.blockName}__calendar__button_target_apply`, this.block).click((event) => this.hide(event));
+            $( `.${this.blockName}__calendar__button_target_clear`, this.block).click((event) => this.clear(event));
             $(document).click((event)=>{
               if (~event.target.className.indexOf('datepicker')) return;
               if (event.target.closest(`.${this.blockName}`)) return;
               if (this.hidden) return;
               if (this.static) return;
-              this.clear(event);
-              this.hide(event);             
+              this.clear();
+              this.hide();             
               return;
             });
             this.hidden = false;
-          }
+          
           return;
     }
 
-    hide(event)  {
-      let parent = event.target.closest(`.${this.blockName}`);
-      let calendar = $('.datepicker-inline', parent);
-      let wrapperExpanded = $(`.${this.blockName}__input-wrapper_expanded`, parent);
+    hide()  {
+      let calendar = $('.datepicker-inline', this.block);
+      let wrapperExpanded = $(`.${this.blockName}__input-wrapper_expanded`, this.block);
       $(wrapperExpanded).removeClass(`${this.blockName}__input-wrapper_expanded`);  
       $(calendar).addClass(`${this.blockName}__calendar_hidden`);
       this.hidden = true;
       return;
     }
 
-    clear(event)  {
+    clear()  {
       let inRange = this.block.querySelectorAll('.-in-range-');
       inRange.forEach((item) => 
       {
@@ -82,8 +89,11 @@ export class Calendar {
          }
       );
       $(`.${this.blockName}`).datepicker(this.options);
+      
       this.static = true;
       this.hidden = false;
+      this.addFunctionality();
+      this.show();
 
     }
   }
