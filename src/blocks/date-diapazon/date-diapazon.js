@@ -40,12 +40,5 @@ class DateDiapazon extends Calendar {
    
   }
   Calendar.initialize(DateDiapazon, 'date-diapazon');
- //инициализация календаря с двойными инпутами на соотв. блоках
 
-
- 
-/* //разворачиваем календарь
-  $('.date-diapazon__start').click(dateDiapazonShowCalendar);
-  //разворачиваем календарь
-  $('.date-diapazon__end').click(dateDiapazonShowCalendar); */
 

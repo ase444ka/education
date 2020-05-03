@@ -3,6 +3,7 @@ export class Calendar {
     constructor(block, blockName) {
       this.block = block;
       this.hidden = true;
+      this.static = false;
       this.blockName = blockName;
       this.options = {
         range: true,
@@ -12,6 +13,7 @@ export class Calendar {
         clearButton: true,
         todayButton: true,
       }
+      
     }
     static initialize(_class, blockName) {
       $(() => {
@@ -27,6 +29,15 @@ export class Calendar {
             $(calendar).removeClass(`${this.blockName}__calendar_hidden`);
             $( `.${this.blockName}__calendar__button_target_apply`, event.target.closest(`.${this.blockName}`)).click((event) => this.hide(event));
             $( `.${this.blockName}__calendar__button_target_clear`, event.target.closest(`.${this.blockName}`)).click((event) => this.clear(event));
+            $(document).click((event)=>{
+              if (~event.target.className.indexOf('datepicker')) return;
+              if (event.target.closest(`.${this.blockName}`)) return;
+              if (this.hidden) return;
+              if (this.static) return;
+              this.clear(event);
+              this.hide(event);             
+              return;
+            });
             this.hidden = false;
           }
           return;
@@ -43,13 +54,13 @@ export class Calendar {
     }
 
     clear(event)  {
-      let inRange = event.target.closest(`.${this.blockName}`).querySelectorAll('.-in-range-');
+      let inRange = this.block.querySelectorAll('.-in-range-');
       inRange.forEach((item) => 
       {
         $(item).removeClass('-in-range-')
         return;
       });
-      let selected = event.target.closest(`.${this.blockName}`).querySelectorAll('.-selected-');
+      let selected = this.block.querySelectorAll('.-selected-');
       selected.forEach((item) => 
       {
         $(item).removeClass('-selected-')
@@ -71,6 +82,8 @@ export class Calendar {
          }
       );
       $(`.${this.blockName}`).datepicker(this.options);
+      this.static = true;
+      this.hidden = false;
 
     }
   }
