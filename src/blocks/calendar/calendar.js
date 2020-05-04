@@ -13,7 +13,7 @@ export class Calendar {
         clearButton: true,
         todayButton: true,
       }
-      
+      this.inputName = `${this.bockName}__input`
     }
     static initialize(_class, blockName) {
       $(() => {
@@ -24,10 +24,26 @@ export class Calendar {
     }
 
     addFunctionality() {
-      if (!this.static) $('.datepicker-inline', this.block).addClass(`${this.blockName}__calendar_hidden`);
+      if (!this.static) {
+        $('.datepicker-inline', this.block).addClass(`${this.blockName}__calendar_hidden`);
+        $(`.${this.inputName}`, this.block).click((event) => {
+          //если календарь скрыт - покажем!
+          if (this.hidden) {
+            $(event.target).addClass(`${this.inputName}_expanded`);
+            this.show();
+          }
+          //а если это expand_less - скроем календарь!
+          else {
+            this.hide();
+            $(event.target).removeClass(`${this.inputName}_expanded`);
+          }
+          
+        })
+      }
       $('.datepicker-inline', this.block).addClass(`${this.blockName}__calendar`);
       $('[data-action="clear"]',this.block).addClass(`${this.blockName}__calendar__button_target_clear`);
       $('[data-action="today"]',this.block).addClass(`${this.blockName}__calendar__button_target_apply`);
+      
     } 
 
     show() {

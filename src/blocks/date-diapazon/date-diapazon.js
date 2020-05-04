@@ -12,22 +12,10 @@ class DateDiapazon extends Calendar {
           return;
         }
        });
+       this.inputName = 'date-diapazon__input-wrapper';
       $(this.block).datepicker(this.options);
       this.addFunctionality(); 
-      //клик на expand_more/less
-   $('.date-diapazon__input-wrapper', this.block).click((event) => {
-    //если календарь скрыт - покажем!
-    if (this.hidden) {
-      $(event.target).addClass('date-diapazon__input-wrapper_expanded');
-      this.show();
-    }
-    //а если это expand_less - скроем календарь!
-    else {
-      this.hide();
-      $(event.target).removeClass('date-diapazon__input-wrapper_expanded');
-    }
-    
-  })
+      //клик на expand_more/less   
     } 
     clear() {
       super.clear();
