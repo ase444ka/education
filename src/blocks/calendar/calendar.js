@@ -5,6 +5,7 @@ export class Calendar {
       this.hidden = true;
       this.static = false;
       this.blockName = blockName;
+      this.inputName = `${this.blockName}__input`
       this.options = {
         range: true,
         clearButton: 'true',
@@ -12,8 +13,7 @@ export class Calendar {
         multipleDates: true,
         clearButton: true,
         todayButton: true,
-      }
-      this.inputName = `${this.bockName}__input`
+      }      
     }
     static initialize(_class, blockName) {
       $(() => {
