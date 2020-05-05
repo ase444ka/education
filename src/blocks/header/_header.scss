@@ -5,14 +5,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    padding: 1rem 0 1rem 8.5rem;
+    padding: 1rem 0;
     background-position-y: 1rem;
     align-items: center;
     color: $darkShade_50;
 
     &__logo {
-        position: absolute;
-        left: 5px;
+        order: -2;
+        flex-grow: 2;
+        align-self: flex-start;
     }
 
     &__nav {
@@ -49,7 +50,19 @@
         display: flex;
         flex-wrap: wrap;
         & .button {
-            margin-left: 1.5rem;
+            margin: 0.5rem 1.5rem;
+        }
+    }
+}
+@media (max-width: 950px) {
+    .header {
+        &__user-info, &__buttons {
+            order: -1;
+        }        
+        &__user-info {
+            border: none;
+            justify-self: center;
+            font-style: italic;
         }
     }
 }
