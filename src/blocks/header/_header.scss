@@ -11,7 +11,7 @@
     color: $darkShade_50;
 
     &__logo {
-        
+        order: -2;
         flex-grow: 2;
         align-self: flex-start;
     }
@@ -50,7 +50,19 @@
         display: flex;
         flex-wrap: wrap;
         & .button {
-            margin-left: 1.5rem;
+            margin: 0.5rem 1.5rem;
+        }
+    }
+}
+@media (max-width: 950px) {
+    .header {
+        &__user-info, &__buttons {
+            order: -1;
+        }        
+        &__user-info {
+            border: none;
+            justify-self: center;
+            font-style: italic;
         }
     }
 }
