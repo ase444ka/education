@@ -1,6 +1,8 @@
 include ../logo/logo
 mixin header(user=false, ...items)
     .header
+        .header__logo
+            +logo()
         .header__nav
             each item in items
                 -let expandable = item.expandable?" header__nav__item_expandable":""

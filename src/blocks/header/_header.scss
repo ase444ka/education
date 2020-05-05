@@ -1,16 +1,19 @@
 .header {
     opacity: 0.99;
+    position: relative;
     box-shadow: 0px 10px 20px $darkShade_05;
     display: flex;
     justify-content: flex-end;
-    padding: 1rem 0 1rem 10rem;
-    background: white url(~Icons/Logo.svg) no-repeat;
+    padding: 1rem 0 1rem 0 8.5rem;
     background-position-y: 1rem;
     align-items: center;
     color: $darkShade_50;
-  /*   &__content-wrapper {
-        width: 80%;
-    } */
+
+    &__logo {
+        position: absolute;
+        left: 5px;
+    }
+
     &__nav {
         display: flex;
         &__item {
