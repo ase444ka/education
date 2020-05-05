@@ -1,4 +1,3 @@
 node_modules
-Forms_
-.idea
 dist
+*Log.txt
