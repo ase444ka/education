@@ -1880,7 +1880,6 @@
                     label: this.d.loc[type]
                 },
                 html = dp.template(button, data);
-                console.log(html);
 
             if ($('[data-action=' + type + ']', this.$buttonsContainer).length) return;
             this.$buttonsContainer.append(html);

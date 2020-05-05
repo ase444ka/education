@@ -1,0 +1,364 @@
+> 7388eb5 2020-03-24 18:32:46 | made date-diapazon [Istomina Asya]
+diff --git a/src/blocks/calendar/css/_datepicker.scss b/src/blocks/calendar/css/_datepicker.scss
+index 9e1433f..0c21656 100644
+--- a/src/blocks/calendar/css/_datepicker.scss
++++ b/src/blocks/calendar/css/_datepicker.scss
+@@ -192,7 +192,7 @@
+   border-radius: 4px;
+   grid-template-rows: 1fr;
+   background: #fff;
+-  box-sizing: content-box;
++  padding: 2px;
+   font-size: 14px;
+   color: #4a4a4a;
+   width: 100%;
+@@ -229,7 +229,9 @@
+ .datepicker--content {
+   background: white;
+   box-sizing: content-box;
+-  padding: 4px; }
++  padding: 4px; 
++  padding-bottom: 2px;
++}
+   .-only-timepicker- .datepicker--content {
+     display: none; }
+ 
+@@ -295,7 +297,7 @@
+   background-color: white;
+   width: 100%;
+   color: $purple;
+-  padding: 1.4rem  1.1rem;
++  padding: 1.35rem  1.1rem;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+@@ -358,8 +360,8 @@
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+-  padding: 4px;
+-  border-top: 1px solid #efefef; }
++  padding: 0 1.3rem 1rem;
++ }
+ 
+ .datepicker--button {
+   color: #4EB5E6;
+
+> eac65f5 2020-03-23 23:48:45 | continue with date-diapazon [Istomina Asya]
+diff --git a/src/blocks/calendar/css/_datepicker.scss b/src/blocks/calendar/css/_datepicker.scss
+index a444a02..9e1433f 100644
+--- a/src/blocks/calendar/css/_datepicker.scss
++++ b/src/blocks/calendar/css/_datepicker.scss
+@@ -8,7 +8,7 @@
+   display: grid;
+   justify-items: center;
+   align-items: center;
+-  grid-template-columns: repeat(7, 2.85rem);
++  grid-template-columns: repeat(7, 1fr);
+   grid-template-rows: repeat(auto-fit, 2.86rem);
+   font-family: Montserrat;
+  font-size: 0.9rem;
+@@ -128,7 +128,7 @@
+ 
+ .datepicker--days-names {
+   display: grid;
+-  grid-template-columns: repeat(7, 2.85rem);
++  grid-template-columns: repeat(7, 1fr);
+   margin: 1.35rem 1rem 1rem 1.2rem;
+  }
+ 
+@@ -198,9 +198,6 @@
+   width: 100%;
+   position: absolute;
+   z-index: 2000;
+-  left: 0px;
+-  right: 0px;
+-  max-height: 0;
+   opacity: 0;
+   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
+   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
+@@ -359,6 +356,8 @@
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
++  width: 100%;
++  justify-content: space-between;
+   padding: 4px;
+   border-top: 1px solid #efefef; }
+ 
+
+> a5c0227 2020-03-22 17:31:16 | continue work with datepicker [Istomina Asya]
+diff --git a/src/blocks/calendar/css/_datepicker.scss b/src/blocks/calendar/css/_datepicker.scss
+index f60dad2..a444a02 100644
+--- a/src/blocks/calendar/css/_datepicker.scss
++++ b/src/blocks/calendar/css/_datepicker.scss
+@@ -1,22 +1,4 @@
+-.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+-  color: #dedede; }
+-  .datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+-    color: #c5c5c5; }
+-  .-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+-    color: #dedede; }
+-  .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+-    color: #fff;
+-    background: #a2ddf6; }
+-    .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+-      background: #8ad5f4; }
+-  .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+-    background-color: rgba(92, 196, 239, 0.1);
+-    color: #cccccc; }
+-    .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+-      background-color: rgba(92, 196, 239, 0.2); }
+-  .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+-    background: none;
+-    border: none; }
++
+ 
+ /* -------------------------------------------------
+     Datepicker cells
+@@ -128,16 +110,7 @@
+         background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+         opacity: 25%;
+   }
+-/*   .datepicker--cell.-range-from- {
+-    border: 1px solid rgba(92, 196, 239, 0.5);
+-    background-color: rgba(92, 196, 239, 0.1);
+-     }
+-  .datepicker--cell.-range-to- {
+-    border: 1px solid rgba(92, 196, 239, 0.5);
+-    background-color: rgba(92, 196, 239, 0.1);
+-    }
+-  .datepicker--cell.-range-from-.-range-to- {
+-    } */
++
+   .datepicker--cell.-selected- {
+     color: #fff;
+     width: 100%;
+@@ -182,8 +155,7 @@
+ .datepicker--cell-day {
+   width: 14.28571%; }
+ 
+-.datepicker--cells-months {
+-  height: 170px; }
++
+ 
+ .datepicker--cell-month {
+   width: 33.33%;
+@@ -199,22 +171,6 @@
+   width: 25%;
+   height: 33.33%; }
+ 
+-/* .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+-  color: #dedede; }
+-  .datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+-    color: #c5c5c5; }
+-  .-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+-    color: #dedede; }
+-  .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+-    color: #fff;
+-    background: #a2ddf6; }
+-    .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+-      background: #8ad5f4; }
+-  .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+-    background-color: rgba(92, 196, 239, 0.1);
+-    color: #cccccc; }
+-    .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+-      background-color: rgba(92, 196, 239, 0.2); } */
+   .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+     background: none;
+     border: none; }
+@@ -231,6 +187,10 @@
+       display: none; } }
+ 
+ .datepicker {
++  display: grid;
++  border: 1px solid $darkShade_50;
++  border-radius: 4px;
++  grid-template-rows: 1fr;
+   background: #fff;
+   box-sizing: content-box;
+   font-size: 14px;
+@@ -238,24 +198,15 @@
+   width: 100%;
+   position: absolute;
+   z-index: 2000;
+-  left: -100000px;
++  left: 0px;
++  right: 0px;
++  max-height: 0;
+   opacity: 0;
+   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
+   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
+   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
+  }
+-  .datepicker.-from-top- {
+-    -webkit-transform: translateY(-8px);
+-            transform: translateY(-8px); }
+-  .datepicker.-from-right- {
+-    -webkit-transform: translateX(8px);
+-            transform: translateX(8px); }
+-  .datepicker.-from-bottom- {
+-    -webkit-transform: translateY(8px);
+-            transform: translateY(8px); }
+-  .datepicker.-from-left- {
+-    -webkit-transform: translateX(-8px);
+-            transform: translateX(-8px); }
++
+   .datepicker.active {
+     opacity: 1;
+     -webkit-transform: translate(0);
+@@ -279,19 +230,13 @@
+   display: none; }
+ 
+ .datepicker--content {
++  background: white;
+   box-sizing: content-box;
+   padding: 4px; }
+   .-only-timepicker- .datepicker--content {
+     display: none; }
+ 
+-.datepicker--pointer {
+-  position: absolute;
+-  background: #fff;
+-  border-top: 1px solid #dbdbdb;
+-  border-right: 1px solid #dbdbdb;
+-  width: 10px;
+-  height: 10px;
+-  z-index: -1; }
++
+   .-top-left- .datepicker--pointer, .-top-center- .datepicker--pointer, .-top-right- .datepicker--pointer {
+     top: calc(100% - 4px);
+     -webkit-transform: rotate(135deg);
+@@ -350,6 +295,8 @@
+     Navigation
+    ------------------------------------------------- */
+ .datepicker--nav {
++  background-color: white;
++  width: 100%;
+   color: $purple;
+   padding: 1.4rem  1.1rem;
+   display: -webkit-flex;
+@@ -644,7 +591,7 @@
+   margin: 0 5px -1px 0;
+   width: 1em;
+   height: 1em; }
+-  .datepicker--time-icon:after, .datepicker--time-icon:before {
++/*   .datepicker--time-icon:after, .datepicker--time-icon:before {
+     content: '';
+     background: currentColor;
+     position: absolute; }
+@@ -659,7 +606,7 @@
+     width: .4em;
+     height: 1px;
+     top: calc(50% + 1px);
+-    left: calc(50% - 1px); }
++    left: calc(50% - 1px); } */
+ 
+ .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+   color: #dedede; }
+
+> af0b99b 2020-03-13 13:46:11 | made card_for_login, begun calendar's programming [Istomina Asya]
+diff --git a/src/blocks/calendar/css/_datepicker.scss b/src/blocks/calendar/css/_datepicker.scss
+index 5ac1116..f60dad2 100644
+--- a/src/blocks/calendar/css/_datepicker.scss
++++ b/src/blocks/calendar/css/_datepicker.scss
+@@ -237,12 +237,13 @@
+   color: #4a4a4a;
+   width: 100%;
+   position: absolute;
++  z-index: 2000;
+   left: -100000px;
+   opacity: 0;
+   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
+   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
+   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
+-  z-index: 100; }
++ }
+   .datepicker.-from-top- {
+     -webkit-transform: translateY(-8px);
+             transform: translateY(-8px); }
+@@ -266,7 +267,8 @@
+ .datepicker-inline .datepicker {
+   border-color: #d7d7d7;
+   box-shadow: none;
+-  position: static;
++  position: relative;
++  z-index: 1000;
+   left: auto;
+   right: auto;
+   opacity: 1;
+
+> b86f7ec 2020-03-12 18:31:28 | fixed calendars bugs (not all) [Istomina Asya]
+diff --git a/src/blocks/calendar/css/_datepicker.scss b/src/blocks/calendar/css/_datepicker.scss
+index 7c689d3..5ac1116 100644
+--- a/src/blocks/calendar/css/_datepicker.scss
++++ b/src/blocks/calendar/css/_datepicker.scss
+@@ -59,19 +59,41 @@
+     width: 100%;
+     height: 100%;
+     &.-in-range- {
+-      opacity: 25%;
+-      width: 100%;
++      background: none;
++      position: relative;
+       border: none;
+       border-radius: unset;
++      color: black;
++      &:before {
++        content: "";
++        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); 
++        position: absolute;
++        top: 0;
++        left: 0;
++        width: 100%;
++        height: 100%;
++        opacity: 25%;
++      }
++      
+     }
+    }
+     .datepicker--cell.-current-.-focus- {
+       color: #4a4a4a; }
+ 
+   .datepicker--cell.-in-range- {
+-    background-color: $purple;
+-    opacity: 25%;
++    position: relative;
+     width: 100%;
++      &:after {
++        content: "";
++        background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
++        opacity: 25%;
++        width: 100%;
++        height: 100%;
++        position: absolute;
++        top: 0;
++        left: 0;
++      } 
++    
+      }
+   .datepicker--cell.-disabled- {
+     cursor: default;
+@@ -103,7 +125,7 @@
+         width: 50%;
+         height: 100%;
+         top: 0;
+-        background: $purple;
++        background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+         opacity: 25%;
+   }
+ /*   .datepicker--cell.-range-from- {
+@@ -132,12 +154,8 @@
+     cursor: default; }
+ 
+ .datepicker--days-names {
+-  display: -webkit-flex;
+-  display: -ms-flexbox;
+-  display: flex;
+-  -webkit-flex-wrap: wrap;
+-      -ms-flex-wrap: wrap;
+-          flex-wrap: wrap;
++  display: grid;
++  grid-template-columns: repeat(7, 2.85rem);
+   margin: 1.35rem 1rem 1rem 1.2rem;
+  }

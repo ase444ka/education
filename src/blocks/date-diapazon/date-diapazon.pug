@@ -2,7 +2,7 @@ mixin date-diapazon(first="прибытие",last="выезд")
     .date-diapazon
         +field({name: first})
             .date-diapazon__input-wrapper
-                input.date-diapazon__start(placeholder = "ДД.ММ.ГГГГ")
+                input.date-diapazon__start(placeholder = "ДД.ММ.ГГГГ", class = "date-diapazon__input")
         +field({name: last})
             .date-diapazon__input-wrapper
-                input.date-diapazon__end(placeholder = "ДД.ММ.ГГГГ")
+                input.date-diapazon__end(placeholder = "ДД.ММ.ГГГГ", class = "date-diapazon__input")
