@@ -5,14 +5,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    padding: 1rem 0 1rem 8.5rem;
+    padding: 1rem 0;
     background-position-y: 1rem;
     align-items: center;
     color: $darkShade_50;
 
     &__logo {
-        position: absolute;
-        left: 5px;
+        
+        flex-grow: 2;
+        align-self: flex-start;
     }
 
     &__nav {
