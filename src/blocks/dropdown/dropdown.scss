@@ -14,6 +14,9 @@ _state_ - в js добавить! (expanded и hovered(?))
     }
     &__placeholder {
         @extend %placeholder-appearence; 
+        &:after {
+            @extend %input__icon;
+        }
     }
     &_state_ {
         &expanded {

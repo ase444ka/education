@@ -2,11 +2,9 @@ mixin dropdown(data, ...items)
     -let expanded = data.expanded? "dropdown_state_expanded ":""
     -let target = data.target? data.target : '';
     -let hovered = data.hovered? "dropdown_state_hovered ":""
-    -let material = "expand_more"
     -let classes = expanded + hovered
 
     div.dropdown(class= classes, data-target = target)&attributes(attributes)
-        i.material-icons.dropdown__i=material
         div.dropdown__placeholder= data.placeholder
             div.dropdown__customization
                 ul.dropdown__options
