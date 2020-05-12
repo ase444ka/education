@@ -1,4 +1,24 @@
 
+import {initialize} from 'Blocks/public'
+class Dropdown {
+    constructor(block, blockName) {
+      this.block =  block;
+      this.blockName = blockName
+      
+
+      this.inputName = 'date-diapazon__input-wrapper';
+      $(this.block).datepicker(this.options);
+      this.addFunctionality(); 
+      //клик на expand_more/less   
+    } 
+    clear() {
+      super.clear();
+      this.$start.val('');
+      this.$end.val('');
+    }
+   
+  }
+  initialize(DateDiapazon, 'date-diapazon');
 //разворачиваем дропдаун по клику на инпут
 $('.dropdown__placeholder').click(function(){
     if (!$(this).parent().hasClass('dropdown_state_expanded')) {
