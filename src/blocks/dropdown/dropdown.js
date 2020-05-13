@@ -15,7 +15,10 @@ class Dropdown {
         this.applyButton = this.block.querySelector('.dropdown__button_target_apply');
         this.clearButton = this.block.querySelector('.dropdown__button_target_clear');
 
+        //разворачиваем при клике на инпут
         this.placeholder.addEventListener('click', () => this.show());
+        
+        //настраиваем плюс - минус
         for (let option of this.options) {
             option.addEventListener('click', (event) => {
                 if ($(event.target).hasClass('dropdown__option-iteration_increment')) {
