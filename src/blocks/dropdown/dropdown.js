@@ -7,7 +7,9 @@ import {endDigit} from './data.js';
 class Dropdown {
     constructor(block, blockName) {
         this.block =  block;
-        this.blockName = blockName
+        this.blockName = blockName;
+        let _text = $('.dropdown__placeholder', block).text();
+        let _placeholder =  $('.dropdown__placeholder', block);
 
         //разворачиваем дропдаун по клику на инпут
         $('.dropdown__placeholder', block).click(function(){
@@ -44,24 +46,39 @@ class Dropdown {
             let target = block.dataset.target; //Выясняем о чем дропдаун
             let str = "";
             let items = data[target].items; //берем данные о чем дропдаун
+            let total = {
+                people: 0,
+                babies: 0,
+            }, result = '';
 
             for (let value of block.querySelectorAll('.dropdown__item')) {
                 let option = value.querySelector('.dropdown__option').textContent;
                 let quantity = value.querySelector('.dropdown__option-quantity').textContent;
                 if (quantity == 0) continue;
+                
+
                 for (let item of items ) {
                     if (item.value == option) {
                         str += item.writing_mode(quantity) + ", ";  //склоняем итем в соответствии с его количеством
+                        if (data[target].result) {
+                            if (item.general) total.people += +quantity;
+                            else total.babies += +quantity;
+                        }
                         break;
                     }
                 }
             }
+            if (data[target].result) {
+                result = data[target].result(total);
+            } else result = str;
+            $(_placeholder).text(result);
             str = str.slice(0,-2);
             alert(str);
             block.classList.remove('dropdown_state_expanded');
             event.stopPropagation();
         });
         $('.dropdown__button_target_clear').click(function(){
+            $(_placeholder).text(_text);
             $(this).closest(".dropdown__customization").find('.dropdown__option-quantity').text('0');
             $(this).closest(".dropdown__customization").find('.dropdown__option-iteration_decrement').addClass('dropdown__option-iteration_disabled');
         });
@@ -70,7 +87,6 @@ class Dropdown {
                 let _expanded = document.querySelector('.dropdown_state_expanded');
                 if (_expanded) _expanded.classList.remove('dropdown_state_expanded');
             } 
-            
         }); 
    
   }

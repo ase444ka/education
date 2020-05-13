@@ -16,7 +16,8 @@ let data = {
                         return quantity + " взрослый";
                     }
                     return quantity + " взрослых";
-                }
+                },
+                general: true,
             },
             {
                 value: "дети",
@@ -29,7 +30,8 @@ let data = {
                         return quantity + " ребенка";
                     }
                     return quantity + " детей";
-                }
+                },
+                general: true,
             },
             {
                 value: "младенцы",
@@ -45,10 +47,14 @@ let data = {
                 }
             },
         ],
-        result: function (all) {
-            if (endDigit(all, 1)) return all + " гость";
-            if (endDigit(all, 2,3,4)) return all + " гость";
-            return all + " гостей";
+        result: function (total) {
+            let res;
+            if (endDigit(total.people, 1)) res = total.people + " гость";
+            else if (endDigit(total.people, 2,3,4)) res = total.people + " гостя";
+            else res = total.people + " гостей";
+            if (total.babies) res += `, ${this.items[2].writing_mode(total.babies)}`;
+            
+            return res;
         }
     },
     rooms: {
