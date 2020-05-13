@@ -8,15 +8,15 @@ mixin dropdown(data)
 
     div.dropdown(class= classes, data-target = target)&attributes(attributes)
         div.dropdown__placeholder= placeholder
-            div.dropdown__customization
-                ul.dropdown__options
-                    each item in items
-                        li.dropdown__item
-                            .dropdown__option= item
-                            .dropdown__option-setter
-                                .dropdown__option-iteration(class = "dropdown__option-iteration_decrement") -
-                                .dropdown__option-quantity 0
-                                .dropdown__option-iteration(class = "dropdown__option-iteration_increment") +
-                    .dropdown__buttons
-                        button.dropdown__button(class="dropdown__button_target_apply") применить
-                        button.dropdown__button(class="dropdown__button_target_clear") очистить
+        div.dropdown__customization
+            ul.dropdown__options
+                each item in items
+                    li.dropdown__item
+                        .dropdown__option= item
+                        .dropdown__option-setter
+                            .dropdown__option-iteration(class = "dropdown__option-iteration_decrement") -
+                            .dropdown__option-quantity 0
+                            .dropdown__option-iteration(class = "dropdown__option-iteration_increment") +
+                .dropdown__buttons
+                    button.dropdown__button(class="dropdown__button_target_apply") применить
+                    button.dropdown__button(class="dropdown__button_target_clear") очистить
