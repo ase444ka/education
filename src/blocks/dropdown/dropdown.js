@@ -33,8 +33,10 @@ class Dropdown {
             })
         }
 
+       //очищаем поля при клике на кнопку очистки
         this.clearButton.addEventListener('click', () => this.clear());
 
+        //очищаем и сворачиваем при клике снаружи
         document.addEventListener('click', (event) => {
             if (event.target.closest('.dropdown') === this.block) return;
             if (this.showing) {
