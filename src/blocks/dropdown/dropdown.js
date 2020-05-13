@@ -33,6 +33,8 @@ class Dropdown {
             })
         }
 
+        this.clearButton.addEventListener('click', () => this.clear());
+
 
         
         //клик на кнопке ПРИМЕНИТЬ
