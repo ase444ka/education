@@ -8,39 +8,13 @@ class Dropdown {
     constructor(block, blockName) {
         this.block =  block;
         this.blockName = blockName;
-        let _text = $('.dropdown__placeholder', block).text();
-        let _placeholder =  $('.dropdown__placeholder', block);
+        this.showing = false;
+        this.placeholderText = $('.dropdown__placeholder', block).text();
+        this.placeholder =  $('.dropdown__placeholder', block);
+        this.options = this.block.querySelectorAll('.dropdown__item')
 
-        //разворачиваем дропдаун по клику на инпут
-        $('.dropdown__placeholder', block).click(function(){
-            if (!$(block).hasClass('dropdown_state_expanded')) {
-                $(block).toggleClass('dropdown_state_expanded');
-            }
-        });
 
-                //Уменьшаем количество людей/комнат/стульев - в общем, итемов
-        $('.dropdown__option-iteration_decrement', block).click(function(){
-            if ($(this).hasClass('dropdown__option-iteration_disabled')) return;
-            let quantity = $(this).parent().children('.dropdown__option-quantity').text();
-            if (quantity <= 0) return;
-            quantity = --quantity;
-            if (quantity == 0) {
-                $(this).addClass('dropdown__option-iteration_disabled')
-            }
-            $(this).parent().children('.dropdown__option-quantity').text(quantity);
-        });
-
-        //Увеличиваем количество людей/комнат/стульев - в общем, итемов
-        $('.dropdown__option-iteration_increment', block).click(function(){
-            if ($(this).hasClass('dropdown__option-iteration_disabled')) return;
-            let quantity = $(this).parent().children('.dropdown__option-quantity').text();
-            quantity = ++quantity;
-            if ($(this).parent().children('.dropdown__option-iteration_decrement').hasClass('dropdown__option-iteration_disabled')) {
-                $(this).parent().children('.dropdown__option-iteration_decrement').removeClass('dropdown__option-iteration_disabled');
-            }
-            $(this).parent().children('.dropdown__option-quantity').text(quantity)
-        });
-      
+        
         //клик на кнопке ПРИМЕНИТЬ
         $('.dropdown__button_target_apply', block).click(function(){
             let target = block.dataset.target; //Выясняем о чем дропдаун
@@ -90,6 +64,48 @@ class Dropdown {
         }); 
    
   }
+  
+  show() {
+    this.block.classList.add('dropdown_state_expanded');
+    this.showing = true;
+  }
+
+  hide() {
+    this.block.classList.remove('dropdown_state_expanded');
+    this.showing = false;
+  }
+
+  clear() {
+    $('.dropdown__option-quantity', this.block).text('0');
+    $('.dropdown__option-iteration_decrement').addClass('dropdown__option-iteration_disabled');
+    $(this.placeholder).text(this.placeholderText)
+  }
+
+  apply() {
+
+  }
+
+  increment(option) {
+    if ($('.dropdown__option-iteration_increment', option).hasClass('dropdown__option-iteration_disabled')) return;
+    let quantity = $('.dropdown__option-quantity', option).text();
+    quantity = ++quantity;
+    if ($('.dropdown__option-iteration_decrement', option).hasClass('dropdown__option-iteration_disabled')) {
+        $('.dropdown__option-iteration_decrement', option).removeClass('dropdown__option-iteration_disabled');
+    }
+    $('.dropdown__option-quantity', option).text(quantity);
+  }
+
+  decrement(option) {
+    if ($('.dropdown__option-iteration_decrement', option).hasClass('dropdown__option-iteration_disabled')) return;
+    let quantity = $('.dropdown__option-quantity', option).text();
+    if (quantity <= 0) return;
+    quantity = --quantity;
+    if (quantity == 0) {
+        $('.dropdown__option-iteration_decrement', option).addClass('dropdown__option-iteration_disabled')
+    }
+    $('.dropdown__option-quantity', option).text(quantity);
+  }
+
 }
 initialize(Dropdown, 'dropdown');
 
