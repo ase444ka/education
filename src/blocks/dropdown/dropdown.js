@@ -35,6 +35,16 @@ class Dropdown {
 
         this.clearButton.addEventListener('click', () => this.clear());
 
+        document.addEventListener('click', (event) => {
+            if (event.target.closest('.dropdown') === this.block) return;
+            if (this.showing) {
+                this.clear();
+                this.hide();
+            }
+            return;
+            
+        }); 
+
 
         
         //клик на кнопке ПРИМЕНИТЬ
