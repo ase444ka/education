@@ -10,13 +10,30 @@ class Dropdown {
         this.blockName = blockName;
         this.showing = false;
         this.placeholderText = $('.dropdown__placeholder', block).text();
-        this.placeholder =  $('.dropdown__placeholder', block);
-        this.options = this.block.querySelectorAll('.dropdown__item')
+        this.placeholder =  this.block.querySelector('.dropdown__placeholder');
+        this.options = this.block.querySelectorAll('.dropdown__item');
+        this.applyButton = this.block.querySelector('.dropdown__button_target_apply');
+        this.clearButton = this.block.querySelector('.dropdown__button_target_clear');
+
+        this.placeholder.addEventListener('click', () => this.show());
+        for (let option of this.options) {
+            option.addEventListener('click', (event) => {
+                if ($(event.target).hasClass('dropdown__option-iteration_increment')) {
+                    this.increment(option);
+                    return;
+                }
+                if ($(event.target).hasClass('dropdown__option-iteration_decrement')) {
+                    this.decrement(option);
+                    return;
+                }
+                return;
+            })
+        }
 
 
         
         //клик на кнопке ПРИМЕНИТЬ
-        $('.dropdown__button_target_apply', block).click(function(){
+       /*  $('.dropdown__button_target_apply', block).click(function(){
             let target = block.dataset.target; //Выясняем о чем дропдаун
             let str = "";
             let items = data[target].items; //берем данные о чем дропдаун
@@ -62,8 +79,8 @@ class Dropdown {
                 if (_expanded) _expanded.classList.remove('dropdown_state_expanded');
             } 
         }); 
-   
-  }
+   */
+  } 
   
   show() {
     this.block.classList.add('dropdown_state_expanded');
