@@ -1,19 +1,21 @@
-mixin dropdown(data, ...items)   
+mixin dropdown(data)   
     -let expanded = data.expanded? "dropdown_state_expanded ":""
     -let target = data.target? data.target : '';
     -let hovered = data.hovered? "dropdown_state_hovered ":""
     -let classes = expanded + hovered
+    -let items =  require("Blocks/dropdown/" + data.target + ".json").items
+    -let placeholder = require("Blocks/dropdown/" + data.target + ".json").placeholder_text
 
     div.dropdown(class= classes, data-target = target)&attributes(attributes)
-        div.dropdown__placeholder= data.placeholder
+        div.dropdown__placeholder= placeholder
             div.dropdown__customization
                 ul.dropdown__options
                     each item in items
                         li.dropdown__item
-                            .dropdown__option= item.name
+                            .dropdown__option= item
                             .dropdown__option-setter
                                 .dropdown__option-iteration(class = "dropdown__option-iteration_decrement") -
-                                .dropdown__option-quantity=item.value
+                                .dropdown__option-quantity 0
                                 .dropdown__option-iteration(class = "dropdown__option-iteration_increment") +
                 if (data.apply)
                     .dropdown__buttons

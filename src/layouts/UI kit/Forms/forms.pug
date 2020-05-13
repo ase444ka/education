@@ -23,9 +23,9 @@ section#forms
     +field({name: "text field", annotation: "hover / focus"})
         +input({placeholder: "This is pretty awesome", hovered: true})
     +field({name: "dropdown", annotation: "default"})
-        +dropdown({placeholder: "Сколько гостей"})
+        +dropdown({target: "guests"})
     +field({name: "dropdown", annotation: "default"})
-            +dropdown({placeholder: "Сколько гостей"})
+            +dropdown({target: "guests"})
     +field({name: "masked text field", annotation: "default"})
         +input({placeholder: "ДД.ММ.ГГГГ", mask: "99.99.9999"})
     +fieldset
@@ -77,16 +77,13 @@ section#forms
     
     
     +field({name: "dropdown", annotation: "default", shorted: true})
-        +dropdown({placeholder: "2 спальни, 2 кровати..."})
+        +dropdown({target: "rooms"})
     +field({name: "dropdown", annotation: "default", shorted: true})
-        +dropdown({placeholder: "2 спальни, 2 кровати...", expanded: true, apply: true, target: "rooms", clear: true},
-            {name: 'спальни', value: 2},{name: 'кровати', value: 2},{name: 'ванные комнаты', value: 0})
+        +dropdown({target: "rooms",})
     +field({name: "dropdown"})
-        +dropdown({placeholder: "сколько гостей", expanded: true, clear: true, target: "guests", apply: true},
-            {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
+        +dropdown({target: "guests"})
     +field({name: "dropdown"})
-        +dropdown({placeholder: "сколько гостей", expanded: true, clear: true, target: "guests", apply: true},
-            {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
+        +dropdown({target: "guests"})
 
 
     +field({name:"expandable checkbox list"}) 
