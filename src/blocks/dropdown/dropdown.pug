@@ -17,8 +17,6 @@ mixin dropdown(data)
                                 .dropdown__option-iteration(class = "dropdown__option-iteration_decrement") -
                                 .dropdown__option-quantity 0
                                 .dropdown__option-iteration(class = "dropdown__option-iteration_increment") +
-                if (data.apply)
                     .dropdown__buttons
                         button.dropdown__button(class="dropdown__button_target_apply") применить
-                        if (data.clear)
-                            button.dropdown__button(class="dropdown__button_target_clear") очистить
+                        button.dropdown__button(class="dropdown__button_target_clear") очистить
