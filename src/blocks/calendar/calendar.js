@@ -1,4 +1,5 @@
 import "./js/datepicker"
+import {initialize} from 'Blocks/public'
 export class Calendar {
     constructor(block, blockName) {
       this.block = block;
@@ -114,5 +115,5 @@ export class Calendar {
     }
   }
   
-  Calendar.initialize(CalendarCard, 'calendar');
+initialize(CalendarCard, 'calendar');
  
