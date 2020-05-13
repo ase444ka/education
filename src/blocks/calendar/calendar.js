@@ -102,7 +102,7 @@ export class Calendar {
     constructor(block, blockName) {
       super(block, blockName);
       Object.assign(this.options, {
-          onSelect: () => console.log('yaaaaaa')
+          onSelect: () => console.log('selected')
          }
       );
       $(`.${this.blockName}`).datepicker(this.options);
