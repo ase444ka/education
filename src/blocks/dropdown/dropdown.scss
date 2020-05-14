@@ -14,6 +14,7 @@ _state_ - в js добавить! (expanded и hovered(?))
     }
     &__placeholder {
         @extend %placeholder-appearence; 
+        cursor: pointer;
         &:after {
             @extend %input__icon;
         }
@@ -23,6 +24,12 @@ _state_ - в js добавить! (expanded и hovered(?))
             border-width: 2px;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
+            .dropdown__placeholder {
+                pointer-events: none;
+                &:after {
+                    pointer-events: all;
+                }
+            }
             .dropdown__customization {
                 position: absolute;
                 max-height: 800px;
@@ -84,6 +91,7 @@ _state_ - в js добавить! (expanded и hovered(?))
         color: $darkShade_25;
         font-weight: normal;
         cursor: pointer;
+        user-select: none;
         &_disabled {
             border-color: $darkShade_05;
             cursor: default;

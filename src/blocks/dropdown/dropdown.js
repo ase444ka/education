@@ -18,7 +18,10 @@ class Dropdown {
         this.data = data[this.target];
 
         //разворачиваем при клике на инпут
-        this.placeholder.addEventListener('click', () => this.show());
+        this.placeholder.addEventListener('click', () => {
+            if (!this.showing) this.show();
+            else this.hide();
+        });
         
         //настраиваем плюс - минус
         for (let option of this.options) {
@@ -42,7 +45,6 @@ class Dropdown {
         document.addEventListener('click', (event) => {
             if (event.target.closest('.dropdown') === this.block) return;
             if (this.showing) {
-                this.clear();
                 this.hide();
             }
             return;

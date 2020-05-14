@@ -16,8 +16,7 @@ export let data = {
                         return this.quantity + " взрослый";
                     }
                     return this.quantity + " взрослых";
-                },
-                general: true,
+                }
             },
             "дети": {
                 quantity: 0,
@@ -31,8 +30,7 @@ export let data = {
                         return this.quantity + " ребенка";
                     }
                     return this.quantity + " детей";
-                },
-                general: true,
+                }
             },
             "младенцы": {
                 quantity: 0,
