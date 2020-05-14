@@ -14,6 +14,8 @@ class Dropdown {
         this.options = this.block.querySelectorAll('.dropdown__item');
         this.applyButton = this.block.querySelector('.dropdown__button_target_apply');
         this.clearButton = this.block.querySelector('.dropdown__button_target_clear');
+        this.target = this.block.dataset["target"];
+        this.data = data[this.target];
 
         //разворачиваем при клике на инпут
         this.placeholder.addEventListener('click', () => this.show());
@@ -46,57 +48,10 @@ class Dropdown {
             return;
             
         }); 
-
-
         
         //клик на кнопке ПРИМЕНИТЬ
-       /*  $('.dropdown__button_target_apply', block).click(function(){
-            let target = block.dataset.target; //Выясняем о чем дропдаун
-            let str = "";
-            let items = data[target].items; //берем данные о чем дропдаун
-            let total = {
-                people: 0,
-                babies: 0,
-            }, result = '';
+        this.applyButton.addEventListener('click', () => this.apply());
 
-            for (let value of block.querySelectorAll('.dropdown__item')) {
-                let option = value.querySelector('.dropdown__option').textContent;
-                let quantity = value.querySelector('.dropdown__option-quantity').textContent;
-                if (quantity == 0) continue;
-                
-
-                for (let item of items ) {
-                    if (item.value == option) {
-                        str += item.writing_mode(quantity) + ", ";  //склоняем итем в соответствии с его количеством
-                        if (data[target].result) {
-                            if (item.general) total.people += +quantity;
-                            else total.babies += +quantity;
-                        }
-                        break;
-                    }
-                }
-            }
-            if (data[target].result) {
-                result = data[target].result(total);
-            } else result = str;
-            $(_placeholder).text(result);
-            str = str.slice(0,-2);
-            alert(str);
-            block.classList.remove('dropdown_state_expanded');
-            event.stopPropagation();
-        });
-        $('.dropdown__button_target_clear').click(function(){
-            $(_placeholder).text(_text);
-            $(this).closest(".dropdown__customization").find('.dropdown__option-quantity').text('0');
-            $(this).closest(".dropdown__customization").find('.dropdown__option-iteration_decrement').addClass('dropdown__option-iteration_disabled');
-        });
-        document.addEventListener('click',function(event) {
-            if (!(~event.target.className.indexOf('dropdown'))) {
-                let _expanded = document.querySelector('.dropdown_state_expanded');
-                if (_expanded) _expanded.classList.remove('dropdown_state_expanded');
-            } 
-        }); 
-   */
   } 
   
   show() {
@@ -116,7 +71,12 @@ class Dropdown {
   }
 
   apply() {
-
+    for (let option of this.options) {
+        this.data.items[$('.dropdown__option', option).text()].quantity = +$('.dropdown__option-quantity', option).text(); 
+    }
+    alert(this.data.resultTotal());
+    $(this.placeholder).text(this.data.result() || this.placeholderText);
+    this.hide();
   }
 
   increment(option) {
