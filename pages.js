@@ -185,6 +185,7 @@ var map = {
 	"./input/input.js": "./blocks/input/input.js",
 	"./like/like.js": "./blocks/like/like.js",
 	"./pagination/pagination.js": "./blocks/pagination/pagination.js",
+	"./public.js": "./blocks/public.js",
 	"./radio/radio.js": "./blocks/radio/radio.js",
 	"./range-slider/range-slider.js": "./blocks/range-slider/range-slider.js",
 	"./rate/rate.js": "./blocks/rate/rate.js"
@@ -227,21 +228,188 @@ webpackContext.id = "./blocks sync recursive \\.js$";
 /*!*************************************!*\
   !*** ./blocks/calendar/calendar.js ***!
   \*************************************/
-/*! no exports provided */
+/*! exports provided: Calendar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _js_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/datepicker */ "./blocks/calendar/js/datepicker.js");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Calendar", function() { return Calendar; });
+/* harmony import */ var _js_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/datepicker */ "./blocks/calendar/js/datepicker.js");
 /* harmony import */ var _js_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_datepicker__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var Blocks_public__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! Blocks/public */ "./blocks/public.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-$('.calendar').datepicker({
-  //inline: true,
-  range: true,
-  multipleDates: true,
-  clearButton: true,
-  todayButton: true
-});
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Calendar =
+/*#__PURE__*/
+function () {
+  function Calendar(block, blockName) {
+    var _this$options;
+
+    _classCallCheck(this, Calendar);
+
+    this.block = block;
+    this.hidden = true;
+    this["static"] = false;
+    this.blockName = blockName;
+    this.inputName = "".concat(this.blockName, "__input");
+    this.options = (_this$options = {
+      range: true,
+      clearButton: 'true',
+      offset: 0,
+      multipleDates: true
+    }, _defineProperty(_this$options, "clearButton", true), _defineProperty(_this$options, "todayButton", true), _this$options);
+  }
+
+  _createClass(Calendar, [{
+    key: "addFunctionality",
+    value: function addFunctionality() {
+      var _this = this;
+
+      if (!this["static"]) {
+        $('.datepicker-inline', this.block).addClass("".concat(this.blockName, "__calendar_hidden"));
+        $(".".concat(this.inputName), this.block).click(function (event) {
+          //если календарь скрыт - покажем!
+          if (_this.hidden) {
+            $(event.target).addClass("".concat(_this.inputName, "_expanded"));
+
+            _this.show();
+          } //а если это expand_less - скроем календарь!
+          else {
+              _this.hide();
+
+              $(event.target).removeClass("".concat(_this.inputName, "_expanded"));
+            }
+        });
+      }
+
+      $('.datepicker-inline', this.block).addClass("".concat(this.blockName, "__calendar"));
+      $('[data-action="clear"]', this.block).addClass("".concat(this.blockName, "__calendar__button_target_clear"));
+      $('[data-action="today"]', this.block).addClass("".concat(this.blockName, "__calendar__button_target_apply"));
+    }
+  }, {
+    key: "show",
+    value: function show() {
+      var _this2 = this;
+
+      var calendar = $('.datepicker-inline', this.block);
+
+      if ($(calendar).hasClass("".concat(this.blockName, "__calendar_hidden"))) {
+        $(calendar).removeClass("".concat(this.blockName, "__calendar_hidden"));
+      }
+
+      $(".".concat(this.blockName, "__calendar__button_target_apply"), this.block).click(function (event) {
+        return _this2.hide(event);
+      });
+      $(".".concat(this.blockName, "__calendar__button_target_clear"), this.block).click(function (event) {
+        return _this2.clear(event);
+      });
+      $(document).click(function (event) {
+        if (~event.target.className.indexOf('datepicker')) return;
+        if (event.target.closest(".".concat(_this2.blockName))) return;
+        if (_this2.hidden) return;
+        if (_this2["static"]) return;
+
+        _this2.clear();
+
+        _this2.hide();
+
+        return;
+      });
+      this.hidden = false;
+      return;
+    }
+  }, {
+    key: "hide",
+    value: function hide() {
+      var calendar = $('.datepicker-inline', this.block);
+      var wrapperExpanded = $(".".concat(this.blockName, "__input-wrapper_expanded"), this.block);
+      $(wrapperExpanded).removeClass("".concat(this.blockName, "__input-wrapper_expanded"));
+      $(calendar).addClass("".concat(this.blockName, "__calendar_hidden"));
+      this.hidden = true;
+      return;
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      var inRange = this.block.querySelectorAll('.-in-range-');
+      inRange.forEach(function (item) {
+        $(item).removeClass('-in-range-');
+        return;
+      });
+      var selected = this.block.querySelectorAll('.-selected-');
+      selected.forEach(function (item) {
+        $(item).removeClass('-selected-');
+        return;
+      });
+      $('.-range-to-').removeClass('-range-to-');
+      $('.-range-from-').removeClass('-range-from-');
+      return;
+    }
+  }], [{
+    key: "initialize",
+    value: function initialize(_class, blockName) {
+      $(function () {
+        $(".".concat(blockName)).each(function (index, node) {
+          new _class(node, blockName);
+        });
+      });
+    }
+  }]);
+
+  return Calendar;
+}();
+
+var CalendarCard =
+/*#__PURE__*/
+function (_Calendar) {
+  _inherits(CalendarCard, _Calendar);
+
+  function CalendarCard(block, blockName) {
+    var _this3;
+
+    _classCallCheck(this, CalendarCard);
+
+    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(CalendarCard).call(this, block, blockName));
+    Object.assign(_this3.options, {
+      onSelect: function onSelect() {
+        return console.log('selected');
+      }
+    });
+    $(".".concat(_this3.blockName)).datepicker(_this3.options);
+    _this3["static"] = true;
+    _this3.hidden = false;
+
+    _this3.addFunctionality();
+
+    _this3.show();
+
+    return _this3;
+  }
+
+  return CalendarCard;
+}(Calendar);
+
+Object(Blocks_public__WEBPACK_IMPORTED_MODULE_1__["initialize"])(CalendarCard, 'calendar');
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -2096,7 +2264,6 @@ $('.calendar').datepicker({
           label: this.d.loc[type]
         },
             html = dp.template(button, data);
-        console.log(html);
         if ($('[data-action=' + type + ']', this.$buttonsContainer).length) return;
         this.$buttonsContainer.append(html);
       },
@@ -2442,105 +2609,83 @@ $('.calendar').datepicker({
 /*!***********************************************!*\
   !*** ./blocks/date-diapazon/date-diapazon.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var Blocks_calendar_calendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Blocks/calendar/calendar */ "./blocks/calendar/calendar.js");
+/* harmony import */ var Blocks_public__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! Blocks/public */ "./blocks/public.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-//объявление класса календаря с привязкой по двум инпутам
-var DateDiapazon = function DateDiapazon(component) {
-  var _$$datepicker;
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  _classCallCheck(this, DateDiapazon);
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-  var $start = $('.date-diapazon__start', component);
-  var $end = $('.date-diapazon__end', component);
-  $(component).datepicker((_$$datepicker = {
-    onSelect: function onSelect(fd, d, picker) {
-      console.log($start);
-      console.log($end);
-      console.log(fd);
-      $start.val(fd.split(",")[0]);
-      $end.val(fd.split(",")[1]);
-    },
-    range: true,
-    clearButton: 'true',
-    offset: 0,
-    multipleDates: true
-  }, _defineProperty(_$$datepicker, "clearButton", true), _defineProperty(_$$datepicker, "todayButton", true), _$$datepicker));
-  $('.datepicker-inline', component).addClass('date-diapazon__calendar_hidden');
-  $('.datepicker-inline', component).addClass('date-diapazon__calendar');
-  $('[data-action="clear"]', component).addClass('date-diapazon__calendar__button_target_clear');
-  $('[data-action="today"]', component).addClass('date-diapazon__calendar__button_target_apply');
-}; //инициализация календаря с двойными инпутами на соотв. блоках
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-$(function () {
-  $('.date-diapazon').each(function (index, node) {
-    new DateDiapazon(node);
-  });
-}); //отображение календаря
+ //объявление класса календаря с привязкой по двум инпутам
 
-var dateDiapazonShowCalendar = function dateDiapazonShowCalendar(event) {
-  var calendar = $('.datepicker-inline', event.target.closest('.date-diapazon'));
+var DateDiapazon =
+/*#__PURE__*/
+function (_Calendar) {
+  _inherits(DateDiapazon, _Calendar);
 
-  if ($(calendar).hasClass('date-diapazon__calendar_hidden')) {
-    $(calendar).removeClass('date-diapazon__calendar_hidden');
-    $('.date-diapazon__calendar__button_target_apply', event.target.closest('.date-diapazon')).click(dateDiapazonHideCalendar);
-    $('.date-diapazon__calendar__button_target_clear', event.target.closest('.date-diapazon')).click(dateDiapazonClearDates);
+  function DateDiapazon(block, blockName) {
+    var _this;
+
+    _classCallCheck(this, DateDiapazon);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DateDiapazon).call(this, block, blockName));
+    _this.$start = $('.date-diapazon__start', block);
+    _this.$end = $('.date-diapazon__end', block);
+    Object.assign(_this.options, {
+      onSelect: function onSelect(fd, d, picker) {
+        _this.$start.val(fd.split(",")[0]);
+
+        _this.$end.val(fd.split(",")[1]);
+
+        return;
+      }
+    });
+    _this.inputName = 'date-diapazon__input-wrapper';
+    $(_this.block).datepicker(_this.options);
+
+    _this.addFunctionality(); //клик на expand_more/less   
+
+
+    return _this;
   }
 
-  return;
-}; //скрытие календаря
+  _createClass(DateDiapazon, [{
+    key: "clear",
+    value: function clear() {
+      _get(_getPrototypeOf(DateDiapazon.prototype), "clear", this).call(this);
 
-
-var dateDiapazonHideCalendar = function dateDiapazonHideCalendar(event) {
-  var parent = event.target.closest('.date-diapazon');
-  var calendar = $('.datepicker-inline', parent);
-  var wrapperExpanded = $('.date-diapazon__input-wrapper_expanded', parent);
-  $(wrapperExpanded).removeClass('date-diapazon__input-wrapper_expanded');
-  $(calendar).addClass('date-diapazon__calendar_hidden');
-  return;
-}; //очистка инпутов с датами
-
-
-var dateDiapazonClearDates = function dateDiapazonClearDates(event) {
-  var start = $('.date-diapazon__start', event.target.closest('.date-diapazon'));
-  var end = $('.date-diapazon__end', event.target.closest('.date-diapazon'));
-  var inRange = event.target.closest('.date-diapazon').querySelectorAll('.-in-range-');
-  inRange.forEach(function (item) {
-    $(item).removeClass('-in-range-');
-    return;
-  });
-  var selected = event.target.closest('.date-diapazon').querySelectorAll('.-selected-');
-  selected.forEach(function (item) {
-    $(item).removeClass('-selected-');
-    return;
-  });
-  $('.-range-to-').removeClass('-range-to-');
-  $('.-range-from-').removeClass('-range-from-');
-  $(start).val('');
-  $(end).val('');
-  return;
-}; //клик на expand_more/less
-
-
-$('.date-diapazon__input-wrapper').click(function (event) {
-  //если календарь скрыт - покажем!
-  if ($(event.target.closest('.date-diapazon')).find('.date-diapazon__calendar_hidden').length) {
-    $(event.target).addClass('date-diapazon__input-wrapper_expanded');
-    dateDiapazonShowCalendar(event);
-  } //а если это expand_less - скроем календарь!
-  else if ($(event.target).hasClass('date-diapazon__input-wrapper_expanded')) {
-      dateDiapazonHideCalendar(event);
+      this.$start.val('');
+      this.$end.val('');
     }
-});
-/* //разворачиваем календарь
-  $('.date-diapazon__start').click(dateDiapazonShowCalendar);
-  //разворачиваем календарь
-  $('.date-diapazon__end').click(dateDiapazonShowCalendar); */
+  }]);
+
+  return DateDiapazon;
+}(Blocks_calendar_calendar__WEBPACK_IMPORTED_MODULE_0__["Calendar"]);
+
+Object(Blocks_public__WEBPACK_IMPORTED_MODULE_1__["initialize"])(DateDiapazon, 'date-diapazon');
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -2549,13 +2694,13 @@ $('.date-diapazon__input-wrapper').click(function (event) {
 /*!*********************************!*\
   !*** ./blocks/dropdown/data.js ***!
   \*********************************/
-/*! exports provided: data, endDigit */
+/*! exports provided: endDigit, data */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endDigit", function() { return endDigit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
 function endDigit(quantity) {
   for (var _len = arguments.length, digits = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     digits[_key - 1] = arguments[_key];
@@ -2568,103 +2713,163 @@ function endDigit(quantity) {
 
   return false;
 }
-
 var data = {
   guests: {
-    initial_value: "СИКОКА гостей",
-    items: [{
-      value: "взрослые",
-      max_quantity: 100,
-      writing_mode: function writing_mode(quantity) {
-        if (endDigit(quantity, 1)) {
-          return quantity + " взрослый";
-        }
+    items: {
+      "взрослые": {
+        quantity: 0,
+        max_quantity: 100,
+        writing_mode: function writing_mode() {
+          if (!this.quantity) return '';
 
-        return quantity + " взрослых";
+          if (endDigit(this.quantity, 1)) {
+            return this.quantity + " взрослый";
+          }
+
+          return this.quantity + " взрослых";
+        },
+        general: true
+      },
+      "дети": {
+        quantity: 0,
+        max_quantity: 50,
+        writing_mode: function writing_mode() {
+          if (!this.quantity) return '';
+
+          if (endDigit(this.quantity, 1)) {
+            return this.quantity + " ребенок";
+          }
+
+          if (endDigit(this.quantity, 2, 3, 4)) {
+            return this.quantity + " ребенка";
+          }
+
+          return this.quantity + " детей";
+        },
+        general: true
+      },
+      "младенцы": {
+        quantity: 0,
+        max_quantity: 30,
+        writing_mode: function writing_mode() {
+          if (!this.quantity) return '';
+
+          if (endDigit(this.quantity, 1)) {
+            return this.quantity + " младенец";
+          }
+
+          if (endDigit(this.quantity, 2, 3, 4)) {
+            return this.quantity + " младенца";
+          }
+
+          return this.quantity + " младенцев";
+        }
+      },
+      "гости": {
+        quantity: 0,
+        max_quantity: 30,
+        writing_mode: function writing_mode() {
+          if (!this.quantity) return '';
+
+          if (endDigit(this.quantity, 1)) {
+            return this.quantity + " гость";
+          }
+
+          if (endDigit(this.quantity, 2, 3, 4)) {
+            return this.quantity + " гостя";
+          }
+
+          return this.quantity + " гостей";
+        }
       }
-    }, {
-      value: "дети",
-      max_quantity: 50,
-      writing_mode: function writing_mode(quantity) {
-        if (endDigit(quantity, 1)) {
-          return quantity + " ребенок";
-        }
+    },
+    result: function result() {
+      var res;
+      this.items["гости"].quantity = this.items["взрослые"].quantity + this.items["дети"].quantity;
+      res = this.items["гости"].writing_mode() + (this.items["младенцы"].writing_mode() && ", ".concat(this.items["младенцы"].writing_mode()) || '');
+      return res;
+    },
+    resultTotal: function resultTotal() {
+      var resArray = [];
+      var res = '';
+      if (this.items["взрослые"].quantity) resArray.push(this.items["взрослые"]);
+      if (this.items["дети"].quantity) resArray.push(this.items["дети"]);
+      if (this.items["младенцы"].quantity) resArray.push(this.items["младенцы"]);
 
-        if (endDigit(quantity, 2, 3, 4)) {
-          return quantity + " ребенка";
-        }
-
-        return quantity + " детей";
+      for (var _i2 = 0, _resArray = resArray; _i2 < _resArray.length; _i2++) {
+        var item = _resArray[_i2];
+        res += item.writing_mode() + ', ';
       }
-    }, {
-      value: "младенцы",
-      max_quantity: 30,
-      writing_mode: function writing_mode(quantity) {
-        if (endDigit(quantity, 1)) {
-          return quantity + " младенец";
-        }
 
-        if (endDigit(quantity, 2, 3, 4)) {
-          return quantity + " младенца";
-        }
-
-        return quantity + " младенцев";
-      }
-    }],
-    result: function result(all) {
-      if (endDigit(all, 1)) return all + " гость";
-      if (endDigit(all, 2, 3, 4)) return all + " гость";
-      return all + " гостей";
+      res = res.slice(0, -2);
+      return res;
     }
   },
   rooms: {
-    initial_value: "Какой нумерочик..",
-    items: [{
-      value: "спальни",
-      max_quantity: 5,
-      writing_mode: function writing_mode(quantity) {
-        if (endDigit(quantity, 1)) {
-          return quantity + " спальня";
-        }
+    items: {
+      "спальни": {
+        max_quantity: 5,
+        writing_mode: function writing_mode() {
+          if (endDigit(this.quantity, 1)) {
+            return this.quantity + " спальня";
+          }
 
-        if (endDigit(quantity, 2, 3, 4)) {
-          return quantity + " спальни";
-        }
+          if (endDigit(this.quantity, 2, 3, 4)) {
+            return this.quantity + " спальни";
+          }
 
-        return quantity + " спален";
+          return this.quantity + " спален";
+        }
+      },
+      "кровати": {
+        max_quantity: 30,
+        writing_mode: function writing_mode() {
+          if (endDigit(this.quantity, 1)) {
+            return this.quantity + " кровать";
+          }
+
+          if (endDigit(this.quantity, 2, 3, 4)) {
+            return this.quantity + " кровати";
+          }
+
+          return this.quantity + " кроватей";
+        }
+      },
+      "ванные комнаты": {
+        max_quantity: 50,
+        writing_mode: function writing_mode() {
+          if (endDigit(this.quantity, 1)) {
+            return this.quantity + " ванная комната";
+          }
+
+          if (endDigit(this.quantity, 2, 3, 4)) {
+            return this.quantity + " ванные комнаты";
+          }
+
+          return this.quantity + " ванных комнат";
+        }
       }
-    }, {
-      value: "кровати",
-      max_quantity: 30,
-      writing_mode: function writing_mode(quantity) {
-        if (endDigit(quantity, 1)) {
-          return quantity + " кровать";
-        }
+    },
+    resultTotal: function resultTotal() {
+      var resArray = [];
+      var res = '';
+      if (this.items["спальни"].quantity) resArray.push(this.items["спальни"]);
+      if (this.items["кровати"].quantity) resArray.push(this.items["кровати"]);
+      if (this.items["ванные комнаты"].quantity) resArray.push(this.items["ванные комнаты"]);
 
-        if (endDigit(quantity, 2, 3, 4)) {
-          return quantity + " кровати";
-        }
-
-        return quantity + " кроватей";
+      for (var _i3 = 0, _resArray2 = resArray; _i3 < _resArray2.length; _i3++) {
+        var item = _resArray2[_i3];
+        res += item.writing_mode() + ', ';
       }
-    }, {
-      value: "ванные комнаты",
-      max_quantity: 50,
-      writing_mode: function writing_mode(quantity) {
-        if (endDigit(quantity, 1)) {
-          return quantity + " ванная комната";
-        }
 
-        if (endDigit(quantity, 2, 3, 4)) {
-          return quantity + " ванные комнаты";
-        }
-
-        return quantity + " ванных комнат";
-      }
-    }]
+      res = res.slice(0, -2);
+      return res;
+    },
+    result: function result() {
+      return this.resultTotal();
+    }
   }
 };
-
 
 /***/ }),
 
@@ -2677,61 +2882,136 @@ var data = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data.js */ "./blocks/dropdown/data.js");
-$('.dropdown__i').click(function () {
-  $(this).parent().toggleClass('dropdown_state_expanded');
-});
-$('.dropdown__option-iteration_decrement').click(function () {
-  if ($(this).hasClass('dropdown__option-iteration_disabled')) return;
-  var quantity = $(this).parent().children('.dropdown__option-quantity').text();
-  if (quantity <= 0) return;
-  quantity = --quantity;
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var Blocks_public__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Blocks/public */ "./blocks/public.js");
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.js */ "./blocks/dropdown/data.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  if (quantity == 0) {
-    $(this).addClass('dropdown__option-iteration_disabled');
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+ //импортируем файл с данными и кой-какую вспомогательную функцию (проверяет, кончается ли число на указанные цифры)
+
+
+
+
+var Dropdown =
+/*#__PURE__*/
+function () {
+  function Dropdown(block, blockName) {
+    var _this = this;
+
+    _classCallCheck(this, Dropdown);
+
+    this.block = block;
+    this.blockName = blockName;
+    this.showing = false;
+    this.placeholderText = $('.dropdown__placeholder', block).text();
+    this.placeholder = this.block.querySelector('.dropdown__placeholder');
+    this.options = this.block.querySelectorAll('.dropdown__item');
+    this.applyButton = this.block.querySelector('.dropdown__button_target_apply');
+    this.clearButton = this.block.querySelector('.dropdown__button_target_clear');
+    this.target = this.block.dataset["target"];
+    this.data = _data_js__WEBPACK_IMPORTED_MODULE_1__["data"][this.target]; //разворачиваем при клике на инпут
+
+    this.placeholder.addEventListener('click', function () {
+      return _this.show();
+    }); //настраиваем плюс - минус
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      var _loop = function _loop() {
+        var option = _step.value;
+        option.addEventListener('click', function (event) {
+          if ($(event.target).hasClass('dropdown__option-iteration_increment')) {
+            _this.increment(option);
+
+            return;
+          }
+
+          if ($(event.target).hasClass('dropdown__option-iteration_decrement')) {
+            _this.decrement(option);
+
+            return;
+          }
+
+          return;
+        });
+      };
+
+      for (var _iterator = this.options[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        _loop();
+      } //очищаем поля при клике на кнопку очистки
+
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    this.clearButton.addEventListener('click', function () {
+      return _this.clear();
+    }); //очищаем и сворачиваем при клике снаружи
+
+    document.addEventListener('click', function (event) {
+      if (event.target.closest('.dropdown') === _this.block) return;
+
+      if (_this.showing) {
+        _this.clear();
+
+        _this.hide();
+      }
+
+      return;
+    }); //клик на кнопке ПРИМЕНИТЬ
+
+    this.applyButton.addEventListener('click', function () {
+      return _this.apply();
+    });
   }
 
-  $(this).parent().children('.dropdown__option-quantity').text(quantity);
-});
-$('.dropdown__option-iteration_increment').click(function () {
-  if ($(this).hasClass('dropdown__option-iteration_disabled')) return;
-  var quantity = $(this).parent().children('.dropdown__option-quantity').text();
-  quantity = ++quantity;
-
-  if ($(this).parent().children('.dropdown__option-iteration_decrement').hasClass('dropdown__option-iteration_disabled')) {
-    $(this).parent().children('.dropdown__option-iteration_decrement').removeClass('dropdown__option-iteration_disabled');
-  }
-
-  $(this).parent().children('.dropdown__option-quantity').text(quantity);
-});
-
-
-$('.dropdown__button_target_apply').click(function () {
-  var target = this.closest('.dropdown').dataset.target;
-  var str = "";
-  var items = _data_js__WEBPACK_IMPORTED_MODULE_0__["data"][target].items;
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = this.closest('.dropdown').querySelectorAll('.dropdown__item')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var value = _step.value;
-      var option = value.querySelector('.dropdown__option').textContent;
-      var quantity = value.querySelector('.dropdown__option-quantity').textContent;
-      if (quantity == 0) continue;
+  _createClass(Dropdown, [{
+    key: "show",
+    value: function show() {
+      this.block.classList.add('dropdown_state_expanded');
+      this.showing = true;
+    }
+  }, {
+    key: "hide",
+    value: function hide() {
+      this.block.classList.remove('dropdown_state_expanded');
+      this.showing = false;
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      $('.dropdown__option-quantity', this.block).text('0');
+      $('.dropdown__option-iteration_decrement').addClass('dropdown__option-iteration_disabled');
+      $(this.placeholder).text(this.placeholderText);
+    }
+  }, {
+    key: "apply",
+    value: function apply() {
       var _iteratorNormalCompletion2 = true;
       var _didIteratorError2 = false;
       var _iteratorError2 = undefined;
 
       try {
-        for (var _iterator2 = items[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var item = _step2.value;
-
-          if (item.value == option) {
-            str += item.writing_mode(quantity) + ", ";
-            break;
-          }
+        for (var _iterator2 = this.options[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var option = _step2.value;
+          this.data.items[$('.dropdown__option', option).text()].quantity = +$('.dropdown__option-quantity', option).text();
         }
       } catch (err) {
         _didIteratorError2 = true;
@@ -2747,30 +3027,44 @@ $('.dropdown__button_target_apply').click(function () {
           }
         }
       }
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
 
-  str = str.slice(0, -2);
-  alert(str);
-  this.closest('.dropdown').classList.remove('dropdown_state_expanded');
-});
-$('.dropdown__button_target_clear').click(function () {
-  $(this).closest(".dropdown__customization").find('.dropdown__option-quantity').text('0');
-  $(this).closest(".dropdown__customization").find('.dropdown__option-iteration_decrement').addClass('dropdown__option-iteration_disabled');
-});
+      alert(this.data.resultTotal());
+      $(this.placeholder).text(this.data.result() || this.placeholderText);
+      this.hide();
+    }
+  }, {
+    key: "increment",
+    value: function increment(option) {
+      if ($('.dropdown__option-iteration_increment', option).hasClass('dropdown__option-iteration_disabled')) return;
+      var quantity = $('.dropdown__option-quantity', option).text();
+      quantity = ++quantity;
+
+      if ($('.dropdown__option-iteration_decrement', option).hasClass('dropdown__option-iteration_disabled')) {
+        $('.dropdown__option-iteration_decrement', option).removeClass('dropdown__option-iteration_disabled');
+      }
+
+      $('.dropdown__option-quantity', option).text(quantity);
+    }
+  }, {
+    key: "decrement",
+    value: function decrement(option) {
+      if ($('.dropdown__option-iteration_decrement', option).hasClass('dropdown__option-iteration_disabled')) return;
+      var quantity = $('.dropdown__option-quantity', option).text();
+      if (quantity <= 0) return;
+      quantity = --quantity;
+
+      if (quantity == 0) {
+        $('.dropdown__option-iteration_decrement', option).addClass('dropdown__option-iteration_disabled');
+      }
+
+      $('.dropdown__option-quantity', option).text(quantity);
+    }
+  }]);
+
+  return Dropdown;
+}();
+
+Object(Blocks_public__WEBPACK_IMPORTED_MODULE_0__["initialize"])(Dropdown, 'dropdown');
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -2796,107 +3090,80 @@ $('.dropdown__button_target_clear').click(function () {
 /*!*******************************************!*\
   !*** ./blocks/filter-date/filter-date.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var Blocks_calendar_calendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Blocks/calendar/calendar */ "./blocks/calendar/calendar.js");
+/* harmony import */ var Blocks_public__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! Blocks/public */ "./blocks/public.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-//объявление класса календаря с привязкой по двум инпутам
-var FilterDate = function FilterDate(component) {
-  var _$$datepicker;
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  _classCallCheck(this, FilterDate);
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-  var start = '';
-  var end = '';
-  var $input = $('.filter-date__input', component);
-  $(component).datepicker((_$$datepicker = {
-    onSelect: function onSelect(fd, d, picker) {
-      console.log(fd);
-      start = fd.split(",")[0];
-      end = fd.split(",")[1] || '';
-      $input.val("".concat(start, "-").concat(end));
-    },
-    range: true,
-    clearButton: 'true',
-    offset: 0,
-    multipleDates: true
-  }, _defineProperty(_$$datepicker, "clearButton", true), _defineProperty(_$$datepicker, "todayButton", true), _defineProperty(_$$datepicker, "dateFormat", 'ddM'), _$$datepicker));
-  $('.datepicker-inline', component).addClass('filter-date__calendar_hidden');
-  $('.datepicker-inline', component).addClass('filter-date__calendar');
-  $('[data-action="clear"]', component).addClass('filter-date__calendar__button_target_clear');
-  $('[data-action="today"]', component).addClass('filter-date__calendar__button_target_apply');
-}; //инициализация календаря с двойными инпутами на соотв. блоках
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-$(function () {
-  $('.filter-date').each(function (index, node) {
-    new FilterDate(node);
-  });
-}); //отображение календаря
 
-var filterDateShowCalendar = function filterDateShowCalendar(event) {
-  var calendar = $('.datepicker-inline', event.target.closest('.filter-date'));
 
-  if ($(calendar).hasClass('filter-date__calendar_hidden')) {
-    $(calendar).removeClass('filter-date__calendar_hidden');
-    $('.filter-date__calendar__button_target_apply', event.target.closest('.filter-date')).click(filterDateHideCalendar);
-    $('.filter-date__calendar__button_target_clear', event.target.closest('.filter-date')).click(filterDateClearDates);
+var FilterDate =
+/*#__PURE__*/
+function (_Calendar) {
+  _inherits(FilterDate, _Calendar);
+
+  function FilterDate(block, blockName) {
+    var _this;
+
+    _classCallCheck(this, FilterDate);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FilterDate).call(this, block, blockName));
+    _this.start = '';
+    _this.end = '';
+    Object.assign(_this.options, {
+      onSelect: function onSelect(fd, d, picker) {
+        _this.start = fd.split(",")[0];
+        _this.end = fd.split(",")[1] || '';
+        $(".".concat(_this.inputName), _this.block).val("".concat(_this.start, "-").concat(_this.end));
+        return;
+      }
+    });
+    $(_this.block).datepicker(_this.options);
+
+    _this.addFunctionality();
+
+    return _this;
   }
 
-  return;
-}; //скрытие календаря
+  _createClass(FilterDate, [{
+    key: "clear",
+    value: function clear() {
+      _get(_getPrototypeOf(FilterDate.prototype), "clear", this).call(this);
 
-
-var filterDateHideCalendar = function filterDateHideCalendar(event) {
-  var parent = event.target.closest('.filter-date');
-  var calendar = $('.datepicker-inline', parent);
-  var wrapperExpanded = $('.filter-date__input-wrapper_expanded', parent);
-  $(wrapperExpanded).removeClass('filter-date__input-wrapper_expanded');
-  $(calendar).addClass('filter-date__calendar_hidden');
-  return;
-}; //очистка инпутов с датами
-
-
-var filterDateClearDates = function filterDateClearDates(event) {
-  var _input = $('.filter-date__input', event.target.closest('.filter-date'));
-
-  var inRange = event.target.closest('.filter-date').querySelectorAll('.-in-range-');
-  inRange.forEach(function (item) {
-    $(item).removeClass('-in-range-');
-    return;
-  });
-  var selected = event.target.closest('.filter-date').querySelectorAll('.-selected-');
-  selected.forEach(function (item) {
-    $(item).removeClass('-selected-');
-    return;
-  });
-  $('.-range-to-').removeClass('-range-to-');
-  $('.-range-from-').removeClass('-range-from-');
-  $(_input).val('');
-  return;
-}; //клик на expand_more/less
-
-
-$('.filter-date__input').click(function (event) {
-  //если календарь скрыт - покажем!
-  if ($(event.target.closest('.filter-date')).find('.filter-date__calendar_hidden').length) {
-    // $(event.target).addClass('filter-date__input-wrapper_expanded');
-    filterDateShowCalendar(event);
-  } //а если это expand_less - скроем календарь!
-  else if ($(event.target).hasClass('filter-date__input-wrapper_expanded')) {
-      //filterDateHideCalendar(event);
-      alert('heyy');
+      $(".".concat(this.inputName), this.block).val('');
     }
-});
-/* //разворачиваем календарь
-  $('.filter-date__start').click(filterDateShowCalendar);
-  //разворачиваем календарь
-  $('.filter-date__end').click(filterDateShowCalendar); 
+  }]);
 
- */
+  return FilterDate;
+}(Blocks_calendar_calendar__WEBPACK_IMPORTED_MODULE_0__["Calendar"]); //инициализация календаря с двойными инпутами на соотв. блоках
+
+
+Object(Blocks_public__WEBPACK_IMPORTED_MODULE_1__["initialize"])(FilterDate, 'filter-date');
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -3084,6 +3351,27 @@ document.addEventListener('click', function (event) {
   current.classList.remove('pagination__item_current');
   list.add('pagination__item_current');
 });
+
+/***/ }),
+
+/***/ "./blocks/public.js":
+/*!**************************!*\
+  !*** ./blocks/public.js ***!
+  \**************************/
+/*! exports provided: initialize */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialize", function() { return initialize; });
+var initialize = function initialize(_class, blockName) {
+  $(function () {
+    $(".".concat(blockName)).each(function (index, node) {
+      new _class(node, blockName);
+    });
+  });
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
