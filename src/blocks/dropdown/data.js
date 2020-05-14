@@ -1,100 +1,141 @@
-function endDigit(quantity, ...digits) {
+export function endDigit(quantity, ...digits) {
     for (let digit of digits) {
         if ((quantity % 10 == digit)&&(quantity - digit) / 10 % 10 != 1) return true;
     }
     return false;
 }
-let data = {
+export let data = {
     guests: {
-        initial_value: "СИКОКА гостей",
-        items: [
-            {
-                value: "взрослые",
+        items: {
+            "взрослые": {
+                quantity: 0,
                 max_quantity: 100,
-                writing_mode: function (quantity) {
-                    if (endDigit(quantity, 1)) {
-                        return quantity + " взрослый";
+                writing_mode:  function()  {
+                    if (!this.quantity) return '';
+                    if (endDigit(this.quantity, 1)) {
+                        return this.quantity + " взрослый";
                     }
-                    return quantity + " взрослых";
-                }
+                    return this.quantity + " взрослых";
+                },
+                general: true,
             },
-            {
-                value: "дети",
+            "дети": {
+                quantity: 0,
                 max_quantity: 50,
-                writing_mode: function (quantity) {
-                    if (endDigit(quantity, 1)) {
-                        return quantity + " ребенок";
+                writing_mode:  function()  {
+                    if (!this.quantity) return '';
+                    if (endDigit(this.quantity, 1)) {
+                        return this.quantity + " ребенок";
                     }
-                    if (endDigit(quantity, 2,3,4)) {
-                        return quantity + " ребенка";
+                    if (endDigit(this.quantity, 2,3,4)) {
+                        return this.quantity + " ребенка";
                     }
-                    return quantity + " детей";
-                }
+                    return this.quantity + " детей";
+                },
+                general: true,
             },
-            {
-                value: "младенцы",
+            "младенцы": {
+                quantity: 0,
                 max_quantity: 30,
-                writing_mode: function (quantity) {
-                    if (endDigit(quantity, 1)) {
-                        return quantity + " младенец";
+                writing_mode:  function()  {
+                    if (!this.quantity) return '';
+                    if (endDigit(this.quantity, 1)) {
+                        return this.quantity + " младенец";
                     }
-                    if (endDigit(quantity, 2, 3, 4)) {
-                        return quantity + " младенца";
+                    if (endDigit(this.quantity, 2, 3, 4)) {
+                        return this.quantity + " младенца";
                     }
-                    return quantity + " младенцев";
+                    return this.quantity + " младенцев";
                 }
             },
-        ],
-        result: function (all) {
-            if (endDigit(all, 1)) return all + " гость";
-            if (endDigit(all, 2,3,4)) return all + " гость";
-            return all + " гостей";
-        }
+            "гости": {
+                quantity: 0,
+                max_quantity: 30,
+                writing_mode:  function()  {
+                    if (!this.quantity) return '';
+                    if (endDigit(this.quantity, 1)) {
+                        return this.quantity + " гость";
+                    }
+                    if (endDigit(this.quantity, 2, 3, 4)) {
+                        return this.quantity + " гостя";
+                    }
+                    return this.quantity + " гостей";
+                }
+            },
+        },
+        result: function() {
+            let res;
+            this.items["гости"].quantity = this.items["взрослые"].quantity + this.items["дети"].quantity;
+            res = this.items["гости"].writing_mode() + (this.items["младенцы"].writing_mode() && `, ${this.items["младенцы"].writing_mode()}` || '')
+            return res;
+        },
+        resultTotal: function() {
+            let resArray = [];
+            let res = '';
+            if (this.items["взрослые"].quantity) resArray.push(this.items["взрослые"]);
+            if (this.items["дети"].quantity) resArray.push(this.items["дети"]);
+            if (this.items["младенцы"].quantity) resArray.push(this.items["младенцы"]);
+            for (let item of resArray) {
+                res += item.writing_mode() + ', ';
+            }
+            res = res.slice(0, -2);
+            return res;
+        },
     },
     rooms: {
-        initial_value: "Какой нумерочик..",
-        items: [
-            {
-                value: "спальни",
+        items: {
+            "спальни": {
                 max_quantity: 5,
-                writing_mode: function(quantity) {
-                    if (endDigit(quantity, 1)) {
-                        return quantity + " спальня";
+                writing_mode: function() {
+                    if (endDigit(this.quantity, 1)) {
+                        return this.quantity + " спальня";
                     }
-                    if (endDigit(quantity, 2,3,4)) {
-                        return quantity + " спальни";
+                    if (endDigit(this.quantity, 2,3,4)) {
+                        return this.quantity + " спальни";
                     }
-                    return quantity + " спален";
+                    return this.quantity + " спален";
                 }
             },
-            {
-                value: "кровати",
+            "кровати": {
                 max_quantity: 30,
-                writing_mode: function(quantity) {
-                    if (endDigit(quantity, 1)) {
-                        return quantity + " кровать";
+                writing_mode: function() {
+                    if (endDigit(this.quantity, 1)) {
+                        return this.quantity + " кровать";
                     }
-                    if (endDigit(quantity, 2,3,4)) {
-                        return quantity + " кровати";
+                    if (endDigit(this.quantity, 2,3,4)) {
+                        return this.quantity + " кровати";
                     }
-                    return quantity + " кроватей";
+                    return this.quantity + " кроватей";
                 }
             },
-            {
-                value: "ванные комнаты",
+            "ванные комнаты": {
                 max_quantity: 50,
-                writing_mode: function(quantity) {
-                    if (endDigit(quantity, 1)) {
-                        return quantity + " ванная комната";
+                writing_mode: function() {
+                    if (endDigit(this.quantity, 1)) {
+                        return this.quantity + " ванная комната";
                     }
-                    if (endDigit(quantity, 2,3,4)) {
-                        return quantity + " ванные комнаты";
+                    if (endDigit(this.quantity, 2,3,4)) {
+                        return this.quantity + " ванные комнаты";
                     }
-                    return quantity + " ванных комнат";
+                    return this.quantity + " ванных комнат";
                 }
             },
-        ]
+        },
+        resultTotal: function() {
+            let resArray = [];
+            let res = '';
+            if (this.items["спальни"].quantity) resArray.push(this.items["спальни"]);
+            if (this.items["кровати"].quantity) resArray.push(this.items["кровати"]);
+            if (this.items["ванные комнаты"].quantity) resArray.push(this.items["ванные комнаты"]);
+            for (let item of resArray) {
+                res += item.writing_mode() + ', ';
+            }
+            res = res.slice(0, -2);
+            return res;
+        },
+        result: function()  {
+            return this.resultTotal();
+        }
     }
 };
 
-export {data, endDigit};

@@ -1,4 +1,5 @@
 import {Calendar} from 'Blocks/calendar/calendar'
+import {initialize} from 'Blocks/public'
 //объявление класса календаря с привязкой по двум инпутам
 class DateDiapazon extends Calendar {
     constructor(block, blockName) {
@@ -24,6 +25,6 @@ class DateDiapazon extends Calendar {
     }
    
   }
-  Calendar.initialize(DateDiapazon, 'date-diapazon');
+initialize(DateDiapazon, 'date-diapazon');
 
 

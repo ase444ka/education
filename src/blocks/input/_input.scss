@@ -1,14 +1,10 @@
 
 
 .input  {
-    height: 3.15rem;
-    cursor: text;
-    width: 100%;
-    border: 1px solid $darkShade_25;
-    border-radius: 4px;
-    outline: none;
-    color: $darkShade_25;
-    padding: 1rem;
+  @extend %input-appearence;
+  &:hover {
+  @extend %input_strong-appearence;
+}
     &__i {
       position: absolute;
       color: $darkShade_50;

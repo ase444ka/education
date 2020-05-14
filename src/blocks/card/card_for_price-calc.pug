@@ -12,8 +12,7 @@ mixin card_for_price-calc(options)
         +date-diapazon()
     .card__guests
         +field({name: "гости"})
-            +dropdown({placeholder: "сколько гостей", select: true, clear: true, apply: true, target: "guests"},
-            {name: 'взрослые', value: 2},{name: 'дети', value: 2},{name: 'младенцы', value: 0})
+            +dropdown({target: "guests"})
     .card__calc-table
         .card__calc-table__position 9 990&#8381; x 4 суток
         .card__calc-table__price 39 960&#8381;

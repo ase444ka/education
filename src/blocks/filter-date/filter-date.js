@@ -1,4 +1,5 @@
 import {Calendar} from 'Blocks/calendar/calendar'
+import {initialize} from 'Blocks/public'
 class FilterDate extends Calendar {
   constructor(block, blockName) {
       super(block, blockName);
@@ -24,4 +25,4 @@ class FilterDate extends Calendar {
    
   }
  //инициализация календаря с двойными инпутами на соотв. блоках
-Calendar.initialize(FilterDate,'filter-date');
+initialize(FilterDate,'filter-date');
