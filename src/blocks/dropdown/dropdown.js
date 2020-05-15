@@ -84,9 +84,13 @@ class Dropdown {
   increment(option) {
     if ($('.dropdown__option-iteration_increment', option).hasClass('dropdown__option-iteration_disabled')) return;
     let quantity = $('.dropdown__option-quantity', option).text();
+   
     quantity = ++quantity;
     if ($('.dropdown__option-iteration_decrement', option).hasClass('dropdown__option-iteration_disabled')) {
         $('.dropdown__option-iteration_decrement', option).removeClass('dropdown__option-iteration_disabled');
+    }
+    if (quantity == this.data.items[$('.dropdown__option', option).text()].maxQuantity) {
+      $('.dropdown__option-iteration_increment', option).addClass('dropdown__option-iteration_disabled');
     }
     $('.dropdown__option-quantity', option).text(quantity);
   }
