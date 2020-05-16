@@ -1,6 +1,16 @@
 .main {
     position: relative;
     margin: 0 -10rem;
+    @media only screen and (max-width: 1250px) {
+        & {
+            margin: 0 -5rem;
+        }
+    }
+    @media only screen and (max-width: 1100px) {
+        & {
+            margin: 0 -2rem;
+        }
+    }
     &__image {
         width: 100%;
     }
@@ -10,6 +20,16 @@
         height: 374px;
         left: 10rem;
         top: 5rem;
+        @media only screen and (max-width: 860px) {
+            & {
+                left: 5rem;
+            }
+        }
+        @media only screen and (max-width: 775px) {
+            & {
+                top: 1rem;
+            }
+        }
     }
     &__slogan {
         position: absolute;
@@ -19,5 +39,11 @@
         line-height: 1.5;
         font-family: Montserrat;
         color: $darkShade_50;
+        @media only screen and (max-width: 775px) {
+            & {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
     }
 }
