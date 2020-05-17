@@ -17,10 +17,10 @@
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 810px) {
   #colorsAndType {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
