@@ -1,6 +1,7 @@
 
 
 .headersFooters {
+  @extend %paddings-decrease;
   display: grid;
   grid-template-rows: 110px 93px 70px 70px;
   grid-template-columns: 67px 336px;

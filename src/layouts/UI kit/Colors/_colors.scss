@@ -1,5 +1,6 @@
 
 .colors {
+  @extend %paddings-decrease;
   display: flex;
   flex-direction: column;
   align-items: center;

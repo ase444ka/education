@@ -9,6 +9,7 @@
     background-position-y: 1rem;
     align-items: center;
     color: $darkShade_50;
+    @extend %paddings-decrease;
 
     &__logo {
         order: -2;
