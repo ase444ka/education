@@ -3,6 +3,12 @@
 
 
 
+  @media only screen and (max-width: 1250px) {
+    #logo {
+      display: none;
+    }
+  }
+ 
 
 #colorsAndType {
   display: flex;
