@@ -2,10 +2,13 @@ section#cards
     include ../../../blocks/card/card
     include ../../../blocks/calendar/calendar
 
-    +card("room-choice", {})
-    +card("price-calc", {})
-    +calendar()
-    +card("registration", {})
-    +card("login", {})
-    +card("room-preview", {category: "люкс", feeds: 145, jpg: "room_preview1", rating: 5})
-    +card("room-preview", {number:840, feeds: 65, rating: 4, jpg: "room_preview2" })
+    div
+        +card("room-choice", {})
+        +card("registration", {})
+    div
+        +card("price-calc", {})
+        +card("login", {})
+    div
+        +calendar()
+        +card("room-preview", {category: "люкс", feeds: 145, jpg: "room_preview1", rating: 5})
+        +card("room-preview", {number:840, feeds: 65, rating: 4, jpg: "room_preview2" })

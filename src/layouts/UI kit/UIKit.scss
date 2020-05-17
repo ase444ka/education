@@ -2,6 +2,9 @@
 @import "basics";
 
 
+  body {
+    margin: 5rem auto;
+  }
 
   @media only screen and (max-width: 1250px) {
     #logo {
