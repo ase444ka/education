@@ -48,7 +48,8 @@ h3 {
 }
 
 %input-appearence {
-  height: 3.15rem;
+    box-sizing: border-box;
+    height: 3.15rem;
     cursor: text;
     width: 100%;
     border: 1px solid $darkShade_25;
