@@ -2,7 +2,9 @@
 @import "~Blocks/footer/footer";
 @import "~Blocks/logo/logo";
 #headersFooters {
+    background: #E5E5E5;
     >div {
         margin-top: 41px; 
     }
+    padding-bottom: 7rem;
 }
