@@ -1,8 +1,11 @@
-import "./js/datepicker"
-import {initialize} from 'Blocks/public'
+import "./js/datepicker";
+import {initialize} from 'Blocks/public';
+import {fitInWindow} from 'Blocks/public';
 export class Calendar {
     constructor(block, blockName) {
       this.block = block;
+      this.borderStyle = '1px solid rgba(31, 32, 65, 0.5)';
+      this.borderRadius = '4px';
       this.hidden = true;
       this.static = false;
       this.blockName = blockName;
@@ -15,13 +18,6 @@ export class Calendar {
         clearButton: true,
         todayButton: true,
       }      
-    }
-    static initialize(_class, blockName) {
-      $(() => {
-        $(`.${blockName}`).each((index, node) => {
-          new _class(node, blockName);
-        });
-      });
     }
 
     addFunctionality() {
@@ -64,6 +60,7 @@ export class Calendar {
               return;
             });
             this.hidden = false;
+            fitInWindow.call(this);
           
           return;
     }
@@ -74,6 +71,11 @@ export class Calendar {
       $(wrapperExpanded).removeClass(`${this.blockName}__input-wrapper_expanded`);  
       $(calendar).addClass(`${this.blockName}__calendar_hidden`);
       this.hidden = true;
+      if(this.style) {
+        this.style.top = '';
+        this.style.border = '';
+        this.style.borderRadius = '';
+      }
       return;
     }
 

@@ -1,5 +1,6 @@
 
 import {initialize} from 'Blocks/public'
+import {fitInWindow} from 'Blocks/public'
 //импортируем файл с данными и кой-какую вспомогательную функцию (проверяет, кончается ли число на указанные цифры)
 import {data} from './data.js';
 import {endDigit} from './data.js'; 
@@ -9,8 +10,11 @@ class Dropdown {
         this.block =  block;
         this.blockName = blockName;
         this.showing = false;
+        this.borderStyle = '2px solid rgba(31, 32, 65, 0.5)';
+         this.borderRadius = '4px';
         this.placeholderText = $('.dropdown__placeholder', block).text();
         this.placeholder =  this.block.querySelector('.dropdown__placeholder');
+        this.customization = this.block.querySelector('.dropdown__customization')
         this.options = this.block.querySelectorAll('.dropdown__item');
         this.applyButton = this.block.querySelector('.dropdown__button_target_apply');
         this.clearButton = this.block.querySelector('.dropdown__button_target_clear');
@@ -59,11 +63,17 @@ class Dropdown {
   show() {
     this.block.classList.add('dropdown_state_expanded');
     this.showing = true;
+    fitInWindow.call(this);
   }
 
   hide() {
     this.block.classList.remove('dropdown_state_expanded');
     this.showing = false;
+    if(this.style) {
+      this.style.top = '';
+      this.style.border = '';
+      this.style.borderRadius = '';
+    }
   }
 
   clear() {
