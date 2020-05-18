@@ -18,6 +18,9 @@ html {
   font-size: 14px;
   line-height: 1.7;
   color: $darkShade;
+  @media (max-width: 400px) {
+    font-size: 12px;
+  }
 }
 @mixin h-size($size, $height, $spacing) {
   font-weight: bold;
