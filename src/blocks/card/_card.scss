@@ -1,5 +1,8 @@
 .card {
     padding: 2.7rem 2.2rem;
+    @media (max-width: 390px){
+        padding: 1.5rem;
+    }
     box-shadow:  0 0 2rem 0.5rem $darkShade_25;
     background-color: white;
     font-family: Montserrat;
