@@ -2,6 +2,12 @@
     position: relative;
     &__image {
         width: 100%;
+        @media only screen and (max-width: 860px) {
+            & {
+                height: 450px;
+                overflow: hidden;
+            }
+        }
     }
 
     &__room-search {
@@ -13,12 +19,17 @@
         @media only screen and (max-width: 860px) {
             & {
                 left: 5rem;
+                top: 2rem;
             }
         }
         @media only screen and (max-width: 775px) {
-            & {
-                top: 1rem;
-            }
+                & {
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    margin: auto;
+                }
         }
     }
     &__slogan {
@@ -31,9 +42,9 @@
         color: $darkShade_50;
         @media only screen and (max-width: 775px) {
             & {
-                top: 1rem;
-                right: 1rem;
+                display: none;
             }
         }
+        
     }
 }
