@@ -15,6 +15,8 @@ class FilterDate extends Calendar {
        });
       $(this.block).datepicker(this.options);
       this.addFunctionality(); 
+      this.customization = this.block.querySelector('.datepicker');
+      this.applyButton = this.block.querySelector('.filter-date__calendar__button_target_apply')  
       
     }
 

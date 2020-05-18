@@ -1,5 +1,6 @@
 import {Calendar} from 'Blocks/calendar/calendar'
 import {initialize} from 'Blocks/public'
+import {fitInWindow} from 'Blocks/public'
 //объявление класса календаря с привязкой по двум инпутам
 class DateDiapazon extends Calendar {
     constructor(block, blockName) {
@@ -14,15 +15,18 @@ class DateDiapazon extends Calendar {
         }
        });
        this.inputName = 'date-diapazon__input-wrapper';
+       
       $(this.block).datepicker(this.options);
       this.addFunctionality(); 
-      //клик на expand_more/less   
+      this.customization = this.block.querySelector('.datepicker');
+      this.applyButton = this.block.querySelector('.date-diapazon__calendar__button_target_apply')  
     } 
     clear() {
       super.clear();
       this.$start.val('');
       this.$end.val('');
     }
+    
    
   }
 initialize(DateDiapazon, 'date-diapazon');
