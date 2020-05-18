@@ -1,6 +1,8 @@
 .footer {
+    background-color: #fff;
     font-family: Montserrat;
     padding-top: 7.4rem;
+    box-shadow: 0px 10px 20px $darkShade_05;
     &__text {         
         color: $darkShade_75;
         line-height: 1.8;
@@ -32,7 +34,8 @@
         }
         .footer__bottom {
             font-size: 0.9rem;
-            margin-top: 7.4rem;
+            margin-top: 5.9rem;
+            padding-bottom: 1.3rem;
             padding-top: 2rem;
             display: flex;
             flex-wrap: wrap;
@@ -66,11 +69,14 @@
         padding: 0 1rem;
     }
     &_type_narrow {
+        .footer__top {
+            width: 45%;
+        }
         background-position-x: center;
         background-position-y: 7.2rem;
-        padding-top: 11.4rem;
+        padding-top: 7.2rem;
+        padding-bottom: 7.6rem;
         align-items: center;
-        width: 60%;
         display: flex;
         flex-direction: column;
         margin: auto;
@@ -99,6 +105,7 @@
     .footer {
         &_type_wide &__info {
             width: 50%;
+            padding-right: 1rem;
         }
         &_type_wide  &__subscribe-block {
             width: 50%;
