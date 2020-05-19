@@ -12,8 +12,15 @@
     display: inline-block;
     padding-right: 1px;
     width: 1.7rem;
+    height: 1.7rem;
+    background: url('~Icons/star_border.svg');
+    background-size: cover;
+    &_checked {
+        background: url('~Icons/star.svg');
+        background-size: cover;
+    }
 }
-.rate__star::before {
+/* .rate__star::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,5 +32,6 @@
     color: $purple
 }
 .rate__star_checked::before {
-    content: "star";
-}
+    content: "star";   
+} 
+*/
