@@ -4,11 +4,12 @@ mixin card_for_room-preview(options)
     -let period = options.period || "в сутки"
     -let price = options.price || 9990;
     -let rating = options.rating || 0;
-    -let jpg = options.jpg || "room_preview1"
+    -let jpg = options.jpg || ["room_preview1","room_preview2"]
     -let feeds = options.feeds || 0
     .card__room-preview
         .card__room-preview__image
-            img(src=require(`Images/${jpg}.jpg`).default)
+            each val in jpg
+                img(src=require(`Images/${val}.jpg`).default)
     .card__room-data.card__room-data_small
         .card__room-data__number= number
             span.card__room-data__category= category

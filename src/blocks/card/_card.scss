@@ -1,3 +1,4 @@
+@import '~Modules/slick-carousel/slick/slick.scss';
 .card {
     padding: 2.7rem 2.2rem;
     @media (max-width: 390px){
@@ -151,7 +152,7 @@
         position: relative;
         height: 8em;
         margin-bottom: 1.4rem;
-        &:before {
+         /* &:before {
             content: "brightness_1 panorama_fish_eye  panorama_fish_eye  panorama_fish_eye";
             font-family: "Material Icons";
             position: absolute;
@@ -163,8 +164,8 @@
             @media (max-width: 400px) {
                 bottom: 0.5rem;
                 right: -0.5rem;
-            }
-        }
+            } 
+        }*/
         &__image {
             position: absolute;
             top: -2.7rem;
@@ -174,7 +175,7 @@
             overflow: hidden;
             & img {
                 width: 100%;
-            }
+            } 
         }
     }
     &__room-feedback {
@@ -189,6 +190,29 @@
             strong {
                 font-weight: bold;
             }
+        }
+    }
+    .slick-dots {
+        display: flex;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 0;
+        z-index: 1000;
+    }
+    .slick-dots button {
+        outline: transparent;
+        &::before {
+            content: "panorama_fish_eye";
+            font-family: "Material Icons";
+            color: white;
+            font-size: 0.66rem;
+
+        }
+    }
+    .slick-dots li.slick-active button {
+        &::before {
+            content: "brightness_1";
         }
     }
     
