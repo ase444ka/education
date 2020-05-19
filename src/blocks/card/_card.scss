@@ -160,11 +160,21 @@
             right: -1.2rem;
             color: white;
             z-index: 1000;
+            @media (max-width: 400px) {
+                bottom: 0.5rem;
+                right: -0.5rem;
+            }
         }
         &__image {
             position: absolute;
             top: -2.7rem;
             left: -2.2rem;
+            right: -2.2rem;
+            height: 12rem;
+            overflow: hidden;
+            & img {
+                width: 100%;
+            }
         }
     }
     &__room-feedback {
