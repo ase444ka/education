@@ -231,6 +231,9 @@ html {
   font-size: 14px;
   line-height: 1.7;
   color: #1F2041; }
+  @media (max-width: 400px) {
+    html {
+      font-size: 12px; } }
 
 h1 {
   font-weight: bold;
@@ -254,6 +257,7 @@ h3, .field__annotation, .field__name, .button, .dropdown__item, .dropdown__optio
   text-transform: uppercase; }
 
 .input, .date-diapazon input, .dropdown {
+  box-sizing: border-box;
   height: 3.15rem;
   cursor: text;
   width: 100%;
@@ -297,16 +301,17 @@ h3, .field__annotation, .field__name, .button, .dropdown__item, .dropdown__optio
 .dropdown__placeholder {
   color: rgba(31, 32, 65, 0.25); }
 
-body {
-  margin: 2rem 10rem; }
-
-@media only screen and (max-width: 1250px) {
-  body {
-    margin: 2rem 5rem; } }
-
-@media only screen and (max-width: 1100px) {
-  body {
-    margin: 2rem 2rem; } }
+.header, .footer_type_wide .footer__top, .footer_type_wide .footer__bottom {
+  padding-left: 10rem !important;
+  padding-right: 10rem !important; }
+  @media only screen and (max-width: 1250px) {
+    .header, .footer_type_wide .footer__top, .footer_type_wide .footer__bottom {
+      padding-left: 5rem !important;
+      padding-right: 5rem !important; } }
+  @media only screen and (max-width: 1100px) {
+    .header, .footer_type_wide .footer__top, .footer_type_wide .footer__bottom {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important; } }
 
 #colorsAndType {
   display: flex;
@@ -937,22 +942,29 @@ Build date: 2019-12-19 16:51:02
   position: relative;
   display: inline-block;
   padding-right: 1px;
-  width: 1.7rem; }
+  width: 1.7rem;
+  height: 1.7rem;
+  background: url(https://ase444ka.github.io/Education/icons/star_border.svg);
+  background-size: cover; }
+  .rate__star_checked {
+    background: url(https://ase444ka.github.io/Education/icons/star.svg);
+    background-size: cover; }
 
-.rate__star::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "star_border";
-  font-family: 'Material Icons';
-  font-size: 1.7rem;
-  color: #BC9CFF; }
-
+/* .rate__star::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "star_border";
+    font-family: 'Material Icons';
+    font-size: 1.7rem;
+    color: $purple
+}
 .rate__star_checked::before {
-  content: "star"; }
-
+    content: "star";   
+} 
+*/
 .button {
   padding: 0.8rem 1.3rem;
   align-self: center;
@@ -1188,10 +1200,18 @@ Build date: 2019-12-19 16:51:02
 /*
 _state_ - в js добавить! (expanded и hovered(?))
 */
+.dropdown__placeholder {
+  overflow: hidden;
+  cursor: pointer; }
+
 .dropdown_state_expanded {
   border-width: 2px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0; }
+  .dropdown_state_expanded .dropdown__placeholder {
+    pointer-events: none; }
+    .dropdown_state_expanded .dropdown__placeholder:after {
+      pointer-events: all; }
   .dropdown_state_expanded .dropdown__customization {
     position: absolute;
     max-height: 800px;
@@ -1242,7 +1262,8 @@ _state_ - в js добавить! (expanded и hovered(?))
   justify-content: center;
   color: rgba(31, 32, 65, 0.25);
   font-weight: normal;
-  cursor: pointer; }
+  cursor: pointer;
+  user-select: none; }
   .dropdown__option-iteration_disabled {
     border-color: rgba(31, 32, 65, 0.05);
     cursor: default; }
@@ -1302,12 +1323,90 @@ _state_ - в js добавить! (expanded и hovered(?))
   #cards {
     grid-template-columns: 1fr; } }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 .card {
   padding: 2.7rem 2.2rem;
   box-shadow: 0 0 2rem 0.5rem rgba(31, 32, 65, 0.25);
   background-color: white;
   font-family: Montserrat;
   opacity: 0.99; }
+  @media (max-width: 390px) {
+    .card {
+      padding: 1.5rem; } }
   .card__header {
     font-weight: bold;
     font-size: 1.5rem;
@@ -1421,20 +1520,30 @@ _state_ - в js добавить! (expanded и hovered(?))
   .card__room-preview {
     position: relative;
     height: 8em;
-    margin-bottom: 1.4rem; }
-    .card__room-preview:before {
-      content: "brightness_1 panorama_fish_eye  panorama_fish_eye  panorama_fish_eye";
-      font-family: "Material Icons";
-      position: absolute;
-      font-size: 0.66rem;
-      bottom: 0.9rem;
-      right: -1.2rem;
-      color: white;
-      z-index: 1000; }
+    margin-bottom: 1.4rem;
+    /* &:before {
+            content: "brightness_1 panorama_fish_eye  panorama_fish_eye  panorama_fish_eye";
+            font-family: "Material Icons";
+            position: absolute;
+            font-size: 0.66rem;
+            bottom: 0.9rem;
+            right: -1.2rem;
+            color: white;
+            z-index: 1000;
+            @media (max-width: 400px) {
+                bottom: 0.5rem;
+                right: -0.5rem;
+            } 
+        }*/ }
     .card__room-preview__image {
       position: absolute;
       top: -2.7rem;
-      left: -2.2rem; }
+      left: -2.2rem;
+      right: -2.2rem;
+      height: 12rem;
+      overflow: hidden; }
+      .card__room-preview__image img {
+        width: 100%; }
   .card__room-feedback {
     display: flex;
     border-top: 2px solid rgba(31, 32, 65, 0.05);
@@ -1446,6 +1555,22 @@ _state_ - в js добавить! (expanded и hovered(?))
       padding-top: 1.4rem; }
       .card__room-feedback__feeds strong {
         font-weight: bold; }
+  .card .slick-dots {
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 0;
+    z-index: 1000; }
+  .card .slick-dots button {
+    outline: transparent; }
+    .card .slick-dots button::before {
+      content: "panorama_fish_eye";
+      font-family: "Material Icons";
+      color: white;
+      font-size: 0.66rem; }
+  .card .slick-dots li.slick-active button::before {
+    content: "brightness_1"; }
 
 .card__room-data__period:before, .card__room-data__price {
   font-family: Montserrat;
@@ -2133,6 +2258,7 @@ _state_ - в js добавить! (expanded и hovered(?))
   border: none; }
 
 .header {
+  background-color: white;
   opacity: 0.99;
   position: relative;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -2142,19 +2268,51 @@ _state_ - в js добавить! (expanded и hovered(?))
   padding: 1rem 0;
   background-position-y: 1rem;
   align-items: center;
-  color: rgba(31, 32, 65, 0.5); }
+  color: rgba(31, 32, 65, 0.5);
+  position: relative; }
+  @media (max-width: 450px) {
+    .header {
+      flex-direction: column; } }
+  .header__hamburger {
+    color: #BC9CFF;
+    font-size: 2rem;
+    align-self: center;
+    display: none; }
+    .header__hamburger:before {
+      font-family: 'Material Icons';
+      content: 'menu';
+      cursor: pointer; }
+    @media (max-width: 750px) {
+      .header__hamburger {
+        display: block; } }
   .header__logo {
     order: -2;
     flex-grow: 2;
     align-self: flex-start; }
+    @media (max-width: 450px) {
+      .header__logo {
+        align-self: center; } }
   .header__nav {
     display: flex;
     flex-wrap: wrap; }
+    @media (max-width: 450px) {
+      .header__nav {
+        flex-direction: column;
+        align-items: center; } }
     .header__nav__item {
       padding: 1rem 1.25rem;
       display: block;
       text-decoration: none;
       color: rgba(31, 32, 65, 0.5); }
+      @media (max-width: 750px) {
+        .header__nav__item {
+          display: none; }
+          .header__nav__item_showing {
+            display: block; } }
+      @media (max-width: 450px) {
+        .header__nav__item {
+          border-bottom: 1px solid rgba(31, 32, 65, 0.5);
+          width: 100%; } }
       .header__nav__item_current {
         color: rgba(31, 32, 65, 0.75);
         font-weight: bold; }
@@ -2170,7 +2328,7 @@ _state_ - в js добавить! (expanded и hovered(?))
           font-size: 1.7rem; }
   .header__user-info {
     border-left: 1px solid rgba(31, 32, 65, 0.25);
-    padding: 0.65rem 0 0.65rem 2.35rem; }
+    padding: 0.65rem 2rem 0.65rem 2.35rem; }
   .header__buttons {
     display: flex;
     flex-wrap: wrap; }
@@ -2186,8 +2344,10 @@ _state_ - в js добавить! (expanded и hovered(?))
     font-style: italic; } }
 
 .footer {
+  background-color: #fff;
   font-family: Montserrat;
-  padding-top: 7.4rem; }
+  padding-top: 7.4rem;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
   .footer__text {
     color: rgba(31, 32, 65, 0.75);
     line-height: 1.8;
@@ -2211,24 +2371,14 @@ _state_ - в js добавить! (expanded и hovered(?))
       width: 25%; }
     .footer_type_wide .footer__bottom {
       font-size: 0.9rem;
-      margin-top: 7.4rem;
+      margin-top: 5.9rem;
+      padding-bottom: 1.3rem;
       padding-top: 2rem;
-      margin-left: -10rem;
-      margin-right: -10rem;
-      padding-left: 10rem;
-      padding-right: 10rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
       border-top: 1px solid rgba(31, 32, 65, 0.25); }
-      @media only screen and (max-width: 1250px) {
-        .footer_type_wide .footer__bottom {
-          margin-left: -5rem;
-          margin-right: -5rem; } }
-      @media only screen and (max-width: 1100px) {
-        .footer_type_wide .footer__bottom {
-          margin: 0 -2rem; } }
   .footer__menu-item {
     display: block;
     text-decoration: none;
@@ -2253,13 +2403,15 @@ _state_ - в js добавить! (expanded и hovered(?))
   .footer_type_narrow {
     background-position-x: center;
     background-position-y: 7.2rem;
-    padding-top: 11.4rem;
+    padding-top: 7.2rem;
+    padding-bottom: 7.6rem;
     align-items: center;
-    width: 60%;
     display: flex;
     flex-direction: column;
     margin: auto;
     text-align: center; }
+    .footer_type_narrow .footer__top {
+      width: 45%; }
     .footer_type_narrow .footer__logo {
       padding-bottom: 1.2rem; }
     .footer_type_narrow .footer__menu {
@@ -2273,7 +2425,8 @@ _state_ - в js добавить! (expanded и hovered(?))
 
 @media (max-width: 950px) {
   .footer_type_wide .footer__info {
-    width: 50%; }
+    width: 50%;
+    padding-right: 1rem; }
   .footer_type_wide .footer__subscribe-block {
     width: 50%; }
   .footer__menu {
@@ -2287,20 +2440,24 @@ _state_ - в js добавить! (expanded и hovered(?))
   .footer__menu {
     order: 2; } }
 
-#headersFooters > div {
-  margin-top: 41px; }
+@media (max-width: 540px) {
+  .footer_type_wide .footer__copyright {
+    padding-bottom: 1rem; } }
+
+#headersFooters {
+  background: #E5E5E5;
+  padding-bottom: 7rem; }
+  #headersFooters > div {
+    margin-top: 41px; }
 
 .main {
-  position: relative;
-  margin: 0 -10rem; }
-  @media only screen and (max-width: 1250px) {
-    .main {
-      margin: 0 -5rem; } }
-  @media only screen and (max-width: 1100px) {
-    .main {
-      margin: 0 -2rem; } }
+  position: relative; }
   .main__image {
     width: 100%; }
+    @media only screen and (max-width: 860px) {
+      .main__image {
+        height: 450px;
+        overflow: hidden; } }
   .main__room-search {
     position: absolute;
     width: 380px;
@@ -2309,10 +2466,18 @@ _state_ - в js добавить! (expanded и hovered(?))
     top: 5rem; }
     @media only screen and (max-width: 860px) {
       .main__room-search {
-        left: 5rem; } }
+        left: 5rem;
+        top: 2rem; } }
     @media only screen and (max-width: 775px) {
       .main__room-search {
-        top: 1rem; } }
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto; } }
+    @media only screen and (max-width: 450px) {
+      .main__room-search {
+        width: 300px; } }
   .main__slogan {
     position: absolute;
     width: 19rem;
@@ -2323,8 +2488,7 @@ _state_ - в js добавить! (expanded и hovered(?))
     color: rgba(31, 32, 65, 0.5); }
     @media only screen and (max-width: 775px) {
       .main__slogan {
-        top: 1rem;
-        right: 1rem; } }
+        display: none; } }
 
 @media only screen and (max-width: 675px) {
   #content {

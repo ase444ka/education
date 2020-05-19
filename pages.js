@@ -177,11 +177,13 @@ var map = {
 	"./button/button.js": "./blocks/button/button.js",
 	"./calendar/calendar.js": "./blocks/calendar/calendar.js",
 	"./calendar/js/datepicker.js": "./blocks/calendar/js/datepicker.js",
+	"./card/card.js": "./blocks/card/card.js",
 	"./date-diapazon/date-diapazon.js": "./blocks/date-diapazon/date-diapazon.js",
 	"./dropdown/data.js": "./blocks/dropdown/data.js",
 	"./dropdown/dropdown.js": "./blocks/dropdown/dropdown.js",
 	"./expandable/expandable.js": "./blocks/expandable/expandable.js",
 	"./filter-date/filter-date.js": "./blocks/filter-date/filter-date.js",
+	"./header/header.js": "./blocks/header/header.js",
 	"./input/input.js": "./blocks/input/input.js",
 	"./like/like.js": "./blocks/like/like.js",
 	"./pagination/pagination.js": "./blocks/pagination/pagination.js",
@@ -259,6 +261,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
 var Calendar =
 /*#__PURE__*/
 function () {
@@ -268,6 +271,8 @@ function () {
     _classCallCheck(this, Calendar);
 
     this.block = block;
+    this.borderStyle = '1px solid rgba(31, 32, 65, 0.5)';
+    this.borderRadius = '4px';
     this.hidden = true;
     this["static"] = false;
     this.blockName = blockName;
@@ -336,6 +341,7 @@ function () {
         return;
       });
       this.hidden = false;
+      Blocks_public__WEBPACK_IMPORTED_MODULE_1__["fitInWindow"].call(this);
       return;
     }
   }, {
@@ -346,6 +352,13 @@ function () {
       $(wrapperExpanded).removeClass("".concat(this.blockName, "__input-wrapper_expanded"));
       $(calendar).addClass("".concat(this.blockName, "__calendar_hidden"));
       this.hidden = true;
+
+      if (this.style) {
+        this.style.top = '';
+        this.style.border = '';
+        this.style.borderRadius = '';
+      }
+
       return;
     }
   }, {
@@ -364,15 +377,6 @@ function () {
       $('.-range-to-').removeClass('-range-to-');
       $('.-range-from-').removeClass('-range-from-');
       return;
-    }
-  }], [{
-    key: "initialize",
-    value: function initialize(_class, blockName) {
-      $(function () {
-        $(".".concat(blockName)).each(function (index, node) {
-          new _class(node, blockName);
-        });
-      });
     }
   }]);
 
@@ -2605,6 +2609,35 @@ Object(Blocks_public__WEBPACK_IMPORTED_MODULE_1__["initialize"])(CalendarCard, '
 
 /***/ }),
 
+/***/ "./blocks/card/card.js":
+/*!*****************************!*\
+  !*** ./blocks/card/card.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! slick-carousel */ "../node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_0__);
+
+$(document).ready(function () {
+  var _this = this;
+
+  $('.card__room-preview__image').slick({
+    slidesToShow: 1,
+    infinite: true,
+    dots: true,
+    arrows: false
+  });
+  $('.slick-slider').on('click', function () {
+    return _this.swipeHandler();
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./blocks/date-diapazon/date-diapazon.js":
 /*!***********************************************!*\
   !*** ./blocks/date-diapazon/date-diapazon.js ***!
@@ -2639,6 +2672,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
+
  //объявление класса календаря с привязкой по двум инпутам
 
 var DateDiapazon =
@@ -2666,9 +2700,10 @@ function (_Calendar) {
     _this.inputName = 'date-diapazon__input-wrapper';
     $(_this.block).datepicker(_this.options);
 
-    _this.addFunctionality(); //клик на expand_more/less   
+    _this.addFunctionality();
 
-
+    _this.customization = _this.block.querySelector('.datepicker');
+    _this.applyButton = _this.block.querySelector('.date-diapazon__calendar__button_target_apply');
     return _this;
   }
 
@@ -2718,8 +2753,8 @@ var data = {
     items: {
       "взрослые": {
         quantity: 0,
-        max_quantity: 100,
-        writing_mode: function writing_mode() {
+        maxQuantity: 100,
+        writingMode: function writingMode() {
           if (!this.quantity) return '';
 
           if (endDigit(this.quantity, 1)) {
@@ -2727,13 +2762,12 @@ var data = {
           }
 
           return this.quantity + " взрослых";
-        },
-        general: true
+        }
       },
       "дети": {
         quantity: 0,
-        max_quantity: 50,
-        writing_mode: function writing_mode() {
+        maxQuantity: 50,
+        writingMode: function writingMode() {
           if (!this.quantity) return '';
 
           if (endDigit(this.quantity, 1)) {
@@ -2745,13 +2779,12 @@ var data = {
           }
 
           return this.quantity + " детей";
-        },
-        general: true
+        }
       },
       "младенцы": {
         quantity: 0,
-        max_quantity: 30,
-        writing_mode: function writing_mode() {
+        maxQuantity: 3,
+        writingMode: function writingMode() {
           if (!this.quantity) return '';
 
           if (endDigit(this.quantity, 1)) {
@@ -2767,8 +2800,8 @@ var data = {
       },
       "гости": {
         quantity: 0,
-        max_quantity: 30,
-        writing_mode: function writing_mode() {
+        maxQuantity: 30,
+        writingMode: function writingMode() {
           if (!this.quantity) return '';
 
           if (endDigit(this.quantity, 1)) {
@@ -2786,7 +2819,7 @@ var data = {
     result: function result() {
       var res;
       this.items["гости"].quantity = this.items["взрослые"].quantity + this.items["дети"].quantity;
-      res = this.items["гости"].writing_mode() + (this.items["младенцы"].writing_mode() && ", ".concat(this.items["младенцы"].writing_mode()) || '');
+      res = this.items["гости"].writingMode() + (this.items["младенцы"].writingMode() && ", ".concat(this.items["младенцы"].writingMode()) || '');
       return res;
     },
     resultTotal: function resultTotal() {
@@ -2798,7 +2831,7 @@ var data = {
 
       for (var _i2 = 0, _resArray = resArray; _i2 < _resArray.length; _i2++) {
         var item = _resArray[_i2];
-        res += item.writing_mode() + ', ';
+        res += item.writingMode() + ', ';
       }
 
       res = res.slice(0, -2);
@@ -2808,8 +2841,8 @@ var data = {
   rooms: {
     items: {
       "спальни": {
-        max_quantity: 5,
-        writing_mode: function writing_mode() {
+        maxQuantity: 5,
+        writingMode: function writingMode() {
           if (endDigit(this.quantity, 1)) {
             return this.quantity + " спальня";
           }
@@ -2822,8 +2855,8 @@ var data = {
         }
       },
       "кровати": {
-        max_quantity: 30,
-        writing_mode: function writing_mode() {
+        maxQuantity: 30,
+        writingMode: function writingMode() {
           if (endDigit(this.quantity, 1)) {
             return this.quantity + " кровать";
           }
@@ -2836,8 +2869,8 @@ var data = {
         }
       },
       "ванные комнаты": {
-        max_quantity: 50,
-        writing_mode: function writing_mode() {
+        maxQuantity: 50,
+        writingMode: function writingMode() {
           if (endDigit(this.quantity, 1)) {
             return this.quantity + " ванная комната";
           }
@@ -2859,7 +2892,7 @@ var data = {
 
       for (var _i3 = 0, _resArray2 = resArray; _i3 < _resArray2.length; _i3++) {
         var item = _resArray2[_i3];
-        res += item.writing_mode() + ', ';
+        res += item.writingMode() + ', ';
       }
 
       res = res.slice(0, -2);
@@ -2890,6 +2923,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+
  //импортируем файл с данными и кой-какую вспомогательную функцию (проверяет, кончается ли число на указанные цифры)
 
 
@@ -2906,8 +2940,11 @@ function () {
     this.block = block;
     this.blockName = blockName;
     this.showing = false;
+    this.borderStyle = '2px solid rgba(31, 32, 65, 0.5)';
+    this.borderRadius = '4px';
     this.placeholderText = $('.dropdown__placeholder', block).text();
     this.placeholder = this.block.querySelector('.dropdown__placeholder');
+    this.customization = this.block.querySelector('.dropdown__customization');
     this.options = this.block.querySelectorAll('.dropdown__item');
     this.applyButton = this.block.querySelector('.dropdown__button_target_apply');
     this.clearButton = this.block.querySelector('.dropdown__button_target_clear');
@@ -2915,7 +2952,7 @@ function () {
     this.data = _data_js__WEBPACK_IMPORTED_MODULE_1__["data"][this.target]; //разворачиваем при клике на инпут
 
     this.placeholder.addEventListener('click', function () {
-      return _this.show();
+      if (!_this.showing) _this.show();else _this.hide();
     }); //настраиваем плюс - минус
 
     var _iteratorNormalCompletion = true;
@@ -2969,8 +3006,6 @@ function () {
       if (event.target.closest('.dropdown') === _this.block) return;
 
       if (_this.showing) {
-        _this.clear();
-
         _this.hide();
       }
 
@@ -2987,12 +3022,19 @@ function () {
     value: function show() {
       this.block.classList.add('dropdown_state_expanded');
       this.showing = true;
+      Blocks_public__WEBPACK_IMPORTED_MODULE_0__["fitInWindow"].call(this);
     }
   }, {
     key: "hide",
     value: function hide() {
       this.block.classList.remove('dropdown_state_expanded');
       this.showing = false;
+
+      if (this.style) {
+        this.style.top = '';
+        this.style.border = '';
+        this.style.borderRadius = '';
+      }
     }
   }, {
     key: "clear",
@@ -3041,6 +3083,10 @@ function () {
 
       if ($('.dropdown__option-iteration_decrement', option).hasClass('dropdown__option-iteration_disabled')) {
         $('.dropdown__option-iteration_decrement', option).removeClass('dropdown__option-iteration_disabled');
+      }
+
+      if (quantity == this.data.items[$('.dropdown__option', option).text()].maxQuantity) {
+        $('.dropdown__option-iteration_increment', option).addClass('dropdown__option-iteration_disabled');
       }
 
       $('.dropdown__option-quantity', option).text(quantity);
@@ -3147,6 +3193,8 @@ function (_Calendar) {
 
     _this.addFunctionality();
 
+    _this.customization = _this.block.querySelector('.datepicker');
+    _this.applyButton = _this.block.querySelector('.filter-date__calendar__button_target_apply');
     return _this;
   }
 
@@ -3164,6 +3212,20 @@ function (_Calendar) {
 
 
 Object(Blocks_public__WEBPACK_IMPORTED_MODULE_1__["initialize"])(FilterDate, 'filter-date');
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./blocks/header/header.js":
+/*!*********************************!*\
+  !*** ./blocks/header/header.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$('.header__hamburger').click(function (event) {
+  $('.header__nav__item', event.target.closest('.header')).toggleClass('header__nav__item_showing');
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -3358,18 +3420,38 @@ document.addEventListener('click', function (event) {
 /*!**************************!*\
   !*** ./blocks/public.js ***!
   \**************************/
-/*! exports provided: initialize */
+/*! exports provided: initialize, fitInWindow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialize", function() { return initialize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fitInWindow", function() { return fitInWindow; });
 var initialize = function initialize(_class, blockName) {
   $(function () {
     $(".".concat(blockName)).each(function (index, node) {
       new _class(node, blockName);
     });
   });
+};
+var fitInWindow = function fitInWindow() {
+  var clientHeight = document.documentElement.clientHeight;
+  var bottom = this.applyButton.getBoundingClientRect().bottom;
+  var left = this.block.getBoundingClientRect().left;
+  var width = this.block.getBoundingClientRect().width;
+  var height = this.customization.scrollHeight;
+  var computedStyle = getComputedStyle(this.block);
+  var borderWidth = computedStyle.borderTopWidth;
+  var borderColor = computedStyle.borderTopColor;
+  var borderRadius = computedStyle.borderTopLeftRadius;
+
+  if (bottom > clientHeight) {
+    this.style = this.customization.style;
+    var difference = bottom - clientHeight;
+    this.style.top = "-".concat(difference, "px");
+    this.style.border = this.borderStyle;
+    this.style.borderRadius = this.borderRadius;
+  }
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
