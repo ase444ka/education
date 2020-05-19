@@ -1,4 +1,7 @@
 .header {
+    @media (max-width: 450px) {
+        flex-direction: column;
+    }
     background-color: white;
     opacity: 0.99;
     position: relative;
@@ -11,17 +14,50 @@
     align-items: center;
     color: $darkShade_50;
     @extend %paddings-decrease;
+    position: relative;
+
+    &__hamburger {
+        color: $purple;
+        font-size: 2rem;
+        align-self: center;
+        display: none;
+        &:before {
+            font-family: 'Material Icons';
+            content: 'menu';
+            cursor: pointer;
+        }
+        @media (max-width: 750px) {
+            display: block;
+        }
+    }
 
     &__logo {
         order: -2;
         flex-grow: 2;
         align-self: flex-start;
+        @media (max-width: 450px) {
+            align-self: center;
+        }
     }
 
     &__nav {
         display: flex;
         flex-wrap: wrap;
+        @media (max-width: 450px) {
+            flex-direction: column;
+            align-items: center;
+        }
         &__item {
+            @media (max-width: 750px) {
+                display: none;
+                &_showing {
+                    display: block;
+                }
+            }
+            @media (max-width: 450px) {
+                border-bottom: 1px solid $darkShade_50;
+                width: 100%;
+            }
             padding: 1rem 1.25rem;
             display: block;
             text-decoration: none;
@@ -40,13 +76,14 @@
                     content: "expand_more";
                     font-family: 'Material Icons';
                     font-size: 1.7rem;
-                }
+                }   
             }
+            
         }
     }
     &__user-info {
         border-left: 1px solid $darkShade_25;
-        padding: 0.65rem 0 0.65rem 2.35rem;
+        padding: 0.65rem 2rem 0.65rem 2.35rem;
     }
     &__buttons {
         display: flex;

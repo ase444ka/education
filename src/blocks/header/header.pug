@@ -3,15 +3,20 @@ mixin header(user=false, ...items)
     .header
         .header__logo
             +logo()
+
         .header__nav
+            
             each item in items
                 -let expandable = item.expandable?" header__nav__item_expandable":""
                 -let current = item.current?" header__nav__item_current":""
                 -let _class = expandable + current
                 a.header__nav__item(class = _class, href="#")=item.value
-        if user
-            .header__user-info=user
-        else
-            .header__buttons
+        .header__buttons
+            if user
+                .header__user-info=user
+                a.header__hamburger
+            else
                 +button({text:"login", color: "white", size: "slim"})
                 +button({text:"register", color: "purple", size: "slim"})
+                a.header__hamburger
+        
