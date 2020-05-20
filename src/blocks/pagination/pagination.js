@@ -1,3 +1,4 @@
+import './pagination.scss';
 document.addEventListener('click', function(event){
     let tar = event.target
     let list = tar.classList;

@@ -1,3 +1,4 @@
+import './expandable.scss';
 $('.expandable i').click(function(){
     let txt = $(this).text();
     txt = (txt=='expand_more')? 'expand_less':'expand_more'

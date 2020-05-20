@@ -1,3 +1,4 @@
+import './range-slider.scss';
 /*  //------------------ТАК ПРИ ЗАГРУЗКЕ ОК ПРИ CHANGE НЕ ОК
 import "ion-rangeslider"
 

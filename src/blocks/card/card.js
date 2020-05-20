@@ -1,3 +1,4 @@
+import './card.scss';
 import 'slick-carousel';
 
 $(document).ready(function(){

@@ -1,3 +1,4 @@
+import './rate.scss';
 let click = false;
 $('.rate__star').mouseenter(function(event) {
     if (!($(this).parent().hasClass("rate_ratable"))) return;

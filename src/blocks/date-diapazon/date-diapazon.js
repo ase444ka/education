@@ -1,3 +1,4 @@
+import './date-diapazon.scss';
 import {Calendar} from 'Blocks/calendar/calendar'
 import {initialize} from 'Blocks/public'
 import {fitInWindow} from 'Blocks/public'

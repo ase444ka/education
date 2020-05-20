@@ -1,3 +1,4 @@
+import './like.scss';
 $(".like").click(function() {
     let checked = "like__button_checked"
     let likes = $(this).find('.like__button').first().text()

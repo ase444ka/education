@@ -1,3 +1,4 @@
+import './calendar.scss';
 import "./js/datepicker";
 import {initialize} from 'Blocks/public';
 import {fitInWindow} from 'Blocks/public';
