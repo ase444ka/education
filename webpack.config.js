@@ -22,6 +22,7 @@ module.exports = {
             Fonts: path.resolve(__dirname, 'src/fonts'),
             Images: path.resolve(__dirname, 'src/images'),
             Modules: path.resolve(__dirname, 'node_modules'),
+            Layouts: path.resolve(__dirname, 'src/layouts'),
         }
     },
     devServer: {
