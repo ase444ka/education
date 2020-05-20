@@ -1,0 +1,5 @@
+@import '~Common/basics';
+.field__name {
+  color: $darkShade_75;
+  @extend %font_small;
+}

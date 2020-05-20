@@ -1,6 +1,6 @@
 import './filter-date.scss';
 import {Calendar} from 'Blocks/calendar/calendar'
-import {initialize} from 'Blocks/public'
+import {initialize} from 'Common/common'
 class FilterDate extends Calendar {
   constructor(block, blockName) {
       super(block, blockName);

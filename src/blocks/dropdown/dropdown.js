@@ -1,6 +1,6 @@
 import './dropdown.scss';
-import {initialize} from 'Blocks/public'
-import {fitInWindow} from 'Blocks/public'
+import {initialize} from 'Common/common'
+import {fitInWindow} from 'Common/common'
 //импортируем файл с данными и кой-какую вспомогательную функцию (проверяет, кончается ли число на указанные цифры)
 import {data} from './data.js';
 import {endDigit} from './data.js'; 

@@ -1,7 +1,7 @@
 import './date-diapazon.scss';
 import {Calendar} from 'Blocks/calendar/calendar'
-import {initialize} from 'Blocks/public'
-import {fitInWindow} from 'Blocks/public'
+import {initialize} from 'Common/common'
+import {fitInWindow} from 'Common/common'
 //объявление класса календаря с привязкой по двум инпутам
 class DateDiapazon extends Calendar {
     constructor(block, blockName) {

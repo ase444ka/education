@@ -1,7 +1,7 @@
 import './calendar.scss';
 import "./js/datepicker";
-import {initialize} from 'Blocks/public';
-import {fitInWindow} from 'Blocks/public';
+import {initialize} from 'Common/common';
+import {fitInWindow} from 'Common/common';
 export class Calendar {
     constructor(block, blockName) {
       this.block = block;

@@ -1,0 +1,6 @@
+@import '~Common/basics';
+.fieldset {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  grid-gap: 1rem;
+}
