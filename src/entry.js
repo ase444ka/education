@@ -3,4 +3,4 @@ function requireAll(requireContext) {
 }
 
 requireAll(require.context('Blocks', true, /\.js$/)); 
-requireAll(require.context('Layouts', true, /\.js$/)); 
+requireAll(require.context('Pages', true, /\.js$/)); 

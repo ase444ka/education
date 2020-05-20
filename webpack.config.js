@@ -5,6 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
+const fs = require('fs');
+const PAGES_DIR = path.resolve(__dirname, 'src/pages');
+const PAGES = fs.readdirSync(PAGES_DIR);
 
 
 
@@ -22,7 +25,7 @@ module.exports = {
             Fonts: path.resolve(__dirname, 'src/fonts'),
             Images: path.resolve(__dirname, 'src/images'),
             Modules: path.resolve(__dirname, 'node_modules'),
-            Layouts: path.resolve(__dirname, 'src/layouts'),
+            Pages: path.resolve(__dirname, 'src/pages'),
         }
     },
     devServer: {
@@ -34,7 +37,7 @@ module.exports = {
     mode: 'development',
     context: path.resolve(__dirname, 'src'),
     entry: {
-        'pages': './layouts/UI kit/UIKit.js',
+        'entry': './entry.js',
         /*  UIKit: './src/UI kit/UIKit.js'*/
     },
     devtool: 'source-map',
@@ -117,10 +120,11 @@ module.exports = {
         //     filename: "pages.html",
         //     template: './src/pages/pages.pug'
         // }),
-        new HtmlWebpackPlugin({
-            filename: "index.html",
-            template: 'layouts/UI kit/index.pug'
-        }),
+        ...PAGES.map((page) => new HtmlWebpackPlugin({
+            filename: `${page}.html`,
+            template: `${PAGES_DIR}/${page}/${page}.pug`,
+          })),
+
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
