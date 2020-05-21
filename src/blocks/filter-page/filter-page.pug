@@ -1,0 +1,40 @@
+mixin filter-page()
+    -let rooms = require("Blocks/filter-page/filter-page.json")
+    -let l = {category: "люкс", feeds: 145, jpg: ["room_preview1", "room_preview2"], rating: 5}
+    .filter-page
+        .filter-page__filters
+
+    
+            +field({name: "даты пребывания в отеле"})
+                +filter-date()
+            +field({name: "гости"})
+                +dropdown({target: "guests"})
+            +field({name: "диапазон цены"})
+                +range-slider
+            +field({name: "ограничения"})
+                +checkbox({value:"Можно курить", nameVar: "smoke-permission"})
+                +checkbox({value:"Можно с питомцами", nameVar: "pets-permission"})
+                +checkbox({value:"Можно пригласить гостей (до 10 человек)", nameVar: "guests-permission"})      
+            +field({name: "доступность"})
+                +checkbox({value: "Широкий коридор", nameVar: "wide_corridor_sample", description: "Ширина коридоров в номере не менее 91 см."})
+                +checkbox({value: "Помощник для инвалидов", nameVar: "assistant_sample", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
+            +field({name: "удобства номера"})
+                +dropdown({target: "rooms"})
+            +field({name: "дополнительные удобства"})
+                +expandable()
+                    +checkbox({value: "завтрак", nameVar: "breakfast"})
+                    +checkbox({value: "письменный стол", nameVar: "breakfast"})
+                    +checkbox({value: "завтрак", nameVar: "breakfast"})
+                    +checkbox({value: "стул для кормления", nameVar: "feedingChair"})
+                    +checkbox({value: "кроватка", nameVar: "cot", checked: true})
+                    +checkbox({value: "телевизор", nameVar: "TV"})
+                    +checkbox({value: "шампунь", nameVar: "shampoo", checked: true})
+                    +checkbox({value: "тапочки", nameVar: "slippers"})
+        .filter-page__content
+            .filter-page__header
+                h1 Номера, которые мы для вас подобрали
+            .filter-page__results
+                each room in rooms
+                    +card("room-preview", room)
+            .filter-page__pagination
+                +pagination()

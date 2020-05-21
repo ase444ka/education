@@ -1,4 +1,5 @@
 mixin card_for_room-preview(options)
+    -options = options || {}
     -let number = options.number || 888
     -let category = options.category || ""
     -let period = options.period || "в сутки"
@@ -9,7 +10,7 @@ mixin card_for_room-preview(options)
     .card__room-preview
         .card__room-preview__image
             each val in jpg
-                img(src=require(`Images/${val}.jpg`).default)
+                img(src=require(`Images/room_previews/${val}.jpg`).default)
     .card__room-data.card__room-data_small
         .card__room-data__number= number
             span.card__room-data__category= category

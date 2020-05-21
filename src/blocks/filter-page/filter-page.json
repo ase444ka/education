@@ -1,0 +1,148 @@
+[
+    {
+        "number" : "888",
+        "category" : "люкс",
+        "price" : "9990",
+        "rating" : "5",
+        "feeds" : "145",
+        "jpg" : [
+            "room_preview1",
+            "room_preview2",
+            "room_preview3",
+            "room_preview4"
+        ]
+    },
+    {
+        "number" : "840",
+        "price" : "9900",
+        "rating" : "4",
+        "feeds" : "65",
+        "jpg" : [
+            "room_preview2",
+            "room_preview3",
+            "room_preview4",
+            "room_preview5"
+        ]
+    },
+    {
+        "number" : "980",
+        "category" : "люкс",
+        "price" : "8500",
+        "rating" : "3",
+        "feeds" : "35",
+        "jpg" : [
+            "room_preview3",
+            "room_preview4",
+            "room_preview5",
+            "room_preview6"
+        ]
+    },
+    {
+        "number" : "856",
+        "price" : "7300",
+        "rating" : "5",
+        "feeds" : "19",
+        "jpg" : [
+            "room_preview4",
+            "room_preview5",
+            "room_preview6",
+            "room_preview7"
+        ]
+    },
+    {
+        "number" : "740",
+        "price" : "6000",
+        "rating" : "4",
+        "feeds" : "44",
+        "jpg" : [
+            "room_preview5",
+            "room_preview6",
+            "room_preview7",
+            "room_preview8"
+        ]
+    },
+    {
+        "number" : "982",
+        "price" : "5800",
+        "rating" : "3",
+        "feeds" : "56",
+        "jpg" : [
+            "room_preview6",
+            "room_preview7",
+            "room_preview8",
+            "room_preview9"
+        ]
+    },
+    {
+        "number" : "678",
+        "price" : "5500",
+        "rating" : "5",
+        "feeds" : "45",
+        "jpg" : [
+            "room_preview7",
+            "room_preview8",
+            "room_preview9",
+            "room_preview10"
+        ]
+    },
+    {
+        "number" : "450",
+        "price" : "5300",
+        "rating" : "4",
+        "feeds" : "39",
+        "jpg" : [
+            "room_preview8",
+            "room_preview9",
+            "room_preview10",
+            "room_preview11"
+        ]
+    },
+    {
+        "number" : "350",
+        "price" : "5000",
+        "rating" : "3",
+        "feeds" : "77",
+        "jpg" : [
+            "room_preview9",
+            "room_preview10",
+            "room_preview11",
+            "room_preview12"
+        ]
+    },
+    {
+        "number" : "666",
+        "price" : "5000",
+        "rating" : "5",
+        "feeds" : "25",
+        "jpg" : [
+            "room_preview10",
+            "room_preview11",
+            "room_preview12",
+            "room_preview1"
+        ]
+    },
+    {
+        "number" : "444",
+        "price" : "5000",
+        "rating" : "3",
+        "feeds" : "15",
+        "jpg" : [
+            "room_preview11",
+            "room_preview12",
+            "room_preview2",
+            "room_preview3"
+        ]
+    },
+    {
+        "number" : "352",
+        "price" : "5000",
+        "rating" : "3",
+        "feeds" : "55",
+        "jpg" : [
+            "room_preview12",
+            "room_preview4",
+            "room_preview5",
+            "room_preview6"
+        ]
+    }
+]
