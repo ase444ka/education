@@ -20,4 +20,8 @@
         grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
         grid-gap: 1rem;
     }
+    &__pagination {
+        display: flex;
+        justify-content: center;
+    }
 }
