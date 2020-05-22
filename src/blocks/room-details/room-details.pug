@@ -7,4 +7,6 @@ mixin room-details(options)
     -let calc = options.calc || {}
     -let rules = options.rules || {}
     -let info = options.info || {}
-    +impressions()
+    .room-details
+        .room-details__impressions
+            +impressions()
