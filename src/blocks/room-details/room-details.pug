@@ -1,6 +1,6 @@
 mixin room-details(options)
     -options = options||{}
-    -let images = options.images || {}
+    -let images = options.images || ["image1","image2","image3"]
     -let features = options.features || {}
     -let impressions = options.impressions || {}
     -let feedback = options.feedback || {}
@@ -8,5 +8,9 @@ mixin room-details(options)
     -let rules = options.rules || {}
     -let info = options.info || {}
     .room-details
+        ul.room-details__gallery
+            each image in images
+                li.room-details__image
+                    img(src=require(`Images/room_details/${image}.png`).default)
         .room-details__impressions
             +donat-chart()
