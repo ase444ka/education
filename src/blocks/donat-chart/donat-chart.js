@@ -1,4 +1,4 @@
-import './impressions.scss';
+import './donat-chart.scss';
 import ApexCharts from 'apexcharts'
 Apex.colors = ['#FFE39C', '#6FCF97', '#BC9CFF', '#919191'];
 Apex.fill = {
@@ -85,5 +85,5 @@ var options = {
     }]
 };
 
-var chart = new ApexCharts(document.querySelector(".impressions"), options);
+var chart = new ApexCharts(document.querySelector(".donat-chart"), options);
 chart.render(); 
