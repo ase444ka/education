@@ -1,2 +1,5 @@
-mixin donat-chart()
-    .donat-chart
+mixin donat-chart(data)
+    -data = data || {}
+    -data.labels = data.labels || []
+    -data.series = data.series || []
+    .donat-chart(data-labels=data.labels, data-series = data.series)

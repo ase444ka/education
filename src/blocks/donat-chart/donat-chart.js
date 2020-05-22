@@ -7,7 +7,7 @@ Apex.fill = {
         shade: 'dark',
         type: "horizontal",
         shadeIntensity: 0.5,
-        gradientToColors: ["#FFBA9C","#66D2EA","#8BA4F9","#3D4975"],// optional, if not defined - uses the shades of same color in series
+        gradientToColors: ["#FFBA9C","#66D2EA","#8BA4F9","#3D4975"],
         inverseColors: true,
         opacityFrom: 1,
         opacityTo: 1,
@@ -15,7 +15,7 @@ Apex.fill = {
         colorStops: []
     }
 };
-var options = {
+let options = {
     series: [130, 65, 65, 0],
     labels: ['Великолепно', 'Хорошо', 'Удоволетворительно', 'Разочарован'],
     chart: {
@@ -85,5 +85,31 @@ var options = {
     }]
 };
 
-var chart = new ApexCharts(document.querySelector(".donat-chart"), options);
-chart.render(); 
+//функция инициализации
+function initializeChart(node, options) {
+    let data = {};
+    
+    //берем данные из дата-атрибутов, переданных через паг
+    data.labels = JSON.parse(node.dataset.labels).length? JSON.parse(node.dataset.labels):options.labels;
+    data.series = JSON.parse(node.dataset.series).length? JSON.parse(node.dataset.series) : options.series;
+    
+    //приводим показатели из строки к числу
+    for (let i = 0; i < data.series.length; i++) {
+        data.series[i] = +data.series[i];
+    }
+
+    //прилепляем результат к настройкам
+    let result = Object.assign(options, data);
+
+    //инициализируем плагин на узле с полученными настройками
+    let _chart = new ApexCharts(node, result);
+    _chart.render(); 
+}
+
+//применяем функцию инициализации ко всем блокам донат-чарт
+let charts = document.querySelectorAll('.donat-chart');
+for (let chart of charts) {
+    initializeChart(chart, options);
+}
+
+
