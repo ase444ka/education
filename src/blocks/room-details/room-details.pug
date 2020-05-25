@@ -15,33 +15,44 @@ mixin room-details(options)
                 li.room-details__image
                     img(src=require(`Images/room_details/${image}.png`).default)    
 
-        .room-details__info
-            .room-details__header
-            +feature("Комфорт","Шумопоглощающие стены","insert_emoticon")
-            +feature("Удобство","Окно в каждой из спален","location_city")
+        .room-details__content
+            .room-details__info
+                h2.room-details__header Сведения о номере
+                +feature("Комфорт","Шумопоглощающие стены","insert_emoticon")
+                +feature("Удобство","Окно в каждой из спален","location_city")
+                +feature("Удобство","Окно в каждой из спален","location_city")
 
-        .room-details__impressions
-            .room-details__header
-            +donat-chart()
+            .room-details__impressions
+                h2.room-details__header Впечатления от номера
+                +donat-chart()
 
-        .room-details__calculations
-            .room-details__header
-            +card("price-calc", {})
-        
-        .room-details__feedback
-            .room-details__header
-            .room-details__feedback__quantity
-            +feedback({ava: "murad", name: "Мурад Сарафанов", likes: 12, time: "5 дней назад", 
-        feed: 
-                `Великолепный матрас на кровати в основной спальне!
-            А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
-            Выкрикивал комплименты повару — никто не жаловался из соседей.`})
-
-        .room-details__rules
-            .room-details__header
-            +bullet-list("Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00")
-
-        .room-details__extra
-            .room-details__header
+            .room-details__calculations
+                h2.room-details__header
+                +card("price-calc", {})
             
+            .room-details__feedback               
+                h2.room-details__header  Отзывы посетителей номера
+                .room-details__feedback__quantity 2 отзыва
+                .room-details__feed
+                    +feedback({ava: "murad", name: "Мурад Сарафанов", likes: 12, time: "5 дней назад", 
+                feed: 
+                        `Великолепный матрас на кровати в основной спальне!
+                    А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
+                    Выкрикивал комплименты повару — никто не жаловался из соседей.`})
+                .room-details__feed
+                    +feedback({ava: "murad", name: "Мурад Сарафанов", likes: 12, time: "5 дней назад", 
+                feed: 
+                        `Великолепный матрас на кровати в основной спальне!
+                    А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
+                    Выкрикивал комплименты повару — никто не жаловался из соседей.`})
+
+            .room-details__rules
+                h2.room-details__header Правила
+                +bullet-list("Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00")
+
+            .room-details__extra 
+                h2.room-details__header Отмена
+                |Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до 
+                |прибытия вы получите полный возврат за вычетом сбора за услуги.
+                
 

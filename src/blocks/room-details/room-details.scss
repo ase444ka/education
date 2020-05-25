@@ -1,9 +1,10 @@
+@import '~Common/basics';
 .room-details {
+    &__header {
+        font-size: 1.35rem;
+    }
     &__impressions {
-        padding: 1rem;
-        margin: 10rem auto;
-        width: 27rem;
-        border: 1px solid red;
+        grid-area: impressions;
     }
     &__image {
         display: block;
@@ -26,6 +27,17 @@
             display: block;
         }
     }
+    &__content {
+        @extend %paddings-decrease;
+        padding-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "info       impressions calculations"
+                             "feedback   feedback    calculations"
+                             "feedback   feedback    calculations"
+                             "rules      extra       calculations";
+    }
     &__gallery {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -37,18 +49,31 @@
         }
     }
     &__info {
+        grid-area: info;
         
     }
+    &__feed {
+        padding-top: 1.55rem;
+    }
     &__feedback {
-
+        position: relative;
+        grid-area: feedback;
+        &__quantity {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+        }
     }
     &__calculations {
+        grid-area: calculations;
 
     }
     &__rules {
+        grid-area: rules;
 
     }
     &__extra {
+        grid-area: extra;
         
     }
 }

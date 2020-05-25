@@ -24,8 +24,8 @@ let options = {
     legend: {
         fontFamily: "Montserrat",
         fontSize: "12px",
-        offsetY: 33,
-        offsetX: -25,
+        offsetY: 30,
+        offsetX: 30,
         color: "rgba(31, 32, 65, 0.75)"
     },
     
@@ -34,7 +34,9 @@ let options = {
     },
     plotOptions: {
         pie: {
-            customScale: 0.79,
+            offsetY: -22,
+            offsetX: -55,
+            customScale: 0.63,
             startAngle: 180,
             donut: {
                 size: "90%",
