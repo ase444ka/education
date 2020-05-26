@@ -5,13 +5,13 @@ Apex.fill = {
     type: 'gradient',
     gradient: {
         shade: 'dark',
-        type: "horizontal",
+        type: "vertical",
         shadeIntensity: 0.5,
         gradientToColors: ["#FFBA9C","#66D2EA","#8BA4F9","#3D4975"],
         inverseColors: true,
         opacityFrom: 1,
         opacityTo: 1,
-        stops: [0, 100],
+        stops: [90, 100],
         colorStops: []
     }
 };
@@ -22,11 +22,9 @@ let options = {
         type: 'donut',
     },
     legend: {
+        floating: true,
         fontFamily: "Montserrat",
-        fontSize: "12px",
-        offsetY: 30,
-        offsetX: 30,
-        color: "rgba(31, 32, 65, 0.75)"
+        fontSize: "14px",
     },
     
     dataLabels: {
@@ -34,9 +32,9 @@ let options = {
     },
     plotOptions: {
         pie: {
-            offsetY: -22,
-            offsetX: -55,
-            customScale: 0.63,
+            offsetY: -85,
+            offsetX: -142,
+            customScale: 0.39,
             startAngle: 180,
             donut: {
                 size: "90%",
@@ -44,18 +42,18 @@ let options = {
                     show: true,
                     value: {
                         show: true,
-                        fontSize: '2rem',
+                        fontSize: '4rem',
                         fontFamily: 'Open Sans',
                         color: '#BC9CFF',                        
-                        offsetY: -15,
+                        offsetY: -30,
                     },
                     name: {
-                        offsetY: 18,
+                        offsetY: 48,
                         
                     },
                     total: {
                         show: true,
-                        fontSize: '1.2rem',
+                        fontSize: '2.8rem',
                         fontFamily: 'Montserrat',
                         color: '#BC9CFF',
                         showAlways: false,
@@ -66,7 +64,6 @@ let options = {
                           },
                         label: 'голосов',
                         
-                        offsetY: -25,
                         
                     }
                 }   
@@ -74,7 +71,102 @@ let options = {
         },
     },
     
-    responsive: [{
+    responsive: [
+        {
+            breakpoint: 1439,
+            options: {
+                plotOptions: {
+                    pie: {
+                        offsetX: -135,
+                        offsetY: -80,
+                    }
+                }       
+            }
+        },
+        {
+            breakpoint: 1380,
+            options: {
+                plotOptions: {
+                    pie: {
+                        offsetX: -125,
+                        offsetY: -70,
+                    }
+                }       
+            }
+        },
+        {
+            breakpoint: 1350,
+            options: {
+                plotOptions: {
+                    pie: {
+                        offsetX: -115,
+                        offsetY: -50,
+                    }
+                }       
+            }
+        },
+        {
+            breakpoint: 1125,
+            options: {
+                legend: {
+                    fontSize: "12px",
+                },       
+            }
+        },
+
+        {
+            breakpoint: 990,
+            options: {
+                plotOptions: {
+                    pie: {
+                      //  customScale: 0.7,
+                        offsetX: -115,
+                        offsetY: -70,
+                    }
+                }       
+            }
+        },
+        {
+            breakpoint: 800,
+            options: {
+                plotOptions: {
+                    pie: {
+                      //  customScale: 0.7,
+                        offsetX: -115,
+                        offsetY: -50,
+                    }
+                }       
+            }
+        },
+        {
+            breakpoint: 750,
+            options: {
+                plotOptions: {
+                    pie: {
+                      //  customScale: 0.7,
+                        offsetX: -90,
+                        offsetY: -50,
+                    }
+                }       
+            }
+        },
+        {
+            breakpoint: 730,
+            options: {
+                chart: {
+                    height: 400
+                },
+                plotOptions: {
+                    pie: {
+                        customScale: 0.25,
+                        offsetX:  -30,
+                        offsetY:  -125,
+                    }
+                }       
+            }
+        },
+        
+        {
         breakpoint: 480,
         options: {
             chart: {
@@ -84,7 +176,24 @@ let options = {
                 position: 'bottom'
             }
         }
-    }]
+    },
+    {
+        breakpoint: 1100,
+        options: {
+            plotOptions: {
+                pie: {
+                  //  offsetY: -5,
+                  //  offsetX: -20,
+                   // customScale: 0.9,
+                },
+            },
+            legend: {
+            //    offsetY: 0,
+            //    offsetX: 0,
+            } 
+        }
+    }
+]
 };
 
 //функция инициализации
@@ -113,5 +222,6 @@ let charts = document.querySelectorAll('.donat-chart');
 for (let chart of charts) {
     initializeChart(chart, options);
 }
+
 
 

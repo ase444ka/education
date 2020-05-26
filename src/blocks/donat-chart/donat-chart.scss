@@ -1,0 +1,28 @@
+@import '~Common/basics';
+.apexcharts-legend {
+    top: 3.5rem !important;
+    left: 9.5rem !important;
+    @media(max-width: 990px) {
+    left: 13.5rem !important;
+  //  top: 5rem !important;
+    } 
+    @media(max-width: 990px) {
+        left: 12.5rem !important;
+       // top: 5rem !important;
+        } 
+    @media(max-width: 830px) {
+        left: 10.5rem !important;
+        // top: 5rem !important;
+        }
+    @media(max-width: 760px) {
+        left: 8.5rem !important;
+        // top: 5rem !important;
+        }
+    @media(max-width: 730px) {
+        left: 5rem !important;
+        top:  10rem !important;
+        }
+    &-text {
+        color: $darkShade_75 !important;
+    }
+}

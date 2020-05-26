@@ -2,6 +2,7 @@
 .room-details {
     &__header {
         font-size: 1.35rem;
+        font-family: "Open Sans";
     }
     &__impressions {
         grid-area: impressions;
@@ -31,12 +32,27 @@
         @extend %paddings-decrease;
         padding-top: 5rem;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 8fr 9fr 9fr;
         grid-template-rows: repeat(4, auto);
         grid-template-areas: "info       impressions calculations"
                              "feedback   feedback    calculations"
                              "feedback   feedback    calculations"
                              "rules      extra       calculations";
+        @media (max-width: 990px) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "info        calculations"
+                                 "feedback    impressions"
+                                 "rules             extra";
+            grid-gap: 3rem;
+        }
+        @media (max-width: 800px) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "calculations  calculations"
+                                 "info          impressions"
+                                 "feedback         feedback"
+                                 "rules             extra";
+            grid-gap: 3rem;
+        }
     }
     &__gallery {
         display: grid;
@@ -56,24 +72,44 @@
         padding-top: 1.55rem;
     }
     &__feedback {
+        padding-top: 0.8rem;
+        padding-bottom: 2.3rem;
         position: relative;
         grid-area: feedback;
         &__quantity {
             position: absolute;
-            top: 2px;
-            right: 2px;
+            top: 1.3rem;
+            right: 3.75rem;
         }
     }
     &__calculations {
         grid-area: calculations;
+        padding-left: 1.3rem;
+        @media (max-width: 1200px) {
+            padding: 0;
+        }
+        @media (max-width: 990px)  {
+            padding: 0 1rem;
+        }
+        @media (max-width: 800px) {
+            padding: 0 20%;
+        }
 
     }
     &__rules {
         grid-area: rules;
-
+        .room-details__header {
+            padding-left: 1.5rem;
+            padding-bottom: 0.6rem;
+        }
     }
     &__extra {
         grid-area: extra;
-        
+        line-height: 1.65;
+        font-family: Montserrat;
+        color: $darkShade_75;
+        .room-details__header {
+            padding-bottom: 1.1rem;
+        }
     }
 }
