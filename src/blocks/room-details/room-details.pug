@@ -34,17 +34,9 @@ mixin room-details(options)
                 h2.room-details__header  Отзывы посетителей номера
                 .room-details__feedback__quantity 2 отзыва
                 .room-details__feed
-                    +feedback({ava: "muzhik", name: "Мурад Сарафанов", likes: 12, time: "5 дней назад", 
-                feed: 
-                        `Великолепный матрас на кровати в основной спальне!
-                    А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
-                    Выкрикивал комплименты повару — никто не жаловался из соседей.`})
+                    +feedback("murad")
                 .room-details__feed
-                    +feedback({ava: "tetka", name: "Мурад Сарафанов", likes: 12, time: "5 дней назад", 
-                feed: 
-                        `Великолепный матрас на кровати в основной спальне!
-                    А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.
-                    Выкрикивал комплименты повару — никто не жаловался из соседей.`})
+                    +feedback("patricia")
 
             .room-details__rules
                 h2.room-details__header Правила

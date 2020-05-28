@@ -1,9 +1,11 @@
-mixin feedback(options)
+mixin feedback(json)
+    -json = json || "murad"
+    -let options = require(`Blocks/feedback/json/${json}.json`) || {}
     -let ava = options.ava || 'murad'
     -let time = options.time || "только что"
     -let name = options.name || "Гость Гость"
     -let likes = options.likes || 0
-    -let feed = options.feed || "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, iure! Quis molestiae, error architecto expedita deserunt fugiat. Labore, perspiciatis amet optio dolore perferendis in vero praesentium sint magni. Esse nesciunt minima perspiciatis eaque necessitatibus? Sapiente illum nihil amet doloribus reprehenderit!"
+    -let feed = options.feed.join(' ') || "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, iure! Quis molestiae, error architecto expedita deserunt fugiat. Labore, perspiciatis amet optio dolore perferendis in vero praesentium sint magni. Esse nesciunt minima perspiciatis eaque necessitatibus? Sapiente illum nihil amet doloribus reprehenderit!"
 
     .feedback
         .feedback__avatar
