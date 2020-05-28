@@ -9,7 +9,13 @@
                          'likes feed';
     &__avatar {
         grid-area: ava;
-    }                 
+    }    
+    &__image {
+        object-fit: cover;
+        border-radius: 50%;
+        width: 3.14rem;
+        height: 3.14rem;
+    }             
     &__likes {
         grid-area: likes;
         padding-left: 0.15rem;

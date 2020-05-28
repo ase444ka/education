@@ -7,7 +7,7 @@ mixin feedback(options)
 
     .feedback
         .feedback__avatar
-            img(src = require(`Images/avatars/${ava}.png`).default)
+            img(src = require(`Images/avatars/${ava}.jpg`).default).feedback__image
         .feedback__likes
             +like(likes)
         .feedback__time= time
