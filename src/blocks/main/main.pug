@@ -1,7 +1,7 @@
 mixin main(slogan)
     -let _slogan = slogan || 'ololo'
     .main
-        img(src=require(`Images/main.png`).default, class = "main__image")
+        img(src=require(`Images/main.jpg`).default, class = "main__image")
         .main__room-search
             +card("room-choice", {})
         .main__slogan= slogan
