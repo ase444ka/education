@@ -1,10 +1,11 @@
 include ./_type_small/footer_type_small.pug
 include ./_type_wide/footer_type_wide.pug
+
 mixin footer(options)
-    if !options
-        - options = require("Blocks/footer/footer.json")
-    else
-        - options = Object.assign(require("Blocks/footer/footer.json"),options)
+    -options = options || {}
+    - options = Object.assign(require("Blocks/footer/footer.json"), options)
+    -if (options.json) 
+    -options = Object.assign(options, require(`Blocks/footer/${options.json}.json`))
 
     -let type = options.type || "wide"
     -let menu = options.menu || {}
@@ -13,7 +14,7 @@ mixin footer(options)
     -let subscribeText = options.subscribe && options.subscribe.text || 
     -"Receive our latest news and promotions in your inbox!"
     -let subscribeInput = options.subscribe && options.subscribe.input || "meeeellll"
-    -let copyright = options.subscribe && options.copyright || "Copyright © 2018 Toxin UI Kit. All rights reserved."
+    -let copyright = options.copyright || "Copyright © 2018 Toxin UI Kit. All rights reserved."
     include ../logo/logo
     -let social = options.social || {}
     -let _class = "footer_type_" + type;
