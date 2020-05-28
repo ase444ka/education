@@ -1,9 +1,4 @@
-export function endDigit(quantity, ...digits) {
-    for (let digit of digits) {
-        if ((quantity % 10 == digit)&&(quantity - digit) / 10 % 10 != 1) return true;
-    }
-    return false;
-}
+import {endDigit} from 'Common/common'
 export let data = {
     guests: {
         items: {
