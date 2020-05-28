@@ -1,0 +1,20 @@
+include ./includeAll
+doctype html
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        meta(content='width=device-width, initial-scale=1.0' name='viewport')
+    title
+        block title
+    body
+        a(href='UIKit.html') UIKit
+        block header
+            +header(false,
+                {value: "О нас", current: true}, 
+                {value: "Услуги", expandable: true}, 
+                {value: "Вакансии"}, 
+                {value: "Новости"}, 
+                {value: "Соглашения", expandable: true})
+        block content
+        block footer
+            +footer()

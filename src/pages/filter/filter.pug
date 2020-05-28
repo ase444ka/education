@@ -1,17 +1,6 @@
-include ../../common/includeAll
-doctype html
-html(lang='ru')
-    head
-        meta(charset='utf-8')
-        meta(content='width=device-width, initial-scale=1.0' name='viewport')
+extends ../../common/base
 
-    body
-        a(href='UIKit.html') UIKit
-        +header(false,
-    {value: "О нас", current: true}, 
-    {value: "Услуги", expandable: true}, 
-    {value: "Вакансии"}, 
-    {value: "Новости"}, 
-    {value: "Соглашения", expandable: true})
-        +filter-page()
-        +footer()
+block title
+    | Toxin - номера по Вашим предпочтениям
+block content
+    +filter-page()

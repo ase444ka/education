@@ -1,17 +1,7 @@
-include ../../common/includeAll
-doctype html
-html(lang='ru')
-    head
-        meta(charset='utf-8')
-        meta(content='width=device-width, initial-scale=1.0' name='viewport')
+extends ../../common/base
 
-    body
-        a(href='UIKit.html') UIKit
-        +header(false,
-    {value: "О нас", current: true}, 
-    {value: "Услуги", expandable: true}, 
-    {value: "Вакансии"}, 
-    {value: "Новости"}, 
-    {value: "Соглашения", expandable: true})
-        +room-details()
-        +footer({json: "footer-pages"})
+block title
+    | Toxin - номер 888 люкс, забронировать номер
+
+block content
+    +room-details()
