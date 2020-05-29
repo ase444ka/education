@@ -5,6 +5,7 @@ import {fitInWindow} from 'Common/common';
 export class Calendar {
     constructor(block, blockName) {
       this.block = block;
+      this.customization = block;
       this.borderStyle = '1px solid rgba(31, 32, 65, 0.5)';
       this.borderRadius = '4px';
       this.hidden = true;

@@ -8,7 +8,8 @@ export let initialize = function(_class, blockName) {
 
   export let fitInWindow = function() {
     let clientHeight = document.documentElement.clientHeight;
-    let bottom = this.applyButton.getBoundingClientRect().bottom;
+    let bottom = this.applyButton? this.applyButton.getBoundingClientRect().bottom : 
+                                   this.block.getBoundingClientRect().bottom ;
     let left = this.block.getBoundingClientRect().left;
     let width = this.block.getBoundingClientRect().width;
     let height = this.customization.scrollHeight;
