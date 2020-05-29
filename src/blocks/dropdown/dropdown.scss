@@ -30,6 +30,7 @@ _state_ - в js добавить! (expanded и hovered(?))
                 pointer-events: none;
                 &:after {
                     pointer-events: all;
+                    content: "expand_less";
                 }
             }
             .dropdown__customization {

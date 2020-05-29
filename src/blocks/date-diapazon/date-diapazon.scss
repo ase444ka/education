@@ -13,11 +13,14 @@
         &_expanded:after {
             content: "expand_less";
         }
+        
     }
-    input {
+    &__input {
+       
         @extend %input-appearence;
         &:hover {
         @extend %input_strong-appearence;
+        
     }
             
     }

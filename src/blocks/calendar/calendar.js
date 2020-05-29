@@ -28,13 +28,13 @@ export class Calendar {
         $(`.${this.inputName}`, this.block).click((event) => {
           //если календарь скрыт - покажем!
           if (this.hidden) {
-            $(event.target).addClass(`${this.inputName}_expanded`);
+            $(`.${this.inputName}`, this.block).addClass(`${this.inputName}_expanded`);
             this.show();
           }
           //а если это expand_less - скроем календарь!
           else {
             this.hide();
-            $(event.target).removeClass(`${this.inputName}_expanded`);
+            $(`.${this.inputName}`, this.block).removeClass(`${this.inputName}_expanded`);
           }
           
         })
