@@ -1155,8 +1155,6 @@ module.exports = content.locals || {};
         });
         this.$datepicker.on('touchstart', '.datepicker--cell', function () {
           _this2._onMouseEnterCell.bind(_this2);
-
-          alert("asekkk");
         });
         this.$datepicker.on('mouseleave', '.datepicker--cell', this._onMouseLeaveCell.bind(this));
         this.inited = true;
@@ -2919,9 +2917,10 @@ module.exports = content.locals || {};
         this.$ranges.on(input, this._onChangeRange.bind(this));
         this.$ranges.on('mouseup', this._onMouseUpRange.bind(this)); //this.$ranges.on('mouseup', this._onMouseUpRange.bind(this));
 
-        this.$ranges.on('mousemove focus ', this._onMouseEnterRange.bind(this)); //this.$ranges.on('mousemove focus ', this._onMouseEnterRange.bind(this));
-
-        this.$ranges.on('mouseout blur', this._onMouseOutRange.bind(this)); // this.$ranges.on('mouseout blur', this._onMouseOutRange.bind(this));
+        this.$ranges.on('mousemove focus ', this._onMouseEnterRange.bind(this));
+        this.$ranges.on('touchmove', this._onMouseEnterRange.bind(this));
+        this.$ranges.on('mouseout blur', this._onMouseOutRange.bind(this));
+        this.$ranges.on('click touchend', this._onMouseOutRange.bind(this));
       },
       _setTime: function _setTime(date) {
         var _date = dp.getParsedDate(date);
