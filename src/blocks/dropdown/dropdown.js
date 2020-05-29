@@ -57,6 +57,12 @@ class Dropdown {
         
         //клик на кнопке ПРИМЕНИТЬ
         this.applyButton.addEventListener('click', () => this.apply());
+        $(document).keydown( (e) => {
+          // ESCAPE key pressed
+          if (e.keyCode == 27) {
+              this.hide();
+          }
+      });
 
   } 
   

@@ -42,6 +42,12 @@ export class Calendar {
       $('.datepicker-inline', this.block).addClass(`${this.blockName}__calendar`);
       $('[data-action="clear"]',this.block).addClass(`${this.blockName}__calendar__button_target_clear`);
       $('[data-action="today"]',this.block).addClass(`${this.blockName}__calendar__button_target_apply`);
+      $(document).keydown( (e) => {
+        // ESCAPE key pressed
+        if (e.keyCode == 27) {
+            this.hide();
+        }
+    });
       
     } 
 
