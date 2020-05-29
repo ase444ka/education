@@ -8,6 +8,7 @@ const isProd = !isDev
 const fs = require('fs');
 const PAGES_DIR = path.resolve(__dirname, 'src/pages');
 const PAGES = fs.readdirSync(PAGES_DIR);
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 
 
@@ -116,10 +117,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css"
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: "pages.html",
-        //     template: './src/pages/pages.pug'
-        // }),
+        new FaviconsWebpackPlugin('./common/favicon.png'),
         ...PAGES.map((page) => new HtmlWebpackPlugin({
             filename: `${page}.html`,
             template: `${PAGES_DIR}/${page}/${page}.pug`,
