@@ -1153,7 +1153,9 @@ module.exports = content.locals || {};
 
           console.log(_this2.$datepicker);
         });
-        this.$datepicker.on('touchstart', '.datepicker--cell', function () {
+        this.$datepicker.on('touchmove', '.datepicker--cell', function () {
+          detectTap = false; // Detects all touch events
+
           _this2._onMouseEnterCell.bind(_this2);
         });
         this.$datepicker.on('mouseleave', '.datepicker--cell', this._onMouseLeaveCell.bind(this));
@@ -2903,6 +2905,8 @@ module.exports = content.locals || {};
 
     datepicker.Timepicker.prototype = {
       init: function init() {
+        var _this3 = this;
+
         var input = 'input';
 
         this._setTime(this.d.date);
@@ -2918,9 +2922,17 @@ module.exports = content.locals || {};
         this.$ranges.on('mouseup', this._onMouseUpRange.bind(this)); //this.$ranges.on('mouseup', this._onMouseUpRange.bind(this));
 
         this.$ranges.on('mousemove focus ', this._onMouseEnterRange.bind(this));
-        this.$ranges.on('touchmove', this._onMouseEnterRange.bind(this));
+        this.$ranges.on('touchmove focus', function () {
+          detectTap = true; // Detects all touch events
+
+          _this3._onMouseEnterRange.bind(_this3);
+        });
         this.$ranges.on('mouseout blur', this._onMouseOutRange.bind(this));
-        this.$ranges.on('click touchend', this._onMouseOutRange.bind(this));
+        this.$ranges.on('click touchend blur', function () {
+          detectTap = true;
+
+          _this3._onMouseOutRange.bind(_this3);
+        });
       },
       _setTime: function _setTime(date) {
         var _date = dp.getParsedDate(date);
