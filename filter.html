@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="icon" href="https://ase444ka.github.io/Education/assets/favicon.png"><link href="https://ase444ka.github.io/Education/entry.css" rel="stylesheet"></head>
+  <title>Toxin - номера по Вашим предпочтениям
+  </title>
+  <body><a href="UIKit.html">UIKit</a>
+    <div class="header">
+      <div class="header__logo"><a href="#"><img class="logo" src="https://ase444ka.github.io/Education/icons/Logo.svg"></a>
+      </div>
+      <div class="header__nav"><a class="header__nav__item  header__nav__item_current" href="#">О нас</a><a class="header__nav__item  header__nav__item_expandable" href="#">Услуги</a><a class="header__nav__item" href="#">Вакансии</a><a class="header__nav__item" href="#">Новости</a><a class="header__nav__item  header__nav__item_expandable" href="#">Соглашения</a>
+      </div>
+      <div class="header__buttons">
+        <button class="button  button_color_white button_size_slim">войти</button>
+        <button class="button  button_color_purple button_size_slim">зарегистрироваться</button><a class="header__hamburger"></a>
+      </div>
+    </div>
+    <div class="filter-page">
+      <div class="filter-page__filters">
+        <div class="field">
+          <div class="field__name">даты пребывания в отеле</div>
+          <div class="field__content">
+            <div class="filter-date">
+              <input class="filter-date__input" placeholder="какие даты?" spellcheck="false">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field__name">гости</div>
+          <div class="field__content">
+            <div class="dropdown" data-target="guests">
+              <div class="dropdown__placeholder">сколько гостей</div>
+              <div class="dropdown__customization">
+                <ul class="dropdown__options">
+                  <li class="dropdown__item">
+                    <div class="dropdown__option">взрослые</div>
+                    <div class="dropdown__option-setter">
+                      <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                      <div class="dropdown__option-quantity">0</div>
+                      <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                    </div>
+                  </li>
+                  <li class="dropdown__item">
+                    <div class="dropdown__option">дети</div>
+                    <div class="dropdown__option-setter">
+                      <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                      <div class="dropdown__option-quantity">0</div>
+                      <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                    </div>
+                  </li>
+                  <li class="dropdown__item">
+                    <div class="dropdown__option">младенцы</div>
+                    <div class="dropdown__option-setter">
+                      <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                      <div class="dropdown__option-quantity">0</div>
+                      <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                    </div>
+                  </li>
+                  <div class="dropdown__buttons">
+                    <button class="dropdown__button dropdown__button_target_apply">применить</button>
+                    <button class="dropdown__button dropdown__button_target_clear">очистить</button>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field__name">диапазон цены</div>
+          <div class="field__annotation">5000р - 10000р</div>
+          <div class="field__content">
+            <input class="js-range-slider" type="text" name="my-range" value="">
+            <div class="range-slider__comment">Стоимость за сутки пребывания в номере</div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field__name">ограничения</div>
+          <div class="field__content">
+            <div class="checkbox">
+              <label class="checkbox__label">
+                <input class="checkbox__input" type="checkbox" name="smoke-permission"><span class="checkbox__tick"></span>Можно курить
+              </label>
+            </div>
+            <div class="checkbox">
+              <label class="checkbox__label">
+                <input class="checkbox__input" type="checkbox" name="pets-permission"><span class="checkbox__tick"></span>Можно с питомцами
+              </label>
+            </div>
+            <div class="checkbox">
+              <label class="checkbox__label">
+                <input class="checkbox__input" type="checkbox" name="guests-permission"><span class="checkbox__tick"></span>Можно пригласить гостей (до 10 человек)
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field__name">доступность</div>
+          <div class="field__content">
+            <div class="checkbox checkbox_rich">
+              <label class="checkbox__label">
+                <input class="checkbox__input" type="checkbox" name="wide_corridor_sample"><span class="checkbox__tick"></span>Широкий коридор
+                <div class="checkbox__description">Ширина коридоров в номере не менее 91 см.</div>
+              </label>
+            </div>
+            <div class="checkbox checkbox_rich">
+              <label class="checkbox__label">
+                <input class="checkbox__input" type="checkbox" name="assistant_sample"><span class="checkbox__tick"></span>Помощник для инвалидов
+                <div class="checkbox__description">На 1 этаже вас встретит специалист  и проводит до номера.</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field__name">удобства номера</div>
+          <div class="field__content">
+            <div class="dropdown" data-target="rooms">
+              <div class="dropdown__placeholder">сколько спален</div>
+              <div class="dropdown__customization">
+                <ul class="dropdown__options">
+                  <li class="dropdown__item">
+                    <div class="dropdown__option">спальни</div>
+                    <div class="dropdown__option-setter">
+                      <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                      <div class="dropdown__option-quantity">0</div>
+                      <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                    </div>
+                  </li>
+                  <li class="dropdown__item">
+                    <div class="dropdown__option">кровати</div>
+                    <div class="dropdown__option-setter">
+                      <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                      <div class="dropdown__option-quantity">0</div>
+                      <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                    </div>
+                  </li>
+                  <li class="dropdown__item">
+                    <div class="dropdown__option">ванные комнаты</div>
+                    <div class="dropdown__option-setter">
+                      <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                      <div class="dropdown__option-quantity">0</div>
+                      <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                    </div>
+                  </li>
+                  <div class="dropdown__buttons">
+                    <button class="dropdown__button dropdown__button_target_apply">применить</button>
+                    <button class="dropdown__button dropdown__button_target_clear">очистить</button>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field__name">дополнительные удобства</div>
+          <div class="field__content">
+            <div class="expandable"><i class="material-icons">expand_more</i>
+              <div class="expandable__content">
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="breakfast"><span class="checkbox__tick"></span>завтрак
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="breakfast"><span class="checkbox__tick"></span>письменный стол
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="breakfast"><span class="checkbox__tick"></span>завтрак
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="feedingChair"><span class="checkbox__tick"></span>стул для кормления
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="cot" checked><span class="checkbox__tick"></span>кроватка
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="TV"><span class="checkbox__tick"></span>телевизор
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="shampoo" checked><span class="checkbox__tick"></span>шампунь
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" name="slippers"><span class="checkbox__tick"></span>тапочки
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-page__content">
+        <div class="filter-page__header">
+          <h1>Номера, которые мы для вас подобрали</h1>
+        </div>
+        <div class="filter-page__results">
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview1.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview2.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview3.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview4.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">888<span class="card__room-data__category">люкс</span></div>
+              <div class="card__room-data__price">9990<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>145</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview2.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview3.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview4.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview5.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">840<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">9900<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>65</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview3.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview4.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview5.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview6.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">980<span class="card__room-data__category">люкс</span></div>
+              <div class="card__room-data__price">8500<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>35</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview4.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview5.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview6.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview7.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">856<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">7300<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>19</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview5.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview6.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview7.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview8.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">740<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">6000<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>44</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview6.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview7.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview8.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview9.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">982<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">5800<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>56</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview7.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview8.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview9.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview10.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">678<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">5500<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>45</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview8.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview9.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview10.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview11.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">450<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">5300<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>39</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview9.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview10.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview11.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview12.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">350<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">5000<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>77</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview10.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview11.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview12.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview1.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">666<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">5000<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>25</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview11.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview12.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview2.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview3.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">444<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">5000<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>15</strong> Отзывов</div>
+            </div>
+          </div>
+          <div class="card card_for_room-preview">
+            <div class="card__room-preview">
+              <div class="card__room-preview__image"><img src="https://ase444ka.github.io/Education/images/room_preview12.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview4.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview5.jpg"><img src="https://ase444ka.github.io/Education/images/room_preview6.jpg">
+              </div>
+            </div>
+            <div class="card__room-data card__room-data_small">
+              <div class="card__room-data__number">352<span class="card__room-data__category"></span></div>
+              <div class="card__room-data__price">5000<span class="card__room-data__period">в сутки</span></div>
+            </div>
+            <div class="card__room-feedback">
+              <div class="rate"><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star rate__star_checked"></span><span class="rate__star"></span><span class="rate__star"></span>
+              </div>
+              <div class="card__room-feedback__feeds"><strong>55</strong> Отзывов</div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-page__pagination">
+          <div class="pagination" data-offset="12" data-total="100">
+            <div class="pagination__item pagination__item_current">1</div>
+            <div class="pagination__item">2</div>
+            <div class="pagination__item">3</div>
+            <div class="pagination__item pagination__item_hidden">...</div>
+            <div class="pagination__item">15</div>
+            <div class="pagination__item pagination__item_next">arrow_forward</div>
+            <div class="pagination__text">1-12 из 100+ вариантов аренды</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer footer_type_wide">
+      <div class="footer__top">
+        <div class="footer__info">
+          <div class="footer__logo"><a href="#"><img class="logo" src="https://ase444ka.github.io/Education/icons/Logo.svg"></a>
+          </div>
+          <div class="footer__text">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
+        </div>
+        <div class="footer__menu">
+          <div class="footer__header">навигация</div><a class="footer__menu-item" href="ya.ru">О нас</a><a class="footer__menu-item" href="ya.ru">Новости</a><a class="footer__menu-item" href="ya.ru">Служба поддержки</a><a class="footer__menu-item" href="ya.ru">Услуги</a>
+        </div>
+        <div class="footer__menu">
+          <div class="footer__header">О нас</div><a class="footer__menu-item" href="ya.ru">О сервисе</a><a class="footer__menu-item" href="ya.ru">Наша команда</a><a class="footer__menu-item" href="ya.ru">Вакансии</a><a class="footer__menu-item" href="ya.ru">Инвесторы</a>
+        </div>
+        <div class="footer__menu">
+          <div class="footer__header">Службы поддержки</div><a class="footer__menu-item" href="ya.ru">Соглашения</a><a class="footer__menu-item" href="ya.ru">Сообщества</a><a class="footer__menu-item" href="ya.ru">Связь с нами</a>
+        </div>
+        <div class="footer__subscribe-block">
+          <div class="footer__header">Подписка</div>
+          <div class="footer__text">Получайте специальные предложения и новости сервиса</div>
+          <div class="footer__subscribe-input">
+            <div class="input__wrapper">
+              <input class="input input_sending" placeholder="Email" spellcheck="false"><i class="material-icons input__i">arrow_forward</i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copyright">Copyright © 2018 Toxin отель. Все права защищены.</div>
+        <div class="footer__social"><a class="footer__social-icon" href="vk.com">&#61570;</a><a class="footer__social-icon" href="vk.com">&#61593;</a><a class="footer__social-icon" href="vk.com">&#61805;</a>
+        </div>
+      </div>
+    </div>
+  <script src="https://ase444ka.github.io/Education/vendors~entry.js"></script><script src="https://ase444ka.github.io/Education/entry.js"></script></body>
+</html>
