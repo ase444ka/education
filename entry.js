@@ -1101,6 +1101,8 @@ module.exports = content.locals || {};
       VERSION: VERSION,
       viewIndexes: ['days', 'months', 'years'],
       init: function init() {
+        var _this2 = this;
+
         if (!containerBuilt && !this.opts.inline && this.elIsInput) {
           this._buildDatepickersContainer();
         }
@@ -1146,7 +1148,16 @@ module.exports = content.locals || {};
         this.nav = new $.fn.datepicker.Navigation(this, this.opts);
         this.view = this.currentView;
         this.$el.on('clickCell.adp', this._onClickCell.bind(this));
-        this.$datepicker.on('mouseenter', '.datepicker--cell', this._onMouseEnterCell.bind(this));
+        this.$datepicker.on('mouseenter', '.datepicker--cell', function () {
+          _this2._onMouseEnterCell.bind(_this2);
+
+          console.log(_this2.$datepicker);
+        });
+        this.$datepicker.on('touchstart', '.datepicker--cell', function () {
+          _this2._onMouseEnterCell.bind(_this2);
+
+          alert("asekkk");
+        });
         this.$datepicker.on('mouseleave', '.datepicker--cell', this._onMouseLeaveCell.bind(this));
         this.inited = true;
       },
@@ -2906,9 +2917,11 @@ module.exports = content.locals || {};
 
         this.d.$el.on('selectDate', this._onSelectDate.bind(this));
         this.$ranges.on(input, this._onChangeRange.bind(this));
-        this.$ranges.on('mouseup', this._onMouseUpRange.bind(this));
-        this.$ranges.on('mousemove focus ', this._onMouseEnterRange.bind(this));
-        this.$ranges.on('mouseout blur', this._onMouseOutRange.bind(this));
+        this.$ranges.on('mouseup', this._onMouseUpRange.bind(this)); //this.$ranges.on('mouseup', this._onMouseUpRange.bind(this));
+
+        this.$ranges.on('mousemove focus ', this._onMouseEnterRange.bind(this)); //this.$ranges.on('mousemove focus ', this._onMouseEnterRange.bind(this));
+
+        this.$ranges.on('mouseout blur', this._onMouseOutRange.bind(this)); // this.$ranges.on('mouseout blur', this._onMouseOutRange.bind(this));
       },
       _setTime: function _setTime(date) {
         var _date = dp.getParsedDate(date);
