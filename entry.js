@@ -3545,26 +3545,57 @@ var options = {
       }
     }
   }, {
-    breakpoint: 480,
+    breakpoint: 500,
     options: {
       chart: {
-        width: 10
+        height: 200
       },
-      legend: {
-        position: 'bottom'
+      plotOptions: {
+        pie: {
+          customScale: 0.8,
+          offsetX: -120,
+          offsetY: 0,
+          donut: {
+            labels: {
+              value: {
+                fontSize: '2.2rem'
+              },
+              name: {
+                offsetY: 30
+              },
+              total: {
+                fontSize: '1.9rem'
+              }
+            }
+          }
+        }
       }
     }
   }, {
-    breakpoint: 1100,
+    breakpoint: 400,
     options: {
-      plotOptions: {
-        pie: {//  offsetY: -5,
-          //  offsetX: -20,
-          // customScale: 0.9,
-        }
+      chart: {
+        height: 400
       },
-      legend: {//    offsetY: 0,
-        //    offsetX: 0,
+      plotOptions: {
+        pie: {
+          customScale: 0.4,
+          offsetX: 0,
+          offsetY: -100,
+          donut: {
+            labels: {
+              value: {
+                fontSize: '4rem'
+              },
+              name: {
+                offsetY: 50
+              },
+              total: {
+                fontSize: '3rem'
+              }
+            }
+          }
+        }
       }
     }
   }]

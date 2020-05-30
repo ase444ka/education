@@ -168,9 +168,6 @@ h3 {
   color: rgba(31, 32, 65, 0.75);
   width: 80%;
   font-family: Montserrat; }
-  @media (max-width: 800px) {
-    .bullet-list {
-      margin: auto; } }
   .bullet-list__item {
     padding-left: 1.6rem;
     line-height: 1.8;
@@ -1581,14 +1578,29 @@ h3 {
       left: 12.5rem !important; } }
   @media (max-width: 830px) {
     .apexcharts-legend {
-      left: 10.5rem !important; } }
+      left: 10.5rem !important;
+      top: 2rem !important; } }
   @media (max-width: 760px) {
     .apexcharts-legend {
       left: 8.5rem !important; } }
   @media (max-width: 730px) {
     .apexcharts-legend {
-      left: 5rem !important;
+      left: 2rem !important;
       top: 10rem !important; } }
+  @media (max-width: 600px) {
+    .apexcharts-legend {
+      left: 0.5rem !important; } }
+  @media (max-width: 500px) {
+    .apexcharts-legend {
+      left: 15rem !important;
+      top: 3rem !important; } }
+  @media (max-width: 450px) {
+    .apexcharts-legend {
+      left: 13rem !important; } }
+  @media (max-width: 400px) {
+    .apexcharts-legend {
+      left: 5rem !important;
+      top: 15rem !important; } }
   .apexcharts-legend-text {
     color: rgba(31, 32, 65, 0.75) !important; }
 
@@ -1869,9 +1881,6 @@ h3 {
   padding-left: 0.3rem;
   grid-template-areas: "img name" "img descr";
   border-bottom: 1px solid rgba(31, 32, 65, 0.05); }
-  @media (max-width: 800px) {
-    .feature {
-      margin: auto; } }
   .feature__image {
     grid-area: img; }
   .feature__name {
@@ -3458,6 +3467,16 @@ h3 {
 
 .room-details__impressions {
   grid-area: impressions; }
+
+@media (max-width: 500px) {
+  .room-details__feature {
+    display: flex;
+    justify-content: center; } }
+
+@media (max-width: 500px) {
+  .room-details__rules-list {
+    display: flex;
+    justify-content: center; } }
 
 .room-details__image {
   display: block; }
