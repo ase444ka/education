@@ -5,6 +5,9 @@
     @media (max-width: 390px){
         padding: 1.5rem;
     }
+    &_for_room-choice {
+        z-index: 10;
+    }
     box-shadow:  0 0 2rem 0.5rem $darkShade_25;
     background-color: white;
     font-family: Montserrat;
