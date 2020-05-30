@@ -19,6 +19,7 @@
     &__likes {
         grid-area: likes;
         padding-left: 0.15rem;
+        user-select: none;
     }    
     &__time {
         grid-area: time;

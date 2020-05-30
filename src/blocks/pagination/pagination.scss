@@ -12,6 +12,7 @@
         padding: 1.1rem;
         font-size: 0.9rem;
         cursor: pointer;
+        user-select: none;
     }
     &__item_next, &__item_previous {
         margin-left: -0.4rem;

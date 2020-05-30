@@ -63,6 +63,7 @@ h3 {
     padding: 1rem;
 }
 %input__icon {
+  user-select: none;
   direction: ltr;
   display: inline-block;
   font-family: 'Material Icons';
