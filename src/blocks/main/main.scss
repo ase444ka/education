@@ -11,7 +11,11 @@
         }
     }
 
-    &__room-search {
+    &__hidden {
+        display: none;
+    }
+
+    &__room-search, &__login, &__registration {
         position: absolute;
         width: 380px;
         height: 374px;

@@ -4,4 +4,9 @@ mixin main(slogan)
         img(src=require(`Images/main.jpg`).default).main__image
         .main__room-search
             +card("room-choice", {})
+        .main__login.main__hidden
+            +card("login", {})
+        .main__registration.main__hidden
+            +card("registration", {})
+        .main
         .main__slogan= slogan

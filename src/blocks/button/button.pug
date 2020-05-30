@@ -4,5 +4,7 @@ mixin button(options)
     -let theme = options.theme? " button_theme_" + options.theme : ""
     -let size = options.size? " button_size_" + options.size : ""
     -let type = options.type? " button_" + options.type : ""
-    -let _class = color + theme + size + type
-    button.button(class = _class)= text
+    -let target = options.target? options.target:"reference"
+    -let bemClass = options.bemClass? " " + options.bemClass : ""
+    -let _class = color + theme + size + type + bemClass
+    button.button(class = _class, data-target = target)= text
