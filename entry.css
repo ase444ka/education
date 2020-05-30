@@ -1164,6 +1164,8 @@ h3, .card__input-name {
   @media (max-width: 390px) {
     .card {
       padding: 1.5rem; } }
+  .card_for_room-choice {
+    z-index: 10; }
   .card__header {
     font-weight: bold;
     font-size: 1.5rem;
@@ -1481,6 +1483,7 @@ h3 {
   padding: 1rem; }
 
 .date-diapazon__input-wrapper:after {
+  user-select: none;
   direction: ltr;
   display: inline-block;
   font-family: 'Material Icons';
@@ -1655,6 +1658,7 @@ h3, .dropdown__item, .dropdown__option-quantity, .dropdown__button {
   padding: 1rem; }
 
 .dropdown__i, .dropdown__placeholder:after {
+  user-select: none;
   direction: ltr;
   display: inline-block;
   font-family: 'Material Icons';
@@ -1826,7 +1830,8 @@ h3 {
   .expandable i {
     position: absolute;
     top: -1.8rem;
-    right: 21.5%;
+    right: 2px;
+    user-select: none;
     font-family: 'Material Icons';
     color: rgba(31, 32, 65, 0.5);
     cursor: pointer;
@@ -1942,7 +1947,8 @@ h3 {
     height: 3.14rem; }
   .feedback__likes {
     grid-area: likes;
-    padding-left: 0.15rem; }
+    padding-left: 0.15rem;
+    user-select: none; }
   .feedback__time {
     grid-area: time; }
   .feedback__feed {
@@ -2969,7 +2975,8 @@ h3 {
     justify-content: center;
     padding: 1.1rem;
     font-size: 0.9rem;
-    cursor: pointer; }
+    cursor: pointer;
+    user-select: none; }
   .pagination__item_next, .pagination__item_previous {
     margin-left: -0.4rem;
     padding: 0.6rem;
@@ -3886,6 +3893,8 @@ h3, .card__input-name {
   @media (max-width: 390px) {
     .card {
       padding: 1.5rem; } }
+  .card_for_room-choice {
+    z-index: 10; }
   .card__header {
     font-weight: bold;
     font-size: 1.5rem;

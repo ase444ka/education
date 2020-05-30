@@ -839,6 +839,7 @@ var Calendar = /*#__PURE__*/function () {
       $(document).click(function (event) {
         if (~event.target.className.indexOf('datepicker')) return;
         if (event.target.closest(".".concat(_this2.blockName))) return;
+        if ($(event.target).hasClass('material-icons')) return;
         if (_this2.hidden) return;
         if (_this2["static"]) return;
 
