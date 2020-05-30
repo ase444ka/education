@@ -18,9 +18,12 @@ mixin room-details(options)
         .room-details__content
             .room-details__info
                 h2.room-details__header Сведения о номере
-                +feature("Комфорт","Шумопоглощающие стены","insert_emoticon")
-                +feature("Удобство","Окно в каждой из спален","location_city")
-                +feature("Уют","Номер оснащён камином","whatshot")
+                .room-details__feature
+                    +feature("Комфорт","Шумопоглощающие стены","insert_emoticon")
+                .room-details__feature
+                    +feature("Удобство","Окно в каждой из спален","location_city")
+                .room-details__feature
+                    +feature("Уют","Номер оснащён камином","whatshot")
 
             .room-details__impressions
                 h2.room-details__header Впечатления от номера
@@ -40,7 +43,8 @@ mixin room-details(options)
 
             .room-details__rules
                 h2.room-details__header Правила
-                +bullet-list("Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00")
+                .room-details__rules-list
+                    +bullet-list("Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00")
 
             .room-details__extra 
                 h2.room-details__header Отмена

@@ -5,6 +5,9 @@
     grid-template-rows: 1fr;
     gap: 1.5rem;
     position: relative;
+    @media (max-width: 600px) {
+        gap: 0.8rem;
+    }
     &__input-wrapper {
         position: relative;
         &:after {

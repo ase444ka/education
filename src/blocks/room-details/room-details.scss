@@ -7,6 +7,18 @@
     &__impressions {
         grid-area: impressions;
     }
+    &__feature {
+        @media (max-width: 500px) {
+           display: flex;
+           justify-content: center;
+        }
+    }
+    &__rules-list {
+        @media (max-width: 500px) {
+            display: flex;
+           justify-content: center;
+        }
+    } 
     &__image {
         display: block;
         &:first-child {
@@ -28,6 +40,7 @@
             display: block;
         }
     }
+
     &__content {
         @extend %paddings-decrease;
         padding-top: 5rem;
@@ -51,6 +64,16 @@
                                  "info          impressions"
                                  "feedback         feedback"
                                  "rules             extra";
+            grid-gap: 3rem;
+        }
+        @media (max-width: 500px) {
+            grid-template-columns: 1fr;
+            grid-template-areas: "calculations"
+                                 "info"         
+                                 "impressions"
+                                 "feedback"
+                                 "rules"
+                                 "extra";
             grid-gap: 3rem;
         }
     }
@@ -93,6 +116,12 @@
         }
         @media (max-width: 800px) {
             padding: 0 20%;
+        }
+        @media (max-width: 600px) {
+            padding: 0 10%;
+        }
+        @media (max-width: 460px) {
+            padding: 0 5%;
         }
 
     }
