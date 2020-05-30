@@ -61,6 +61,7 @@ export class Calendar {
             $(document).click((event)=>{
               if (~event.target.className.indexOf('datepicker')) return;
               if (event.target.closest(`.${this.blockName}`)) return;
+              if ($(event.target).hasClass('material-icons')) return;
               if (this.hidden) return;
               if (this.static) return;
               this.clear();
