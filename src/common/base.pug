@@ -1,4 +1,5 @@
 include ./includeAll
+
 doctype html
 html(lang='ru')
     head
@@ -18,3 +19,6 @@ html(lang='ru')
         block content
         block footer
             +footer({json: "footer-pages"})
+        +modal("registration")
+        +modal("login")
+        +modal()

@@ -1,0 +1,27 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background .2s ease-in;
+    opacity: 0;
+    z-index: -1;
+    &__window {
+        transform: translateY(-200px);
+        width: 400px;
+        border-radius: 5px;
+        background: #fff;
+        margin: 0 auto;
+        transition: transform .2s ease-in;
+    }
+    &_opened {
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0.99;
+        z-index: 1000;
+        .modal__window {
+            transform: translateY(100px);
+        }
+    }
+}

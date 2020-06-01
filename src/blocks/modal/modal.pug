@@ -1,0 +1,11 @@
+mixin modal(target)
+    -target = target || "message"
+    .modal(data-target = target)
+        .modal__window  
+            case target
+                when "login"
+                    +card("login", {})
+                when "registration"
+                    +card("registration", {})
+                when "message"
+                    .modal__message
