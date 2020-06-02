@@ -18,8 +18,8 @@ mixin card_for_registration(options)
         .card__offers-setter
             +toggle("receiveOffers","Получать спецпредложения")
         .card__button
-            +button({type: "active", color: "purple", text: "перейти к оплате"})
+            +button({type: "active", color: "purple", text: "перейти к оплате", target: "message"})
         .card__account-existance-check
             .card__account-existance-check__text Уже есть аккаунт на Toxin
             .card__account-existance-check__button 
-                +button({text: "войти", color: "white"})
+                +button({type: "active",text: "войти", color: "white", target: "login"})

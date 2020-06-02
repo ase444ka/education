@@ -1,17 +1,39 @@
 import './modal.scss';
+export let opened = null;
 export class Modal {
     constructor(block) {
         this.block = block;
+        this.showing = false;
+        this.text = "";
     }
     hide() {
+        if (this.text) {
+            this.text = false;
+        }
         $(this.block).removeClass('modal_opened');
+        this.showing = false;
+        opened = null;
     }
-    show() {
+    show(text) {
+        this.text = text || '';
+        this.showing = true;
+        if (opened) opened.hide();
+        opened = this;
         $(this.block).addClass('modal_opened');
-    }
-    message(text) {
-        if (!$('.modal__message', this.block)) return;
-        $('.modal__message', this.block).text(text);
+        if (text && $('.modal__message', this.block)) {
+            $('.modal__message', this.block).text(text);
+        }
+        document.addEventListener('click', (event) => {
+            if (event.target.closest('.modal__window')) return;
+            if (opened) opened.hide();
+            return;
+        });  
+        $(document).keydown( (e) => {
+            // ESCAPE key pressed
+            if (e.keyCode == 27) {
+                if (this.showing) this.hide();
+            }
+        });
     }
 }
 
