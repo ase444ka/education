@@ -3,6 +3,8 @@ $_red: red($purple);
 $_green: green($purple);
 $_blue: blue($purple);
 .button {
+    display: inline-block;
+    text-decoration: none;
     padding: 0.8rem 1.3rem;
     align-self: center;
     cursor: pointer;

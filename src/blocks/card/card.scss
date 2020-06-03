@@ -47,6 +47,8 @@
             }
         }
         &__number {
+            text-decoration: none;
+            color: $darkShade;
             font-weight: bold;
             font-size: 1.7rem;
             &:before {

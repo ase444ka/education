@@ -7,4 +7,9 @@ mixin button(options)
     -let target = options.target? options.target:"reference"
     -let bemClass = options.bemClass? " " + options.bemClass : ""
     -let _class = color + theme + size + type + bemClass
-    button.button(class = _class, data-target = target)= text
+    -let ref = options.ref || "/"
+    if (target == "reference")
+        a.button(class = _class, data-target = target, href = ref)= text
+    else
+        button.button(class = _class, data-target = target)= text
+        
