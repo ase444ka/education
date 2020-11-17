@@ -222,6 +222,8 @@ h3, .button {
   text-transform: uppercase; }
 
 .button {
+  display: inline-block;
+  text-decoration: none;
   padding: 0.8rem 1.3rem;
   align-self: center;
   cursor: pointer;
@@ -323,6 +325,30 @@ h3, .button {
   background-image: none;
   background-color: white;
   position: relative; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background .2s ease-in;
+  opacity: 0;
+  z-index: -1; }
+  .modal__window {
+    transform: translateY(-200px);
+    width: 400px;
+    border-radius: 5px;
+    background: #fff;
+    margin: 0 auto;
+    transition: transform .2s ease-in; }
+  .modal_opened {
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0.99;
+    z-index: 1000; }
+    .modal_opened .modal__window {
+      transform: translateY(10px); }
 
 .label {
   color: rgba(31, 32, 65, 0.25);
@@ -1194,6 +1220,8 @@ h3, .card__input-name {
       .card__room-data__period:before {
         content: "\20BD"; }
     .card__room-data__number {
+      text-decoration: none;
+      color: #1F2041;
       font-weight: bold;
       font-size: 1.7rem; }
       .card__room-data__number:before {
@@ -2895,25 +2923,27 @@ h3 {
       .main__image {
         height: 450px;
         overflow: hidden; } }
-  .main__room-search {
+  .main__hidden {
+    display: none; }
+  .main__room-search, .main__login, .main__registration {
     position: absolute;
     width: 380px;
     height: 374px;
     left: 10rem;
     top: 5rem; }
     @media only screen and (max-width: 860px) {
-      .main__room-search {
+      .main__room-search, .main__login, .main__registration {
         left: 5rem;
         top: 2rem; } }
     @media only screen and (max-width: 775px) {
-      .main__room-search {
+      .main__room-search, .main__login, .main__registration {
         left: 0;
         top: 0;
         bottom: 0;
         right: 0;
         margin: auto; } }
     @media only screen and (max-width: 450px) {
-      .main__room-search {
+      .main__room-search, .main__login, .main__registration {
         width: 300px; } }
   .main__slogan {
     position: absolute;
@@ -3923,6 +3953,8 @@ h3, .card__input-name {
       .card__room-data__period:before {
         content: "\20BD"; }
     .card__room-data__number {
+      text-decoration: none;
+      color: #1F2041;
       font-weight: bold;
       font-size: 1.7rem; }
       .card__room-data__number:before {
@@ -5262,9 +5294,9 @@ body {
     align-content: center; } }
 
 
-
 body {
   margin: auto; }
+
 
 
 /*# sourceMappingURL=entry.css.map*/

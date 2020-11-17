@@ -4,194 +4,161 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="icon" href="https://ase444ka.github.io/Education/assets/favicon.png"><link href="https://ase444ka.github.io/Education/entry.css" rel="stylesheet"></head>
-  <title>Toxin - номер 888 люкс, забронировать номер
+  <title>Toxin - добро пожаловать в наши отели!
   </title>
   <body><a href="UIKit.html">UIKit</a>
     <div class="header">
-      <div class="header__logo"><a href="#"><img class="logo" src="https://ase444ka.github.io/Education/icons/Logo.svg"></a>
+      <div class="header__logo"><a href="/"><img class="logo" src="https://ase444ka.github.io/Education/icons/Logo.svg"></a>
       </div>
       <div class="header__nav"><a class="header__nav__item  header__nav__item_current" href="#">О нас</a><a class="header__nav__item  header__nav__item_expandable" href="#">Услуги</a><a class="header__nav__item" href="#">Вакансии</a><a class="header__nav__item" href="#">Новости</a><a class="header__nav__item  header__nav__item_expandable" href="#">Соглашения</a>
       </div>
       <div class="header__buttons">
-        <button class="button  button_color_white button_size_slim">войти</button>
-        <button class="button  button_color_purple button_size_slim">зарегистрироваться</button><a class="header__hamburger"></a>
+        <button class="button  button_color_white button_size_slim header__button" data-target="login">войти</button>
+        <button class="button  button_color_purple button_size_slim header__button" data-target="registration">зарегистрироваться</button><a class="header__hamburger"></a>
       </div>
     </div>
-    <div class="room-details">
-      <ul class="room-details__gallery">
-        <li class="room-details__image"><img src="https://ase444ka.github.io/Education/images/image1.png"></li>
-        <li class="room-details__image"><img src="https://ase444ka.github.io/Education/images/image2.png"></li>
-        <li class="room-details__image"><img src="https://ase444ka.github.io/Education/images/image3.png"></li>
-      </ul>
-      <div class="room-details__content">
-        <div class="room-details__info">
-          <h2 class="room-details__header">Сведения о номере</h2>
-          <div class="room-details__feature">
-            <div class="feature">
-              <div class="feature__image"><img src="https://ase444ka.github.io/Education/icons/insert_emoticon.svg"></div>
-              <div class="feature__name">Комфорт</div>
-              <div class="feature__description">Шумопоглощающие стены</div>
-            </div>
-          </div>
-          <div class="room-details__feature">
-            <div class="feature">
-              <div class="feature__image"><img src="https://ase444ka.github.io/Education/icons/location_city.svg"></div>
-              <div class="feature__name">Удобство</div>
-              <div class="feature__description">Окно в каждой из спален</div>
-            </div>
-          </div>
-          <div class="room-details__feature">
-            <div class="feature">
-              <div class="feature__image"><img src="https://ase444ka.github.io/Education/icons/whatshot.svg"></div>
-              <div class="feature__name">Уют</div>
-              <div class="feature__description">Номер оснащён камином</div>
-            </div>
-          </div>
-        </div>
-        <div class="room-details__impressions">
-          <h2 class="room-details__header">Впечатления от номера</h2>
-          <div class="donat-chart" data-labels="[]" data-series="[]"></div>
-        </div>
-        <div class="room-details__calculations">
-          <h2 class="room-details__header"></h2>
-          <div class="card card_for_price-calc">
-            <div class="card__room-data">
-              <div class="card__room-data__number">888<span class="card__room-data__category">люкс</span></div>
-              <div class="card__room-data__price">9990<span class="card__room-data__period">в сутки</span></div>
-            </div>
-            <div class="card__dates">
-              <div class="date-diapazon">
-                <div class="field">
-                  <div class="field__name">прибытие</div>
-                  <div class="field__content">
-                    <div class="date-diapazon__input-wrapper">
-                      <input class="date-diapazon__start date-diapazon__input" placeholder="ДД.ММ.ГГГГ" readonly>
-                    </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="field__name">выезд</div>
-                  <div class="field__content">
-                    <div class="date-diapazon__input-wrapper">
-                      <input class="date-diapazon__end date-diapazon__input" placeholder="ДД.ММ.ГГГГ" readonly>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card__guests">
+    <div class="main"><img class="main__image" src="https://ase444ka.github.io/Education/images/main.jpg">
+      <div class="main__room-search">
+        <div class="card card_for_room-choice">
+          <div class="card__header">Найдем номера под ваши пожелания</div>
+          <div class="card__dates">
+            <div class="date-diapazon">
               <div class="field">
-                <div class="field__name">гости</div>
+                <div class="field__name">прибытие</div>
                 <div class="field__content">
-                  <div class="dropdown" data-target="guests">
-                    <div class="dropdown__placeholder">сколько гостей</div>
-                    <div class="dropdown__customization">
-                      <ul class="dropdown__options">
-                        <li class="dropdown__item">
-                          <div class="dropdown__option">взрослые</div>
-                          <div class="dropdown__option-setter">
-                            <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
-                            <div class="dropdown__option-quantity">0</div>
-                            <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
-                          </div>
-                        </li>
-                        <li class="dropdown__item">
-                          <div class="dropdown__option">дети</div>
-                          <div class="dropdown__option-setter">
-                            <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
-                            <div class="dropdown__option-quantity">0</div>
-                            <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
-                          </div>
-                        </li>
-                        <li class="dropdown__item">
-                          <div class="dropdown__option">младенцы</div>
-                          <div class="dropdown__option-setter">
-                            <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
-                            <div class="dropdown__option-quantity">0</div>
-                            <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
-                          </div>
-                        </li>
-                        <div class="dropdown__buttons">
-                          <button class="dropdown__button dropdown__button_target_apply">применить</button>
-                          <button class="dropdown__button dropdown__button_target_clear">очистить</button>
+                  <div class="date-diapazon__input-wrapper">
+                    <input class="date-diapazon__start date-diapazon__input" placeholder="ДД.ММ.ГГГГ" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="field__name">выезд</div>
+                <div class="field__content">
+                  <div class="date-diapazon__input-wrapper">
+                    <input class="date-diapazon__end date-diapazon__input" placeholder="ДД.ММ.ГГГГ" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__guests">
+            <div class="field">
+              <div class="field__name">гости</div>
+              <div class="field__content">
+                <div class="dropdown" data-target="guests">
+                  <div class="dropdown__placeholder">сколько гостей</div>
+                  <div class="dropdown__customization">
+                    <ul class="dropdown__options">
+                      <li class="dropdown__item">
+                        <div class="dropdown__option">взрослые</div>
+                        <div class="dropdown__option-setter">
+                          <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                          <div class="dropdown__option-quantity">0</div>
+                          <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
                         </div>
-                      </ul>
-                    </div>
+                      </li>
+                      <li class="dropdown__item">
+                        <div class="dropdown__option">дети</div>
+                        <div class="dropdown__option-setter">
+                          <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                          <div class="dropdown__option-quantity">0</div>
+                          <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                        </div>
+                      </li>
+                      <li class="dropdown__item">
+                        <div class="dropdown__option">младенцы</div>
+                        <div class="dropdown__option-setter">
+                          <div class="dropdown__option-iteration dropdown__option-iteration_decrement">-</div>
+                          <div class="dropdown__option-quantity">0</div>
+                          <div class="dropdown__option-iteration dropdown__option-iteration_increment">+</div>
+                        </div>
+                      </li>
+                      <div class="dropdown__buttons">
+                        <button class="dropdown__button dropdown__button_target_apply">применить</button>
+                        <button class="dropdown__button dropdown__button_target_clear">очистить</button>
+                      </div>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card__calc-table">
-              <div class="card__calc-table__position">9 990&#8381; x 4 суток</div>
-              <div class="card__calc-table__price">39 960&#8381;</div>
-              <div class="card__calc-table__position card__calc-table__position_with-info">Сбор за услуги: скидка 2 179₽</div>
-              <div class="card__calc-table__price">0&#8381;</div>
-              <div class="card__calc-table__position card__calc-table__position_with-info">Сбор за дополнительные услуги</div>
-              <div class="card__calc-table__price">300&#8381;</div>
-            </div>
-            <div class="card__total">
-              <div class="card__total__literal">Итого</div>
-              <div class="card__total__price">38 081&#8381;</div>
-            </div>
-            <div class="card__button">
-              <button class="button button_color_purple button_active">забронировать</button>
-            </div>
           </div>
-        </div>
-        <div class="room-details__feedback">              
-          <h2 class="room-details__header"> Отзывы посетителей номера</h2>
-          <div class="room-details__feedback__quantity"></div>
-          <div class="room-details__feed">
-            <div class="feedback">
-              <div class="feedback__avatar"><img class="feedback__image" src="https://ase444ka.github.io/Education/images/muzhik.jpg"></div>
-              <div class="feedback__likes">
-                <div class="like">
-                  <div class="like__base">
-                    <div class="like__button">12</div>
-                  </div>
-                </div>
-              </div>
-              <div class="feedback__time">5 дней назад</div>
-              <div class="feedback__name">Мурад Сарафанов</div>
-              <div class="feedback__feed">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</div>
-            </div>
+          <div class="card__button"><a class="button button_color_purple button_active" data-target="reference" href="/filter.html">подобрать номер</a>
           </div>
-          <div class="room-details__feed">
-            <div class="feedback">
-              <div class="feedback__avatar"><img class="feedback__image" src="https://ase444ka.github.io/Education/images/tetka.jpg"></div>
-              <div class="feedback__likes">
-                <div class="like">
-                  <div class="like__base">
-                    <div class="like__button">75</div>
-                  </div>
-                </div>
-              </div>
-              <div class="feedback__time">Неделю назад</div>
-              <div class="feedback__name">Патрисия Стёклышкова</div>
-              <div class="feedback__feed">Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент</div>
-            </div>
-          </div>
-        </div>
-        <div class="room-details__rules">
-          <h2 class="room-details__header">Правила</h2>
-          <div class="room-details__rules-list">
-            <ul class="bullet-list">
-              <li class="bullet-list__item">Нельзя с питомцами</li>
-              <li class="bullet-list__item">Без вечеринок и мероприятий</li>
-              <li class="bullet-list__item">Время прибытия — после 13:00, а выезд до 12:00</li>
-            </ul>
-          </div>
-        </div>
-        <div class="room-details__extra"> 
-          <h2 class="room-details__header">Отмена</h2>Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до 
-          прибытия вы получите полный возврат за вычетом сбора за услуги.
         </div>
       </div>
+      <div class="main__login main__hidden">
+        <div class="card card_for_login">
+          <div class="card__header">Войти</div>
+          <div class="card__input">
+            <input class="input" placeholder="Email" spellcheck="false">
+          </div>
+          <div class="card__input">
+            <input class="input" placeholder="Пароль" spellcheck="false">
+          </div>
+          <div class="card__button"><a class="button  button_color_purple button_active" data-target="reference" href="/">перейти к оплате</a>
+          </div>
+          <div class="card__account-existance-check">
+            <div class="card__account-existance-check__text">Нет аккаунта на Toxin?</div>
+            <div class="card__account-existance-check__button"> 
+              <button class="button  button_color_white" data-target="registration">создать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__registration main__hidden">
+        <div class="card card_for_registration">
+          <div class="card__header">Регистрация аккаунта</div>
+          <div class="card__input">
+            <input class="input" placeholder="Имя" spellcheck="false">
+          </div>
+          <div class="card__input">
+            <input class="input" placeholder="Фамилия" spellcheck="false">
+          </div>
+          <div class="card__radio">
+            <div class="radio">
+              <label class="radio__item">
+                <input class="radio__input" type="radio" name="gender" value="male"><span class="radio__tick"></span>мужчина
+              </label>
+              <label class="radio__item">
+                <input class="radio__input" type="radio" name="gender" checked value="female"><span class="radio__tick"></span>женщина
+              </label>
+            </div>
+          </div>
+          <div class="card__input-name">Дата рождения</div>
+          <div class="card__input">
+            <input class="input input_masked" placeholder="ДД.ММ.ГГ" spellcheck="false" data-inputmask="'mask': '99.99.9999', 'placeholder': 'ДД.ММ.ГГ'">
+          </div>
+          <div class="card__input-name">Данные для входа в сервис</div>
+          <div class="card__input">
+            <input class="input" placeholder="Email" spellcheck="false">
+          </div>
+          <div class="card__input">
+            <input class="input" placeholder="Пароль" spellcheck="false">
+          </div>
+          <div class="card__offers-setter">
+            <label class="toggle">
+              <input class="toggle__input" type="checkbox" name="receiveOffers"><span class="toggle__slider"></span>Получать спецпредложения
+            </label>
+          </div>
+          <div class="card__button">
+            <button class="button  button_color_purple button_active" data-target="message">перейти к оплате</button>
+          </div>
+          <div class="card__account-existance-check">
+            <div class="card__account-existance-check__text">Уже есть аккаунт на Toxin</div>
+            <div class="card__account-existance-check__button"> 
+              <button class="button  button_color_white" data-target="login">войти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main"></div>
+      <div class="main__slogan">Лучшие номера для вашей работы, отдыха и просто вдохновения</div>
     </div>
     <div class="footer footer_type_wide">
       <div class="footer__top">
         <div class="footer__info">
-          <div class="footer__logo"><a href="#"><img class="logo" src="https://ase444ka.github.io/Education/icons/Logo.svg"></a>
+          <div class="footer__logo"><a href="/"><img class="logo" src="https://ase444ka.github.io/Education/icons/Logo.svg"></a>
           </div>
           <div class="footer__text">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
         </div>
@@ -218,6 +185,80 @@
         <div class="footer__copyright">Copyright © 2018 Toxin отель. Все права защищены.</div>
         <div class="footer__social"><a class="footer__social-icon" href="vk.com">&#61570;</a><a class="footer__social-icon" href="vk.com">&#61593;</a><a class="footer__social-icon" href="vk.com">&#61805;</a>
         </div>
+      </div>
+    </div>
+    <div class="modal" data-target="registration">
+      <div class="modal__window"> 
+        <div class="card card_for_registration">
+          <div class="card__header">Регистрация аккаунта</div>
+          <div class="card__input">
+            <input class="input" placeholder="Имя" spellcheck="false">
+          </div>
+          <div class="card__input">
+            <input class="input" placeholder="Фамилия" spellcheck="false">
+          </div>
+          <div class="card__radio">
+            <div class="radio">
+              <label class="radio__item">
+                <input class="radio__input" type="radio" name="gender" value="male"><span class="radio__tick"></span>мужчина
+              </label>
+              <label class="radio__item">
+                <input class="radio__input" type="radio" name="gender" checked value="female"><span class="radio__tick"></span>женщина
+              </label>
+            </div>
+          </div>
+          <div class="card__input-name">Дата рождения</div>
+          <div class="card__input">
+            <input class="input input_masked" placeholder="ДД.ММ.ГГ" spellcheck="false" data-inputmask="'mask': '99.99.9999', 'placeholder': 'ДД.ММ.ГГ'">
+          </div>
+          <div class="card__input-name">Данные для входа в сервис</div>
+          <div class="card__input">
+            <input class="input" placeholder="Email" spellcheck="false">
+          </div>
+          <div class="card__input">
+            <input class="input" placeholder="Пароль" spellcheck="false">
+          </div>
+          <div class="card__offers-setter">
+            <label class="toggle">
+              <input class="toggle__input" type="checkbox" name="receiveOffers"><span class="toggle__slider"></span>Получать спецпредложения
+            </label>
+          </div>
+          <div class="card__button">
+            <button class="button  button_color_purple button_active" data-target="message">перейти к оплате</button>
+          </div>
+          <div class="card__account-existance-check">
+            <div class="card__account-existance-check__text">Уже есть аккаунт на Toxin</div>
+            <div class="card__account-existance-check__button"> 
+              <button class="button  button_color_white" data-target="login">войти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" data-target="login">
+      <div class="modal__window"> 
+        <div class="card card_for_login">
+          <div class="card__header">Войти</div>
+          <div class="card__input">
+            <input class="input" placeholder="Email" spellcheck="false">
+          </div>
+          <div class="card__input">
+            <input class="input" placeholder="Пароль" spellcheck="false">
+          </div>
+          <div class="card__button"><a class="button  button_color_purple button_active" data-target="reference" href="/">перейти к оплате</a>
+          </div>
+          <div class="card__account-existance-check">
+            <div class="card__account-existance-check__text">Нет аккаунта на Toxin?</div>
+            <div class="card__account-existance-check__button"> 
+              <button class="button  button_color_white" data-target="registration">создать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" data-target="message">
+      <div class="modal__window"> 
+        <div class="modal__message"></div>
       </div>
     </div>
   <script src="https://ase444ka.github.io/Education/vendors~entry.js"></script><script src="https://ase444ka.github.io/Education/entry.js"></script></body>
