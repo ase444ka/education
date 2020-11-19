@@ -12,7 +12,7 @@ mixin card_for_room-preview(options)
             each val in jpg
                 img(src=require(`Images/room_previews/${val}.jpg`).default)
     .card__room-data.card__room-data_small
-        a.card__room-data__number(href = "/room-details.html" target = "_blank")= number
+        a.card__room-data__number(href = "./room-details.html" target = "_blank")= number
             span.card__room-data__category= category
         .card__room-data__price=price
             span.card__room-data__period= period
