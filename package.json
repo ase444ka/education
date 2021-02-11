@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/core": "^7.7.4",
     "D": "^1.0.0",
-    "apexcharts": "^3.19.2",
+    "apexcharts": "^3.24.0",
     "babel-upgrade": "^1.0.1",
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
